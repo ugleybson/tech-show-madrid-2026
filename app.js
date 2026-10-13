@@ -1,0 +1,1023 @@
+/* ================================================
+   app.js – Tech Show Madrid 2026 Team Planner
+   ================================================ */
+
+// ── DATA ─────────────────────────────────────────
+// TRACKS e SESSOES (programa oficial completo) vêm de data/programa.js
+
+
+// ── STATE ─────────────────────────────────────────
+const COLORS = ['#6366f1','#ec4899','#f59e0b','#10b981','#ef4444'];
+const INITIALS = ['A','B','C','D','E'];
+
+// Dados lidos das credenciais (PDF): pavilhão de acreditação → salas do programa
+const CREDENCIAIS = {
+  m1: { credencial:'AcreditacionMTS26_MADRID_X12706597_Pedro+Duarte+Oliveira+Monteiro.pdf',
+        cargo:'Gerente', pavilhao:'HR', trilhas:['hr-learning','hr-talent','hr-wellbeing'],
+        // Roteiro de IA (PDF): ROI, falhas de IA, agentes, Human-in-the-Loop, cultura builder, IA invisível, governança
+        prioritarias:['s005','s007','s009','s018','s016','s022','s020'] },
+  m2: { credencial:'AcreditacionMTS26_MADRID_J13849432_Fábio+Miguel+Mendes+Ferreira.pdf',
+        cargo:'Digital Marketing Specialist', pavilhao:'Technology for Marketing', trilhas:['tfm'] },
+  m3: { credencial:'AcreditacionMTS26_MADRID_P13827748_Gleibson+Silva.pdf',
+        cargo:'AI Project Manager', pavilhao:'Big Data & AI World', trilhas:['ai-data','tech-keynote'] },
+  // Consultor financeiro: investimento primeiro, depois energia/sustentabilidade, depois edge
+  m4: { credencial:'AcreditacionMTS26_MADRID_L13788720_Marco+Nunes.pdf',
+        cargo:'Consultor Financeiro', pavilhao:'Data Centre World', trilhas:['dc-design','dc-energy','dc-edge'],
+        // Sessões sobre investimento: Portugal como porta de entrada, mercado, capital, novo ciclo em Espanha
+        prioritarias:['s235','s368','s370','s375'] },
+};
+
+let state = {
+  equipa: JSON.parse(localStorage.getItem('tsm_equipa') || 'null') || [
+    {id:'m1', nome:'Pedro Monteiro', inicial:'P', cor:COLORS[0], areas:[], ...CREDENCIAIS.m1},
+    {id:'m2', nome:'Fábio Ferreira', inicial:'F', cor:COLORS[1], areas:[], ...CREDENCIAIS.m2},
+    {id:'m3', nome:'Gleibson Silva', inicial:'G', cor:COLORS[2], areas:[], ...CREDENCIAIS.m3},
+    {id:'m4', nome:'Marco Nunes', inicial:'M', cor:COLORS[3], areas:[], ...CREDENCIAIS.m4},
+    {id:'m5', nome:'Membro 5', inicial:'E', cor:COLORS[4], areas:[]},
+  ],
+  inscricoes: JSON.parse(localStorage.getItem('tsm_inscricoes') || '{}'), // {sessaoId: [membroId,...]}
+  diaAtivo: '2026-11-04',
+  view: 'grid', // grid | timeline
+  filtroTrack: '',
+  filtroMembro: '',
+  filtroTipo: '',
+  pesquisa: '',
+  sort: 'hora',
+  sessaoAberta: null,
+  eu: lerLocal('tsm_eu'),   // membro "eu sou" usado em Meu plano (por dispositivo)
+  indTab: 'crono',          // telemóvel: separador do plano individual (crono | grelha)
+  agoraSim: 630,            // vista Agora fora dos dias do evento: hora simulada (minutos)
+};
+
+function lerLocal(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
+function gravarLocal(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+// Migração: aplicar dados reais a equipas já guardadas no localStorage
+(function migrateEquipa() {
+  const antigos = { m1:'Membro 1', m2:'Membro 2', m3:'Membro 3', m4:'Membro 4' };
+  const nomes = { m1:'Pedro Monteiro', m2:'Fábio Ferreira', m3:'Gleibson Silva', m4:'Marco Nunes' };
+  state.equipa.forEach(m => {
+    const c = CREDENCIAIS[m.id];
+    if (!c) return;
+    if (m.nome === antigos[m.id]) { m.nome = nomes[m.id]; m.inicial = m.nome.charAt(0).toUpperCase(); }
+    Object.assign(m, { credencial: m.credencial || c.credencial, cargo: c.cargo, pavilhao: c.pavilhao, trilhas: c.trilhas, prioritarias: c.prioritarias || [] });
+  });
+  // Sessões antigas que não existem no programa oficial (placeholders / hora errada)
+  const remap = { s040: 's102' };
+  Object.keys(state.inscricoes).forEach(id => {
+    if (SESSOES.some(x => x.id === id)) return;
+    if (remap[id]) state.inscricoes[remap[id]] = [...new Set([...(state.inscricoes[remap[id]] || []), ...state.inscricoes[id]])];
+    delete state.inscricoes[id];
+  });
+})();
+
+// ── SAVE / LOAD ───────────────────────────────────
+function saveState() {
+  localStorage.setItem('tsm_equipa', JSON.stringify(state.equipa));
+  localStorage.setItem('tsm_inscricoes', JSON.stringify(state.inscricoes));
+}
+
+// ── HELPERS ───────────────────────────────────────
+function getTrack(id) { return TRACKS.find(t => t.id === id) || {nome:id, cor:'#6366f1'}; }
+function getMembro(id) { return state.equipa.find(m => m.id === id); }
+function getSessoesMembro(memId) {
+  return SESSOES.filter(s => (state.inscricoes[s.id] || []).includes(memId));
+}
+function getAssignedMembers(sessaoId) {
+  return (state.inscricoes[sessaoId] || []).map(mid => getMembro(mid)).filter(Boolean);
+}
+
+function toggleInscricao(sessaoId, membroId) {
+  if (!state.inscricoes[sessaoId]) state.inscricoes[sessaoId] = [];
+  const idx = state.inscricoes[sessaoId].indexOf(membroId);
+  if (idx === -1) {
+    state.inscricoes[sessaoId].push(membroId);
+    return true;
+  } else {
+    state.inscricoes[sessaoId].splice(idx, 1);
+    return false;
+  }
+}
+
+// ── PLANO PELA CREDENCIAL ─────────────────────────
+function sobrepoe(a, b) {
+  return a.dia === b.dia && a.hora_inicio < b.hora_fim && b.hora_inicio < a.hora_fim;
+}
+
+// Momentos logísticos que não entram no plano automático
+const NAO_PLANEAR = /^(check-in|institutional welcome|conclusi[oó]n)\b/i;
+
+// Escolhe sessões sem sobreposições: primeiro as prioritárias do membro (pela ordem dada),
+// depois as das salas do pavilhão – as de IA antes das restantes, pela ordem das salas.
+function planearPorCredencial(m) {
+  if (!m.trilhas || !m.trilhas.length) return 0;
+  Object.values(state.inscricoes).forEach(arr => {
+    const i = arr.indexOf(m.id);
+    if (i !== -1) arr.splice(i, 1);
+  });
+  const prioritarias = (m.prioritarias || []).map(id => SESSOES.find(s => s.id === id)).filter(Boolean);
+  const prio = s => (s.tags.includes('IA') ? 0 : 100) + m.trilhas.indexOf(s.track_id);
+  const candidatos = SESSOES
+    .filter(s => m.trilhas.includes(s.track_id) && !NAO_PLANEAR.test(s.titulo))
+    .sort((a,b) => prio(a) - prio(b) || a.dia.localeCompare(b.dia) || a.hora_inicio.localeCompare(b.hora_inicio));
+  const escolhidas = [];
+  [...prioritarias, ...candidatos].forEach(s => {
+    if (!escolhidas.some(e => sobrepoe(e, s))) escolhidas.push(s);
+  });
+  escolhidas.forEach(s => {
+    if (!state.inscricoes[s.id]) state.inscricoes[s.id] = [];
+    state.inscricoes[s.id].push(m.id);
+  });
+  return escolhidas.length;
+}
+
+function planearEquipaPorCredencial() {
+  const comCredencial = state.equipa.filter(m => m.trilhas && m.trilhas.length);
+  if (!confirm(`Gerar o plano de ${comCredencial.map(m => m.nome).join(', ')} a partir das credenciais?\nAs inscrições actuais destes membros serão substituídas.`)) return;
+  comCredencial.forEach(planearPorCredencial);
+  saveState();
+  renderAll();
+  showToast('🎫 Planos individuais gerados pelas credenciais');
+}
+
+function filteredSessoes() {
+  let list = SESSOES.filter(s => s.dia === state.diaAtivo);
+  if (state.filtroTrack) list = list.filter(s => s.track_id === state.filtroTrack);
+  if (state.filtroTipo) list = list.filter(s => s.tipo === state.filtroTipo);
+  if (state.filtroMembro) {
+    list = list.filter(s => (state.inscricoes[s.id] || []).includes(state.filtroMembro));
+  }
+  if (state.pesquisa.trim()) {
+    const q = state.pesquisa.trim().toLowerCase();
+    list = list.filter(s =>
+      s.titulo.toLowerCase().includes(q) ||
+      s.descricao.toLowerCase().includes(q) ||
+      s.oradores.some(o => o.nome.toLowerCase().includes(q) || o.empresa.toLowerCase().includes(q)) ||
+      s.tags.some(t => t.toLowerCase().includes(q))
+    );
+  }
+  if (state.sort === 'track') {
+    list.sort((a,b) => a.track_id.localeCompare(b.track_id) || a.hora_inicio.localeCompare(b.hora_inicio));
+  } else {
+    list.sort((a,b) => a.hora_inicio.localeCompare(b.hora_inicio));
+  }
+  return list;
+}
+
+// ── RENDERS ───────────────────────────────────────
+
+// --- Team sidebar ---
+function renderTeam() {
+  const el = document.getElementById('team-list');
+  const filterEl = document.getElementById('filter-member');
+
+  el.innerHTML = state.equipa.map(m => {
+    const count = Object.values(state.inscricoes).filter(arr => arr.includes(m.id)).length;
+    const isActive = state.filtroMembro === m.id;
+    return `
+      <div class="team-member ${isActive ? 'active' : ''}" 
+           style="color:${m.cor}" 
+           data-member-id="${m.id}" 
+           id="team-member-${m.id}">
+        <div class="team-member__avatar" style="background:${m.cor}; box-shadow:0 0 10px ${m.cor}55">
+          ${m.inicial}
+        </div>
+        <div class="team-member__info">
+          <div class="team-member__name">${m.nome}</div>
+          <div class="team-member__count">${count} sessão${count !== 1 ? 'ões' : ''}</div>
+          ${m.credencial ? `<a class="team-member__cred" href="${encodeURI(m.credencial)}" target="_blank" rel="noopener" title="Abrir credencial">🎫 ${m.pavilhao || 'Credencial'}</a>` : ''}
+        </div>
+        <div class="team-member__dot"></div>
+      </div>`;
+  }).join('');
+
+  // Events
+  el.querySelectorAll('.team-member__cred').forEach(a => {
+    a.addEventListener('click', e => e.stopPropagation());
+  });
+  el.querySelectorAll('.team-member').forEach(el => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.memberId;
+      state.filtroMembro = state.filtroMembro === id ? '' : id;
+      document.getElementById('filter-member').value = state.filtroMembro;
+      renderAll();
+    });
+  });
+
+  // Also update filter dropdown
+  filterEl.innerHTML = `<option value="">Todos os Membros</option>` +
+    state.equipa.map(m => `<option value="${m.id}" ${state.filtroMembro===m.id?'selected':''}>${m.nome}</option>`).join('');
+}
+
+// --- Track filter ---
+function renderTrackFilter() {
+  const el = document.getElementById('filter-track');
+  el.innerHTML = `<option value="">Todas as Tracks</option>` +
+    TRACKS.map(t => `<option value="${t.id}" ${state.filtroTrack===t.id?'selected':''}>${t.nome}</option>`).join('');
+}
+
+// --- Summary ---
+function renderSummary() {
+  const total = Object.values(state.inscricoes).filter(arr => arr.length > 0).length;
+  const conflitos = detectConflicts();
+  const el = document.getElementById('summary-stats');
+  el.innerHTML = `
+    <div class="summary-stat">
+      <span class="summary-stat__label">Total inscrito</span>
+      <span class="summary-stat__value">${total}</span>
+    </div>
+    <div class="summary-stat">
+      <span class="summary-stat__label">Conflitos hora</span>
+      <span class="summary-stat__value" style="color:${conflitos > 0 ? '#ef4444' : '#10b981'}">${conflitos}</span>
+    </div>
+    <div class="summary-stat">
+      <span class="summary-stat__label">Dias cobertos</span>
+      <span class="summary-stat__value">2</span>
+    </div>`;
+}
+
+function detectConflicts() {
+  let c = 0;
+  state.equipa.forEach(m => {
+    const sessoes = getSessoesMembro(m.id).sort((a,b) => a.hora_inicio.localeCompare(b.hora_inicio));
+    for (let i = 0; i < sessoes.length - 1; i++) {
+      if (sessoes[i].dia === sessoes[i+1].dia && sessoes[i].hora_fim > sessoes[i+1].hora_inicio) c++;
+    }
+  });
+  return c;
+}
+
+// --- Session cards ---
+function renderSessions() {
+  const container = document.getElementById('sessions-container');
+  const list = filteredSessoes();
+
+  document.getElementById('search-count').textContent = `${list.length} sessões`;
+
+  if (list.length === 0 && state.view !== 'individual' && state.view !== 'agora') {
+    container.innerHTML = `
+      <div class="no-results">
+        <div class="no-results__icon">🔍</div>
+        <div class="no-results__text">Nenhuma sessão encontrada com os filtros actuais.</div>
+      </div>`;
+    return;
+  }
+
+  if (state.view === 'agora') {
+    renderAgora(container);
+  } else if (state.view === 'individual') {
+    renderIndividual(container);
+  } else if (state.view === 'grid') {
+    container.className = 'sessions-container';
+    container.innerHTML = list.map(s => renderCard(s)).join('');
+  } else {
+    renderTimeline(container, list);
+  }
+
+  // Card click events
+  container.querySelectorAll('[data-session-id]').forEach(el => {
+    el.addEventListener('click', () => openSessionModal(el.dataset.sessionId));
+  });
+}
+
+function renderCard(s) {
+  const track = getTrack(s.track_id);
+  const assigned = getAssignedMembers(s.id);
+  const isAssigned = assigned.length > 0;
+  const avatarsHtml = assigned.map(m =>
+    `<div class="session-card__avatar" style="background:${m.cor}" title="${m.nome}">${m.inicial}</div>`
+  ).join('');
+  const speakerNames = s.oradores.map(o => o.nome + (o.empresa ? ` (${o.empresa})` : '')).join(', ');
+
+  return `
+    <div class="session-card ${isAssigned ? 'is-assigned' : ''}" 
+         style="--track-color:${track.cor}" 
+         data-session-id="${s.id}"
+         id="card-${s.id}">
+      <div class="session-card__top">
+        <div class="session-card__track-badge" style="color:${track.cor}; border-color:${track.cor}44; background:${track.cor}11">
+          ${track.nome}
+        </div>
+        <div class="session-card__time">${s.hora_inicio}–${s.hora_fim}</div>
+      </div>
+      <div class="session-card__title">${s.titulo}</div>
+      ${speakerNames ? `<div class="session-card__speakers">🎤 ${speakerNames}</div>` : ''}
+      <div class="session-card__bottom">
+        <span class="session-card__type-badge">${s.tipo}</span>
+        <div class="session-card__avatars">${avatarsHtml}</div>
+      </div>
+    </div>`;
+}
+
+function renderTimeline(container, list) {
+  container.className = 'sessions-container view-timeline';
+  const grouped = {};
+  list.forEach(s => {
+    const h = s.hora_inicio.split(':')[0];
+    if (!grouped[h]) grouped[h] = [];
+    grouped[h].push(s);
+  });
+
+  container.innerHTML = Object.keys(grouped).sort().map(h => {
+    const sessions = grouped[h];
+    return `
+      <div class="timeline-group">
+        ${sessions.map(s => {
+          const track = getTrack(s.track_id);
+          const assigned = getAssignedMembers(s.id);
+          const avatarsHtml = assigned.map(m =>
+            `<div class="session-card__avatar" style="background:${m.cor}; width:20px;height:20px;font-size:9px;margin-left:-4px;" title="${m.nome}">${m.inicial}</div>`
+          ).join('');
+          return `
+            <div class="timeline-card" style="--track-color:${track.cor}" data-session-id="${s.id}">
+              <div class="timeline-card__time">${s.hora_inicio}–${s.hora_fim}</div>
+              <div class="timeline-card__title">${s.titulo}</div>
+              <div class="timeline-card__track" style="color:${track.cor}">${track.nome}</div>
+              <div class="timeline-card__avatars">${avatarsHtml}</div>
+            </div>`;
+        }).join('')}
+      </div>`;
+  }).join('');
+}
+
+// --- Plano individual: grelha por sala + cronograma ---
+const MIN_PX = 2.2; // altura em px por minuto na grelha
+function toMin(h) { const [a,b] = h.split(':').map(Number); return a*60 + b; }
+function fmtMin(n) { return `${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`; }
+
+function renderIndividual(container) {
+  container.className = 'sessions-container view-individual';
+  const comPlano = state.equipa.filter(m => m.trilhas && m.trilhas.length);
+  const sel = getMembro(state.eu);
+  const m = sel && sel.trilhas ? sel : comPlano[0];
+  if (!m) {
+    container.innerHTML = `<div class="no-results"><div class="no-results__text">Nenhum membro tem credencial associada.</div></div>`;
+    return;
+  }
+  const dia = state.diaAtivo;
+  const minhas = getSessoesMembro(m.id).filter(s => s.dia === dia)
+    .sort((a,b) => a.hora_inicio.localeCompare(b.hora_inicio));
+  // Salas do pavilhão + outras salas onde o membro tem sessões neste dia (ex.: roteiro)
+  const salas = [...new Set([...m.trilhas, ...minhas.map(s => s.track_id)])];
+  const tracks = salas.map(getTrack);
+  const doDia = SESSOES.filter(s => s.dia === dia && salas.includes(s.track_id));
+  const inscrito = s => (state.inscricoes[s.id] || []).includes(m.id);
+  const primeiro = m.nome.split(' ')[0];
+
+  const picker = comPlano.map(p => `
+    <button class="ind-pick ${p.id === m.id ? 'active' : ''}" data-pick-member="${p.id}" style="--mc:${p.cor}">
+      <span class="ind-pick__av" style="background:${p.cor}">${p.inicial}</span>${p.nome}
+    </button>`).join('');
+
+  const mins = minhas.reduce((t,s) => t + toMin(s.hora_fim) - toMin(s.hora_inicio), 0);
+  const header = `
+    <div class="ind-header" style="--mc:${m.cor}">
+      <div class="ind-header__av" style="background:${m.cor}">${m.inicial}</div>
+      <div class="ind-header__info">
+        <div class="ind-header__name">${m.nome}</div>
+        <div class="ind-header__meta">${m.cargo || ''} · Credencial <strong>${m.pavilhao}</strong>${m.credencial ? ` · <a href="${encodeURI(m.credencial)}" target="_blank" rel="noopener">🎫 abrir</a>` : ''}</div>
+      </div>
+      <div class="ind-header__stats">
+        <div><strong>${minhas.length}</strong><span>sessões</span></div>
+        <div><strong>${Math.floor(mins/60)}h${String(mins%60).padStart(2,'0')}</strong><span>em sala</span></div>
+        <div><strong>${tracks.length}</strong><span>sala${tracks.length > 1 ? 's' : ''}</span></div>
+      </div>
+    </div>`;
+
+  // Grelha: uma coluna por sala do pavilhão, blocos posicionados pela hora
+  let grelha = '<p class="ind-hint">Sem sessões nas salas deste pavilhão neste dia.</p>';
+  if (doDia.length) {
+    const ini = Math.floor(Math.min(...doDia.map(s => toMin(s.hora_inicio))) / 30) * 30;
+    const fim = Math.ceil(Math.max(...doDia.map(s => toMin(s.hora_fim))) / 30) * 30;
+    const altura = (fim - ini) * MIN_PX;
+    const linhas = [];
+    for (let t = ini; t <= fim; t += 30) {
+      linhas.push(`<div class="ind-grid__line" style="top:${(t-ini)*MIN_PX}px"><span>${fmtMin(t)}</span></div>`);
+    }
+    const colunas = tracks.map(tr => {
+      const blocos = doDia.filter(s => s.track_id === tr.id).map(s => {
+        const top = (toMin(s.hora_inicio) - ini) * MIN_PX;
+        const h = Math.max((toMin(s.hora_fim) - toMin(s.hora_inicio)) * MIN_PX - 3, 18);
+        const on = inscrito(s);
+        return `
+          <div class="ind-block ${on ? 'is-on' : ''}" data-session-id="${s.id}"
+               style="top:${top}px;height:${h}px;--tc:${tr.cor};--mc:${m.cor}" title="${s.hora_inicio}–${s.hora_fim} · ${s.titulo.replace(/"/g,'&quot;')}">
+            <span class="ind-block__time">${s.hora_inicio}–${s.hora_fim}${on ? ' ✓' : ''}</span>
+            <span class="ind-block__title">${s.titulo}</span>
+          </div>`;
+      }).join('');
+      return `
+        <div class="ind-grid__col">
+          <div class="ind-grid__colhead" style="border-color:${tr.cor};color:${tr.cor}">${tr.nome}</div>
+          <div class="ind-grid__colbody" style="height:${altura}px">${blocos}</div>
+        </div>`;
+    }).join('');
+    grelha = `
+      <div class="ind-grid-wrap">
+        <div class="ind-grid" style="--cols:${tracks.length}">
+          <div class="ind-grid__axis"><div class="ind-grid__colhead">&nbsp;</div>
+            <div class="ind-grid__axisbody" style="height:${altura}px">${linhas.join('')}</div></div>
+          ${colunas}
+        </div>
+      </div>
+      <p class="ind-hint">Clique numa sessão para inscrever ou remover. As sessões a cor sólida estão no plano de ${primeiro}.</p>`;
+  }
+
+  // Cronograma: sequência do dia com intervalos e mudanças de sala
+  let crono = '<p class="ind-hint">Sem sessões no plano para este dia.</p>';
+  if (minhas.length) {
+    const itens = [];
+    minhas.forEach((s, i) => {
+      const prev = minhas[i-1];
+      if (prev) {
+        const gap = toMin(s.hora_inicio) - toMin(prev.hora_fim);
+        const muda = prev.track_id !== s.track_id;
+        if (gap < 0) itens.push(`<li class="crono__gap crono__gap--conflict">⚠️ Sobreposição de ${-gap} min com a sessão anterior</li>`);
+        else if (gap === 0 && muda) itens.push(`<li class="crono__gap crono__gap--tight">⚡ Sem intervalo · mudar já para ${getTrack(s.track_id).nome}</li>`);
+        else if (gap >= 15 || muda) itens.push(`<li class="crono__gap">${gap >= 60 ? '🍽️' : '☕'} ${gap} min livres${muda ? ` · mudar para ${getTrack(s.track_id).nome}` : ''}</li>`);
+      }
+      const tr = getTrack(s.track_id);
+      const nomes = s.oradores.map(o => o.nome);
+      itens.push(`
+        <li class="crono__item" data-session-id="${s.id}" style="--tc:${tr.cor}">
+          <span class="crono__time">${s.hora_inicio}<small>${s.hora_fim}</small></span>
+          <span class="crono__body">
+            <span class="crono__title">${s.titulo}</span>
+            <span class="crono__meta"><span style="color:${tr.cor}">${tr.nome}</span> · ${s.tipo}${nomes.length ? ' · ' + nomes.slice(0,2).join(', ') + (nomes.length > 2 ? '…' : '') : ''}</span>
+          </span>
+        </li>`);
+    });
+    crono = `<ol class="crono">${itens.join('')}</ol>`;
+  }
+
+  container.classList.add(`ind-show-${state.indTab}`);
+  container.innerHTML = `
+    <div class="ind-picker">${picker}</div>
+    ${header}
+    ${renderAgoraStrip(m)}
+    <div class="ind-actions">
+      <button class="btn-secondary" data-ics="${m.id}">📅 Adicionar ao calendário</button>
+      <button class="btn-secondary" data-replan="${m.id}">🎫 Refazer plano de ${primeiro}</button>
+    </div>
+    <div class="ind-tabs" role="tablist">
+      <button class="ind-tabs__btn ${state.indTab === 'crono' ? 'active' : ''}" data-ind-tab="crono">▤ Cronograma</button>
+      <button class="ind-tabs__btn ${state.indTab === 'grelha' ? 'active' : ''}" data-ind-tab="grelha">▦ Grelha</button>
+    </div>
+    <div class="ind-layout">
+      <section class="ind-section ind-section--grelha"><h3 class="ind-section__title">▦ Grelha · salas do pavilhão ${m.pavilhao}${tracks.length > m.trilhas.length ? ' + roteiro' : ''}</h3>${grelha}</section>
+      <section class="ind-section ind-section--crono"><h3 class="ind-section__title">▤ Cronograma do dia</h3>${crono}</section>
+    </div>`;
+
+  container.querySelectorAll('[data-pick-member]').forEach(b => b.addEventListener('click', () => {
+    state.eu = b.dataset.pickMember;
+    gravarLocal('tsm_eu', state.eu);
+    renderSessions();
+  }));
+  container.querySelectorAll('[data-ind-tab]').forEach(b => b.addEventListener('click', () => {
+    state.indTab = b.dataset.indTab;
+    renderSessions();
+  }));
+  container.querySelector('[data-ics]').addEventListener('click', () => exportarICS(m));
+  container.querySelector('[data-replan]').addEventListener('click', () => {
+    if (!confirm(`Refazer o plano de ${m.nome} pela credencial? As inscrições actuais serão substituídas.`)) return;
+    const n = planearPorCredencial(m);
+    saveState();
+    renderAll();
+    showToast(`🎫 ${m.nome}: ${n} sessões planeadas`);
+  });
+}
+
+// --- Navegação (desktop + telemóvel) ---
+function isMobile() { return window.matchMedia('(max-width: 860px)').matches; }
+
+function setView(v, render = true) {
+  state.view = v;
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.id === `view-${v}`));
+  document.querySelectorAll('[data-nav]').forEach(b => b.classList.toggle('active', b.dataset.nav === v));
+  document.body.dataset.view = v;
+  if (render) renderSessions();
+}
+
+function abrirMenu() {
+  document.getElementById('sidebar').classList.add('is-open');
+  document.getElementById('sidebar-backdrop').classList.add('is-open');
+  document.getElementById('btn-menu').setAttribute('aria-expanded', 'true');
+  document.body.classList.add('menu-open');
+}
+function fecharMenu() {
+  document.getElementById('sidebar').classList.remove('is-open');
+  document.getElementById('sidebar-backdrop').classList.remove('is-open');
+  document.getElementById('btn-menu').setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
+}
+
+// --- Agora / A seguir ---
+const DIAS_EVENTO = ['2026-11-04', '2026-11-05'];
+function dataLocalISO(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+// Referência temporal: hora real nos dias do evento; fora deles, a hora simulada no dia seleccionado
+function referenciaAgora() {
+  const d = new Date();
+  const hoje = dataLocalISO(d);
+  if (DIAS_EVENTO.includes(hoje)) return { dia: hoje, min: d.getHours()*60 + d.getMinutes(), aoVivo: true };
+  return { dia: state.diaAtivo, min: state.agoraSim, aoVivo: false };
+}
+function estadoMembro(m, ref) {
+  const ss = getSessoesMembro(m.id).filter(s => s.dia === ref.dia)
+    .sort((a,b) => a.hora_inicio.localeCompare(b.hora_inicio));
+  const atual = ss.find(s => toMin(s.hora_inicio) <= ref.min && ref.min < toMin(s.hora_fim));
+  const seguinte = ss.find(s => toMin(s.hora_inicio) > ref.min);
+  return { ss, atual, seguinte };
+}
+function linhaSessao(s, rotulo, extra) {
+  const tr = getTrack(s.track_id);
+  return `
+    <div class="now-row" data-session-id="${s.id}" style="--tc:${tr.cor}">
+      <span class="now-row__label">${rotulo}</span>
+      <span class="now-row__body">
+        <span class="now-row__title">${s.titulo}</span>
+        <span class="now-row__meta"><span style="color:${tr.cor}">${tr.nome}</span> · ${s.hora_inicio}–${s.hora_fim}${extra ? ' · ' + extra : ''}</span>
+      </span>
+    </div>`;
+}
+function emQuanto(min) {
+  if (min < 60) return `daqui a ${min} min`;
+  return `daqui a ${Math.floor(min/60)}h${String(min%60).padStart(2,'0')}`;
+}
+
+// Faixa "Agora / A seguir" no topo de Meu plano
+function renderAgoraStrip(m) {
+  const ref = referenciaAgora();
+  if (!ref.aoVivo || ref.dia !== state.diaAtivo) return '';
+  const { atual, seguinte } = estadoMembro(m, ref);
+  if (!atual && !seguinte) return '';
+  return `
+    <div class="now-strip">
+      ${atual ? linhaSessao(atual, '● Agora', `termina às ${atual.hora_fim}`) : '<div class="now-row now-row--free"><span class="now-row__label">● Agora</span><span class="now-row__body">Livre</span></div>'}
+      ${seguinte ? linhaSessao(seguinte, 'A seguir', emQuanto(toMin(seguinte.hora_inicio) - ref.min)) : ''}
+    </div>`;
+}
+
+// Vista "Agora": onde está cada membro e para onde vai a seguir
+function renderAgora(container) {
+  container.className = 'sessions-container view-agora';
+  const ref = referenciaAgora();
+  const membros = state.equipa.filter(m => getSessoesMembro(m.id).length);
+  const diaNome = ref.dia === '2026-11-04' ? 'quarta, 4 Nov' : 'quinta, 5 Nov';
+
+  const topo = ref.aoVivo
+    ? `<div class="agora-top"><span class="agora-live">● Ao vivo</span> ${diaNome} · ${fmtMin(ref.min)}</div>`
+    : `<div class="agora-top">
+         <div>Fora dos dias do evento — ver onde cada um estará na <strong>${diaNome}</strong> às
+           <strong id="agora-sim-label">${fmtMin(ref.min)}</strong></div>
+         <input type="range" class="agora-slider" id="agora-slider" min="600" max="1140" step="5" value="${ref.min}" aria-label="Hora simulada" />
+       </div>`;
+
+  const cards = membros.map(m => {
+    const { atual, seguinte } = estadoMembro(m, ref);
+    return `
+      <div class="agora-card" style="--mc:${m.cor}">
+        <div class="agora-card__head">
+          <span class="agora-card__av" style="background:${m.cor}">${m.inicial}</span>
+          <span class="agora-card__name">${m.nome}</span>
+          <span class="agora-card__state ${atual ? 'is-busy' : ''}">${atual ? 'Em sessão' : 'Livre'}</span>
+        </div>
+        ${atual ? linhaSessao(atual, 'Agora', `até ${atual.hora_fim}`) : ''}
+        ${seguinte ? linhaSessao(seguinte, 'A seguir', emQuanto(toMin(seguinte.hora_inicio) - ref.min))
+                   : '<div class="agora-card__done">Sem mais sessões neste dia</div>'}
+      </div>`;
+  }).join('');
+
+  container.innerHTML = topo + (cards || '<div class="no-results"><div class="no-results__text">Ainda não há inscrições.</div></div>');
+
+  const slider = document.getElementById('agora-slider');
+  if (slider) {
+    slider.addEventListener('input', () => {
+      document.getElementById('agora-sim-label').textContent = fmtMin(Number(slider.value));
+    });
+    slider.addEventListener('change', () => {
+      state.agoraSim = Number(slider.value);
+      renderSessions();
+    });
+  }
+}
+
+// --- Exportar plano individual para o calendário (.ics) ---
+function exportarICS(m) {
+  const ss = getSessoesMembro(m.id).sort((a,b) => (a.dia + a.hora_inicio).localeCompare(b.dia + b.hora_inicio));
+  if (!ss.length) { showToast('Sem sessões para exportar'); return; }
+  // Madrid em Novembro = CET (UTC+1)
+  const utc = (dia, h) => {
+    const [Y,M,D] = dia.split('-').map(Number);
+    const [hh,mm] = h.split(':').map(Number);
+    return new Date(Date.UTC(Y, M-1, D, hh-1, mm)).toISOString().replace(/[-:]/g,'').slice(0,15) + 'Z';
+  };
+  const esc = t => String(t).replace(/\\/g,'\\\\').replace(/([,;])/g,'\\$1').replace(/\r?\n/g,'\\n');
+  const dobrar = l => l.length <= 74 ? l : l.match(/.{1,73}/g).join('\r\n ');
+  const agora = new Date().toISOString().replace(/[-:]/g,'').slice(0,15) + 'Z';
+  const linhas = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Norporgest//Tech Show Madrid 2026//PT','CALSCALE:GREGORIAN','METHOD:PUBLISH',
+    `X-WR-CALNAME:${esc('Tech Show Madrid – ' + m.nome)}`];
+  ss.forEach(s => {
+    const tr = getTrack(s.track_id);
+    const oradores = s.oradores.map(o => [o.nome, o.empresa].filter(Boolean).join(' – ')).join('; ');
+    linhas.push('BEGIN:VEVENT', `UID:${s.id}-${m.id}@techshowmadrid2026`, `DTSTAMP:${agora}`,
+      `DTSTART:${utc(s.dia, s.hora_inicio)}`, `DTEND:${utc(s.dia, s.hora_fim)}`,
+      `SUMMARY:${esc(s.titulo)}`, `LOCATION:${esc(tr.nome + ' · IFEMA Madrid')}`,
+      `DESCRIPTION:${esc([s.tipo, oradores, s.url].filter(Boolean).join('\n'))}`, `URL:${s.url}`,
+      'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:Sessão a começar','TRIGGER:-PT10M','END:VALARM',
+      'END:VEVENT');
+  });
+  linhas.push('END:VCALENDAR');
+  const blob = new Blob([linhas.map(dobrar).join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `TechShowMadrid2026_${m.nome.replace(/\s+/g,'_')}.ics`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast(`📅 ${ss.length} sessões exportadas para o calendário`);
+}
+
+// --- Session Modal ---
+function openSessionModal(sessaoId) {
+  const s = SESSOES.find(x => x.id === sessaoId);
+  if (!s) return;
+  state.sessaoAberta = sessaoId;
+
+  const track = getTrack(s.track_id);
+
+  document.getElementById('modal-track-badge').textContent = track.nome;
+  document.getElementById('modal-track-badge').style.color = track.cor;
+  document.getElementById('modal-track-badge').style.borderColor = track.cor + '55';
+  document.getElementById('modal-track-badge').style.background = track.cor + '18';
+
+  document.getElementById('modal-time').textContent =
+    `📅 ${s.dia === '2026-11-04' ? '4 Nov' : '5 Nov'} 2026 · ${s.hora_inicio} – ${s.hora_fim}`;
+
+  document.getElementById('modal-session-title').textContent = s.titulo;
+  document.getElementById('modal-desc').textContent = s.descricao;
+
+  // Speakers
+  const spkEl = document.getElementById('modal-speakers');
+  if (s.oradores.length > 0) {
+    spkEl.innerHTML = `
+      <p class="modal__speakers-title">Oradores</p>
+      ${s.oradores.map(o => `
+        <div class="modal__speaker">
+          <div class="modal__speaker-avatar">${o.nome.charAt(0)}</div>
+          <div class="modal__speaker-info">
+            <div class="modal__speaker-name">${o.nome}</div>
+            <div class="modal__speaker-role">${[o.cargo, o.empresa].filter(Boolean).join(' · ')}</div>
+          </div>
+          ${o.role === 'moderador' ? '<span class="modal__speaker-badge">Moderador</span>' : ''}
+        </div>`).join('')}`;
+  } else {
+    spkEl.innerHTML = '';
+  }
+
+  // Tags
+  document.getElementById('modal-tags').innerHTML =
+    s.tags.map(t => `<span class="modal__tag">${t}</span>`).join('');
+
+  // URL
+  document.getElementById('modal-url').innerHTML =
+    `<a href="${s.url}" target="_blank" rel="noopener">🔗 Ver sessão oficial ↗</a>`;
+
+  // Team buttons
+  const assigned = state.inscricoes[sessaoId] || [];
+  document.getElementById('modal-team-buttons').innerHTML = state.equipa.map(m => {
+    const isAssigned = assigned.includes(m.id);
+    return `
+      <button class="modal__team-btn ${isAssigned ? 'assigned' : ''}" 
+              data-member-id="${m.id}"
+              style="color:${m.cor}; border-color:${m.cor}; background:${isAssigned ? m.cor + '22' : 'transparent'}">
+        <div class="modal__team-btn-avatar" style="background:${m.cor}">${m.inicial}</div>
+        ${m.nome}
+        ${isAssigned ? ' ✓' : ''}
+      </button>`;
+  }).join('');
+
+  document.getElementById('modal-team-buttons').querySelectorAll('[data-member-id]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mid = btn.dataset.memberId;
+      const added = toggleInscricao(sessaoId, mid);
+      const m = getMembro(mid);
+      showToast(added ? `✅ ${m.nome} inscrito em "${s.titulo.substring(0,40)}..."` : `❌ ${m.nome} removido desta sessão`);
+      saveState();
+      openSessionModal(sessaoId); // refresh modal
+      renderAll();
+    });
+  });
+
+  document.getElementById('modal-session').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSessionModal() {
+  document.getElementById('modal-session').classList.remove('is-open');
+  document.body.style.overflow = '';
+  state.sessaoAberta = null;
+}
+
+// --- Team Edit Modal ---
+function openTeamModal() {
+  const body = document.getElementById('modal-team-body');
+  body.innerHTML = state.equipa.map((m,i) => `
+    <div class="team-edit-item">
+      <div class="team-edit-avatar" style="background:${m.cor}" id="edit-avatar-${m.id}">${m.inicial}</div>
+      <input class="team-edit-input" type="text" value="${m.nome}" 
+             data-member-id="${m.id}" id="edit-name-${m.id}" 
+             placeholder="Nome do membro..." maxlength="30" />
+      <input type="color" class="color-btn" value="${m.cor}"
+             data-member-id="${m.id}" id="edit-color-${m.id}" title="Cor do membro" />
+    </div>`).join('');
+
+  // Color change preview
+  body.querySelectorAll('input[type=color]').forEach(inp => {
+    inp.addEventListener('input', () => {
+      const mid = inp.dataset.memberId;
+      document.getElementById(`edit-avatar-${mid}`).style.background = inp.value;
+    });
+  });
+
+  // Initial from name
+  body.querySelectorAll('.team-edit-input').forEach(inp => {
+    inp.addEventListener('input', () => {
+      const mid = inp.dataset.memberId;
+      const inicial = inp.value.trim().charAt(0).toUpperCase() || '?';
+      document.getElementById(`edit-avatar-${mid}`).textContent = inicial;
+    });
+  });
+
+  document.getElementById('modal-team').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function saveTeam() {
+  state.equipa.forEach(m => {
+    const nameEl = document.getElementById(`edit-name-${m.id}`);
+    const colorEl = document.getElementById(`edit-color-${m.id}`);
+    if (nameEl) m.nome = nameEl.value.trim() || m.nome;
+    if (colorEl) m.cor = colorEl.value;
+    m.inicial = m.nome.charAt(0).toUpperCase();
+  });
+  document.getElementById('modal-team').classList.remove('is-open');
+  document.body.style.overflow = '';
+  saveState();
+  renderAll();
+  showToast('✅ Equipa actualizada!');
+}
+
+// --- Schedule Modal ---
+function openScheduleModal() {
+  const body = document.getElementById('modal-schedule-body');
+  const dias = ['2026-11-04','2026-11-05'];
+  const diaNomes = {'2026-11-04':'Quarta-feira, 4 Novembro', '2026-11-05':'Quinta-feira, 5 Novembro'};
+
+  body.innerHTML = dias.map(dia => {
+    const memberBlocks = state.equipa.map(m => {
+      const sessoes = getSessoesMembro(m.id)
+        .filter(s => s.dia === dia)
+        .sort((a,b) => a.hora_inicio.localeCompare(b.hora_inicio));
+      if (!sessoes.length) return '';
+      const track = (s) => getTrack(s.track_id);
+      return `
+        <div class="schedule-member-block">
+          <div class="schedule-member-header">
+            <div class="schedule-member-avatar" style="background:${m.cor}">${m.inicial}</div>
+            <span class="schedule-member-name">${m.nome}</span>
+          </div>
+          ${sessoes.map(s => `
+            <div class="schedule-session-row" style="border-left-color:${track(s).cor}">
+              <span class="schedule-session-time">${s.hora_inicio}–${s.hora_fim}</span>
+              <span class="schedule-session-title">${s.titulo}</span>
+            </div>`).join('')}
+        </div>`;
+    }).filter(Boolean).join('');
+
+    if (!memberBlocks) return '';
+    return `
+      <div class="schedule-day">
+        <div class="schedule-day__title">${diaNomes[dia]}</div>
+        ${memberBlocks}
+      </div>`;
+  }).join('') || '<p style="color:#8892a4;text-align:center;padding:40px">Ainda não há inscrições.</p>';
+
+  document.getElementById('modal-schedule').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+// --- Export ---
+function exportPlan() {
+  const dias = {'2026-11-04':'4 Nov (Qua)','2026-11-05':'5 Nov (Qui)'};
+  let txt = 'TECH SHOW MADRID 2026 – Plano de Participação da Equipa\n';
+  txt += '='.repeat(60) + '\n\n';
+
+  state.equipa.forEach(m => {
+    const sessoes = getSessoesMembro(m.id).sort((a,b) => {
+      if (a.dia !== b.dia) return a.dia.localeCompare(b.dia);
+      return a.hora_inicio.localeCompare(b.hora_inicio);
+    });
+    txt += `${m.nome.toUpperCase()}\n${'─'.repeat(40)}\n`;
+    if (!sessoes.length) {
+      txt += '  (sem inscrições)\n\n';
+    } else {
+      const byDay = {};
+      sessoes.forEach(s => { (byDay[s.dia] = byDay[s.dia] || []).push(s); });
+      Object.keys(byDay).sort().forEach(dia => {
+        txt += `  ${dias[dia]}:\n`;
+        byDay[dia].forEach(s => {
+          const track = getTrack(s.track_id);
+          txt += `    • ${s.hora_inicio}–${s.hora_fim} | ${track.nome}\n`;
+          txt += `      ${s.titulo}\n`;
+        });
+      });
+      txt += '\n';
+    }
+  });
+
+  txt += '\nGerado em: ' + new Date().toLocaleString('pt-PT');
+
+  const blob = new Blob([txt], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'TechShow_Madrid_2026_Plano.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('📥 Plano exportado!');
+}
+
+// --- Toast ---
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('is-visible');
+  clearTimeout(el._timer);
+  el._timer = setTimeout(() => el.classList.remove('is-visible'), 3000);
+}
+
+// --- Render All ---
+function renderAll() {
+  renderTeam();
+  renderSessions();
+  renderSummary();
+}
+
+// ── INIT ─────────────────────────────────────────
+function init() {
+  // Day tabs
+  document.getElementById('day-tabs').addEventListener('click', e => {
+    const tab = e.target.closest('.day-tab');
+    if (!tab) return;
+    document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.diaAtivo = tab.dataset.day;
+    renderSessions();
+  });
+
+  // Search
+  document.getElementById('search-input').addEventListener('input', e => {
+    state.pesquisa = e.target.value;
+    renderSessions();
+  });
+
+  // Filters
+  document.getElementById('filter-track').addEventListener('change', e => {
+    state.filtroTrack = e.target.value;
+    renderAll();
+  });
+  document.getElementById('filter-member').addEventListener('change', e => {
+    state.filtroMembro = e.target.value;
+    renderAll();
+  });
+  document.getElementById('filter-type').addEventListener('change', e => {
+    state.filtroTipo = e.target.value;
+    renderSessions();
+  });
+  document.getElementById('btn-clear-filters').addEventListener('click', () => {
+    state.filtroTrack = '';
+    state.filtroMembro = '';
+    state.filtroTipo = '';
+    state.pesquisa = '';
+    document.getElementById('search-input').value = '';
+    document.getElementById('filter-track').value = '';
+    document.getElementById('filter-member').value = '';
+    document.getElementById('filter-type').value = '';
+    renderAll();
+  });
+
+  // Sort
+  document.getElementById('sort-select').addEventListener('change', e => {
+    state.sort = e.target.value;
+    renderSessions();
+  });
+
+  // View toggle
+  ['grid','timeline','individual','agora'].forEach(v => {
+    document.getElementById(`view-${v}`).addEventListener('click', () => setView(v));
+  });
+
+  // Telemóvel: navegação inferior e gaveta da equipa/filtros
+  document.querySelectorAll('[data-nav]').forEach(b => b.addEventListener('click', () => {
+    if (b.dataset.nav === 'menu') { abrirMenu(); return; }
+    setView(b.dataset.nav);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+  document.getElementById('btn-menu').addEventListener('click', abrirMenu);
+  document.getElementById('btn-menu-close').addEventListener('click', fecharMenu);
+  document.getElementById('sidebar-backdrop').addEventListener('click', fecharMenu);
+  // Escolher um membro na gaveta filtra o programa; no telemóvel fecha a gaveta
+  document.getElementById('team-list').addEventListener('click', e => {
+    if (e.target.closest('.team-member') && !e.target.closest('.team-member__cred') && isMobile()) {
+      fecharMenu();
+      if (state.view !== 'grid' && state.view !== 'timeline') setView('grid');
+    }
+  });
+  ['btn-export','btn-view-schedule','btn-plan-credencial','btn-edit-team'].forEach(id =>
+    document.getElementById(id).addEventListener('click', () => { if (isMobile()) fecharMenu(); }));
+
+  // Actualiza "Agora" a cada minuto
+  setInterval(() => { if (state.view === 'agora' || state.view === 'individual') renderSessions(); }, 60000);
+
+  // Funcionamento offline (só quando servido por http/https)
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+
+  // Modal close buttons
+  document.getElementById('modal-close').addEventListener('click', closeSessionModal);
+  document.getElementById('modal-team-close').addEventListener('click', () => {
+    document.getElementById('modal-team').classList.remove('is-open');
+    document.body.style.overflow = '';
+  });
+  document.getElementById('modal-schedule-close').addEventListener('click', () => {
+    document.getElementById('modal-schedule').classList.remove('is-open');
+    document.body.style.overflow = '';
+  });
+
+  // Close on overlay click
+  ['modal-session','modal-team','modal-schedule'].forEach(id => {
+    document.getElementById(id).addEventListener('click', e => {
+      if (e.target.id === id) {
+        document.getElementById(id).classList.remove('is-open');
+        document.body.style.overflow = '';
+        if (id === 'modal-session') state.sessaoAberta = null;
+      }
+    });
+  });
+
+  // ESC to close
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      fecharMenu();
+      ['modal-session','modal-team','modal-schedule'].forEach(id => {
+        document.getElementById(id).classList.remove('is-open');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Edit team
+  document.getElementById('btn-edit-team').addEventListener('click', openTeamModal);
+  document.getElementById('btn-save-team').addEventListener('click', saveTeam);
+
+  // Export
+  document.getElementById('btn-export').addEventListener('click', exportPlan);
+
+  // Schedule
+  document.getElementById('btn-view-schedule').addEventListener('click', openScheduleModal);
+
+  // Plano pela credencial
+  document.getElementById('btn-plan-credencial').addEventListener('click', planearEquipaPorCredencial);
+
+  // Primeira utilização: membros com credencial e sem inscrições recebem o plano automático
+  let gerado = false;
+  state.equipa.forEach(m => {
+    if (m.trilhas && m.trilhas.length && getSessoesMembro(m.id).length === 0) gerado = planearPorCredencial(m) > 0 || gerado;
+  });
+  // Versão 2 do plano: roteiro de IA no plano do Pedro e sem momentos logísticos
+  if (localStorage.getItem('tsm_plano_v') !== '2') {
+    const m1 = getMembro('m1');
+    if (m1 && m1.trilhas) gerado = planearPorCredencial(m1) > 0 || gerado;
+    localStorage.setItem('tsm_plano_v', '2');
+  }
+  if (gerado) saveState();
+
+  // Altura real do cabeçalho (para os separadores de dia fixos no telemóvel)
+  const header = document.querySelector('.header');
+  const medirHeader = () => document.documentElement.style.setProperty('--hdr', header.offsetHeight + 'px');
+  medirHeader();
+  window.addEventListener('resize', medirHeader);
+
+  // Init render
+  if (state.eu && getMembro(state.eu)) state.view = 'individual';
+  setView(state.view, false);
+  renderTrackFilter();
+  renderAll();
+}
+
+document.addEventListener('DOMContentLoaded', init);

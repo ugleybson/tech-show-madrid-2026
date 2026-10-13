@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d0f1a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TSM 2026" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <title>Tech Show Madrid 2026 – Planeador de Equipa</title>
+  <meta name="description" content="Planeador de participação para a equipa no Tech Show Madrid 2026 – 4 e 5 Novembro, IFEMA Madrid" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__brand">
+        <button class="header__menu" id="btn-menu" aria-label="Abrir equipa e filtros" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="header__logo-badge">TSM</div>
+        <div class="header__titles">
+          <h1 class="header__title">Tech Show Madrid <span class="header__year">2026</span></h1>
+          <p class="header__subtitle">Planeador de Participação da Equipa</p>
+        </div>
+      </div>
+      <div class="header__meta">
+        <div class="header__meta-item">
+          <span class="header__meta-icon">📅</span>
+          <span>4–5 Novembro 2026</span>
+        </div>
+        <div class="header__meta-item">
+          <span class="header__meta-icon">📍</span>
+          <span>IFEMA Madrid, Pabellones 3–5</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main layout -->
+  <div class="app-layout">
+
+    <!-- Sidebar: Equipa -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__header">
+        <h2 class="sidebar__title">Nossa Equipa</h2>
+        <button class="btn-icon" id="btn-edit-team" title="Editar equipa">✏️</button>
+        <button class="btn-icon sidebar__close" id="btn-menu-close" aria-label="Fechar">✕</button>
+      </div>
+      <div class="team-list" id="team-list">
+        <!-- Membros gerados por JS -->
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__section-title">Filtros</h3>
+        <div class="filter-group" id="track-filter-group">
+          <label class="filter-label">Track / Área</label>
+          <select class="filter-select" id="filter-track">
+            <option value="">Todas as Tracks</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Membro</label>
+          <select class="filter-select" id="filter-member">
+            <option value="">Todos os Membros</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Tipo</label>
+          <select class="filter-select" id="filter-type">
+            <option value="">Todos os Tipos</option>
+            <option value="Palestra">Palestra</option>
+            <option value="Mesa Debate">Mesa Debate</option>
+          </select>
+        </div>
+        <button class="btn-secondary w-full" id="btn-clear-filters">Limpar Filtros</button>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__section-title">Resumo</h3>
+        <div class="summary-stats" id="summary-stats">
+          <!-- Gerado por JS -->
+        </div>
+      </div>
+
+      <div class="sidebar__section">
+        <button class="btn-primary w-full" id="btn-export">📤 Exportar Plano</button>
+        <button class="btn-secondary w-full mt-2" id="btn-view-schedule">📅 Ver Agenda</button>
+        <button class="btn-secondary w-full mt-2" id="btn-plan-credencial">🎫 Planear pelas credenciais</button>
+      </div>
+    </aside>
+
+    <!-- Main content: Sessões -->
+    <main class="main-content" id="main-content">
+      <!-- Day tabs -->
+      <div class="day-tabs" id="day-tabs">
+        <button class="day-tab active" data-day="2026-11-04" id="tab-day1">
+          <span class="day-tab__day">Quarta-feira</span>
+          <span class="day-tab__date">4 Nov</span>
+        </button>
+        <button class="day-tab" data-day="2026-11-05" id="tab-day2">
+          <span class="day-tab__day">Quinta-feira</span>
+          <span class="day-tab__date">5 Nov</span>
+        </button>
+      </div>
+
+      <!-- Search -->
+      <div class="search-bar">
+        <span class="search-bar__icon">🔍</span>
+        <input class="search-bar__input" type="text" id="search-input" placeholder="Pesquisar sessões, oradores, empresas..." />
+        <span class="search-bar__count" id="search-count"></span>
+      </div>
+
+      <!-- View toggle -->
+      <div class="view-controls">
+        <div class="view-toggle">
+          <button class="view-btn active" id="view-grid" title="Grelha">▦ Grelha</button>
+          <button class="view-btn" id="view-timeline" title="Cronograma">▤ Cronograma</button>
+          <button class="view-btn" id="view-individual" title="Plano individual pela credencial">👤 Plano individual</button>
+          <button class="view-btn" id="view-agora" title="Onde está cada um agora">⏱ Agora</button>
+        </div>
+        <div class="sort-group">
+          <label class="sort-label">Ordenar por:</label>
+          <select class="filter-select" id="sort-select">
+            <option value="hora">Horário</option>
+            <option value="track">Track</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Sessions grid -->
+      <div class="sessions-container" id="sessions-container">
+        <!-- Sessões geradas por JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal: Detalhe da Sessão -->
+  <div class="modal-overlay" id="modal-session" role="dialog" aria-modal="true" aria-labelledby="modal-session-title">
+    <div class="modal">
+      <div class="modal__header">
+        <div class="modal__track-badge" id="modal-track-badge"></div>
+        <button class="modal__close" id="modal-close" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__time" id="modal-time"></div>
+        <h2 class="modal__title" id="modal-session-title"></h2>
+        <p class="modal__desc" id="modal-desc"></p>
+        <div class="modal__speakers" id="modal-speakers"></div>
+        <div class="modal__tags" id="modal-tags"></div>
+        <div class="modal__url" id="modal-url"></div>
+      </div>
+      <div class="modal__footer">
+        <p class="modal__assign-label">Atribuir a membro da equipa:</p>
+        <div class="modal__team-buttons" id="modal-team-buttons"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Editar Equipa -->
+  <div class="modal-overlay" id="modal-team" role="dialog" aria-modal="true">
+    <div class="modal modal--team">
+      <div class="modal__header">
+        <h2 class="modal__title-inline">Editar Equipa</h2>
+        <button class="modal__close" id="modal-team-close" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal__body" id="modal-team-body">
+        <!-- Gerado por JS -->
+      </div>
+      <div class="modal__footer">
+        <button class="btn-primary" id="btn-save-team">💾 Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Agenda da Equipa -->
+  <div class="modal-overlay" id="modal-schedule" role="dialog" aria-modal="true">
+    <div class="modal modal--schedule">
+      <div class="modal__header">
+        <h2 class="modal__title-inline">📅 Agenda da Equipa</h2>
+        <button class="modal__close" id="modal-schedule-close" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal__body" id="modal-schedule-body">
+        <!-- Gerado por JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegação inferior (telemóvel) -->
+  <nav class="bottom-nav" id="bottom-nav" aria-label="Navegação">
+    <button class="bottom-nav__btn" data-nav="grid"><span class="bottom-nav__icon">📋</span>Programa</button>
+    <button class="bottom-nav__btn" data-nav="individual"><span class="bottom-nav__icon">👤</span>Meu plano</button>
+    <button class="bottom-nav__btn" data-nav="agora"><span class="bottom-nav__icon">⏱</span>Agora</button>
+    <button class="bottom-nav__btn" data-nav="menu"><span class="bottom-nav__icon">☰</span>Equipa</button>
+  </nav>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="data/programa.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
