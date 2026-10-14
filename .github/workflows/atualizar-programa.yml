@@ -1,0 +1,39 @@
+name: Actualizar programa
+
+# Lê o programa oficial do Tech Show Madrid e publica data/programa.json quando há alterações
+# (cancelamentos, mudanças de hora/sala/orador). A app vai buscar este ficheiro pelo botão 🔄.
+on:
+  schedule:
+    - cron: '*/30 * * * *'           # até ao evento: a cada 30 min
+    - cron: '*/5 6-18 3-5 11 *'      # 3–5 Nov, 07:00–19:59 em Madrid (UTC+1): a cada 5 min
+  workflow_dispatch:                 # botão "Run workflow" no GitHub para forçar
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-programa
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Ler programa oficial
+        run: python tools/atualizar_programa.py
+      - name: Publicar alterações
+        run: |
+          if git diff --quiet -- data/programa.json; then
+            echo "Sem alterações"
+            exit 0
+          fi
+          git config user.name "tsm-programa-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/programa.json
+          git commit -m "Programa actualizado a partir da fonte oficial"
+          git push

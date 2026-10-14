@@ -47,10 +47,14 @@ let state = {
   eu: lerLocal('tsm_eu'),   // membro "eu sou" usado em Meu plano (por dispositivo)
   indTab: 'crono',          // telemóvel: separador do plano individual (crono | grelha)
   agoraSim: 630,            // vista Agora fora dos dias do evento: hora simulada (minutos)
+  programa: { versao: 0, actualizado_em: null, verificado_em: null },
 };
 
 function lerLocal(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
 function gravarLocal(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+// Programa: se houver uma versão mais recente descarregada, usa-a já (antes da migração das inscrições)
+carregarProgramaGuardado();
 
 // Migração: aplicar dados reais a equipas já guardadas no localStorage
 (function migrateEquipa() {
@@ -99,6 +103,242 @@ function toggleInscricao(sessaoId, membroId) {
   }
 }
 
+// ── PROGRAMA EM DIRECTO ───────────────────────────
+// O site oficial não permite leitura directa pelo browser (sem CORS). Um robô no GitHub
+// (tools/atualizar_programa.py, a cada 5–30 min) lê o site e publica data/programa.json;
+// a app vai buscar esse ficheiro.
+const PROGRAMA_FONTES = [
+  'https://raw.githubusercontent.com/ugleybson/tech-show-madrid-2026/main/data/programa.json',
+  'data/programa.json',
+];
+const CAMPOS_RELEVANTES = ['hora', 'sala', 'estado'];
+
+function ativa(s) { return s.estado !== 'cancelada'; }
+function alteracoesRelevantes(s) {
+  return (s.alteracoes || []).filter(a => CAMPOS_RELEVANTES.includes(a.campo) && a.depois !== 'nova');
+}
+function fmtDataHora(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleString('pt-PT', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+}
+function descreverAlteracao(a) {
+  if (a.campo === 'estado') return a.depois === 'cancelada' ? '❌ Cancelada' : a.depois === 'reposta' ? '✅ Reposta' : '🆕 Nova sessão';
+  if (a.campo === 'sala') return `🚪 Sala: ${getTrack(a.antes).nome} → ${getTrack(a.depois).nome}`;
+  if (a.campo === 'hora') return `🕒 Hora: ${a.antes.slice(11)} → ${a.depois.slice(11)}${a.antes.slice(0,10) !== a.depois.slice(0,10) ? ' (mudou de dia)' : ''}`;
+  if (a.campo === 'titulo') return `✏️ Título: «${a.antes}» → «${a.depois}»`;
+  if (a.campo === 'oradores') return `🎤 Oradores: ${a.antes} → ${a.depois}`;
+  return `${a.campo}: ${a.antes} → ${a.depois}`;
+}
+
+// Substitui TRACKS/SESSOES pelos dados novos e devolve as diferenças face aos actuais
+function aplicarPrograma(dados) {
+  const antes = new Map(SESSOES.map(s => [s.id, s]));
+  const dif = { canceladas: [], alteradas: [], novas: [], repostas: [] };
+  dados.sessoes.forEach(n => {
+    const v = antes.get(n.id);
+    if (!v) { if (ativa(n)) dif.novas.push(n); return; }
+    if (ativa(v) && !ativa(n)) dif.canceladas.push(n);
+    else if (!ativa(v) && ativa(n)) dif.repostas.push(n);
+    else if (ativa(n)) {
+      const campos = [];
+      if (v.dia !== n.dia || v.hora_inicio !== n.hora_inicio || v.hora_fim !== n.hora_fim)
+        campos.push({ campo: 'hora', antes: `${v.dia} ${v.hora_inicio}–${v.hora_fim}`, depois: `${n.dia} ${n.hora_inicio}–${n.hora_fim}` });
+      if (v.track_id !== n.track_id) campos.push({ campo: 'sala', antes: v.track_id, depois: n.track_id });
+      if (v.titulo !== n.titulo) campos.push({ campo: 'titulo', antes: v.titulo, depois: n.titulo });
+      const no = x => x.oradores.map(o => o.nome).join(', ');
+      if (no(v) !== no(n)) campos.push({ campo: 'oradores', antes: no(v) || '—', depois: no(n) || '—' });
+      if (campos.length) dif.alteradas.push({ s: n, campos });
+    }
+  });
+  TRACKS.splice(0, TRACKS.length, ...dados.tracks);
+  SESSOES.splice(0, SESSOES.length, ...dados.sessoes);
+  state.programa = { versao: dados.versao, actualizado_em: dados.actualizado_em, verificado_em: new Date().toISOString() };
+  return dif;
+}
+
+function programaGuardado() {
+  try { return JSON.parse(localStorage.getItem('tsm_programa') || 'null'); } catch (e) { return null; }
+}
+
+// Ao arrancar: usa a última versão descarregada se for mais recente que a embutida
+function carregarProgramaGuardado() {
+  const g = programaGuardado();
+  if (g && g.dados && g.dados.versao > 0) {
+    aplicarPrograma(g.dados);
+    state.programa.verificado_em = g.verificado_em;
+  }
+}
+
+async function obterProgramaRemoto() {
+  let ultimoErro;
+  for (const url of PROGRAMA_FONTES) {
+    try {
+      const r = await fetch(`${url}?t=${Date.now()}`, { cache: 'no-store' });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const dados = await r.json();
+      if (!dados || !Array.isArray(dados.sessoes) || !dados.sessoes.length) throw new Error('ficheiro inválido');
+      return dados;
+    } catch (e) { ultimoErro = e; }
+  }
+  throw ultimoErro;
+}
+
+let aActualizar = false;
+async function atualizarPrograma(manual) {
+  if (aActualizar) return;
+  aActualizar = true;
+  document.querySelectorAll('[data-refresh]').forEach(b => b.classList.add('is-loading'));
+  try {
+    const dados = await obterProgramaRemoto();
+    const agora = new Date().toISOString();
+    if (dados.versao > (state.programa.versao || 0)) {
+      const dif = aplicarPrograma(dados);
+      state.programa.verificado_em = agora;
+      gravarLocal('tsm_programa', JSON.stringify({ dados, verificado_em: agora }));
+      renderTrackFilter();
+      renderAll();
+      const afectadas = sessoesAfectadas(dif);
+      const total = dif.canceladas.length + dif.alteradas.length + dif.novas.length + dif.repostas.length;
+      if (manual || afectadas.length) mostrarAlteracoes(dif);
+      else showToast(`🔄 Programa actualizado (${total} alterações)`);
+    } else {
+      state.programa.verificado_em = agora;
+      const g = programaGuardado();
+      if (g) { g.verificado_em = agora; gravarLocal('tsm_programa', JSON.stringify(g)); }
+      renderEstadoPrograma();
+      if (manual) showToast(`✅ Programa em dia · última alteração ${fmtDataHora(state.programa.actualizado_em)}`);
+    }
+  } catch (e) {
+    if (manual) showToast(navigator.onLine === false ? '📴 Sem ligação — a usar o programa guardado' : '⚠️ Não foi possível verificar agora. Tente novamente.');
+  } finally {
+    aActualizar = false;
+    document.querySelectorAll('[data-refresh]').forEach(b => b.classList.remove('is-loading'));
+  }
+}
+
+// Alterações que tocam sessões onde alguém da equipa está inscrito
+function sessoesAfectadas(dif) {
+  const todas = [...dif.canceladas, ...dif.alteradas.filter(a => a.campos.some(c => CAMPOS_RELEVANTES.includes(c.campo))).map(a => a.s)];
+  return todas.filter(s => getAssignedMembers(s.id).length);
+}
+
+function renderEstadoPrograma() {
+  const el = document.getElementById('programa-estado');
+  if (!el) return;
+  const p = state.programa;
+  const canceladas = SESSOES.filter(s => !ativa(s)).length;
+  el.innerHTML = `
+    <div>Última alteração: <strong>${p.versao ? fmtDataHora(p.actualizado_em) : 'programa de 13/10'}</strong></div>
+    <div>Verificado: ${p.verificado_em ? fmtDataHora(p.verificado_em) : 'ainda não'}${canceladas ? ` · <span class="txt-danger">${canceladas} cancelada${canceladas > 1 ? 's' : ''}</span>` : ''}</div>`;
+}
+
+function mostrarAlteracoes(dif) {
+  const afectadas = new Set(sessoesAfectadas(dif).map(s => s.id));
+  const linha = (s, detalhe) => {
+    const tr = getTrack(s.track_id);
+    const quem = getAssignedMembers(s.id);
+    return `
+      <li class="chg ${afectadas.has(s.id) ? 'chg--hit' : ''}" data-session-id="${s.id}" style="--tc:${tr.cor}">
+        <div class="chg__title">${s.titulo}</div>
+        <div class="chg__meta">${s.dia === '2026-11-04' ? '4 Nov' : '5 Nov'} · ${s.hora_inicio}–${s.hora_fim} · <span style="color:${tr.cor}">${tr.nome}</span></div>
+        ${detalhe ? `<div class="chg__detail">${detalhe}</div>` : ''}
+        ${quem.length ? `<div class="chg__who">⚠️ No plano de: ${quem.map(m => `<b style="color:${m.cor}">${m.nome}</b>`).join(', ')}</div>` : ''}
+      </li>`;
+  };
+  const ordenar = arr => arr.sort((a,b) => (afectadas.has(b.id) - afectadas.has(a.id)) || (a.dia + a.hora_inicio).localeCompare(b.dia + b.hora_inicio));
+  const alteradas = dif.alteradas.map(a => a.s);
+  const detalheAlt = new Map(dif.alteradas.map(a => [a.s.id, a.campos.map(descreverAlteracao).join('<br>')]));
+  const grupos = [
+    ['❌ Canceladas', ordenar(dif.canceladas), () => ''],
+    ['🕒 Alteradas', ordenar(alteradas), s => detalheAlt.get(s.id)],
+    ['✅ Repostas', ordenar(dif.repostas), () => ''],
+    ['🆕 Novas', ordenar(dif.novas), () => ''],
+  ].filter(g => g[1].length);
+  const precisaAjuste = state.equipa.some(m => { const p = problemasPlano(m); return p.canceladas || p.sobreposicoes; });
+
+  document.getElementById('modal-changes-body').innerHTML = `
+    <p class="chg-intro">Fonte: programa oficial · última alteração ${fmtDataHora(state.programa.actualizado_em)}</p>
+    ${precisaAjuste ? `<button class="btn-primary w-full" data-ajustar>🔁 Ajustar planos (canceladas e sobreposições)</button>` : ''}
+    ${grupos.map(([t, arr, det]) => `
+      <h3 class="chg-group">${t} <span>${arr.length}</span></h3>
+      <ol class="chg-list">${arr.map(s => linha(s, det(s))).join('')}</ol>`).join('')
+      || '<p class="chg-intro">Sem alterações.</p>'}`;
+
+  const body = document.getElementById('modal-changes-body');
+  body.querySelectorAll('[data-session-id]').forEach(el => el.addEventListener('click', () => {
+    fecharModal('modal-changes');
+    openSessionModal(el.dataset.sessionId);
+  }));
+  body.querySelectorAll('[data-ajustar]').forEach(b => b.addEventListener('click', executarAjuste));
+  document.getElementById('modal-changes').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharModal(id) {
+  document.getElementById(id).classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+// Problemas no plano de um membro: sessões canceladas e sobreposições de horário
+function problemasPlano(m) {
+  const ss = getSessoesMembro(m.id);
+  const ativas = ss.filter(ativa).sort((a,b) => (a.dia + a.hora_inicio).localeCompare(b.dia + b.hora_inicio));
+  let sobreposicoes = 0;
+  for (let i = 0; i < ativas.length - 1; i++) if (sobrepoe(ativas[i], ativas[i+1])) sobreposicoes++;
+  return { canceladas: ss.filter(s => !ativa(s)).length, sobreposicoes };
+}
+
+// Ajusta os planos depois de uma alteração ao programa:
+// 1) sai das sessões canceladas; 2) nas sobreposições fica com a mais importante
+// (prioritária do membro > IA > resto; "TBC" é a primeira a sair);
+// 3) tenta preencher cada horário libertado com uma alternativa das salas do membro.
+function ajustarPlanos() {
+  let removidas = 0, adicionadas = 0;
+  state.equipa.forEach(m => {
+    const sair = id => { state.inscricoes[id] = (state.inscricoes[id] || []).filter(x => x !== m.id); removidas++; };
+    const peso = s => ((m.prioritarias || []).includes(s.id) ? 4 : 0) + (s.tags.includes('IA') ? 2 : 0) - (/^\s*TBC\s*$/i.test(s.titulo) ? 3 : 0);
+    const libertados = [];
+    getSessoesMembro(m.id).filter(s => !ativa(s)).forEach(c => { sair(c.id); libertados.push(c); });
+    for (;;) {
+      const ss = getSessoesMembro(m.id).filter(ativa).sort((a,b) => (a.dia + a.hora_inicio).localeCompare(b.dia + b.hora_inicio));
+      const i = ss.findIndex((s, k) => k < ss.length - 1 && sobrepoe(s, ss[k+1]));
+      if (i === -1) break;
+      const [a, b] = [ss[i], ss[i+1]];
+      const perde = peso(a) > peso(b) ? b : peso(b) > peso(a) ? a : b;
+      sair(perde.id);
+      libertados.push(perde);
+    }
+    const salas = m.trilhas && m.trilhas.length ? m.trilhas : TRACKS.map(t => t.id);
+    libertados.forEach(c => {
+      const plano = getSessoesMembro(m.id).filter(ativa);
+      const alt = SESSOES
+        .filter(s => ativa(s) && s.id !== c.id && salas.includes(s.track_id) && sobrepoe(s, c)
+          && !plano.some(p => sobrepoe(p, s)) && !NAO_PLANEAR.test(s.titulo))
+        .sort((a,b) => peso(b) - peso(a) || salas.indexOf(a.track_id) - salas.indexOf(b.track_id))[0];
+      if (alt) { (state.inscricoes[alt.id] = state.inscricoes[alt.id] || []).push(m.id); adicionadas++; }
+    });
+  });
+  return { removidas, adicionadas };
+}
+
+function executarAjuste() {
+  const r = ajustarPlanos();
+  saveState();
+  renderAll();
+  fecharModal('modal-changes');
+  showToast(r.removidas
+    ? `🔁 ${r.removidas} sessão(ões) retirada(s), ${r.adicionadas} alternativa(s) adicionada(s) — confira em Meu plano`
+    : '✅ Os planos já não têm canceladas nem sobreposições');
+}
+
+function badgesSessao(s) {
+  if (!ativa(s)) return '<span class="badge-st badge-st--cancel">Cancelada</span>';
+  const rel = alteracoesRelevantes(s);
+  if (rel.length) return `<span class="badge-st badge-st--changed" title="${rel.map(descreverAlteracao).join(' | ').replace(/"/g,'&quot;')}">Alterada</span>`;
+  return '';
+}
+
 // ── PLANO PELA CREDENCIAL ─────────────────────────
 function sobrepoe(a, b) {
   return a.dia === b.dia && a.hora_inicio < b.hora_fim && b.hora_inicio < a.hora_fim;
@@ -115,10 +355,10 @@ function planearPorCredencial(m) {
     const i = arr.indexOf(m.id);
     if (i !== -1) arr.splice(i, 1);
   });
-  const prioritarias = (m.prioritarias || []).map(id => SESSOES.find(s => s.id === id)).filter(Boolean);
+  const prioritarias = (m.prioritarias || []).map(id => SESSOES.find(s => s.id === id)).filter(s => s && ativa(s));
   const prio = s => (s.tags.includes('IA') ? 0 : 100) + m.trilhas.indexOf(s.track_id);
   const candidatos = SESSOES
-    .filter(s => m.trilhas.includes(s.track_id) && !NAO_PLANEAR.test(s.titulo))
+    .filter(s => ativa(s) && m.trilhas.includes(s.track_id) && !NAO_PLANEAR.test(s.titulo))
     .sort((a,b) => prio(a) - prio(b) || a.dia.localeCompare(b.dia) || a.hora_inicio.localeCompare(b.hora_inicio));
   const escolhidas = [];
   [...prioritarias, ...candidatos].forEach(s => {
@@ -239,7 +479,8 @@ function renderSummary() {
 function detectConflicts() {
   let c = 0;
   state.equipa.forEach(m => {
-    const sessoes = getSessoesMembro(m.id).sort((a,b) => a.hora_inicio.localeCompare(b.hora_inicio));
+    const sessoes = getSessoesMembro(m.id).filter(ativa)
+      .sort((a,b) => (a.dia + a.hora_inicio).localeCompare(b.dia + b.hora_inicio));
     for (let i = 0; i < sessoes.length - 1; i++) {
       if (sessoes[i].dia === sessoes[i+1].dia && sessoes[i].hora_fim > sessoes[i+1].hora_inicio) c++;
     }
@@ -290,7 +531,7 @@ function renderCard(s) {
   const speakerNames = s.oradores.map(o => o.nome + (o.empresa ? ` (${o.empresa})` : '')).join(', ');
 
   return `
-    <div class="session-card ${isAssigned ? 'is-assigned' : ''}" 
+    <div class="session-card ${isAssigned ? 'is-assigned' : ''} ${ativa(s) ? '' : 'is-cancelled'}" 
          style="--track-color:${track.cor}" 
          data-session-id="${s.id}"
          id="card-${s.id}">
@@ -300,6 +541,7 @@ function renderCard(s) {
         </div>
         <div class="session-card__time">${s.hora_inicio}–${s.hora_fim}</div>
       </div>
+      ${badgesSessao(s)}
       <div class="session-card__title">${s.titulo}</div>
       ${speakerNames ? `<div class="session-card__speakers">🎤 ${speakerNames}</div>` : ''}
       <div class="session-card__bottom">
@@ -369,7 +611,7 @@ function renderIndividual(container) {
       <span class="ind-pick__av" style="background:${p.cor}">${p.inicial}</span>${p.nome}
     </button>`).join('');
 
-  const mins = minhas.reduce((t,s) => t + toMin(s.hora_fim) - toMin(s.hora_inicio), 0);
+  const mins = minhas.filter(ativa).reduce((t,s) => t + toMin(s.hora_fim) - toMin(s.hora_inicio), 0);
   const header = `
     <div class="ind-header" style="--mc:${m.cor}">
       <div class="ind-header__av" style="background:${m.cor}">${m.inicial}</div>
@@ -400,9 +642,9 @@ function renderIndividual(container) {
         const h = Math.max((toMin(s.hora_fim) - toMin(s.hora_inicio)) * MIN_PX - 3, 18);
         const on = inscrito(s);
         return `
-          <div class="ind-block ${on ? 'is-on' : ''}" data-session-id="${s.id}"
+          <div class="ind-block ${on ? 'is-on' : ''} ${ativa(s) ? '' : 'is-cancelled'}" data-session-id="${s.id}"
                style="top:${top}px;height:${h}px;--tc:${tr.cor};--mc:${m.cor}" title="${s.hora_inicio}–${s.hora_fim} · ${s.titulo.replace(/"/g,'&quot;')}">
-            <span class="ind-block__time">${s.hora_inicio}–${s.hora_fim}${on ? ' ✓' : ''}</span>
+            <span class="ind-block__time">${s.hora_inicio}–${s.hora_fim}${on ? ' ✓' : ''}${ativa(s) ? '' : ' · CANCELADA'}</span>
             <span class="ind-block__title">${s.titulo}</span>
           </div>`;
       }).join('');
@@ -427,8 +669,20 @@ function renderIndividual(container) {
   let crono = '<p class="ind-hint">Sem sessões no plano para este dia.</p>';
   if (minhas.length) {
     const itens = [];
-    minhas.forEach((s, i) => {
-      const prev = minhas[i-1];
+    let prev = null;
+    minhas.forEach(s => {
+      const tr = getTrack(s.track_id);
+      if (!ativa(s)) {
+        itens.push(`
+        <li class="crono__item crono__item--cancel" data-session-id="${s.id}" style="--tc:${tr.cor}">
+          <span class="crono__time">${s.hora_inicio}<small>${s.hora_fim}</small></span>
+          <span class="crono__body">
+            <span class="crono__title">${s.titulo}</span>
+            <span class="crono__meta">❌ <b>CANCELADA</b> · toque para escolher outra sessão ou use 🔁 Ajustar</span>
+          </span>
+        </li>`);
+        return;
+      }
       if (prev) {
         const gap = toMin(s.hora_inicio) - toMin(prev.hora_fim);
         const muda = prev.track_id !== s.track_id;
@@ -436,13 +690,13 @@ function renderIndividual(container) {
         else if (gap === 0 && muda) itens.push(`<li class="crono__gap crono__gap--tight">⚡ Sem intervalo · mudar já para ${getTrack(s.track_id).nome}</li>`);
         else if (gap >= 15 || muda) itens.push(`<li class="crono__gap">${gap >= 60 ? '🍽️' : '☕'} ${gap} min livres${muda ? ` · mudar para ${getTrack(s.track_id).nome}` : ''}</li>`);
       }
-      const tr = getTrack(s.track_id);
+      prev = s;
       const nomes = s.oradores.map(o => o.nome);
       itens.push(`
         <li class="crono__item" data-session-id="${s.id}" style="--tc:${tr.cor}">
           <span class="crono__time">${s.hora_inicio}<small>${s.hora_fim}</small></span>
           <span class="crono__body">
-            <span class="crono__title">${s.titulo}</span>
+            <span class="crono__title">${badgesSessao(s)}${s.titulo}</span>
             <span class="crono__meta"><span style="color:${tr.cor}">${tr.nome}</span> · ${s.tipo}${nomes.length ? ' · ' + nomes.slice(0,2).join(', ') + (nomes.length > 2 ? '…' : '') : ''}</span>
           </span>
         </li>`);
@@ -455,6 +709,11 @@ function renderIndividual(container) {
     <div class="ind-picker">${picker}</div>
     ${header}
     ${renderAgoraStrip(m)}
+    ${(() => { const p = problemasPlano(m); return p.canceladas || p.sobreposicoes ? `
+      <div class="plan-alert">
+        <span>⚠️ O programa mudou: ${[p.canceladas ? `${p.canceladas} sessão(ões) cancelada(s)` : '', p.sobreposicoes ? `${p.sobreposicoes} sobreposição(ões)` : ''].filter(Boolean).join(' e ')} no plano de ${primeiro}.</span>
+        <button class="btn-primary" data-ajustar>🔁 Ajustar</button>
+      </div>` : ''; })()}
     <div class="ind-actions">
       <button class="btn-secondary" data-ics="${m.id}">📅 Adicionar ao calendário</button>
       <button class="btn-secondary" data-replan="${m.id}">🎫 Refazer plano de ${primeiro}</button>
@@ -478,6 +737,7 @@ function renderIndividual(container) {
     renderSessions();
   }));
   container.querySelector('[data-ics]').addEventListener('click', () => exportarICS(m));
+  container.querySelectorAll('[data-ajustar]').forEach(b => b.addEventListener('click', executarAjuste));
   container.querySelector('[data-replan]').addEventListener('click', () => {
     if (!confirm(`Refazer o plano de ${m.nome} pela credencial? As inscrições actuais serão substituídas.`)) return;
     const n = planearPorCredencial(m);
@@ -524,7 +784,7 @@ function referenciaAgora() {
   return { dia: state.diaAtivo, min: state.agoraSim, aoVivo: false };
 }
 function estadoMembro(m, ref) {
-  const ss = getSessoesMembro(m.id).filter(s => s.dia === ref.dia)
+  const ss = getSessoesMembro(m.id).filter(s => s.dia === ref.dia && ativa(s))
     .sort((a,b) => a.hora_inicio.localeCompare(b.hora_inicio));
   const atual = ss.find(s => toMin(s.hora_inicio) <= ref.min && ref.min < toMin(s.hora_fim));
   const seguinte = ss.find(s => toMin(s.hora_inicio) > ref.min);
@@ -659,6 +919,10 @@ function openSessionModal(sessaoId) {
 
   document.getElementById('modal-session-title').textContent = s.titulo;
   document.getElementById('modal-desc').textContent = s.descricao;
+  const hist = (s.alteracoes || []).filter(a => a.depois !== 'nova');
+  document.getElementById('modal-status').innerHTML =
+    (!ativa(s) ? '<div class="modal__alert">❌ Sessão <b>cancelada</b> no programa oficial.</div>' : '') +
+    (hist.length ? `<div class="modal__history"><b>Alterações no programa</b>${hist.map(a => `<div>${descreverAlteracao(a)} <small>${fmtDataHora(a.em)}</small></div>`).join('')}</div>` : '');
 
   // Speakers
   const spkEl = document.getElementById('modal-speakers');
@@ -862,6 +1126,7 @@ function showToast(msg) {
 
 // --- Render All ---
 function renderAll() {
+  renderEstadoPrograma();
   renderTeam();
   renderSessions();
   renderSummary();
@@ -960,7 +1225,7 @@ function init() {
   });
 
   // Close on overlay click
-  ['modal-session','modal-team','modal-schedule'].forEach(id => {
+  ['modal-session','modal-team','modal-schedule','modal-changes'].forEach(id => {
     document.getElementById(id).addEventListener('click', e => {
       if (e.target.id === id) {
         document.getElementById(id).classList.remove('is-open');
@@ -974,7 +1239,7 @@ function init() {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       fecharMenu();
-      ['modal-session','modal-team','modal-schedule'].forEach(id => {
+      ['modal-session','modal-team','modal-schedule','modal-changes'].forEach(id => {
         document.getElementById(id).classList.remove('is-open');
       });
       document.body.style.overflow = '';
@@ -1006,6 +1271,13 @@ function init() {
     localStorage.setItem('tsm_plano_v', '2');
   }
   if (gerado) saveState();
+
+  // Programa: última versão descarregada; depois verifica a fonte (ao abrir e a cada 10 min)
+  document.querySelectorAll('[data-refresh]').forEach(b => b.addEventListener('click', () => atualizarPrograma(true)));
+  document.getElementById('modal-changes-close').addEventListener('click', () => fecharModal('modal-changes'));
+  setTimeout(() => atualizarPrograma(false), 1500);
+  setInterval(() => { if (navigator.onLine !== false) atualizarPrograma(false); }, 10 * 60000);
+  window.addEventListener('online', () => atualizarPrograma(false));
 
   // Altura real do cabeçalho (para os separadores de dia fixos no telemóvel)
   const header = document.querySelector('.header');

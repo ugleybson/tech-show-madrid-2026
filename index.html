@@ -30,6 +30,7 @@
           <p class="header__subtitle">Planeador de Participação da Equipa</p>
         </div>
       </div>
+      <button class="header__refresh" data-refresh title="Actualizar programa a partir da fonte oficial" aria-label="Actualizar programa">🔄</button>
       <div class="header__meta">
         <div class="header__meta-item">
           <span class="header__meta-icon">📅</span>
@@ -81,6 +82,12 @@
           </select>
         </div>
         <button class="btn-secondary w-full" id="btn-clear-filters">Limpar Filtros</button>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__section-title">Programa</h3>
+        <div class="programa-estado" id="programa-estado"></div>
+        <button class="btn-secondary w-full mt-2" data-refresh>🔄 Actualizar programa</button>
       </div>
 
       <div class="sidebar__section">
@@ -152,6 +159,7 @@
       <div class="modal__body">
         <div class="modal__time" id="modal-time"></div>
         <h2 class="modal__title" id="modal-session-title"></h2>
+        <div id="modal-status"></div>
         <p class="modal__desc" id="modal-desc"></p>
         <div class="modal__speakers" id="modal-speakers"></div>
         <div class="modal__tags" id="modal-tags"></div>
@@ -190,6 +198,17 @@
       <div class="modal__body" id="modal-schedule-body">
         <!-- Gerado por JS -->
       </div>
+    </div>
+  </div>
+
+  <!-- Modal: Alterações ao programa -->
+  <div class="modal-overlay" id="modal-changes" role="dialog" aria-modal="true">
+    <div class="modal modal--schedule">
+      <div class="modal__header">
+        <h2 class="modal__title-inline">🔄 Alterações ao programa</h2>
+        <button class="modal__close" id="modal-changes-close" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal__body" id="modal-changes-body"></div>
     </div>
   </div>
 
