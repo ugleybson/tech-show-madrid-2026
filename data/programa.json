@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 2,
-"actualizado_em": "2026-10-14T15:19:24Z",
+"versao": 3,
+"actualizado_em": "2026-10-14T19:33:05Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1570,6 +1570,12 @@
 "cargo": "Schneider Electric",
 "empresa": "Data Center and C&SP Sales Manager Iberia",
 "role": "orador"
+},
+{
+"nome": "Armando Layna",
+"cargo": "Vocal Junta Directiva SpainSDC y Socio Director Sales For You Consulting",
+"empresa": "Spain DC",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-de-debate-tbc",
@@ -1584,6 +1590,12 @@
 "antes": "Alejandro Fuster",
 "depois": "Alejandro Fuster, Emmanuel Becker, Víctor Gago",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "oradores",
+"antes": "Alejandro Fuster, Emmanuel Becker, Víctor Gago",
+"depois": "Alejandro Fuster, Emmanuel Becker, Víctor Gago, Armando Layna",
+"em": "2026-10-14T19:33:05Z"
 }
 ]
 },
@@ -2193,12 +2205,6 @@
 "role": "orador"
 },
 {
-"nome": "Oscar López Ugarte",
-"cargo": "Chief Data Officer",
-"empresa": "Rastreator.com",
-"role": "orador"
-},
-{
 "nome": "Antonio López González",
 "cargo": "Chief Data Officer",
 "empresa": "Decathlon España",
@@ -2213,7 +2219,14 @@
 "escalabilidade",
 "autonomia"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Cecilia Aparicio, Mario Prieto, Oscar López Ugarte, Antonio López González",
+"depois": "Cecilia Aparicio, Mario Prieto, Antonio López González",
+"em": "2026-10-14T19:33:05Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -6127,6 +6140,12 @@
 "cargo": "Fundador y CEO",
 "empresa": "Clikalia y presidente de EsTech",
 "role": "orador"
+},
+{
+"nome": "Alex Brando",
+"cargo": "Matemático, Ingeniero Informático, Doctor en Trustworthy AI",
+"empresa": ".",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-debate-organizada-por-genai",
@@ -6140,6 +6159,12 @@
 "antes": "Alister Moreno, Óscar Méndez Soto",
 "depois": "Óscar Méndez Soto, Alister Moreno",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "oradores",
+"antes": "Óscar Méndez Soto, Alister Moreno",
+"depois": "Óscar Méndez Soto, Alister Moreno, Alex Brando",
+"em": "2026-10-14T19:33:05Z"
 }
 ]
 },
