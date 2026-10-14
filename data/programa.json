@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 3,
-"actualizado_em": "2026-10-14T19:33:05Z",
+"versao": 4,
+"actualizado_em": "2026-10-14T22:56:19Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -5431,7 +5431,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-144",
 "id": "s396",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-14T22:56:19Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
