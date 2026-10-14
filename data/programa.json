@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 1,
-"actualizado_em": "2026-10-14T09:55:40Z",
+"versao": 2,
+"actualizado_em": "2026-10-14T15:19:24Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -177,6 +177,12 @@
 "cargo": "Country Manager",
 "empresa": "Randstad Digital España",
 "role": "orador"
+},
+{
+"nome": "Víctor Martínez",
+"cargo": "Head of Digital Solutions",
+"empresa": "SKF Industrial",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-33",
@@ -187,21 +193,48 @@
 "human in the loop",
 "cloud"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Javier Rodríguez Cabrera, Adrián Gómez",
+"depois": "Javier Rodríguez Cabrera, Adrián Gómez, Víctor Martínez",
+"em": "2026-10-14T15:19:24Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
 "track_id": "cyber-security",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "Ponencia Riot",
+"titulo": "La dimensión humana del riesgo: ¿estás midiendo lo que realmente importa?",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "El factor humano del riesgo ciber evoluciona más rápido de lo que los CISOs pueden formar a sus equipos para mantenerse al día. La ingeniería social impulsada por IA, la shadow AI y los comportamiento…",
+"oradores": [
+{
+"nome": "Miguel González-Gallarza",
+"cargo": "Enterprise AE",
+"empresa": "RIOT",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-118",
 "id": "s108",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Riot",
+"depois": "La dimensión humana del riesgo: ¿estás midiendo lo que realmente importa?",
+"em": "2026-10-14T15:19:24Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Miguel González-Gallarza",
+"em": "2026-10-14T15:19:24Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5249,7 +5282,7 @@
 "hora_fim": "18:20",
 "titulo": "AI Has Made the SOC Faster. Now Let's Make It Stronger.",
 "tipo": "Palestra",
-"descricao": "Jean-Baptiste is Sales Engineering Director at Qevlar AI. With 20+ years in cybersecurity and 12+ years focused on the SOC market, he has spent his career at the intersection of security operations an…",
+"descricao": "Proactive security runs on predictions: severity scores, exploit forecasts, simulations. Your SOC is sitting on observations, thousands a year, with the evidence attached, thanks to AI SOC. This talk…",
 "oradores": [
 {
 "nome": "Jean-Baptiste Guglielmine",
@@ -7239,6 +7272,37 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "prestashop",
+"hora_inicio": "12:30",
+"hora_fim": "12:50",
+"titulo": "¿Está tu e-commerce preparado para 2027? Privacidad, IA, consumo y nuevas reglas",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "José María Baños",
+"cargo": "Socio fundador y Managing Partner",
+"empresa": "Letslaw",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/est%C3%A1-tu-e-commerce-preparado-para-2027-privacidad-ia-consumo-y-nuevas-reglas",
+"id": "s397",
+"tags": [
+"IA",
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-14T15:19:24Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "ecommerce-strat",
 "hora_inicio": "12:35",
 "hora_fim": "12:55",
@@ -7445,14 +7509,46 @@
 "track_id": "hr-wellbeing",
 "hora_inicio": "12:55",
 "hora_fim": "13:15",
-"titulo": "Ponencia Waipoints",
+"titulo": "Del aprendizaje al impacto en el negocio",
 "tipo": "Palestra",
 "descricao": "",
-"oradores": [],
+"oradores": [
+{
+"nome": "Borja Anasagasti",
+"cargo": "Sales Director",
+"empresa": "Waipoints",
+"role": "moderador"
+},
+{
+"nome": "Ernesto Loncomilla",
+"cargo": "Talent & Internal Development Manager Iberia",
+"empresa": "ID Logistics",
+"role": "orador"
+},
+{
+"nome": "Miguel Bayod",
+"cargo": "Especialista de Formación y Desarrollo de Personas",
+"empresa": "ID Logistics",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-159",
 "id": "s332",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Waipoints",
+"depois": "Del aprendizaje al impacto en el negocio",
+"em": "2026-10-14T15:19:24Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Borja Anasagasti, Ernesto Loncomilla, Miguel Bayod",
+"em": "2026-10-14T15:19:24Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8612,14 +8708,34 @@
 "track_id": "tech-keynote",
 "hora_inicio": "15:55",
 "hora_fim": "16:15",
-"titulo": "TBC",
+"titulo": "Cada equipo quiere una IA distinta. ¿Y ahora qué?",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Cada persona y cada equipo utiliza la IA de forma distinta. ¿Cómo gestionar esa diversidad en una empresa? Hablaremos de adopción entre perfiles técnicos y no técnicos, de cómo elegir y combinar herra…",
+"oradores": [
+{
+"nome": "Guillermo Martínez",
+"cargo": "CTO",
+"empresa": "RASTREATOR",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-30",
 "id": "s263",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "Cada equipo quiere una IA distinta. ¿Y ahora qué?",
+"em": "2026-10-14T15:19:24Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Guillermo Martínez",
+"em": "2026-10-14T15:19:24Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
