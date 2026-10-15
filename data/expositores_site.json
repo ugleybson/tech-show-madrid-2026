@@ -1,0 +1,3036 @@
+{
+ "fonte": "https://www.techshowmadrid.es/expositores",
+ "actualizado_em": "2026-10-15T16:44:36+00:00",
+ "expositores": [
+  {
+   "slug": "22-vatios-sl",
+   "nome": "22 VATIOS SL",
+   "stand": "5G68",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "2bedigital",
+   "nome": "2bedigital",
+   "stand": "3F86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "3ipunt",
+   "nome": "3iPunt",
+   "stand": "3C12",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "3m",
+   "nome": "3M",
+   "stand": "5D75",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "3mt-global-services-o0zo",
+   "nome": "3MT Global Services",
+   "stand": "3A14",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "abb",
+   "nome": "ABB",
+   "stand": "5C28",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "acai-depuracion-slu",
+   "nome": "ACAI DEPURACION SLU",
+   "stand": "5B46",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "accesfluid",
+   "nome": "Accesfluid",
+   "stand": "5D80",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "accountali",
+   "nome": "ACCOUNTALI",
+   "stand": "FB5",
+   "patrocinio": "FBA Show Sponsor"
+  },
+  {
+   "slug": "act-intronics",
+   "nome": "ACT (Intronics)",
+   "stand": "5A39",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "adaptavist",
+   "nome": "Adaptavist",
+   "stand": "3N01",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "admin-by-request-emea-ltd",
+   "nome": "Admin By Request EMEA Ltd",
+   "stand": "3G24",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "adr-formacion",
+   "nome": "ADR Formación",
+   "stand": "3A15",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "advens",
+   "nome": "ADVENS",
+   "stand": "3J46",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "aelis-consulting-sl",
+   "nome": "AELIS CONSULTING SL",
+   "stand": "3E42",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "aep-global",
+   "nome": "AEP GLOBAL",
+   "stand": "5F03",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "affinity",
+   "nome": "Affinity",
+   "stand": "3D101",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "agr-integral-engineering-solutions",
+   "nome": "AGR Integral Engineering Solutions",
+   "stand": "5C82",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "aipresta",
+   "nome": "AiPresta",
+   "stand": "P04",
+   "patrocinio": "PrestaShop Sponsor"
+  },
+  {
+   "slug": "aircall",
+   "nome": "Aircall",
+   "stand": "3G105",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "aire",
+   "nome": "Aire",
+   "stand": "3F16",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "alcalink",
+   "nome": "Alcalink",
+   "stand": "P02",
+   "patrocinio": "PrestaShop Sponsor"
+  },
+  {
+   "slug": "alhambra-it",
+   "nome": "ALHAMBRA IT",
+   "stand": "3H22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "alma",
+   "nome": "Alma",
+   "stand": "P03",
+   "patrocinio": "PrestaShop Sponsor"
+  },
+  {
+   "slug": "amphora-logistics",
+   "nome": "Amphora Logistics",
+   "stand": "S04",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "anatman-internacional",
+   "nome": "ANATMAN INTERNACIONAL",
+   "stand": "3H25",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ancypel",
+   "nome": "ANCYPEL",
+   "stand": "3A10",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "anord-mardix",
+   "nome": "Anord Mardix",
+   "stand": "5D73",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "anyformat",
+   "nome": "AnyFormat",
+   "stand": "3K50",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "aokly",
+   "nome": "AOKLY",
+   "stand": "5B42",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "app-consultoria-de-gestion-de-proyectos-sl",
+   "nome": "APP CONSULTORIA DE GESTION DE PROYECTOS SL",
+   "stand": "5C59",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "applivery",
+   "nome": "Applivery",
+   "stand": "3G36",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "apprecio",
+   "nome": "Apprecio",
+   "stand": "3B22",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "arexdata",
+   "nome": "AREXDATA",
+   "stand": "3F20",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "aselcom",
+   "nome": "ASELCOM",
+   "stand": "5G36",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "askdialog",
+   "nome": "Askdialog",
+   "stand": "3C46",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "astrafy-sl",
+   "nome": "Astrafy S.L",
+   "stand": "3K52",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "atmanco",
+   "nome": "Atmanco",
+   "stand": "3A19",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "atos",
+   "nome": "ATOS",
+   "stand": "7C",
+   "patrocinio": "Co-sponsored Session"
+  },
+  {
+   "slug": "austin-hughes",
+   "nome": "Austin Hughes",
+   "stand": "5C58",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "avask-1",
+   "nome": "Avask",
+   "stand": "FB07, 3C101",
+   "patrocinio": "FBA Show Sponsor"
+  },
+  {
+   "slug": "avvale",
+   "nome": "Avvale",
+   "stand": "3G71",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ayesa",
+   "nome": "Ayesa",
+   "stand": "3K76",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "ayscom",
+   "nome": "AYSCOM",
+   "stand": "3H42",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ayuntamiento-madrid",
+   "nome": "Ayuntamiento Madrid",
+   "stand": "3F08",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "b2com",
+   "nome": "B2group",
+   "stand": "3H08",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "bac",
+   "nome": "BAC",
+   "stand": "5E74",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "balmoral-tanks",
+   "nome": "Balmoral Tanks",
+   "stand": "5D50",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "barco",
+   "nome": "Barco",
+   "stand": "5A30",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "baros",
+   "nome": "Baros",
+   "stand": "3K53",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "barpa",
+   "nome": "BARPA",
+   "stand": "5C72",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "sunco",
+   "nome": "BEEHEE",
+   "stand": "5B70",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "belimo",
+   "nome": "Belimo",
+   "stand": "5C47",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "bender-iberia",
+   "nome": "Bender Iberia",
+   "stand": "5B72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "bergvik-sweden-ab",
+   "nome": "Bergvik Sweden AB",
+   "stand": "5F30",
+   "patrocinio": "DC del Futuro Sponsor"
+  },
+  {
+   "slug": "betterfly",
+   "nome": "Betterfly",
+   "stand": "3A24",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "bigblue",
+   "nome": "Bigblue",
+   "stand": "S14",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "bizneo",
+   "nome": "BIZNEO",
+   "stand": "3A18",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "blygold-espa%C3%B1a",
+   "nome": "Blygold España",
+   "stand": "5D20",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "bme-bolsas-y-mercados-espa%C3%B1oles",
+   "nome": "BME Bolsas y Mercados Españoles",
+   "stand": "3J60",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "boardfy",
+   "nome": "Boardfy",
+   "stand": "3D82",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "bolt-operations-o%C3%BC",
+   "nome": "Bolt Operations OÜ",
+   "stand": "",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "box-integration-systems-sl",
+   "nome": "BOX INTEGRATION SYSTEMS S.L.",
+   "stand": "5C22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "bps",
+   "nome": "BPS",
+   "stand": "5G02",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "brother-iberia",
+   "nome": "Brother Iberia",
+   "stand": "5G45",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "buscos",
+   "nome": "Buscos",
+   "stand": "3C10",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "bytestock-1",
+   "nome": "BYTESTOCK",
+   "stand": "3J26",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "cainiao-express-iberia",
+   "nome": "Cainiao Express Iberia",
+   "stand": "3C44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "cap-ingelec",
+   "nome": "CAP INGELEC",
+   "stand": "5G30",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "capitole-consulting",
+   "nome": "Capitole Consulting",
+   "stand": "3H70",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "carrier",
+   "nome": "Carrier",
+   "stand": "5F21",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "cegid",
+   "nome": "CEGID",
+   "stand": "3E84",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "centric-shoppingfeed",
+   "nome": "Centric Shoppingfeed",
+   "stand": "3F105",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "cgh-group",
+   "nome": "CGH Group",
+   "stand": "5F79",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "chakray-consulting-sl",
+   "nome": "Chakray Consulting S.L.",
+   "stand": "3K45",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "channable-1",
+   "nome": "Channable",
+   "stand": "3D80",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "channel-pilot-solutions-gmbh",
+   "nome": "Channel Pilot Solutions GmbH",
+   "stand": "P09",
+   "patrocinio": "PrestaShop Sponsor"
+  },
+  {
+   "slug": "cibernos",
+   "nome": "Cibernos",
+   "stand": "3K38",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "citadum-lariojadigital",
+   "nome": "CIDATUM - LARIOJADIGITAL",
+   "stand": "3G58",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "cimc-digital-power",
+   "nome": "CIMC Digital Power",
+   "stand": "5C27",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "cj",
+   "nome": "CJ",
+   "stand": "RM08",
+   "patrocinio": "Retail Media Sponsor"
+  },
+  {
+   "slug": "clasing",
+   "nome": "Clasing",
+   "stand": "3E08",
+   "patrocinio": "Theatre Sponsor"
+  },
+  {
+   "slug": "iberternic",
+   "nome": "Clean Hub +",
+   "stand": "5C54",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "clearpeaks",
+   "nome": "ClearPeaks",
+   "stand": "3F74",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "tecna",
+   "nome": "CLIVET TECNA",
+   "stand": "5G70",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "cloudgal",
+   "nome": "Cloud.gal",
+   "stand": "3F86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "cloudappi",
+   "nome": "CloudAppi",
+   "stand": "3K04",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "cl%C3%BAster-tic-galicia",
+   "nome": "Clúster TIC Galicia",
+   "stand": "3F86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "cobra",
+   "nome": "Cobra",
+   "stand": "5C03",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "codigo-creativo-solutions",
+   "nome": "Codigo Creativo Solutions",
+   "stand": "3E88",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "comaple",
+   "nome": "Comaple",
+   "stand": "5C60",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "commscope",
+   "nome": "Commscope",
+   "stand": "5C08",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "comunidad-de-madrid",
+   "nome": "COMUNIDAD DE MADRID",
+   "stand": "3F01",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "condair",
+   "nome": "Condair",
+   "stand": "5A40",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "consolis-tecnyconta",
+   "nome": "Consolis Tecnyconta",
+   "stand": "5D18",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "converhero",
+   "nome": "ConverHero",
+   "stand": "3H106",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "coverflex",
+   "nome": "Coverflex",
+   "stand": "3C30",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "craftgate",
+   "nome": "Craftgate",
+   "stand": "3C92",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ctt-express",
+   "nome": "CTTexpress",
+   "stand": "3C82",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "cyberwatch",
+   "nome": "CYBERWATCH",
+   "stand": "3G40",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "cynet",
+   "nome": "CYNET",
+   "stand": "3K28",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "camara-de-comercio",
+   "nome": "Cámara de Madrid",
+   "stand": "3F02",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "daikin",
+   "nome": "DAIKIN",
+   "stand": "5G59",
+   "patrocinio": "DC del Futuro Sponsor"
+  },
+  {
+   "slug": "dakel",
+   "nome": "Dakel",
+   "stand": "5C81",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "danysoft",
+   "nome": "Danysoft",
+   "stand": "3J56",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "data-equity",
+   "nome": "Data Equity",
+   "stand": "3J58",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "day-wireless",
+   "nome": "DAY WIRELESS",
+   "stand": "3K05",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "dc-systems",
+   "nome": "DC Systems",
+   "stand": "5G25",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "dch",
+   "nome": "DCH",
+   "stand": "",
+   "patrocinio": "Theatre Sponsor"
+  },
+  {
+   "slug": "dconcept",
+   "nome": "DConcept",
+   "stand": "5A02",
+   "patrocinio": "DC del Futuro Sponsor"
+  },
+  {
+   "slug": "delta",
+   "nome": "DELTA",
+   "stand": "5C10",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "dfun",
+   "nome": "DFUN",
+   "stand": "5C66",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "digatel-telecomunicaciones",
+   "nome": "Digatel Telecomunicaciones",
+   "stand": "5G26",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "djk-europe-gmbh",
+   "nome": "DJK Europe GmbH",
+   "stand": "5G01",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "dome-marketplace",
+   "nome": "Dome Marketplace",
+   "stand": "3H20",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "domus-global-iberia-sl-1",
+   "nome": "Domus Global Iberia SL",
+   "stand": "3H35",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "don-dominio",
+   "nome": "Don Dominio",
+   "stand": "3D96",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "doofinder-1",
+   "nome": "Doofinder",
+   "stand": "3E96",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "dorlet",
+   "nome": "Dorlet",
+   "stand": "5C38",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "dow",
+   "nome": "DOW",
+   "stand": "5G67",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "eae",
+   "nome": "EAE",
+   "stand": "5F62",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "easyvista",
+   "nome": "EasyVista",
+   "stand": "3K06",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "eaton",
+   "nome": "Eaton",
+   "stand": "5D62",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ebay",
+   "nome": "eBay",
+   "stand": "3D100",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ebm-papst",
+   "nome": "ebm-papst",
+   "stand": "5D77",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "edflex",
+   "nome": "Edflex",
+   "stand": "3D16",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "el-corte-ingl%C3%A9s",
+   "nome": "El Corte Inglés",
+   "stand": "3C102",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "elastic",
+   "nome": "Elastic",
+   "stand": "3K46",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "emblue",
+   "nome": "EmBlue",
+   "stand": "3H88",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "emersen",
+   "nome": "EMERSON",
+   "stand": "5A60",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "emka-beschlagteile-ib%C3%A9rica-sl",
+   "nome": "EMKA Beschlagteile Ibérica S.L.",
+   "stand": "5H50",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "emred",
+   "nome": "EMRED",
+   "stand": "3D98",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "enable-global",
+   "nome": "ENABLE GLOBAL",
+   "stand": "3H72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "endalia",
+   "nome": "Endalia",
+   "stand": "3D17",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "energetus",
+   "nome": "Energetus",
+   "stand": "5B21",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "epinium",
+   "nome": "EPINIUM",
+   "stand": "FB4",
+   "patrocinio": "Silver Sponsor - FBA Show Sponsor"
+  },
+  {
+   "slug": "equifab",
+   "nome": "EQUIFAB",
+   "stand": "5G12",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "equinsa-networking",
+   "nome": "Equinsa Networking",
+   "stand": "5C18",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "esendex",
+   "nome": "ESENDEX",
+   "stand": "3J88",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "eset-espa%C3%B1a",
+   "nome": "ESET España",
+   "stand": "3H34",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "esw",
+   "nome": "ESW",
+   "stand": "RM05",
+   "patrocinio": "Retail Media Sponsor"
+  },
+  {
+   "slug": "eupago",
+   "nome": "Eupago",
+   "stand": "3D89",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "euroconnex",
+   "nome": "EUROCONNEX",
+   "stand": "5A43",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "evernex",
+   "nome": "Evernex",
+   "stand": "3N08",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "exacloud",
+   "nome": "Exacloud",
+   "stand": "3H18",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "exide-technologies-energy-solution-slu",
+   "nome": "Exide Technologies Energy Solution S.L.U.",
+   "stand": "5G44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "factorial",
+   "nome": "Factorial",
+   "stand": "3E14",
+   "patrocinio": "Theatre Sponsor"
+  },
+  {
+   "slug": "fantasticfy",
+   "nome": "FANTASTICFY",
+   "stand": "S08",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "faronics",
+   "nome": "Faronics",
+   "stand": "3J49",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "fibratel",
+   "nome": "Fibratel",
+   "stand": "5F28",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "fik",
+   "nome": "fik.",
+   "stand": "S16",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "finocio",
+   "nome": "FINOCIO",
+   "stand": "3C50",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "finseed",
+   "nome": "Finseed",
+   "stand": "P05",
+   "patrocinio": ""
+  },
+  {
+   "slug": "flytech",
+   "nome": "FLYTECH",
+   "stand": "5E72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "fnt-software-1",
+   "nome": "FNT Software",
+   "stand": "5C02",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "fortra",
+   "nome": "Fortra",
+   "stand": "3H49",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "foxit-software",
+   "nome": "Foxit Software",
+   "stand": "3J78",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "foxize",
+   "nome": "Foxize",
+   "stand": "3C16",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "gaestopas",
+   "nome": "Gaestopas",
+   "stand": "5E66",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "galadrim",
+   "nome": "Galadrim",
+   "stand": "3K78",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "garaje-de-ideas",
+   "nome": "Garaje de Ideas",
+   "stand": "3G72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "genially",
+   "nome": "Genially",
+   "stand": "3E25",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "gerflor",
+   "nome": "GERFLOR",
+   "stand": "5G66",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "gesab",
+   "nome": "GESAB",
+   "stand": "5D28",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "gespasa",
+   "nome": "Gespasa",
+   "stand": "5D67",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "getresponse",
+   "nome": "GetResponse",
+   "stand": "3J106",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "global-stem-women",
+   "nome": "Global STEM WOMEN",
+   "stand": "3A26",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "grupo-datesa-datesa-soluciones-datesa-seguridad",
+   "nome": "Grupo Datesa - Datesa Soluciones - Datesa Seguridad",
+   "stand": "5D42",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "grupo-secoex",
+   "nome": "GRUPO SECOEX",
+   "stand": "5F01",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "grupo-trevenque",
+   "nome": "Grupo Trevenque",
+   "stand": "3E51",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "gs-yuasa-espa%C3%B1a",
+   "nome": "GS YUASA ESPAÑA",
+   "stand": "5E73",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "happyrobot",
+   "nome": "HappyRobot",
+   "stand": "3K54",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "hidroten",
+   "nome": "HIDROTEN",
+   "stand": "5F73",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "hilti",
+   "nome": "Hilti",
+   "stand": "5G60",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "himoinsa",
+   "nome": "HIMOINSA",
+   "stand": "5D44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "hms-industrial-networks",
+   "nome": "HMS Networks",
+   "stand": "5C46",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "holaerp",
+   "nome": "HOLAERP",
+   "stand": "3F106",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "holded",
+   "nome": "HOLDED",
+   "stand": "3D36",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "hoppecke",
+   "nome": "Hoppecke",
+   "stand": "5F68",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "hornet-security",
+   "nome": "Hornet security",
+   "stand": "3J32",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "hovmand-a-s",
+   "nome": "Hovmand A/S",
+   "stand": "5E54",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "hrider",
+   "nome": "Hrider",
+   "stand": "3C08",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "hrlog",
+   "nome": "HRLOG",
+   "stand": "3G58",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "huurre",
+   "nome": "Huurre",
+   "stand": "5G37",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "iberica-energy-data-centers",
+   "nome": "IBERICA Energy & Data Centers",
+   "stand": "5B74",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "icecat",
+   "nome": "Icecat",
+   "stand": "3D99",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "icotek-iberia",
+   "nome": "ICOTEK IBERIA",
+   "stand": "5B71",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "idealo",
+   "nome": "Idealo",
+   "stand": "3C104",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "igel-technology-bv",
+   "nome": "IGEL Technology BV",
+   "stand": "3J54",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "igic",
+   "nome": "IGIC",
+   "stand": "5F80",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ilux",
+   "nome": "Ilux",
+   "stand": "3F86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "impulsa-3",
+   "nome": "IMPULSA 3",
+   "stand": "3A37",
+   "patrocinio": ""
+  },
+  {
+   "slug": "in-quattro",
+   "nome": "IN-QUATTRO",
+   "stand": "5B22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "inael",
+   "nome": "INAEL",
+   "stand": "5G38",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "inforges",
+   "nome": "Inforges",
+   "stand": "S26",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "inserty",
+   "nome": "Inserty",
+   "stand": "5D72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "insights",
+   "nome": "Insights",
+   "stand": "3D32",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "intergrity-cable-co-limited",
+   "nome": "INTEGRITY CABLE CO., LIMITED",
+   "stand": "5A01",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "intelequia",
+   "nome": "Intelequia",
+   "stand": "3G74",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "intercel",
+   "nome": "Intercel",
+   "stand": "5H41",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "interempresas",
+   "nome": "INTEREMPRESAS",
+   "stand": "5G03",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "interplast-sa",
+   "nome": "Interplast SA",
+   "stand": "5B38",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ionos-cloud-slu",
+   "nome": "Ionos Cloud S.L.U.",
+   "stand": "3F17",
+   "patrocinio": "Theatre Sponsor"
+  },
+  {
+   "slug": "iron-mountain-data-centers-espa%C3%B1a-slu",
+   "nome": "IRON MOUNTAIN DATA CENTERS (ESPAÑA) SLU",
+   "stand": "3F04",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "iseazy",
+   "nome": "isEazy",
+   "stand": "3C24",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "isocial-web",
+   "nome": "ISocial Web",
+   "stand": "3B76",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "isopan",
+   "nome": "ISOPAN",
+   "stand": "5H32",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "isyc",
+   "nome": "ISYC",
+   "stand": "3C12",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "italsan",
+   "nome": "ITALSAN",
+   "stand": "5F52",
+   "patrocinio": "DC del Futuro Sponsor"
+  },
+  {
+   "slug": "itercon-cyclus-group",
+   "nome": "Itercon - Cyclus Group",
+   "stand": "5D06",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "itoptraining",
+   "nome": "iTopTraining",
+   "stand": "3D18",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "jetbrains",
+   "nome": "JetBrains",
+   "stand": "3F82",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "jiangsu-etern-company-limited",
+   "nome": "JIANGSU ETERN COMPANY LIMITED",
+   "stand": "5A32",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "john-cockerill-sa",
+   "nome": "John Cockerill Hamon",
+   "stand": "5C44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "johnson-controls",
+   "nome": "Johnson Controls",
+   "stand": "5B60",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "julius-baer",
+   "nome": "Julius Baer",
+   "stand": "3F108",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "kair%C3%B3s",
+   "nome": "Kairós",
+   "stand": "3J72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "kata-global-logistics-1",
+   "nome": "KATA Global Logistics",
+   "stand": "FB07",
+   "patrocinio": "FBA Show Sponsor"
+  },
+  {
+   "slug": "kaufland-marketplace-gmbh",
+   "nome": "Kaufland Marketplace GmbH",
+   "stand": "3C90",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "keepit",
+   "nome": "KEEPIT",
+   "stand": "3G46",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "kelio",
+   "nome": "Kelio",
+   "stand": "3D15",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "keynet-systems",
+   "nome": "Keynet Systems",
+   "stand": "5D10",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "keypasco",
+   "nome": "Keypasco",
+   "stand": "3H58",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "kimera-technologies",
+   "nome": "Kimera Technologies",
+   "stand": "3D83",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "kirey",
+   "nome": "Kirey",
+   "stand": "3H59",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "klarna-2",
+   "nome": "Klarna",
+   "stand": "3J105",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "klaviyo",
+   "nome": "Klaviyo",
+   "stand": "S27",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "kompass",
+   "nome": "KOMPASS",
+   "stand": "3A40",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "konecta",
+   "nome": "Konecta",
+   "stand": "3J62",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "konvo-ai",
+   "nome": "Konvo AI",
+   "stand": "S15",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "kriter-software-sl",
+   "nome": "KRITER SOFTWARE SL",
+   "stand": "3F88",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ksb-spain",
+   "nome": "KSB Spain",
+   "stand": "5H45",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "kymatio-1",
+   "nome": "KYMATIO",
+   "stand": "3G30",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "h-products-europe-gmbh",
+   "nome": "Kyocera",
+   "stand": "3J50",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "la-f%C3%A1brica-de-la-web",
+   "nome": "La Fábrica de la Web",
+   "stand": "3D94",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "lamdaloopers",
+   "nome": "LamdaLoopers",
+   "stand": "3H71",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "landmark-global",
+   "nome": "Landmark Global",
+   "stand": "3G86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "shanghai-liangxin-electrical-co-ltd",
+   "nome": "Lazzen",
+   "stand": "5C74",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "leexi",
+   "nome": "Leexi",
+   "stand": "3H24",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "legrand",
+   "nome": "LEGRAND",
+   "stand": "5E10",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "lemon-learning",
+   "nome": "Lemon Learning",
+   "stand": "3D22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "lengow",
+   "nome": "Lengow",
+   "stand": "3G99",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "leoch-batteries",
+   "nome": "LEOCH BATTERIES",
+   "stand": "5D38",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "leolytics",
+   "nome": "LEOlytics",
+   "stand": "3C94",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "lindapter-international",
+   "nome": "Lindapter International",
+   "stand": "5A08",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "suria-interior-fit-out-sl",
+   "nome": "LINDNER",
+   "stand": "5G66",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "linea-grafica",
+   "nome": "LINEA GRAFICA",
+   "stand": "S01",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "capefoxx",
+   "nome": "Linguaserve",
+   "stand": "3D87",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "link-mobility-spain-sl",
+   "nome": "LINK Mobility Spain SL",
+   "stand": "3G88",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "lixsaai",
+   "nome": "LIXSA.AI",
+   "stand": "3D46",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "lmsi-engineering",
+   "nome": "LMSI Engineering",
+   "stand": "5B21",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "log%C3%ADstica-sevica",
+   "nome": "LOGÍSTICA SEVICA",
+   "stand": "3C82",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "longxing",
+   "nome": "LONGXING",
+   "stand": "5C52",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "looper-log%C3%ADstica",
+   "nome": "Looper Logística",
+   "stand": "3C86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "lucca",
+   "nome": "Lucca",
+   "stand": "3E24",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "luckycart",
+   "nome": "Luckycart",
+   "stand": "RM03",
+   "patrocinio": "Retail Media Sponsor"
+  },
+  {
+   "slug": "lyra",
+   "nome": "Lyra",
+   "stand": "3C103",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "yimikang-ymk",
+   "nome": "Macrochip",
+   "stand": "5A41",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "macrotest-informatica",
+   "nome": "Macrotest",
+   "stand": "3F86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "maisa-ai",
+   "nome": "Maisa AI",
+   "stand": "3G70",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "manage-engine",
+   "nome": "Manage Engine",
+   "stand": "3F48",
+   "patrocinio": "Keynote Theatre Sponsor"
+  },
+  {
+   "slug": "manago-ai",
+   "nome": "Manago AI",
+   "stand": "3F112",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "marechal-electric",
+   "nome": "MARECHAL ELECTRIC",
+   "stand": "5D66",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "master-battery",
+   "nome": "MASTER BATTERY",
+   "stand": "5G10",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "mayekawa",
+   "nome": "Mayekawa",
+   "stand": "5F72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "fujian-mecca-impexptrading-coltd",
+   "nome": "Mecca Power Co., Ltd.",
+   "stand": "5E68",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "mecides-the-tax-lease-company",
+   "nome": "MECIDES - The Tax Lease Company",
+   "stand": "3F72",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "megmeet",
+   "nome": "MEGMEET",
+   "stand": "5E80",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "meteoria",
+   "nome": "METEORIA",
+   "stand": "3K72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "microsoft",
+   "nome": "Microsoft",
+   "stand": "7C",
+   "patrocinio": "Co-sponsored Session"
+  },
+  {
+   "slug": "frigicoll-hvac-sl",
+   "nome": "MIDEA FRIGICOLL HVAC",
+   "stand": "5G24",
+   "patrocinio": "Theatre Sponsor"
+  },
+  {
+   "slug": "mirakl",
+   "nome": "Mirakl",
+   "stand": "3E68",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "mitsubischi-electric",
+   "nome": "Mitsubishi Electric",
+   "stand": "5G56",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "moddo",
+   "nome": "Moddo",
+   "stand": "S12",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "mollie-payments",
+   "nome": "Mollie Payments",
+   "stand": "3H104",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "monei",
+   "nome": "Monei",
+   "stand": "3E50",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "moodle",
+   "nome": "MOODLE",
+   "stand": "3C12",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "motive",
+   "nome": "Motive.co",
+   "stand": "3F104",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "muchbetterai",
+   "nome": "Muchbetter.ai",
+   "stand": "3E22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "multisafepay",
+   "nome": "Multisafepay",
+   "stand": "3F96",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "multisoft",
+   "nome": "Multisoft",
+   "stand": "3K40",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "mundosms",
+   "nome": "MundoSMS",
+   "stand": "3J76",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "my-solution-connect",
+   "nome": "My Solution Connect",
+   "stand": "3G89",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "navarro-molina-instalaciones-hv-sl",
+   "nome": "Navarro Molina Instalaciones HV, S.L.",
+   "stand": "5G28",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "nemix",
+   "nome": "Nemix",
+   "stand": "5D22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "netceed",
+   "nome": "Netceed",
+   "stand": "5G73",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "netmetrix",
+   "nome": "Netmetrix",
+   "stand": "3H56",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "new-mall-media-services",
+   "nome": "New Mall Media Services",
+   "stand": "3A42",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "nexconec",
+   "nome": "Nexconec",
+   "stand": "5A21",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "nextcloud",
+   "nome": "Nextcloud",
+   "stand": "3G56",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "ninjaone",
+   "nome": "NinjaOne",
+   "stand": "3G48",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "nitsnets",
+   "nome": "Nitsnets",
+   "stand": "S17",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "norvento",
+   "nome": "Norvento",
+   "stand": "5G72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ntt-global-data-centers",
+   "nome": "NTT Global Data Centers",
+   "stand": "3J01",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "numericco",
+   "nome": "Numericco",
+   "stand": "S03",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "nuvo-msp",
+   "nome": "NUVO MSP",
+   "stand": "3K41",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "invent",
+   "nome": "nVent",
+   "stand": "5B68",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "n%C3%BCo-planet",
+   "nome": "NÜO PLANET",
+   "stand": "5B44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "oct8ne",
+   "nome": "OCT8NE",
+   "stand": "3C96",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "octopia",
+   "nome": "OCTOPIA",
+   "stand": "3C95",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "odoo",
+   "nome": "Odoo",
+   "stand": "3H16",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "on-soluciones",
+   "nome": "on soluciones",
+   "stand": "3K03",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "onestic",
+   "nome": "ONESTIC",
+   "stand": "3E72",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "onirica-vr",
+   "nome": "Onirica VR",
+   "stand": "3A17",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "o9-directo-iindustria-slu",
+   "nome": "ONUEVE",
+   "stand": "5D60",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "open-compute-project",
+   "nome": "Open Compute Project",
+   "stand": "5H30",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "opentiendas-2",
+   "nome": "OpenTiendas",
+   "stand": "3E100",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "optima-solutions",
+   "nome": "OPTIMA SOLUTIONS",
+   "stand": "3J52",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "oracle",
+   "nome": "Oracle",
+   "stand": "3F66",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "orange-empresas",
+   "nome": "ORANGE EMPRESAS",
+   "stand": "3H48",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "orisha-commerce-1",
+   "nome": "Orisha Commerce",
+   "stand": "3C88",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "otto-group-one",
+   "nome": "Otto Group one.O Spain",
+   "stand": "3D104",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "ovhcloud",
+   "nome": "OVHcloud",
+   "stand": "3F70",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "pandora-fms",
+   "nome": "Pandora FMS",
+   "stand": "3F40",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "panduit-europe-ltd",
+   "nome": "Panduit Europe Ltd",
+   "stand": "5F54",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "pango-studio",
+   "nome": "Pango Studio",
+   "stand": "S28",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "panthr",
+   "nome": "Panthr",
+   "stand": "3D34",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "partoo",
+   "nome": "Partoo",
+   "stand": "3H103",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "pemsa",
+   "nome": "Pemsa",
+   "stand": "5E28",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "permastore-limited",
+   "nome": "Permastore Limited",
+   "stand": "5G37",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "permut",
+   "nome": "Permut",
+   "stand": "S25",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "phs-west",
+   "nome": "PHS West",
+   "stand": "5F26",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "pitch-avatar",
+   "nome": "Pitch Avatar",
+   "stand": "3C02",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "pluxee",
+   "nome": "Pluxee",
+   "stand": "3A20",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "portugal-dc",
+   "nome": "Portugal DC",
+   "stand": "5B21",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "powershield",
+   "nome": "Powershield",
+   "stand": "5A44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "premium-minds-",
+   "nome": "Premium Minds",
+   "stand": "3J66",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "prestashop",
+   "nome": "PrestaShop",
+   "stand": "P07",
+   "patrocinio": "Platinum Sponsor"
+  },
+  {
+   "slug": "protec-fire-detection",
+   "nome": "PROTEC FIRE DETECTION",
+   "stand": "5F74",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "provenexpertcom",
+   "nome": "ProvenExpert.com",
+   "stand": "3G94",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "prysmian",
+   "nome": "Prysmian",
+   "stand": "5F60",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "publicis-groupe-commerce",
+   "nome": "Publicis Groupe / Commerce",
+   "stand": "RM01",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "purafil",
+   "nome": "Purafil",
+   "stand": "5A05",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "puromarketing",
+   "nome": "Puromarketing",
+   "stand": "3A38",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "q-safety-by-quiron-prevencion-1",
+   "nome": "Q SAFETY BY QUIRON PREVENCION",
+   "stand": "5C01",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "q2tec",
+   "nome": "Q2tec",
+   "stand": "5H31",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "qevlar-ai",
+   "nome": "QEVLAR AI",
+   "stand": "3H57",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "qonto",
+   "nome": "Qonto",
+   "stand": "P01",
+   "patrocinio": "PrestaShop Sponsor"
+  },
+  {
+   "slug": "quantcast-en-duda-28-dias",
+   "nome": "Quantcast",
+   "stand": "3G109",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "qumulo",
+   "nome": "qumulo",
+   "stand": "3J17",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "quobis",
+   "nome": "Quobis",
+   "stand": "3F86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "r2-docuo",
+   "nome": "R2 Docuo",
+   "stand": "3G98",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "raiola-networks",
+   "nome": "RAIOLA NETWORKS",
+   "stand": "3G17",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "randstad",
+   "nome": "Randstad",
+   "stand": "3D40",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "real",
+   "nome": "REAL",
+   "stand": "5F02",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "red-hat-sl",
+   "nome": "Red Hat - Intel",
+   "stand": "3H73",
+   "patrocinio": "Keynote Theatre Sponsor"
+  },
+  {
+   "slug": "redegal",
+   "nome": "Redegal",
+   "stand": "S19",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "reichle-de-massari",
+   "nome": "Reichle & De-Massari",
+   "stand": "5D52",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "rentaload",
+   "nome": "Rentaload",
+   "stand": "5E30",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "reskyt",
+   "nome": "Reskyt",
+   "stand": "S02",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "reveni",
+   "nome": "Reveni",
+   "stand": "S18",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "reversia",
+   "nome": "Reversia",
+   "stand": "3B68",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "revolut",
+   "nome": "REVOLUT",
+   "stand": "3E44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ricoh",
+   "nome": "Ricoh",
+   "stand": "S21",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "riello",
+   "nome": "Riello UPS",
+   "stand": "5E36",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ringover",
+   "nome": "RINGOVER",
+   "stand": "3D38",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "riot",
+   "nome": "Riot",
+   "stand": "3H50",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "rister",
+   "nome": "RISTER",
+   "stand": "5G61",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "rittal",
+   "nome": "Rittal",
+   "stand": "5D36",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "rocket-digital",
+   "nome": "Rocket Digital",
+   "stand": "S13",
+   "patrocinio": "Theatre Sponsor"
+  },
+  {
+   "slug": "rocketplace",
+   "nome": "Rocketplace",
+   "stand": "FB3",
+   "patrocinio": "FBA Show Sponsor"
+  },
+  {
+   "slug": "roicos",
+   "nome": "ROICOS",
+   "stand": "FB6",
+   "patrocinio": "FBA Show Sponsor"
+  },
+  {
+   "slug": "roxtec",
+   "nome": "Roxtec",
+   "stand": "5G46",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sage",
+   "nome": "Sage",
+   "stand": "3E40",
+   "patrocinio": "Theatre Sponsor"
+  },
+  {
+   "slug": "ajoomal-asociados",
+   "nome": "SANGFOR",
+   "stand": "3N07",
+   "patrocinio": "DC del Futuro Sponsor"
+  },
+  {
+   "slug": "sansheng",
+   "nome": "SANSHENG",
+   "stand": "5B01",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "santa-clara-tech-sl",
+   "nome": "SANTA CLARA TECH S.L.",
+   "stand": "3G63",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sarenet",
+   "nome": "SARENET",
+   "stand": "3G44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sayonara",
+   "nome": "SAYONARA",
+   "stand": "3C42",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "scalapay",
+   "nome": "Scalapay",
+   "stand": "3E80",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "scanmenow",
+   "nome": "SCANMENOW",
+   "stand": "3F86",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "scc",
+   "nome": "SCC",
+   "stand": "5F12",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "schneider-electric",
+   "nome": "Schneider Electric",
+   "stand": "5E20",
+   "patrocinio": "Theatre Sponsor - Data Center del futuro Sponsor"
+  },
+  {
+   "slug": "sdi",
+   "nome": "SDi",
+   "stand": "S23",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "securizame",
+   "nome": "SECURIZAME",
+   "stand": "3G58",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "seeburger",
+   "nome": "Seeburger",
+   "stand": "3J27",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "seidor-solutions",
+   "nome": "Seidor Solutions",
+   "stand": "3K20, 3J24",
+   "patrocinio": "VIP Lounge Sponsor"
+  },
+  {
+   "slug": "semantic-systems",
+   "nome": "Semantic Systems",
+   "stand": "3F64",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sendcloud",
+   "nome": "Sendcloud",
+   "stand": "S06",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "sensei",
+   "nome": "Sensei",
+   "stand": "3C32",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "sequra",
+   "nome": "SEQURA",
+   "stand": "3G112",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sercoba-csb-battery",
+   "nome": "SERCOBA BATERIAS – CSB",
+   "stand": "5B28",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "grupo-seresco",
+   "nome": "Serdatia",
+   "stand": "3G64",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "seresco",
+   "nome": "Seresco",
+   "stand": "3G64",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "servicetonic",
+   "nome": "Servicetonic",
+   "stand": "3C38",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sevilla-datacenter-comvive",
+   "nome": "Sevilla Datacenter & Comvive",
+   "stand": "3G16",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sgf-global",
+   "nome": "SGF Global",
+   "stand": "3G22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "shakers",
+   "nome": "Shakers",
+   "stand": "3D20",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "shopify",
+   "nome": "Shopify",
+   "stand": "SHOPIFY ARENA",
+   "patrocinio": "Head Sponsorship"
+  },
+  {
+   "slug": "sierra",
+   "nome": "SIERRA",
+   "stand": "3H108",
+   "patrocinio": "Keynote Theatre Sponsor"
+  },
+  {
+   "slug": "simpler",
+   "nome": "Simpler.",
+   "stand": "3D102",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sinexcel",
+   "nome": "SINEXCEL",
+   "stand": "5C70",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "seroneit",
+   "nome": "Sistemas de Control CV, S. L.",
+   "stand": "5B48",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sit-spain",
+   "nome": "SIT Spain",
+   "stand": "5A04",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "skai",
+   "nome": "SKAI",
+   "stand": "RM06",
+   "patrocinio": "Retail Media Sponsor"
+  },
+  {
+   "slug": "skeepers-1",
+   "nome": "Skeepers",
+   "stand": "3G104",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "skolae",
+   "nome": "Skolae",
+   "stand": "3B12",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "skrey",
+   "nome": "Skrey",
+   "stand": "S07",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "sme-soluciones",
+   "nome": "SME Soluciones",
+   "stand": "5C36",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "smses",
+   "nome": "SMS.es",
+   "stand": "3B69",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "socomec",
+   "nome": "Socomec",
+   "stand": "5D30",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "socored",
+   "nome": "Socored",
+   "stand": "5B50",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "software-one",
+   "nome": "Software One",
+   "stand": "3F56",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "solid-optics",
+   "nome": "Solid Optics",
+   "stand": "3G17",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "solidgate",
+   "nome": "Solidgate",
+   "stand": "3H102",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "solventia-solutions",
+   "nome": "Solventia Solutions",
+   "stand": "5G53",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sorint",
+   "nome": "Sorint",
+   "stand": "3N02",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sosafe",
+   "nome": "SOSAFE",
+   "stand": "3H32",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "soterguard",
+   "nome": "SOTERGUARD",
+   "stand": "3G15",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sovendus",
+   "nome": "Sovendus",
+   "stand": "3B50",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "splio",
+   "nome": "Splio",
+   "stand": "3A30",
+   "patrocinio": ""
+  },
+  {
+   "slug": "spoki",
+   "nome": "SPOKI",
+   "stand": "3G87",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "springboard-consultancy-sl",
+   "nome": "Springboard35",
+   "stand": "3C40",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "sshteam",
+   "nome": "SSHTEAM",
+   "stand": "3G58",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "stalflex",
+   "nome": "STALFLEX",
+   "stand": "5B40",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "starline",
+   "nome": "Starline",
+   "stand": "",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "stc",
+   "nome": "STC",
+   "stand": "S09",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "steelnet-sistemas",
+   "nome": "Steelnet Sistemas",
+   "stand": "5A24",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "stockagile",
+   "nome": "Stockagile",
+   "stand": "S24",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "store-commander",
+   "nome": "Store Commander",
+   "stand": "3D88",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "stulz",
+   "nome": "Stulz",
+   "stand": "5E44",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "kx-load",
+   "nome": "Supmea Automation Co., Ltd.",
+   "stand": "5C56",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "syneto",
+   "nome": "Syneto",
+   "stand": "3F42",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "synthesia",
+   "nome": "Synthesia",
+   "stand": "3C14",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "syteca",
+   "nome": "Syteca",
+   "stand": "3G34",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "t-systems-iberia",
+   "nome": "T-Systems Iberia",
+   "stand": "3J15",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "tac",
+   "nome": "TAC",
+   "stand": "3K48",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "tai-editorial",
+   "nome": "TAI EDITORIAL",
+   "stand": "3N03",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "talentware",
+   "nome": "Talentware",
+   "stand": "3A12",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "tanium-1",
+   "nome": "Tanium",
+   "stand": "3H40",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "tate",
+   "nome": "TATE",
+   "stand": "5F22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "daas-group",
+   "nome": "Tech4access",
+   "stand": "3H90",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "techbiz-global-gmbh",
+   "nome": "TechBiz Global GmbH",
+   "stand": "3J80",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "teckentrup-door-solutions",
+   "nome": "TECKENTRUP DOOR SOLUTIONS",
+   "stand": "5F10",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "tecnoware",
+   "nome": "TECNOWARE",
+   "stand": "5B20",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "tempelsa",
+   "nome": "TEMPEL,S.A.",
+   "stand": "5G14",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "adjudicaciones-tic-sl",
+   "nome": "TendersTool",
+   "stand": "3G61",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "the-agent",
+   "nome": "The Agent",
+   "stand": "3A50",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "the-roi-makers",
+   "nome": "The ROI Makers",
+   "stand": "3D90",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "the-trade-desk",
+   "nome": "The Trade Desk",
+   "stand": "RM02",
+   "patrocinio": "Retail Media Sponsor"
+  },
+  {
+   "slug": "therapyside",
+   "nome": "Therapyside",
+   "stand": "3C32",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "threatlocker",
+   "nome": "ThreatLocker",
+   "stand": "3H52",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "tiktok",
+   "nome": "TikTok",
+   "stand": "RM04",
+   "patrocinio": "Retail Media Sponsor"
+  },
+  {
+   "slug": "tiktok-1",
+   "nome": "TikTok",
+   "stand": "3C50",
+   "patrocinio": ""
+  },
+  {
+   "slug": "tileflow",
+   "nome": "TileFlow",
+   "stand": "5E75",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "todo-en-cloud",
+   "nome": "TODO EN CLOUD",
+   "stand": "3K10",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "top-cable",
+   "nome": "TOP CABLE",
+   "stand": "5B10",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "tramitapp",
+   "nome": "TramitApp",
+   "stand": "3C04",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "transfermate",
+   "nome": "TransferMate",
+   "stand": "3D47",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "transparent-edge-services",
+   "nome": "Transparent Edge Services",
+   "stand": "3F33",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "trc",
+   "nome": "TRC",
+   "stand": "3F32",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "trilux-iluminacion",
+   "nome": "Trilux Iluminacion",
+   "stand": "5G52",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "trusted-shops",
+   "nome": "Trusted Shops",
+   "stand": "3F113",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "trustpilot-a-s",
+   "nome": "Trustpilot A/S",
+   "stand": "3C80",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "ttk-ssi-seguridad",
+   "nome": "TTK / SSI Seguridad",
+   "stand": "5F66",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "turron-by-plazo",
+   "nome": "Turrón by Plazo",
+   "stand": "3E66",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "twenix",
+   "nome": "Twenix",
+   "stand": "3C18",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "ugc-slalom",
+   "nome": "UGC Slalom",
+   "stand": "3K65",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ukg",
+   "nome": "UKG",
+   "stand": "3B10",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "unikal",
+   "nome": "Unikal",
+   "stand": "S22",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "uniway",
+   "nome": "UNIWAY",
+   "stand": "3J33",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "unlimitail",
+   "nome": "Unlimitail",
+   "stand": "RM07",
+   "patrocinio": "Retail Media Sponsor"
+  },
+  {
+   "slug": "upango",
+   "nome": "Upango",
+   "stand": "S10",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "v-valley",
+   "nome": "V-Valley",
+   "stand": "3G32",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "valdinox",
+   "nome": "Valdinox",
+   "stand": "5E52",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "vatai",
+   "nome": "VATAi",
+   "stand": "FB2",
+   "patrocinio": "FBA Show Sponsor"
+  },
+  {
+   "slug": "velorcios-group",
+   "nome": "Velorcios",
+   "stand": "3G54",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "velorum-labs",
+   "nome": "VELORUM LABS",
+   "stand": "3G66",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "veltech",
+   "nome": "VELTECH",
+   "stand": "3G66",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "ventural%C3%ADtica",
+   "nome": "Venturalítica",
+   "stand": "3K74",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "verkada",
+   "nome": "verkada",
+   "stand": "3J48",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "vermoon",
+   "nome": "Vermoon",
+   "stand": "3K43",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "vertiv",
+   "nome": "Vertiv",
+   "stand": "5E60",
+   "patrocinio": "Gold Sponsor"
+  },
+  {
+   "slug": "victaulic",
+   "nome": "Victaulic",
+   "stand": "5C35",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "vidext",
+   "nome": "Vidext",
+   "stand": "3C20",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "virtual-mirror",
+   "nome": "Virtual Mirror",
+   "stand": "3A28",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "vertice",
+   "nome": "Vértice",
+   "stand": "3A13",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "waipoints",
+   "nome": "Waipoints",
+   "stand": "3D24",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "walraven",
+   "nome": "WALRAVEN",
+   "stand": "5H40",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "wapping",
+   "nome": "Wapping",
+   "stand": "3D95",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "watts-water",
+   "nome": "Watts Water",
+   "stand": "5C80",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "webimpacto",
+   "nome": "Webimpacto",
+   "stand": "S11",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "webloyalty",
+   "nome": "Webloyalty",
+   "stand": "RM09",
+   "patrocinio": "Retail Media Sponsor"
+  },
+  {
+   "slug": "weiss-klimatechnik",
+   "nome": "Weiss Klimatechnik",
+   "stand": "5C34",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "westcon",
+   "nome": "WESTCON",
+   "stand": "3F24",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "why-ads-media",
+   "nome": "Why Ads Media",
+   "stand": "3C87",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "wifidom-sl",
+   "nome": "Wifidom S.L,",
+   "stand": "3H33",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "wilo",
+   "nome": "WILO",
+   "stand": "5A20",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ab-tasty",
+   "nome": "Wingify",
+   "stand": "3J90",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "wolters-kluwer",
+   "nome": "Wolters Kluwer",
+   "stand": "3F98",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "wooclap",
+   "nome": "Wooclap",
+   "stand": "3A16",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "wortmann-ag",
+   "nome": "Wortmann AG",
+   "stand": "3J16",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "wunder-control-solutions",
+   "nome": "WUNDER CONTROL SOLUTIONS",
+   "stand": "3G58",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "x-growai",
+   "nome": "X-Grow.AI",
+   "stand": "3C114",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "xfusion",
+   "nome": "xFusion",
+   "stand": "5D22",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "xpeng",
+   "nome": "XPENG",
+   "stand": "3F84",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "ynvolve",
+   "nome": "YNVOLVE",
+   "stand": "3G26",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "yocab%C3%A9",
+   "nome": "Yocabé",
+   "stand": "3K64",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "youtrust",
+   "nome": "Youtrust",
+   "stand": "3D30",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "zelvion-tech",
+   "nome": "Zelvion Tech",
+   "stand": "3J74",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "zepo-intelligence",
+   "nome": "Zepo Intelligence",
+   "stand": "3K30",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "zigzag-28-d%C3%ADas",
+   "nome": "Zigzag",
+   "stand": "S05",
+   "patrocinio": "Shopify Partner Village"
+  },
+  {
+   "slug": "zoho",
+   "nome": "Zoho",
+   "stand": "3E33",
+   "patrocinio": "VIP Lounge Sponsor"
+  },
+  {
+   "slug": "zylon",
+   "nome": "Zylon",
+   "stand": "3K02",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "zyxel-networks",
+   "nome": "Zyxel Networks",
+   "stand": "3G42",
+   "patrocinio": "Exhibitor"
+  }
+ ]
+}

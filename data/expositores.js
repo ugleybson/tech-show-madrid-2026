@@ -1,0 +1,1189 @@
+// Gerado por tools/expositores_site.py a partir de tools/expositores_curadoria.json
+const EXPOSITORES_VERSAO = 1;
+const PERGUNTAS_GERAIS_EXP = [
+ "Se fossem uma consultora de PME em Portugal a tornar-se AI First, por onde começavam?",
+ "Que casos de uso de IA estão a ter retorno real nos vossos clientes PME, e em quanto tempo?",
+ "Quem é a pessoa certa para continuar a conversa depois da feira?"
+];
+const CATEGORIAS_EXP = [
+ {
+  "id": "gestao-contab",
+  "nome": "Gestão e contabilidade",
+  "cor": "#10b981",
+  "perguntas": [
+   "Que funções de IA já estão disponíveis hoje e quais chegam nos próximos 12 meses?",
+   "Têm programa de parceiros para gabinetes de contabilidade ou consultoras? Que margens e requisitos?",
+   "Há API aberta para ligar a n8n, OCR e agentes externos?",
+   "Têm clientes ou parceiros em Portugal? Quem é o contacto para o mercado português?"
+  ]
+ },
+ {
+  "id": "incentivos-concursos",
+  "nome": "Incentivos e concursos",
+  "cor": "#f59e0b",
+  "perguntas": [
+   "Como usam IA para encontrar e qualificar avisos ou concursos para cada empresa?",
+   "Cobrem Portugal e fundos europeus, ou só Espanha?",
+   "Há API ou exportação para integrar no nosso fluxo de pré-análise de candidaturas?",
+   "Modelo de parceria para consultoras que preparam candidaturas?"
+  ]
+ },
+ {
+  "id": "rh",
+  "nome": "RH e pessoas",
+  "cor": "#ec4899",
+  "perguntas": [
+   "Que tarefas de RH a IA já faz sozinha no vosso produto?",
+   "Têm programa para assessorias ou gabinetes que gerem salários e RH de PME?",
+   "O produto cumpre a legislação laboral portuguesa? Há clientes em Portugal?",
+   "Que integração existe com software de contabilidade e salários?"
+  ]
+ },
+ {
+  "id": "agentes-ia",
+  "nome": "Agentes e plataformas de IA",
+  "cor": "#6366f1",
+  "perguntas": [
+   "Que agentes já estão em produção em PME e que processos substituem?",
+   "Como tratam a supervisão humana, os registos e a governação dos agentes?",
+   "Programa de parceiros ou white-label para consultoras que implementam em clientes?",
+   "Onde ficam os dados (UE) e como se cumpre o RGPD e o AI Act?"
+  ]
+ },
+ {
+  "id": "dados-docs",
+  "nome": "Documentos, dados e BI",
+  "cor": "#0ea5e9",
+  "perguntas": [
+   "Que precisão têm na extracção de faturas, contratos e documentos em português?",
+   "Como se liga a uma base de conhecimento interna com pesquisa e respostas com fonte (RAG)?",
+   "Têm dashboards que explicam a variação dos números, não só mostram?",
+   "Preço para volumes de uma consultora com algumas centenas de clientes PME?"
+  ]
+ },
+ {
+  "id": "marketing",
+  "nome": "Marketing e conteúdo",
+  "cor": "#a855f7",
+  "perguntas": [
+   "Que parte da produção de conteúdo a vossa IA faz hoje, e com que controlo de marca?",
+   "Suportam português de Portugal (voz, texto, avatares)?",
+   "Há programa de agência ou revenda para quem gere marketing de PME?",
+   "Que resultados mostram clientes PME?"
+  ]
+ },
+ {
+  "id": "cloud-seg",
+  "nome": "Cloud e segurança",
+  "cor": "#64748b",
+  "perguntas": [
+   "Que oferta têm para alojar n8n, modelos e bases vectoriais na UE?",
+   "Programa de parceiros para consultoras que gerem a infraestrutura de PME?",
+   "Como protegem dados de clientes usados por agentes de IA?",
+   "Custos típicos para uma PME com 10 a 50 utilizadores?"
+  ]
+ },
+ {
+  "id": "rede-pt-es",
+  "nome": "Rede e internacionalização",
+  "cor": "#ef4444",
+  "perguntas": [
+   "Que apoios existem para empresas portuguesas que querem entrar em Espanha?",
+   "Que parceiros procuram em Portugal?",
+   "Que eventos ou programas recomendam para criar rede ibérica em IA?",
+   "Podemos levar clientes PME a reuniões convosco?"
+  ]
+ }
+];
+const EXPOSITORES = [
+ {
+  "id": "e01",
+  "slug": "cegid",
+  "nome": "Cegid (Primavera)",
+  "stand": "3E84",
+  "categoria": "gestao-contab",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m4",
+   "m1"
+  ],
+  "dia": "2026-11-04",
+  "porque": "A Cegid é dona do Primavera, o software de contabilidade mais usado nas PME portuguesas. Saber o roteiro de IA e as condições de parceiro para gabinetes.",
+  "perguntas": [
+   "Que funções de IA chegam ao Primavera em Portugal e quando?"
+  ],
+  "nome_oficial": "CEGID",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.cegid.com/ib/es/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/cegid"
+ },
+ {
+  "id": "e02",
+  "slug": "sage",
+  "nome": "Sage",
+  "stand": "3E40",
+  "categoria": "gestao-contab",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m4",
+   "m1"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Sage Copilot e programa de parceiros contabilistas. Fala no programa: aproveitar a sessão para abordar o orador.",
+  "perguntas": [
+   "O Sage Copilot está disponível para Portugal? Que tarefas contabilísticas já automatiza?"
+  ],
+  "nome_oficial": "Sage",
+  "patrocinio": "Theatre Sponsor",
+  "site": "https://sage.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/sage"
+ },
+ {
+  "id": "e03",
+  "slug": "wolters-kluwer",
+  "nome": "Wolters Kluwer (a3)",
+  "stand": "3F98",
+  "categoria": "gestao-contab",
+  "prioridade": "A",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m4"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Referência em software fiscal e contabilístico para assessorias em Espanha. Benchmark para o serviço de contabilidade AI First.",
+  "perguntas": [
+   "Como mudou o trabalho das assessorias que usam a vossa IA? Que tarefas desapareceram?"
+  ],
+  "nome_oficial": "Wolters Kluwer",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.wolterskluwer.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/wolters-kluwer"
+ },
+ {
+  "id": "e04",
+  "slug": "holded",
+  "nome": "Holded",
+  "stand": "3D36",
+  "categoria": "gestao-contab",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m4"
+  ],
+  "dia": "2026-11-04",
+  "porque": "ERP cloud para PME com programa para contabilistas. Possível ferramenta a recomendar ou revender a clientes.",
+  "perguntas": [
+   "Programa Holded para asesores: comissões, formação, clientes em Portugal?"
+  ],
+  "nome_oficial": "HOLDED",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.holded.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/holded"
+ },
+ {
+  "id": "e05",
+  "slug": "odoo",
+  "nome": "Odoo",
+  "stand": "3H16",
+  "categoria": "gestao-contab",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m4",
+   "m3"
+  ],
+  "dia": "2026-11-04",
+  "porque": "ERP open source com IA e rede de parceiros implementadores. Pode virar serviço de implementação para clientes PME.",
+  "perguntas": [
+   "Requisitos para ser parceiro Odoo em Portugal e localização fiscal portuguesa?"
+  ],
+  "nome_oficial": "Odoo",
+  "patrocinio": "Exhibitor",
+  "site": "https://WWW.ODOO.COM",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/odoo"
+ },
+ {
+  "id": "e06",
+  "slug": "zoho",
+  "nome": "Zoho",
+  "stand": "3E33",
+  "categoria": "gestao-contab",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m2",
+   "m3"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Zoho One e a IA Zia cobrem CRM, marketing e finanças. Programa de revenda. Fala no programa.",
+  "perguntas": [
+   "Que agentes Zia existem para CRM e marketing de PME? Margem de parceiro revendedor?"
+  ],
+  "nome_oficial": "Zoho",
+  "patrocinio": "VIP Lounge Sponsor",
+  "site": "https://www.zoho.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/zoho"
+ },
+ {
+  "id": "e07",
+  "slug": "adjudicaciones-tic-sl",
+  "nome": "TendersTool",
+  "stand": "3G61",
+  "categoria": "incentivos-concursos",
+  "prioridade": "A",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m5",
+   "m4"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Monitorização de concursos públicos com IA. Referência directa para o AI Incentive Copilot e para o analista de concursos.",
+  "perguntas": [
+   "Cobrem o Portal BASE e o JOUE? Como classificam a adequação de um concurso a uma empresa?"
+  ],
+  "nome_oficial": "TendersTool",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.adjudicacionestic.com/front/quienes-somos.php",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/adjudicaciones-tic-sl"
+ },
+ {
+  "id": "e08",
+  "slug": "factorial",
+  "nome": "Factorial",
+  "stand": "3E14",
+  "categoria": "rh",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m1"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Software de RH para PME com programa de parceiros para assessorias. Serviço complementar para clientes de contabilidade.",
+  "perguntas": [
+   "Programa de partners para assessorias em Portugal: comissão recorrente?"
+  ],
+  "nome_oficial": "Factorial",
+  "patrocinio": "Theatre Sponsor",
+  "site": "https://factorialhr.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/factorial"
+ },
+ {
+  "id": "e09",
+  "slug": "microsoft",
+  "nome": "Microsoft",
+  "stand": "7C",
+  "categoria": "agentes-ia",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m3",
+   "m1"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Copilot, Copilot Studio e Azure AI Foundry. Base provável do Sistema de IA Empresarial e do programa de parceiros Microsoft.",
+  "perguntas": [
+   "Que caminho de parceria recomendam a uma consultora de PME que quer vender agentes Copilot Studio?"
+  ],
+  "nome_oficial": "Microsoft",
+  "patrocinio": "Co-sponsored Session",
+  "site": "",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/microsoft"
+ },
+ {
+  "id": "e10",
+  "slug": "maisa-ai",
+  "nome": "Maisa AI",
+  "stand": "3G70",
+  "categoria": "agentes-ia",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Agentes empresariais auditáveis, empresa de Valência. Fala no programa. Possível parceiro tecnológico para agentes por função.",
+  "perguntas": [
+   "Trabalham com consultoras como implementadoras? Que dimensão mínima de cliente?"
+  ],
+  "nome_oficial": "Maisa AI",
+  "patrocinio": "Gold Sponsor",
+  "site": "https://maisa.ai/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/maisa-ai"
+ },
+ {
+  "id": "e11",
+  "slug": "zylon",
+  "nome": "Zylon",
+  "stand": "3K02",
+  "categoria": "agentes-ia",
+  "prioridade": "A",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-04",
+  "porque": "IA privada e RAG instalados na empresa (equipa do PrivateGPT). Encaixa no Norporgest Knowledge System com dados sensíveis de clientes.",
+  "perguntas": [
+   "Requisitos de hardware e preço para uma equipa de 20 a 50 pessoas? Licença para revenda?"
+  ],
+  "nome_oficial": "Zylon",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.zylon.ai/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/zylon"
+ },
+ {
+  "id": "e12",
+  "slug": "anyformat",
+  "nome": "Anyformat",
+  "stand": "3K50",
+  "categoria": "dados-docs",
+  "prioridade": "A",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3",
+   "m4"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Extracção de dados de documentos com IA. Base do AI Document Agent para faturas, extractos e candidaturas. Fala no programa.",
+  "perguntas": [
+   "Testamos com 20 documentos portugueses reais? Integração com n8n?"
+  ],
+  "nome_oficial": "AnyFormat",
+  "patrocinio": "Exhibitor",
+  "site": "https://anyformat.ai/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/anyformat"
+ },
+ {
+  "id": "e13",
+  "slug": "intelequia",
+  "nome": "Intelequia",
+  "stand": "3G74",
+  "categoria": "agentes-ia",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m3",
+   "m1"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Integrador Microsoft especializado em IA. Possível parceiro de subcontratação ou white-label para projectos maiores.",
+  "perguntas": [
+   "Fazem projectos em subcontratação para consultoras? Que tipo de projecto de IA vendem mais a PME?"
+  ],
+  "nome_oficial": "Intelequia",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.intelequia.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/intelequia"
+ },
+ {
+  "id": "e14",
+  "slug": "qonto",
+  "nome": "Qonto",
+  "stand": "P01",
+  "categoria": "gestao-contab",
+  "prioridade": "A",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m4"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Banco online para PME com programa para contabilistas e integrações contabilísticas. Fala no programa.",
+  "perguntas": [
+   "Programa de parceiros contabilistas em Portugal? Ligação directa ao Primavera ou TOConline?"
+  ],
+  "nome_oficial": "Qonto",
+  "patrocinio": "PrestaShop Sponsor",
+  "site": "http://www.qonto.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/qonto"
+ },
+ {
+  "id": "e15",
+  "slug": "seidor-solutions",
+  "nome": "Seidor",
+  "stand": "3K20, 3J24",
+  "categoria": "agentes-ia",
+  "prioridade": "A",
+  "objetivo": "rede",
+  "responsaveis": [
+   "m1"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Grande integrador ibérico com escritório em Portugal. Aliança de co-venda: eles na tecnologia, a Norporgest na consultoria às PME. Fala no programa.",
+  "perguntas": [
+   "A Seidor Portugal procura parceiros de consultoria para PME? Como funciona a co-venda?"
+  ],
+  "nome_oficial": "Seidor Solutions",
+  "patrocinio": "VIP Lounge Sponsor",
+  "site": "https://www.seidor.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/seidor-solutions"
+ },
+ {
+  "id": "e16",
+  "slug": "coverflex",
+  "nome": "Coverflex",
+  "stand": "3C30",
+  "categoria": "rh",
+  "prioridade": "A",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m1",
+   "m5"
+  ],
+  "dia": "2026-11-05",
+  "idioma": "pt",
+  "porque": "Scale-up portuguesa de benefícios para empresas. Feedback de quem vende tecnologia a PME portuguesas, e programa de parceiros. Fala no programa.",
+  "perguntas": [
+   "O que funcionou para vender a PME portuguesas? Têm programa para contabilistas?"
+  ],
+  "nome_oficial": "Coverflex",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://coverflex.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/coverflex"
+ },
+ {
+  "id": "e17",
+  "slug": "r2-docuo",
+  "nome": "R2 Docuo",
+  "stand": "3G98",
+  "categoria": "dados-docs",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Gestão documental com fluxos e assinatura. Referência para o arquivo digital de clientes e o Document Agent.",
+  "perguntas": [],
+  "nome_oficial": "R2 Docuo",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.r2docuo.com/es/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/r2-docuo"
+ },
+ {
+  "id": "e18",
+  "slug": "leexi",
+  "nome": "Leexi",
+  "stand": "3H24",
+  "categoria": "agentes-ia",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3",
+   "m1"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Notas de reunião com IA e follow-up automático. Corresponde ao AI Meeting Agent do plano.",
+  "perguntas": [
+   "Funciona em português de Portugal? Integra com CRM e Teams?"
+  ],
+  "nome_oficial": "Leexi",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.leexi.ai",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/leexi"
+ },
+ {
+  "id": "e19",
+  "slug": "bizneo",
+  "nome": "Bizneo HR",
+  "stand": "3A18",
+  "categoria": "rh",
+  "prioridade": "B",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m1"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Software de RH para PME com canal de assessorias. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "BIZNEO",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://bizneo.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/bizneo"
+ },
+ {
+  "id": "e20",
+  "slug": "lucca",
+  "nome": "Lucca",
+  "stand": "3E24",
+  "categoria": "rh",
+  "prioridade": "B",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m1"
+  ],
+  "dia": "2026-11-04",
+  "porque": "RH e despesas para PME, programa de parceiros contabilistas. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Lucca",
+  "patrocinio": "Gold Sponsor",
+  "site": "https://www.lucca-software.es/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/lucca"
+ },
+ {
+  "id": "e21",
+  "slug": "tramitapp",
+  "nome": "TramitApp",
+  "stand": "3C04",
+  "categoria": "rh",
+  "prioridade": "B",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m1"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Controlo de ponto e RH para PME vendido via assessorias. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "TramitApp",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://www.tramitapp.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/tramitapp"
+ },
+ {
+  "id": "e22",
+  "slug": "revolut",
+  "nome": "Revolut Business",
+  "stand": "3E44",
+  "categoria": "gestao-contab",
+  "prioridade": "B",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m4"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Conta empresarial com integrações contabilísticas. Comparar com Qonto para recomendar a clientes.",
+  "perguntas": [],
+  "nome_oficial": "REVOLUT",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.revolut.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/revolut"
+ },
+ {
+  "id": "e23",
+  "slug": "accountali",
+  "nome": "Accountali",
+  "stand": "FB5",
+  "categoria": "gestao-contab",
+  "prioridade": "B",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m4"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Contabilidade para vendedores de e-commerce apoiada por automação. Feedback de um par sobre contabilidade AI First.",
+  "perguntas": [
+   "Quanto do vosso processo contabilístico já é automático? Que ferramentas usam?"
+  ],
+  "nome_oficial": "ACCOUNTALI",
+  "patrocinio": "FBA Show Sponsor",
+  "site": "https://accountali.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/accountali"
+ },
+ {
+  "id": "e24",
+  "slug": "kompass",
+  "nome": "Kompass",
+  "stand": "3A40",
+  "categoria": "rede-pt-es",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m2",
+   "m5"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Base de dados B2B internacional. Alimenta o AI Lead Agent e projectos de internacionalização. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "KOMPASS",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.kompass.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/kompass"
+ },
+ {
+  "id": "e25",
+  "slug": "partoo",
+  "nome": "Partoo",
+  "stand": "3H103",
+  "categoria": "marketing",
+  "prioridade": "B",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m2"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Presença local, avaliações e mensagens com IA. Serviço revendável a PME com lojas ou balcões.",
+  "perguntas": [],
+  "nome_oficial": "Partoo",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.partoo.es",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/partoo"
+ },
+ {
+  "id": "e26",
+  "slug": "synthesia",
+  "nome": "Synthesia",
+  "stand": "3C14",
+  "categoria": "marketing",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m2"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Vídeo com avatares de IA. Útil para reels, formação de clientes e a Academia Interna de IA.",
+  "perguntas": [],
+  "nome_oficial": "Synthesia",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.synthesia.io",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/synthesia"
+ },
+ {
+  "id": "e27",
+  "slug": "vidext",
+  "nome": "Vidext",
+  "stand": "3C20",
+  "categoria": "marketing",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m2"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Vídeo com IA, empresa espanhola. Alternativa à Synthesia. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Vidext",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://vidext.io",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/vidext"
+ },
+ {
+  "id": "e28",
+  "slug": "genially",
+  "nome": "Genially",
+  "stand": "3E25",
+  "categoria": "marketing",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m2"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Conteúdo interactivo com IA para propostas, formação e marketing.",
+  "perguntas": [],
+  "nome_oficial": "Genially",
+  "patrocinio": "Exhibitor",
+  "site": "https://genially.com/es/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/genially"
+ },
+ {
+  "id": "e29",
+  "slug": "iseazy",
+  "nome": "isEazy",
+  "stand": "3C24",
+  "categoria": "rh",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m1",
+   "m2"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Formação online com IA. Base possível para a Academia de IA e para formação de clientes. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "isEazy",
+  "patrocinio": "Silver Sponsor",
+  "site": "",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/iseazy"
+ },
+ {
+  "id": "e30",
+  "slug": "happyrobot",
+  "nome": "HappyRobot",
+  "stand": "3K54",
+  "categoria": "agentes-ia",
+  "prioridade": "B",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m3",
+   "m2"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Agentes de voz em produção. Benchmark de produto e de preço para agentes de atendimento. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "HappyRobot",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://happyrobot.ai",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/happyrobot"
+ },
+ {
+  "id": "e31",
+  "slug": "konvo-ai",
+  "nome": "Konvo AI",
+  "stand": "S15",
+  "categoria": "agentes-ia",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m2"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Agentes conversacionais para vendas online. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Konvo AI",
+  "patrocinio": "Shopify Partner Village",
+  "site": "https://www.konvoai.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/konvo-ai"
+ },
+ {
+  "id": "e32",
+  "slug": "ovhcloud",
+  "nome": "OVHcloud",
+  "stand": "3F70",
+  "categoria": "cloud-seg",
+  "prioridade": "B",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Cloud europeia para alojar n8n, RAG e modelos com dados na UE. Programa de parceiros. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "OVHcloud",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://www.ovh.es",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/ovhcloud"
+ },
+ {
+  "id": "e33",
+  "slug": "ionos-cloud-slu",
+  "nome": "IONOS",
+  "stand": "3F17",
+  "categoria": "cloud-seg",
+  "prioridade": "B",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Cloud europeia com IA gerida e programa de parceiros. Comparar com OVHcloud. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Ionos Cloud S.L.U.",
+  "patrocinio": "Theatre Sponsor",
+  "site": "https://www.ionos-group.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/ionos-cloud-slu"
+ },
+ {
+  "id": "e34",
+  "slug": "nextcloud",
+  "nome": "Nextcloud",
+  "stand": "3G56",
+  "categoria": "dados-docs",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Plataforma documental soberana com assistente de IA. Opção para o Knowledge System. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Nextcloud",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://nextcloud.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/nextcloud"
+ },
+ {
+  "id": "e35",
+  "slug": "elastic",
+  "nome": "Elastic",
+  "stand": "3K46",
+  "categoria": "dados-docs",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Pesquisa e RAG em escala. Referência técnica para o Knowledge System. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Elastic",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://www.elastic.co",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/elastic"
+ },
+ {
+  "id": "e36",
+  "slug": "clearpeaks",
+  "nome": "ClearPeaks (Synvert)",
+  "stand": "3F74",
+  "aliases": [
+   "Synvert ClearPeaks"
+  ],
+  "categoria": "dados-docs",
+  "prioridade": "B",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m4",
+   "m3"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Consultora de BI e dados com IA. Referência para o serviço de controlo de gestão com dashboards que explicam. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "ClearPeaks",
+  "patrocinio": "Gold Sponsor",
+  "site": "https://www.clearpeaks.com/?lang=es",
+  "descricao_oficial": "ClearPeaks es una consultora especializada en ofrecer servicios y soluciones en Everything Data: Business Intelligence, Advanced Analytics, Big Data, Cloud y aplicaciones web y móviles. Fundada en 2000, hemos sido un socio de confianza para nuestros clientes en más de 15 sectores industriales y en una amplia gama de áreas funcionales, con operaciones que abarcan Europa, Oriente Medio, Estados Unid",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/clearpeaks"
+ },
+ {
+  "id": "e37",
+  "slug": "astrafy-sl",
+  "nome": "Astrafy",
+  "stand": "3K52",
+  "categoria": "dados-docs",
+  "prioridade": "B",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Engenharia de dados e IA sobre Google Cloud. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Astrafy S.L",
+  "patrocinio": "Exhibitor",
+  "site": "https://astrafy.io/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/astrafy-sl"
+ },
+ {
+  "id": "e38",
+  "slug": "premium-minds-",
+  "nome": "Premium Minds",
+  "stand": "3J66",
+  "categoria": "rede-pt-es",
+  "prioridade": "B",
+  "objetivo": "rede",
+  "responsaveis": [
+   "m3",
+   "m5"
+  ],
+  "dia": "2026-11-05",
+  "idioma": "pt",
+  "porque": "Software house portuguesa. Possível parceiro de desenvolvimento para projectos maiores.",
+  "perguntas": [],
+  "nome_oficial": "Premium Minds",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.premium-minds.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/premium-minds-"
+ },
+ {
+  "id": "e39",
+  "slug": "portugal-dc",
+  "nome": "Portugal DC",
+  "stand": "5B21",
+  "categoria": "rede-pt-es",
+  "prioridade": "B",
+  "objetivo": "rede",
+  "responsaveis": [
+   "m4",
+   "m5"
+  ],
+  "dia": "2026-11-04",
+  "idioma": "pt",
+  "porque": "Associação portuguesa de data centers, no pavilhão do Marco. Rede portuguesa em Madrid. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Portugal DC",
+  "patrocinio": "Exhibitor",
+  "site": "https://portugaldc.pt/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/portugal-dc"
+ },
+ {
+  "id": "e40",
+  "slug": "camara-de-comercio",
+  "nome": "Cámara de Madrid",
+  "stand": "3F02",
+  "aliases": [
+   "Cámara Oficial de Comercio"
+  ],
+  "categoria": "rede-pt-es",
+  "prioridade": "B",
+  "objetivo": "rede",
+  "responsaveis": [
+   "m5",
+   "m1"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Apoio a empresas estrangeiras em Madrid. Internacionalização de clientes portugueses para Espanha. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Cámara de Madrid",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.camaramadrid.es/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/camara-de-comercio"
+ },
+ {
+  "id": "e41",
+  "slug": "comunidad-de-madrid",
+  "nome": "Comunidad de Madrid",
+  "stand": "3F01",
+  "categoria": "rede-pt-es",
+  "prioridade": "B",
+  "objetivo": "rede",
+  "responsaveis": [
+   "m5"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Programas regionais de inovação e IA. Ao lado da Cámara de Madrid.",
+  "perguntas": [],
+  "nome_oficial": "COMUNIDAD DE MADRID",
+  "patrocinio": "Exhibitor",
+  "site": "",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/comunidad-de-madrid"
+ },
+ {
+  "id": "e42",
+  "slug": "todo-en-cloud",
+  "nome": "Todo en Cloud",
+  "stand": "3K10",
+  "categoria": "agentes-ia",
+  "prioridade": "B",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m1",
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Fala sobre IA que se pode governar, sessão do roteiro do Pedro. Continuar a conversa no stand.",
+  "perguntas": [],
+  "nome_oficial": "TODO EN CLOUD",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://www.todoencloud.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/todo-en-cloud"
+ },
+ {
+  "id": "e43",
+  "slug": "muchbetterai",
+  "nome": "Muchbetter.ai",
+  "stand": "3E22",
+  "categoria": "agentes-ia",
+  "prioridade": "C",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Startup de IA aplicada a empresas. Ver o que oferece.",
+  "perguntas": [],
+  "nome_oficial": "Muchbetter.ai",
+  "patrocinio": "Exhibitor",
+  "site": "https://muchbetter.ai/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/muchbetterai"
+ },
+ {
+  "id": "e44",
+  "slug": "manago-ai",
+  "nome": "Manago AI",
+  "stand": "3F112",
+  "categoria": "agentes-ia",
+  "prioridade": "C",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "IA para gestão. Ver se encaixa no AI Management Agent.",
+  "perguntas": [],
+  "nome_oficial": "Manago AI",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.manago.ai",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/manago-ai"
+ },
+ {
+  "id": "e45",
+  "slug": "lixsaai",
+  "nome": "LIXSA.AI",
+  "stand": "3D46",
+  "categoria": "agentes-ia",
+  "prioridade": "C",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m1"
+  ],
+  "dia": "2026-11-05",
+  "porque": "IA aplicada, zona de RH. Ver o que oferece.",
+  "perguntas": [],
+  "nome_oficial": "LIXSA.AI",
+  "patrocinio": "Exhibitor",
+  "site": "https://lixsa.ai/es/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/lixsaai"
+ },
+ {
+  "id": "e46",
+  "slug": "zepo-intelligence",
+  "nome": "Zepo Intelligence",
+  "stand": "3K30",
+  "categoria": "cloud-seg",
+  "prioridade": "C",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Ciberinteligência com IA. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "Zepo Intelligence",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://zepo.ai",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/zepo-intelligence"
+ },
+ {
+  "id": "e47",
+  "slug": "velorum-labs",
+  "nome": "Velorum Labs",
+  "stand": "3G66",
+  "categoria": "agentes-ia",
+  "prioridade": "C",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Laboratório de IA. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "VELORUM LABS",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://www.velorumlabs.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/velorum-labs"
+ },
+ {
+  "id": "e48",
+  "slug": "lamdaloopers",
+  "nome": "LamdaLoopers",
+  "stand": "3H71",
+  "categoria": "agentes-ia",
+  "prioridade": "C",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Desenvolvimento com IA. Possível parceiro técnico.",
+  "perguntas": [],
+  "nome_oficial": "LamdaLoopers",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.lambdaloopers.com",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/lamdaloopers"
+ },
+ {
+  "id": "e49",
+  "slug": "the-agent",
+  "nome": "The Agent",
+  "stand": "3A50",
+  "categoria": "agentes-ia",
+  "prioridade": "C",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m1"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Agentes de IA, zona de RH. Ver casos de uso.",
+  "perguntas": [],
+  "nome_oficial": "The Agent",
+  "patrocinio": "Exhibitor",
+  "site": "https://theagent.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/the-agent"
+ },
+ {
+  "id": "e50",
+  "slug": "cl%C3%BAster-tic-galicia",
+  "nome": "Clúster TIC Galicia",
+  "stand": "3F86",
+  "categoria": "rede-pt-es",
+  "prioridade": "C",
+  "objetivo": "rede",
+  "responsaveis": [
+   "m5"
+  ],
+  "dia": "2026-11-04",
+  "porque": "Stand partilhado por várias empresas galegas. Rede transfronteiriça com o Norte de Portugal.",
+  "perguntas": [],
+  "nome_oficial": "Clúster TIC Galicia",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.clusterticgalicia.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/cl%C3%BAster-tic-galicia"
+ },
+ {
+  "id": "e51",
+  "slug": "eset-espa%C3%B1a",
+  "nome": "ESET",
+  "stand": "3H34",
+  "categoria": "cloud-seg",
+  "prioridade": "C",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Segurança para PME com programa de revenda. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "ESET España",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://www.eset.com/es/para-empresas/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/eset-espa%C3%B1a"
+ },
+ {
+  "id": "e52",
+  "slug": "keepit",
+  "nome": "Keepit",
+  "stand": "3G46",
+  "categoria": "cloud-seg",
+  "prioridade": "C",
+  "objetivo": "parceria",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Cópias de segurança de Microsoft 365. Serviço revendável. Fala no programa.",
+  "perguntas": [],
+  "nome_oficial": "KEEPIT",
+  "patrocinio": "Exhibitor",
+  "site": "http://www.keepit.com/es",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/keepit"
+ },
+ {
+  "id": "e53",
+  "slug": "ringover",
+  "nome": "Ringover",
+  "stand": "3D38",
+  "categoria": "marketing",
+  "prioridade": "C",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m2"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Telefone na cloud com IA para atendimento e vendas.",
+  "perguntas": [],
+  "nome_oficial": "RINGOVER",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.ringover.es",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/ringover"
+ },
+ {
+  "id": "e54",
+  "slug": "h-products-europe-gmbh",
+  "nome": "Kyocera",
+  "stand": "3J50",
+  "categoria": "dados-docs",
+  "prioridade": "C",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m4"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Digitalização e captura documental com software de gestão documental.",
+  "perguntas": [],
+  "nome_oficial": "Kyocera",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.kyoceradocumentsolutions.es/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/h-products-europe-gmbh"
+ }
+];

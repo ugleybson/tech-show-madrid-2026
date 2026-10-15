@@ -99,6 +99,7 @@
 
       <div class="sidebar__section">
         <button class="btn-primary w-full" id="btn-export">📤 Exportar Plano</button>
+        <button class="btn-secondary w-full mt-2" id="btn-export-contactos">📇 Exportar contactos (CSV)</button>
         <button class="btn-secondary w-full mt-2" id="btn-view-schedule">📅 Ver Agenda</button>
         <button class="btn-secondary w-full mt-2" id="btn-plan-credencial">🎫 Planear pelas credenciais</button>
       </div>
@@ -121,7 +122,7 @@
       <!-- Search -->
       <div class="search-bar">
         <span class="search-bar__icon">🔍</span>
-        <input class="search-bar__input" type="text" id="search-input" placeholder="Pesquisar sessões, oradores, empresas..." />
+        <input class="search-bar__input" type="text" id="search-input" placeholder="Pesquisar sessões, oradores, empresas, stands..." />
         <span class="search-bar__count" id="search-count"></span>
       </div>
 
@@ -132,6 +133,7 @@
           <button class="view-btn" id="view-timeline" title="Cronograma">▤ Cronograma</button>
           <button class="view-btn" id="view-individual" title="Plano individual pela credencial">👤 Plano individual</button>
           <button class="view-btn" id="view-agora" title="Onde está cada um agora">⏱ Agora</button>
+          <button class="view-btn" id="view-expositores" title="Stands a visitar (plano AI First)">🏢 Stands</button>
         </div>
         <div class="sort-group">
           <label class="sort-label">Ordenar por:</label>
@@ -212,11 +214,27 @@
     </div>
   </div>
 
+  <!-- Modal: Expositor (stand) -->
+  <div class="modal-overlay" id="modal-expositor" role="dialog" aria-modal="true" aria-labelledby="modal-exp-title">
+    <div class="modal">
+      <div class="modal__header">
+        <div class="modal__track-badge" id="modal-exp-badge"></div>
+        <button class="modal__close" id="modal-expositor-close" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal__body" id="modal-exp-body"></div>
+      <div class="modal__footer">
+        <p class="modal__assign-label">Quem visita este stand:</p>
+        <div class="modal__team-buttons" id="modal-exp-team"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Navegação inferior (telemóvel) -->
   <nav class="bottom-nav" id="bottom-nav" aria-label="Navegação">
     <button class="bottom-nav__btn" data-nav="grid"><span class="bottom-nav__icon">📋</span>Programa</button>
     <button class="bottom-nav__btn" data-nav="individual"><span class="bottom-nav__icon">👤</span>Meu plano</button>
     <button class="bottom-nav__btn" data-nav="agora"><span class="bottom-nav__icon">⏱</span>Agora</button>
+    <button class="bottom-nav__btn" data-nav="expositores"><span class="bottom-nav__icon">🏢</span>Stands</button>
     <button class="bottom-nav__btn" data-nav="menu"><span class="bottom-nav__icon">☰</span>Equipa</button>
   </nav>
 
@@ -224,6 +242,7 @@
   <div class="toast" id="toast"></div>
 
   <script src="data/programa.js"></script>
+  <script src="data/expositores.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

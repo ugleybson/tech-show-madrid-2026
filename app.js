@@ -48,6 +48,12 @@ let state = {
   indTab: 'crono',          // telemóvel: separador do plano individual (crono | grelha)
   agoraSim: 630,            // vista Agora fora dos dias do evento: hora simulada (minutos)
   programa: { versao: 0, actualizado_em: null, verificado_em: null },
+  // Stands: {expId: {membros?, dia?, visitado, followup, contacto, notas, em}} (por dispositivo)
+  visitas: (() => { try { return JSON.parse(localStorage.getItem('tsm_visitas') || '{}'); } catch (e) { return {}; } })(),
+  expDia: 'dia',   // dia | todos
+  expPrio: '',     // '' | A | B | C
+  expCat: '',
+  expAberto: null,
 };
 
 function lerLocal(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
@@ -79,6 +85,7 @@ carregarProgramaGuardado();
 function saveState() {
   localStorage.setItem('tsm_equipa', JSON.stringify(state.equipa));
   localStorage.setItem('tsm_inscricoes', JSON.stringify(state.inscricoes));
+  gravarLocal('tsm_visitas', JSON.stringify(state.visitas));
 }
 
 // ── HELPERS ───────────────────────────────────────
@@ -154,6 +161,7 @@ function aplicarPrograma(dados) {
   TRACKS.splice(0, TRACKS.length, ...dados.tracks);
   SESSOES.splice(0, SESSOES.length, ...dados.sessoes);
   state.programa = { versao: dados.versao, actualizado_em: dados.actualizado_em, verificado_em: new Date().toISOString() };
+  if (typeof EXPOSITORES !== 'undefined') ligarExpositoresSessoes(); // oradores podem ter mudado
   return dif;
 }
 
@@ -473,6 +481,14 @@ function renderSummary() {
     <div class="summary-stat">
       <span class="summary-stat__label">Dias cobertos</span>
       <span class="summary-stat__value">2</span>
+    </div>
+    <div class="summary-stat">
+      <span class="summary-stat__label">Stands visitados</span>
+      <span class="summary-stat__value">${EXPOSITORES.filter(e => visita(e).visitado).length}/${EXPOSITORES.filter(e => membrosExp(e).length).length}</span>
+    </div>
+    <div class="summary-stat">
+      <span class="summary-stat__label">Follow-ups</span>
+      <span class="summary-stat__value" style="color:var(--color-warning)">${EXPOSITORES.filter(e => visita(e).followup).length}</span>
     </div>`;
 }
 
@@ -491,6 +507,7 @@ function detectConflicts() {
 // --- Session cards ---
 function renderSessions() {
   const container = document.getElementById('sessions-container');
+  if (state.view === 'expositores') { renderExpositores(container); return; }
   const list = filteredSessoes();
 
   document.getElementById('search-count').textContent = `${list.length} sessões`;
@@ -721,11 +738,14 @@ function renderIndividual(container) {
     <div class="ind-tabs" role="tablist">
       <button class="ind-tabs__btn ${state.indTab === 'crono' ? 'active' : ''}" data-ind-tab="crono">▤ Cronograma</button>
       <button class="ind-tabs__btn ${state.indTab === 'grelha' ? 'active' : ''}" data-ind-tab="grelha">▦ Grelha</button>
+      <button class="ind-tabs__btn ${state.indTab === 'stands' ? 'active' : ''}" data-ind-tab="stands">🏢 Stands</button>
     </div>
     <div class="ind-layout">
       <section class="ind-section ind-section--grelha"><h3 class="ind-section__title">▦ Grelha · salas do pavilhão ${m.pavilhao}${tracks.length > m.trilhas.length ? ' + roteiro' : ''}</h3>${grelha}</section>
       <section class="ind-section ind-section--crono"><h3 class="ind-section__title">▤ Cronograma do dia</h3>${crono}</section>
-    </div>`;
+    </div>
+    ${renderStandsMembro(m, dia)}`;
+  ligarStandsMembro(container);
 
   container.querySelectorAll('[data-pick-member]').forEach(b => b.addEventListener('click', () => {
     state.eu = b.dataset.pickMember;
@@ -1101,6 +1121,17 @@ function exportPlan() {
       });
       txt += '\n';
     }
+    const stands = EXPOSITORES.filter(e => membrosExp(e).includes(m.id)).sort(ordemExp);
+    if (stands.length) {
+      txt += '  Stands a visitar:\n';
+      stands.forEach(e => {
+        const v = visita(e);
+        txt += `    ${v.visitado ? '[x]' : '[ ]'} ${diaExp(e) === '2026-11-04' ? '4 Nov' : '5 Nov'} | ${e.stand} | ${e.nome} (${e.prioridade})${v.followup ? ' | FOLLOW-UP' : ''}\n`;
+        if (v.contacto) txt += `        Contacto: ${v.contacto}\n`;
+        if (v.notas) txt += `        Notas: ${v.notas.replace(/\n/g, ' / ')}\n`;
+      });
+      txt += '\n';
+    }
   });
 
   txt += '\nGerado em: ' + new Date().toLocaleString('pt-PT');
@@ -1125,6 +1156,356 @@ function showToast(msg) {
 }
 
 // --- Render All ---
+// ── STANDS (expositores a visitar · plano AI First) ──
+// EXPOSITORES, CATEGORIAS_EXP e PERGUNTAS_GERAIS_EXP vêm de data/expositores.js
+// (gerado por tools/expositores_site.py a partir de tools/expositores_curadoria.json).
+const EXPOSITORES_FONTES = [
+  'https://raw.githubusercontent.com/ugleybson/tech-show-madrid-2026/main/data/expositores.json',
+  'data/expositores.json',
+];
+const SWAPCARD_EXPOSITORES = 'https://madridtechshow.app.swapcard.com/event/tech-show-madrid-2026/exhibitors/RXZlbnRWaWV3XzEyOTIxNTc=';
+const PRIORIDADES = { A: 'Visita obrigatória', B: 'Se houver tempo', C: 'Oportunista' };
+const OBJETIVOS = { parceria: '🤝 Parceria / revenda', feedback: '💬 Feedback', produto: '🧪 Produto para nós', rede: '🌍 Rede' };
+let expositoresVersao = typeof EXPOSITORES_VERSAO !== 'undefined' ? EXPOSITORES_VERSAO : 0;
+
+function esc(t) {
+  return String(t ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+}
+function getCategoriaExp(id) { return CATEGORIAS_EXP.find(c => c.id === id) || { id, nome: id, cor: '#6366f1', perguntas: [] }; }
+function getExpositor(id) { return EXPOSITORES.find(e => e.id === id); }
+function visita(e) { return state.visitas[e.id] || {}; }
+function membrosExp(e) { const v = visita(e); return v.membros || e.responsaveis || []; }
+function diaExp(e) { return visita(e).dia || e.dia; }
+function alterarVisita(e, campos) {
+  state.visitas[e.id] = { ...visita(e), ...campos, em: new Date().toISOString() };
+  saveState();
+}
+
+// Zona a partir do stand: "3E84" → Pavilhão 3 · corredor E; aldeias com prefixo próprio
+function zonaStand(stand) {
+  const s = String(stand || '').split(',')[0].trim().toUpperCase();
+  let m;
+  if ((m = s.match(/^(\d)([A-Z])\d*/))) return { nome: `Pavilhão ${m[1]} · corredor ${m[2]}`, ordem: `${m[1]}${m[2]}` };
+  if (/^S\d/.test(s)) return { nome: 'Shopify Partner Village', ordem: '3ZS' };
+  if (/^P\d/.test(s)) return { nome: 'PrestaShop Village', ordem: '3ZP' };
+  if (/^FB/.test(s)) return { nome: 'FBA Show', ordem: '3ZF' };
+  if (/^RM/.test(s)) return { nome: 'Retail Media', ordem: '3ZR' };
+  return { nome: 'Outros', ordem: '9' };
+}
+function chaveStand(e) {
+  const s = String(e.stand || '').split(',')[0].trim().toUpperCase();
+  const n = (s.match(/(\d+)$/) || [0, 0])[1];
+  return `${zonaStand(s).ordem}-${String(n).padStart(4, '0')}`;
+}
+function ordemExp(a, b) {
+  return diaExp(a).localeCompare(diaExp(b)) || chaveStand(a).localeCompare(chaveStand(b));
+}
+
+// Liga cada expositor às sessões onde alguém da empresa fala (pelo campo "empresa" dos oradores)
+function normEmpresa(t) {
+  return String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+    .replace(/\(.*?\)/g, ' ').replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\b(s ?l ?u?|s ?a|ltd|gmbh|bv|iberia|espana|spain|group|groupe|solutions|software)\b/g, ' ')
+    .replace(/\s+/g, ' ').trim();
+}
+function ligarExpositoresSessoes() {
+  EXPOSITORES.forEach(e => {
+    const chaves = [e.nome, e.nome_oficial, ...(e.aliases || [])].map(normEmpresa).filter(k => k.length >= 3);
+    const fala = s => s.oradores.some(o => {
+      const emp = normEmpresa(o.empresa);
+      return emp && chaves.some(k => emp === k || emp.startsWith(k + ' ') || k.startsWith(emp + ' '));
+    });
+    e._sessoes = SESSOES.filter(s => ativa(s) && fala(s))
+      .sort((a, b) => (a.dia + a.hora_inicio).localeCompare(b.dia + b.hora_inicio)).map(s => s.id);
+  });
+}
+
+function filteredExpositores() {
+  let list = EXPOSITORES.slice();
+  if (state.expDia === 'dia') list = list.filter(e => diaExp(e) === state.diaAtivo);
+  if (state.expPrio) list = list.filter(e => e.prioridade === state.expPrio);
+  if (state.expCat) list = list.filter(e => e.categoria === state.expCat);
+  if (state.filtroMembro) list = list.filter(e => membrosExp(e).includes(state.filtroMembro));
+  const q = state.pesquisa.trim().toLowerCase();
+  if (q) list = list.filter(e => [e.nome, e.nome_oficial, e.stand, e.porque, getCategoriaExp(e.categoria).nome, visita(e).notas, visita(e).contacto]
+    .some(t => String(t || '').toLowerCase().includes(q)));
+  return list.sort(ordemExp);
+}
+
+function renderExpCard(e) {
+  const cat = getCategoriaExp(e.categoria);
+  const v = visita(e);
+  const quem = membrosExp(e).map(getMembro).filter(Boolean);
+  const fala = (e._sessoes || []).length;
+  return `
+    <div class="exp-card prio-${e.prioridade} ${v.visitado ? 'is-visited' : ''}" style="--track-color:${cat.cor}" data-exp-id="${e.id}">
+      <div class="exp-card__stand">${esc(e.stand)}</div>
+      <div class="exp-card__main">
+        <div class="exp-card__top">
+          <span class="exp-prio exp-prio--${e.prioridade}" title="${PRIORIDADES[e.prioridade]}">${e.prioridade}</span>
+          <span class="exp-card__name">${esc(e.nome)}</span>
+          ${v.visitado ? '<span class="exp-flag" title="Visitado">✅</span>' : ''}
+          ${v.followup ? '<span class="exp-flag" title="Follow-up">🔁</span>' : ''}
+        </div>
+        <div class="exp-card__meta"><span style="color:${cat.cor}">${esc(cat.nome)}</span> · ${OBJETIVOS[e.objetivo] || ''}${fala ? ` · 🎤 fala ${fala}×` : ''}</div>
+        <div class="exp-card__why">${esc(e.porque)}</div>
+      </div>
+      <div class="session-card__avatars exp-card__avatars">${quem.map(m => `<div class="session-card__avatar" style="background:${m.cor}" title="${esc(m.nome)}">${m.inicial}</div>`).join('')}</div>
+    </div>`;
+}
+
+function renderExpositores(container) {
+  container.className = 'sessions-container view-expositores';
+  const list = filteredExpositores();
+  document.getElementById('search-count').textContent = `${list.length} stands`;
+  const total = EXPOSITORES.filter(e => state.expDia !== 'dia' || diaExp(e) === state.diaAtivo);
+  const feitos = total.filter(e => visita(e).visitado).length;
+  const chip = (attr, val, atual, txt) => `<button class="exp-chip ${atual === val ? 'active' : ''}" data-${attr}="${val}">${txt}</button>`;
+
+  const grupos = [];
+  list.forEach(e => {
+    const z = (state.expDia === 'todos' ? (diaExp(e) === '2026-11-04' ? '4 Nov · ' : '5 Nov · ') : '') + zonaStand(e.stand).nome;
+    if (!grupos.length || grupos[grupos.length - 1].z !== z) grupos.push({ z, itens: [] });
+    grupos[grupos.length - 1].itens.push(e);
+  });
+
+  container.innerHTML = `
+    <div class="exp-toolbar">
+      <div class="exp-intro">
+        <strong>Stands a visitar · plano AI First</strong>
+        <span>${feitos}/${total.length} visitados ${state.expDia === 'dia' ? 'neste dia' : 'nos dois dias'} · ordenados pelo percurso no pavilhão</span>
+      </div>
+      <div class="exp-chips">
+        ${chip('exp-dia', 'dia', state.expDia, '📅 Este dia')}${chip('exp-dia', 'todos', state.expDia, 'Ambos os dias')}
+        <span class="exp-sep"></span>
+        ${chip('exp-prio', '', state.expPrio, 'Todas')}${['A','B','C'].map(p => chip('exp-prio', p, state.expPrio, `${p} · ${PRIORIDADES[p]}`)).join('')}
+      </div>
+      <select class="filter-select exp-cat" id="exp-cat">
+        <option value="">Todas as categorias</option>
+        ${CATEGORIAS_EXP.map(c => `<option value="${c.id}" ${state.expCat === c.id ? 'selected' : ''}>${esc(c.nome)}</option>`).join('')}
+      </select>
+    </div>
+    ${grupos.length ? grupos.map(g => `
+      <h3 class="exp-zone">${esc(g.z)} <span>${g.itens.length}</span></h3>
+      <div class="exp-list">${g.itens.map(renderExpCard).join('')}</div>`).join('')
+      : `<div class="no-results"><div class="no-results__icon">🏢</div><div class="no-results__text">Nenhum stand com estes filtros${state.expDia === 'dia' ? ' neste dia. Experimente "Ambos os dias".' : '.'}</div></div>`}
+    <p class="ind-hint">Lista curada a partir de ${EXPOSITORES.length} expositores escolhidos entre os mais de 500 da lista oficial. As notas e o estado das visitas ficam guardados neste telemóvel: exporte os contactos no fim de cada dia.</p>`;
+
+  container.querySelectorAll('[data-exp-dia]').forEach(b => b.addEventListener('click', () => { state.expDia = b.dataset.expDia; renderSessions(); }));
+  container.querySelectorAll('[data-exp-prio]').forEach(b => b.addEventListener('click', () => { state.expPrio = b.dataset.expPrio; renderSessions(); }));
+  container.querySelector('#exp-cat').addEventListener('change', ev => { state.expCat = ev.target.value; renderSessions(); });
+  container.querySelectorAll('[data-exp-id]').forEach(el => el.addEventListener('click', () => openExpositorModal(el.dataset.expId)));
+}
+
+// Secção "Stands a visitar" no plano individual
+function renderStandsMembro(m, dia) {
+  const meus = EXPOSITORES.filter(e => membrosExp(e).includes(m.id) && diaExp(e) === dia).sort(ordemExp);
+  const outroDia = EXPOSITORES.filter(e => membrosExp(e).includes(m.id) && diaExp(e) !== dia).length;
+  const primeiro = m.nome.split(' ')[0];
+  return `
+    <section class="ind-section ind-section--stands ind-stands">
+      <h3 class="ind-section__title ind-section__title--show">🏢 Stands a visitar · ${meus.filter(e => visita(e).visitado).length}/${meus.length} visitados</h3>
+      ${meus.length ? `<ol class="stand-list">${meus.map(e => {
+        const v = visita(e);
+        return `
+          <li class="stand-row prio-${e.prioridade} ${v.visitado ? 'is-visited' : ''}" style="--track-color:${getCategoriaExp(e.categoria).cor}">
+            <button class="stand-row__check" data-visitado="${e.id}" aria-label="Marcar ${esc(e.nome)} como visitado">${v.visitado ? '✅' : '⬜'}</button>
+            <span class="stand-row__body" data-exp-id="${e.id}">
+              <span class="stand-row__title"><b>${esc(e.stand)}</b> · ${esc(e.nome)} <span class="exp-prio exp-prio--${e.prioridade}">${e.prioridade}</span>${v.followup ? ' 🔁' : ''}</span>
+              <span class="stand-row__meta">${esc(zonaStand(e.stand).nome)} · ${OBJETIVOS[e.objetivo] || ''}</span>
+            </span>
+          </li>`;
+      }).join('')}</ol>` : `<p class="ind-hint">Sem stands atribuídos a ${esc(primeiro)} neste dia.</p>`}
+      <p class="ind-hint">${outroDia ? `${outroDia} stand(s) no outro dia. ` : ''}Aproveite os intervalos do cronograma. Toque num stand para ver perguntas, mensagem e notas.</p>
+    </section>`;
+}
+function ligarStandsMembro(container) {
+  container.querySelectorAll('[data-visitado]').forEach(b => b.addEventListener('click', ev => {
+    ev.stopPropagation();
+    const e = getExpositor(b.dataset.visitado);
+    alterarVisita(e, { visitado: !visita(e).visitado });
+    renderAll();
+  }));
+  container.querySelectorAll('.stand-row__body[data-exp-id]').forEach(el => el.addEventListener('click', () => openExpositorModal(el.dataset.expId)));
+}
+
+// Mensagem para enviar pelo Swapcard (ES para empresas espanholas/internacionais, PT para portuguesas)
+function mensagemContacto(e) {
+  const eu = getMembro(state.eu) || getMembro(membrosExp(e)[0]) || state.equipa[0];
+  const assinatura = `${eu.nome}${eu.cargo ? ` · ${eu.cargo}` : ''} · Norporgest`;
+  const dias = 'el 4 y 5 de noviembre';
+  if (e.idioma === 'pt') {
+    const obj = {
+      parceria: `Gostávamos de conhecer o vosso programa de parceiros para levar a ${e.nome} aos nossos clientes.`,
+      feedback: 'Gostávamos de ouvir a vossa experiência sobre como aplicar IA em serviços para PME.',
+      produto: `Queremos conhecer a ${e.nome} como ferramenta para os nossos processos e os dos nossos clientes.`,
+      rede: 'Procuramos contactos para colaborar em projetos de IA para PME entre Portugal e Espanha.',
+    }[e.objetivo] || '';
+    return `Olá! Sou ${eu.nome.split(' ')[0]}, da Norporgest, consultora de gestão, contabilidade e incentivos para PME (Covilhã e Vila Nova de Famalicão). Estamos a tornar a empresa e os nossos serviços AI First e vamos estar no Tech Show Madrid a 4 e 5 de novembro. ${obj} Podemos falar 15 minutos no vosso stand ${e.stand}?\n\n${assinatura}`;
+  }
+  const obj = {
+    parceria: `Nos interesa conocer vuestro programa de partners para ofrecer ${e.nome} a nuestros clientes.`,
+    feedback: 'Nos gustaría conocer vuestra experiencia sobre cómo aplicar la IA en servicios para pymes.',
+    produto: `Queremos conocer ${e.nome} como herramienta para nuestros procesos y los de nuestros clientes.`,
+    rede: 'Buscamos contactos para colaborar en proyectos de IA para pymes entre Portugal y España.',
+  }[e.objetivo] || '';
+  return `¡Hola! Soy ${eu.nome.split(' ')[0]}, de Norporgest, consultora portuguesa de gestión, contabilidad e incentivos para pymes. Estamos convirtiendo la empresa y nuestros servicios en AI First y estaremos en Tech Show Madrid ${dias}. ${obj} ¿Podríamos hablar 15 minutos en vuestro stand ${e.stand}?\n\n${assinatura}`;
+}
+
+async function copiarTexto(t) {
+  try { await navigator.clipboard.writeText(t); return true; }
+  catch (err) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e2) {}
+    ta.remove();
+    return ok;
+  }
+}
+
+function openExpositorModal(id) {
+  const e = getExpositor(id);
+  if (!e) return;
+  state.expAberto = id;
+  const cat = getCategoriaExp(e.categoria);
+  const v = visita(e);
+  const quem = membrosExp(e);
+  const perguntas = [...(e.perguntas || []), ...cat.perguntas, ...(typeof PERGUNTAS_GERAIS_EXP !== 'undefined' ? PERGUNTAS_GERAIS_EXP : [])];
+  const sessoes = (e._sessoes || []).map(sid => SESSOES.find(s => s.id === sid)).filter(Boolean);
+  const dia = diaExp(e);
+  const badge = document.getElementById('modal-exp-badge');
+  badge.textContent = cat.nome;
+  badge.style.color = cat.cor; badge.style.borderColor = cat.cor + '55'; badge.style.background = cat.cor + '18';
+
+  document.getElementById('modal-exp-body').innerHTML = `
+    <div class="modal__time">📍 Stand <b>${esc(e.stand)}</b> · ${esc(zonaStand(e.stand).nome)} · ${dia === '2026-11-04' ? '4 Nov' : '5 Nov'}</div>
+    <h2 class="modal__title" id="modal-exp-title">${esc(e.nome)}</h2>
+    <div class="exp-badges">
+      <span class="exp-prio exp-prio--${e.prioridade}">${e.prioridade}</span> ${PRIORIDADES[e.prioridade]}
+      · ${OBJETIVOS[e.objetivo] || ''}${e.patrocinio && e.patrocinio !== 'Exhibitor' ? ` · ${esc(e.patrocinio)}` : ''}
+    </div>
+    <p class="modal__desc">${esc(e.porque)}</p>
+    ${e.descricao_oficial ? `<p class="exp-desc-oficial">${esc(e.descricao_oficial)}</p>` : ''}
+    <div class="exp-links">
+      ${e.site ? `<a href="${esc(e.site)}" target="_blank" rel="noopener">🌐 Site</a>` : ''}
+      ${e.ficha ? `<a href="${esc(e.ficha)}" target="_blank" rel="noopener">📄 Ficha oficial</a>` : ''}
+      <a href="${SWAPCARD_EXPOSITORES}" target="_blank" rel="noopener" data-swapcard>💬 Swapcard</a>
+    </div>
+    ${sessoes.length ? `
+      <p class="modal__speakers-title">🎤 Fala no programa</p>
+      <ul class="exp-sessoes">${sessoes.map(s => `
+        <li data-exp-sessao="${s.id}"><b>${s.dia === '2026-11-04' ? '4 Nov' : '5 Nov'} ${s.hora_inicio}</b> · ${esc(s.titulo)} <small style="color:${getTrack(s.track_id).cor}">${esc(getTrack(s.track_id).nome)}</small></li>`).join('')}
+      </ul>` : ''}
+    <p class="modal__speakers-title">❓ Perguntas a fazer</p>
+    <ol class="exp-perguntas">${perguntas.map(p => `<li>${esc(p)}</li>`).join('')}</ol>
+    <div class="exp-actions">
+      <button class="btn-secondary" data-copiar-msg>📋 Copiar mensagem de contacto</button>
+      <button class="btn-secondary" data-mover-dia>📅 Passar para ${dia === '2026-11-04' ? '5 Nov' : '4 Nov'}</button>
+    </div>
+    <div class="exp-toggles">
+      <button class="exp-toggle ${v.visitado ? 'on' : ''}" data-toggle="visitado">${v.visitado ? '✅ Visitado' : '⬜ Marcar como visitado'}</button>
+      <button class="exp-toggle ${v.followup ? 'on' : ''}" data-toggle="followup">${v.followup ? '🔁 Follow-up pedido' : '🔁 Pedir follow-up'}</button>
+    </div>
+    <label class="filter-label" for="exp-contacto">Contacto no stand</label>
+    <input class="exp-input" id="exp-contacto" type="text" placeholder="Nome, cargo, email ou telefone" value="${esc(v.contacto)}" />
+    <label class="filter-label" for="exp-notas">Notas e feedback para o plano AI First</label>
+    <textarea class="exp-input" id="exp-notas" rows="4" placeholder="O que disseram, preços, próximos passos...">${esc(v.notas)}</textarea>`;
+
+  document.getElementById('modal-exp-team').innerHTML = state.equipa.map(m => {
+    const on = quem.includes(m.id);
+    return `
+      <button class="modal__team-btn ${on ? 'assigned' : ''}" data-member-id="${m.id}"
+              style="color:${m.cor}; border-color:${m.cor}; background:${on ? m.cor + '22' : 'transparent'}">
+        <div class="modal__team-btn-avatar" style="background:${m.cor}">${m.inicial}</div>${esc(m.nome)}${on ? ' ✓' : ''}
+      </button>`;
+  }).join('');
+
+  const body = document.getElementById('modal-expositor');
+  body.querySelectorAll('#modal-exp-team [data-member-id]').forEach(b => b.addEventListener('click', () => {
+    const mid = b.dataset.memberId;
+    const atual = membrosExp(e);
+    alterarVisita(e, { membros: atual.includes(mid) ? atual.filter(x => x !== mid) : [...atual, mid] });
+    openExpositorModal(id); renderAll();
+  }));
+  body.querySelectorAll('[data-toggle]').forEach(b => b.addEventListener('click', () => {
+    const k = b.dataset.toggle;
+    alterarVisita(e, { [k]: !visita(e)[k] });
+    openExpositorModal(id); renderAll();
+  }));
+  body.querySelector('[data-mover-dia]').addEventListener('click', () => {
+    alterarVisita(e, { dia: dia === '2026-11-04' ? '2026-11-05' : '2026-11-04' });
+    showToast(`📅 ${e.nome} passou para ${dia === '2026-11-04' ? '5' : '4'} Nov`);
+    openExpositorModal(id); renderAll();
+  });
+  body.querySelector('[data-copiar-msg]').addEventListener('click', async () => {
+    showToast(await copiarTexto(mensagemContacto(e)) ? '📋 Mensagem copiada. Cole-a no chat do Swapcard.' : '⚠️ Não foi possível copiar');
+  });
+  body.querySelector('[data-swapcard]').addEventListener('click', () => {
+    copiarTexto(e.nome_oficial || e.nome);
+    showToast(`🔎 Nome "${e.nome_oficial || e.nome}" copiado: cole-o na pesquisa do Swapcard`);
+  });
+  body.querySelectorAll('[data-exp-sessao]').forEach(li => li.addEventListener('click', () => {
+    closeExpositorModal();
+    openSessionModal(li.dataset.expSessao);
+  }));
+  body.querySelector('#exp-contacto').addEventListener('input', ev => { alterarVisita(e, { contacto: ev.target.value }); });
+  body.querySelector('#exp-notas').addEventListener('input', ev => { alterarVisita(e, { notas: ev.target.value }); });
+  body.querySelectorAll('.exp-input').forEach(i => i.addEventListener('change', () => renderAll()));
+
+  document.getElementById('modal-expositor').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeExpositorModal() {
+  document.getElementById('modal-expositor').classList.remove('is-open');
+  document.body.style.overflow = '';
+  state.expAberto = null;
+}
+
+// CSV para o follow-up depois da feira (Excel PT: separador ";" e BOM)
+function exportarContactosCSV() {
+  const col = t => `"${String(t ?? '').replace(/"/g, '""').replace(/\r?\n/g, ' / ')}"`;
+  const linhas = [['Expositor','Stand','Dia','Prioridade','Categoria','Objetivo','Responsáveis','Visitado','Follow-up','Contacto','Notas','Site','Actualizado']];
+  EXPOSITORES.slice().sort(ordemExp).forEach(e => {
+    const v = visita(e);
+    linhas.push([e.nome, e.stand, diaExp(e), e.prioridade, getCategoriaExp(e.categoria).nome, (OBJETIVOS[e.objetivo] || '').replace(/^\S+\s/, ''),
+      membrosExp(e).map(id => (getMembro(id) || {}).nome).filter(Boolean).join(', '),
+      v.visitado ? 'sim' : 'não', v.followup ? 'sim' : 'não', v.contacto, v.notas, e.site, v.em ? fmtDataHora(v.em) : '']);
+  });
+  const csv = '﻿' + linhas.map(l => l.map(col).join(';')).join('\r\n');
+  const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  const a = document.createElement('a');
+  const quem = getMembro(state.eu);
+  a.href = url;
+  a.download = `TechShow_Madrid_2026_Contactos${quem ? '_' + quem.nome.split(' ')[0] : ''}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('📇 Contactos exportados');
+}
+
+// Lista curada actualizável sem reinstalar a app (correcções de stand, novos expositores)
+async function atualizarExpositores() {
+  for (const url of EXPOSITORES_FONTES) {
+    try {
+      const r = await fetch(`${url}?t=${Date.now()}`, { cache: 'no-store' });
+      if (!r.ok) continue;
+      const d = await r.json();
+      if (!d || !Array.isArray(d.expositores) || !d.expositores.length) continue;
+      if ((d.versao || 0) > expositoresVersao) {
+        EXPOSITORES.splice(0, EXPOSITORES.length, ...d.expositores);
+        if (Array.isArray(d.categorias)) CATEGORIAS_EXP.splice(0, CATEGORIAS_EXP.length, ...d.categorias);
+        if (Array.isArray(d.perguntas_gerais) && typeof PERGUNTAS_GERAIS_EXP !== 'undefined') PERGUNTAS_GERAIS_EXP.splice(0, PERGUNTAS_GERAIS_EXP.length, ...d.perguntas_gerais);
+        expositoresVersao = d.versao;
+        ligarExpositoresSessoes();
+        renderAll();
+      }
+      return;
+    } catch (e) { /* sem rede: fica a lista embutida */ }
+  }
+}
+
 function renderAll() {
   renderEstadoPrograma();
   renderTeam();
@@ -1182,7 +1563,7 @@ function init() {
   });
 
   // View toggle
-  ['grid','timeline','individual','agora'].forEach(v => {
+  ['grid','timeline','individual','agora','expositores'].forEach(v => {
     document.getElementById(`view-${v}`).addEventListener('click', () => setView(v));
   });
 
@@ -1202,7 +1583,7 @@ function init() {
       if (state.view !== 'grid' && state.view !== 'timeline') setView('grid');
     }
   });
-  ['btn-export','btn-view-schedule','btn-plan-credencial','btn-edit-team'].forEach(id =>
+  ['btn-export','btn-export-contactos','btn-view-schedule','btn-plan-credencial','btn-edit-team'].forEach(id =>
     document.getElementById(id).addEventListener('click', () => { if (isMobile()) fecharMenu(); }));
 
   // Actualiza "Agora" a cada minuto
@@ -1225,12 +1606,13 @@ function init() {
   });
 
   // Close on overlay click
-  ['modal-session','modal-team','modal-schedule','modal-changes'].forEach(id => {
+  ['modal-session','modal-team','modal-schedule','modal-changes','modal-expositor'].forEach(id => {
     document.getElementById(id).addEventListener('click', e => {
       if (e.target.id === id) {
         document.getElementById(id).classList.remove('is-open');
         document.body.style.overflow = '';
         if (id === 'modal-session') state.sessaoAberta = null;
+        if (id === 'modal-expositor') state.expAberto = null;
       }
     });
   });
@@ -1239,9 +1621,10 @@ function init() {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       fecharMenu();
-      ['modal-session','modal-team','modal-schedule','modal-changes'].forEach(id => {
+      ['modal-session','modal-team','modal-schedule','modal-changes','modal-expositor'].forEach(id => {
         document.getElementById(id).classList.remove('is-open');
       });
+      state.expAberto = null;
       document.body.style.overflow = '';
     }
   });
@@ -1258,6 +1641,12 @@ function init() {
 
   // Plano pela credencial
   document.getElementById('btn-plan-credencial').addEventListener('click', planearEquipaPorCredencial);
+
+  // Stands: contactos em CSV, modal e dados actualizáveis
+  document.getElementById('btn-export-contactos').addEventListener('click', exportarContactosCSV);
+  document.getElementById('modal-expositor-close').addEventListener('click', closeExpositorModal);
+  ligarExpositoresSessoes();
+  setTimeout(atualizarExpositores, 2500);
 
   // Primeira utilização: membros com credencial e sem inscrições recebem o plano automático
   let gerado = false;

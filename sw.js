@@ -1,11 +1,12 @@
 /* Service worker – guarda a app para funcionar sem rede no recinto (IFEMA) */
-const CACHE = 'tsm2026-v2';
+const CACHE = 'tsm2026-v3';
 const FICHEIROS = [
   './',
   './index.html',
   './style.css',
   './app.js',
   './data/programa.js',
+  './data/expositores.js',
   './manifest.webmanifest',
   './icon.svg',
   // Credenciais (bilhetes de entrada) disponíveis sem rede
