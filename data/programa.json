@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 6,
-"actualizado_em": "2026-10-15T11:51:49Z",
+"versao": 7,
+"actualizado_em": "2026-10-15T16:09:51Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -689,7 +689,7 @@
 "oradores": [
 {
 "nome": "Inma Elizalde",
-"cargo": "Redactora jefa de Director TIC y Revista Pymes",
+"cargo": "Redactora jefa de las cabeceras Director TIC y Revista Pymes",
 "empresa": "TAI EDITORIAL",
 "role": "moderador"
 },
@@ -6240,6 +6240,12 @@
 "cargo": "Matemático, Ingeniero Informático, Doctor en Trustworthy AI",
 "empresa": ".",
 "role": "orador"
+},
+{
+"nome": "Natalia Sánchez",
+"cargo": "Presidenta",
+"empresa": "Omnicom PR Group",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-debate-organizada-por-genai",
@@ -6259,6 +6265,12 @@
 "antes": "Óscar Méndez Soto, Alister Moreno",
 "depois": "Óscar Méndez Soto, Alister Moreno, Alex Brando",
 "em": "2026-10-14T19:33:05Z"
+},
+{
+"campo": "oradores",
+"antes": "Óscar Méndez Soto, Alister Moreno, Alex Brando",
+"depois": "Óscar Méndez Soto, Alister Moreno, Alex Brando, Natalia Sánchez",
+"em": "2026-10-15T16:09:51Z"
 }
 ]
 },
