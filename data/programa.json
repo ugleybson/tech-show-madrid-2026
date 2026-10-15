@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 4,
-"actualizado_em": "2026-10-14T22:56:19Z",
+"versao": 5,
+"actualizado_em": "2026-10-15T06:07:51Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -2949,14 +2949,40 @@
 "track_id": "hr-learning",
 "hora_inicio": "13:50",
 "hora_fim": "14:05",
-"titulo": "Ponencia Waipoints",
+"titulo": "La próxima revolución del aprendizaje ya está aquí",
 "tipo": "Palestra",
 "descricao": "",
-"oradores": [],
+"oradores": [
+{
+"nome": "Álvaro González Rodriguez",
+"cargo": "CEO",
+"empresa": "Waipoints",
+"role": "orador"
+},
+{
+"nome": "Borja Anasagasti",
+"cargo": "Sales Director",
+"empresa": "Waipoints",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-waipoints",
 "id": "s128",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Waipoints",
+"depois": "La próxima revolución del aprendizaje ya está aquí",
+"em": "2026-10-15T06:07:51Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Álvaro González Rodriguez, Borja Anasagasti",
+"em": "2026-10-15T06:07:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
