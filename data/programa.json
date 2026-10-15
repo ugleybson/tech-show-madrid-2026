@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 5,
-"actualizado_em": "2026-10-15T06:07:51Z",
+"versao": 6,
+"actualizado_em": "2026-10-15T11:51:49Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -688,9 +688,9 @@
 "descricao": "En este año 2026 el Observatorio de Industria y Tecnología, con la colaboración de Structurit, presenta su IX Informe Smart Industry 4.0, en el que se analiza la situación de la aplicación de la tecno…",
 "oradores": [
 {
-"nome": "M. Inmaculada Blázquez García",
-"cargo": "Presidente",
-"empresa": "Observatorio Industria y Tecnología",
+"nome": "Inma Elizalde",
+"cargo": "Redactora jefa de Director TIC y Revista Pymes",
+"empresa": "TAI EDITORIAL",
 "role": "moderador"
 },
 {
@@ -710,6 +710,12 @@
 "cargo": "Colaborador y experto en tecnologías de Industria 4.0",
 "empresa": "Observatorio de Industria",
 "role": "orador"
+},
+{
+"nome": "M. Inmaculada Blázquez García",
+"cargo": "Presidente",
+"empresa": "Observatorio Industria y Tecnología",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-34",
@@ -719,7 +725,14 @@
 "transformação digital",
 "adoção tecnológica"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "M. Inmaculada Blázquez García, Luis Casado, Luis Federico Gimilio, Javier de la Cuerda",
+"depois": "Inma Elizalde, Luis Casado, Luis Federico Gimilio, Javier de la Cuerda, M. Inmaculada Blázquez García",
+"em": "2026-10-15T11:51:49Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -2886,14 +2899,40 @@
 "track_id": "dc-energy",
 "hora_inicio": "13:45",
 "hora_fim": "14:05",
-"titulo": "Ponencia ECOLAB",
+"titulo": "Liquid Cooling All-In : Delivering reliable cooling from Site to Chip",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Explore how operators can build reliable, scalable liquid cooling systems through effective commissioning, coolant management, and continuous monitoring. Learn how an end-to-end cooling strategy can i…",
+"oradores": [
+{
+"nome": "Tatenda Phiri",
+"cargo": "Corporate Accounts Manager",
+"empresa": "EcoLab",
+"role": "orador"
+},
+{
+"nome": "Luc Wagemakers",
+"cargo": "EMEA and India Area Manager",
+"empresa": "CoolIT",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-ecolab",
 "id": "s250",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia ECOLAB",
+"depois": "Liquid Cooling All-In : Delivering reliable cooling from Site to Chip",
+"em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Tatenda Phiri, Luc Wagemakers",
+"em": "2026-10-15T11:51:49Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -2951,7 +2990,7 @@
 "hora_fim": "14:05",
 "titulo": "La próxima revolución del aprendizaje ya está aquí",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "La IA está transformando el aprendizaje corporativo. Descubre cómo pasar de contenidos estáticos a experiencias personalizadas, interactivas y prácticas que aceleran el desarrollo de competencias y re…",
 "oradores": [
 {
 "nome": "Álvaro González Rodriguez",
@@ -5454,6 +5493,27 @@
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-81",
+"id": "s398",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-15T11:51:49Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
+"track_id": "hr-learning",
+"hora_inicio": "18:00",
+"hora_fim": "18:20",
+"titulo": "TBC",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-144",
 "id": "s396",
 "tags": [],
@@ -6565,6 +6625,38 @@
 "track_id": "cloud-ai",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
+"titulo": "Más bots que pasajeros: cómo preparamos OUIGO para el cliente agentico",
+"tipo": "Palestra",
+"descricao": "Según Cloudflare, en 2026 los bots ya generan más tráfico web que los humanos, y el sector viajes es uno de sus principales objetivos. Cuando el cliente es un agente de IA que consulta APIs en lugar d…",
+"oradores": [
+{
+"nome": "Guillaume Dahan",
+"cargo": "CIO",
+"empresa": "OUIGO España",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-guilleuma-dahan-ouigo",
+"id": "s285",
+"tags": [
+"IA",
+"agentes",
+"cloud"
+],
+"alteracoes": [
+{
+"campo": "hora",
+"antes": "2026-11-05 16:30–16:50",
+"depois": "2026-11-05 11:30–11:50",
+"em": "2026-10-15T11:51:49Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "cloud-ai",
+"hora_inicio": "11:30",
+"hora_fim": "11:50",
 "titulo": "La ventaja eres tú: cómo pensar, innovar y competir en la era de la IA",
 "tipo": "Palestra",
 "descricao": "La inteligencia artificial está democratizando capacidades que hasta hace muy poco eran extraordinarias. Pero cuando todos tengamos acceso a tecnologías, copilotos y agentes similares, la verdadera di…",
@@ -6582,7 +6674,15 @@
 "IA",
 "agentes"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-15T11:51:49Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
@@ -6897,7 +6997,7 @@
 "track_id": "cloud-ai",
 "hora_inicio": "12:00",
 "hora_fim": "12:45",
-"titulo": "Mesa de debate: Detrás del dato: la infraestructura crítica invisible que sostiene la IA y los servicios digitales de las empresas - Schneider Electric",
+"titulo": "Mesa de debate: Tras el dato: la infraestructura crítica invisible que impulsa la IA y los servicios digitales del negocio Schneider Electric",
 "tipo": "Mesa Debate",
 "descricao": "Vivimos una era en la que empresas de todos los sectores —aseguradoras, sanitarias, banca, retail, servicios profesionales— dependen cada vez más de plataformas digitales, inteligencia artificial y vo…",
 "oradores": [
@@ -6906,6 +7006,24 @@
 "cargo": "Directora",
 "empresa": "Data Center Market",
 "role": "moderador"
+},
+{
+"nome": "Patricia Pérez",
+"cargo": "Secure Power IT & ET Channel Sales Manager",
+"empresa": "Schneider Electric",
+"role": "orador"
+},
+{
+"nome": "Marco Prieto",
+"cargo": "Chief Technology Officer",
+"empresa": "ASAC",
+"role": "orador"
+},
+{
+"nome": "Pedro Alexandre",
+"cargo": "CEO",
+"empresa": "Guiatel",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-de-debate-schneider-electric-1",
@@ -6915,7 +7033,20 @@
 "dados",
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Mesa de debate: Detrás del dato: la infraestructura crítica invisible que sostiene la IA y los servicios digitales de las empresas - Schneider Electric",
+"depois": "Mesa de debate: Tras el dato: la infraestructura crítica invisible que impulsa la IA y los servicios digitales del negocio Schneider Electric",
+"em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "oradores",
+"antes": "Lucía Bonilla",
+"depois": "Lucía Bonilla, Patricia Pérez, Marco Prieto, Pedro Alexandre",
+"em": "2026-10-15T11:51:49Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8093,9 +8224,9 @@
 "track_id": "cloud-ai",
 "hora_inicio": "13:45",
 "hora_fim": "14:05",
-"titulo": "Ponencia Keep-it",
+"titulo": "Resiliencia SaaS en la era de la IA: control, cumplimiento y soberanía",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "La inteligencia artificial lo acelera todo: la adopción de SaaS, la dispersión de los datos críticos y la velocidad y escala de los ataques. Mientras tanto, muchas empresas siguen confiando únicamente…",
 "oradores": [
 {
 "nome": "Susana Reguera Gilarranz",
@@ -8107,7 +8238,14 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-keep-it",
 "id": "s281",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Keep-it",
+"depois": "Resiliencia SaaS en la era de la IA: control, cumplimiento y soberanía",
+"em": "2026-10-15T11:51:49Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8137,14 +8275,40 @@
 "track_id": "cyber-security",
 "hora_inicio": "14:00",
 "hora_fim": "14:15",
-"titulo": "Ponencia SYNETO",
+"titulo": "Orizon Oversight by Cyrebro: El IA SOC as a service",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Orizon Oversight by Cyrebro redefine el SOC as a Service combinando Inteligencia Artificial y analistas expertos para una ciberseguridad 24/7. En esta ponencia, descubriras cómo optimizar la detección…",
+"oradores": [
+{
+"nome": "Alberto Vidal",
+"cargo": "Alliance & Sales Director",
+"empresa": "Orizon",
+"role": "orador"
+},
+{
+"nome": "Esteban Kilstein",
+"cargo": "Partnership Team Leader",
+"empresa": "Cyrebro",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-syneto",
 "id": "s292",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia SYNETO",
+"depois": "Orizon Oversight by Cyrebro: El IA SOC as a service",
+"em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Alberto Vidal, Esteban Kilstein",
+"em": "2026-10-15T11:51:49Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8764,6 +8928,42 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "prestashop",
+"hora_inicio": "15:45",
+"hora_fim": "16:30",
+"titulo": "Empezar con poco, llegar lejos: aciertos, tropiezos y aprendizajes",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Víctor Quesada",
+"cargo": "Fundador y Ceo",
+"empresa": "Ecoportátil",
+"role": "orador"
+},
+{
+"nome": "Ion Vidaurreta",
+"cargo": "Co-CEO",
+"empresa": "DECOWOOD",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/empezar-con-poco-llegar-lejos-aciertos-tropiezos-y-aprendizajes",
+"id": "s399",
+"tags": [
+"aprendizagem"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-15T11:51:49Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "tech-keynote",
 "hora_inicio": "15:55",
 "hora_fim": "16:15",
@@ -8870,10 +9070,17 @@
 "track_id": "dc-design",
 "hora_inicio": "16:00",
 "hora_fim": "16:20",
-"titulo": "Ponencia CIMC",
+"titulo": "Prefabricated Modular Solutions: A New Paradigm for Data Center Delivery in the AIDC Era",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Practical Insights from CIMC Digital Power's Prefabricated Modular Data Center Projects",
+"oradores": [
+{
+"nome": "Freddy Chen",
+"cargo": "BD Manager",
+"empresa": "CIMC Digital Power",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-128",
 "id": "s377",
 "tags": [],
@@ -8889,6 +9096,18 @@
 "antes": "TBC",
 "depois": "Ponencia CIMC",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia CIMC",
+"depois": "Prefabricated Modular Solutions: A New Paradigm for Data Center Delivery in the AIDC Era",
+"em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Freddy Chen",
+"em": "2026-10-15T11:51:49Z"
 }
 ]
 },
@@ -9060,31 +9279,6 @@
 },
 {
 "dia": "2026-11-05",
-"track_id": "cloud-ai",
-"hora_inicio": "16:30",
-"hora_fim": "16:50",
-"titulo": "Más bots que pasajeros: cómo preparamos OUIGO para el cliente agentico",
-"tipo": "Palestra",
-"descricao": "Según Cloudflare, en 2026 los bots ya generan más tráfico web que los humanos, y el sector viajes es uno de sus principales objetivos. Cuando el cliente es un agente de IA que consulta APIs en lugar d…",
-"oradores": [
-{
-"nome": "Guillaume Dahan",
-"cargo": "CIO",
-"empresa": "OUIGO España",
-"role": "orador"
-}
-],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-guilleuma-dahan-ouigo",
-"id": "s285",
-"tags": [
-"IA",
-"agentes",
-"cloud"
-],
-"alteracoes": []
-},
-{
-"dia": "2026-11-05",
 "track_id": "cyber-security",
 "hora_inicio": "16:30",
 "hora_fim": "16:50",
@@ -9097,12 +9291,31 @@
 "cargo": "Presale Engineer",
 "empresa": "CYBERWATCH",
 "role": "orador"
+},
+{
+"nome": "Capucine Bardet",
+"cargo": "Country Manager Spain",
+"empresa": "CYBERWATCH",
+"role": "orador"
+},
+{
+"nome": "Javier Paniagua",
+"cargo": "Director de Tecnología y Transformación",
+"empresa": "CYBERWATCH",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-35",
 "id": "s296",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Pierre Caceres Casanova",
+"depois": "Pierre Caceres Casanova, Capucine Bardet, Javier Paniagua",
+"em": "2026-10-15T11:51:49Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
