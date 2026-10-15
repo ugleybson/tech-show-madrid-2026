@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 7,
-"actualizado_em": "2026-10-15T16:09:51Z",
+"versao": 8,
+"actualizado_em": "2026-10-15T19:57:40Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -2066,9 +2066,9 @@
 "track_id": "hr-talent",
 "hora_inicio": "12:30",
 "hora_fim": "12:50",
-"titulo": "Ponencia Securitas Direct",
+"titulo": "La IA no va de tecnología, sino de personas",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "¿Qué diferenciará a las empresas cuando la IA esté al alcance de todos?",
 "oradores": [
 {
 "nome": "Álvaro Vázquez Losada",
@@ -2080,7 +2080,14 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-securitas-direct",
 "id": "s140",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Securitas Direct",
+"depois": "La IA no va de tecnología, sino de personas",
+"em": "2026-10-15T19:57:40Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -4863,6 +4870,34 @@
 "IA"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "hr-wellbeing",
+"hora_inicio": "17:00",
+"hora_fim": "17:20",
+"titulo": "La incertidumbre no se gestiona, se lidera",
+"tipo": "Palestra",
+"descricao": "En estos tiempos tan convulsos, inciertos, cambiantes, artificiales, tan pirotécnicos, tan deshumanizados tenemos que entender que liderar no es mandar, es influir, es inspirar, es servir y querer. Li…",
+"oradores": [
+{
+"nome": "Roberto Cabezas",
+"cargo": "Top 1 HR Influencers in Spain 2024. Expert in Higher Education Management",
+"empresa": ".",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/la-incertidumbre-no-se-gestiona-se-lidera",
+"id": "s400",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-15T19:57:40Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
