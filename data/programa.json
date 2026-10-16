@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 10,
-"actualizado_em": "2026-10-16T15:07:53Z",
+"versao": 11,
+"actualizado_em": "2026-10-16T18:53:21Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -499,6 +499,12 @@
 "cargo": "Chief Architect",
 "empresa": "ING España & Portugal",
 "role": "orador"
+},
+{
+"nome": "Mariola Martínez Herrera",
+"cargo": "Directora General",
+"empresa": "Niba (Grupo Iberdrola)",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-debate-cionet",
@@ -520,6 +526,12 @@
 "antes": "—",
 "depois": "Jesús García, Mat Jovanovic, Pedro Martínez Quero, Víctor Cano",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "oradores",
+"antes": "Jesús García, Mat Jovanovic, Pedro Martínez Quero, Víctor Cano",
+"depois": "Jesús García, Mat Jovanovic, Pedro Martínez Quero, Víctor Cano, Mariola Martínez Herrera",
+"em": "2026-10-16T18:53:21Z"
 }
 ]
 },
@@ -3353,15 +3365,15 @@
 "descricao": "Los directivos más innovadores tienen claro que deben ir más allá de las tendencias y convertir la inteligencia artificial en un impacto operativo real. En esta sesión, analizaremos cómo las empresas…",
 "oradores": [
 {
-"nome": "Alex Romero",
-"cargo": "Principal Consultant, AI & Agentic AI",
+"nome": "Borja Elizalde",
+"cargo": "Head of AI Services",
 "empresa": "Synvert ClearPeaks",
 "role": "orador"
 },
 {
-"nome": "Borja Elizalde",
-"cargo": "Head of AI Services",
-"empresa": "Synvert ClearPeaks",
+"nome": "Oriol Griera Jiménez",
+"cargo": "Senior AI Consultant",
+"empresa": "ClearPeaks",
 "role": "orador"
 }
 ],
@@ -3372,7 +3384,14 @@
 "talento",
 "liderança"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Alex Romero, Borja Elizalde",
+"depois": "Borja Elizalde, Oriol Griera Jiménez",
+"em": "2026-10-16T18:53:21Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -6499,7 +6518,7 @@
 "track_id": "ecommerce-strat",
 "hora_inicio": "11:00",
 "hora_fim": "11:20",
-"titulo": "Marketing Automation para impulsar la conversión: del Customer Journey a los resultados",
+"titulo": "Mr. Blue: Marketing Automation para impulsar la conversión, del Customer Journey a los resultados",
 "tipo": "Palestra",
 "descricao": "En esta sesión, Mr. Blue compartirá cómo está utilizando los datos y el Marketing Automation para transformar el Customer Journey en una palanca real de conversión y fidelización. Desde la identificac…",
 "oradores": [
@@ -6523,7 +6542,14 @@
 "marketing",
 "automatização"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Marketing Automation para impulsar la conversión: del Customer Journey a los resultados",
+"depois": "Mr. Blue: Marketing Automation para impulsar la conversión, del Customer Journey a los resultados",
+"em": "2026-10-16T18:53:21Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7675,21 +7701,21 @@
 "titulo": "De la pregunta al insight: cómo eliminar las barreras técnicas del dato corporativo con IA",
 "tipo": "Palestra",
 "descricao": "Los datos empresariales albergan un enorme potencial, pero acceder a ellos suele requerir el manejo de herramientas complejas o depender en gran medida de los equipos técnicos. En esta sesión, explor…",
-"oradores": [
-{
-"nome": "Alex Romero",
-"cargo": "Principal Consultant, AI & Agentic AI",
-"empresa": "Synvert ClearPeaks",
-"role": "orador"
-}
-],
+"oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-clearpeaks",
 "id": "s269",
 "tags": [
 "IA",
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Alex Romero",
+"depois": "—",
+"em": "2026-10-16T18:53:21Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
