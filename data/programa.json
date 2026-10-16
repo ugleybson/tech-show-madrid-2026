@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 8,
-"actualizado_em": "2026-10-15T19:57:40Z",
+"versao": 9,
+"actualizado_em": "2026-10-16T10:31:38Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -2768,14 +2768,46 @@
 "track_id": "hr-talent",
 "hora_inicio": "13:30",
 "hora_fim": "13:50",
-"titulo": "Ponencia Shakers",
+"titulo": "Contratar talento IA y trabajar con IA: el caso cruzado de Piper AI (Aircall) y Shakers",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Piper AI (Aircall) necesitaba perfiles tech senior capaces de construir con IA. Shakers necesitaba que su equipo comercial vendiera más y gestionara menos. Cada uno resolvió el problema del otro. Un c…",
+"oradores": [
+{
+"nome": "Claudia Silva Baringo",
+"cargo": "Future of Work & AI Partner",
+"empresa": "Shakers",
+"role": "orador"
+},
+{
+"nome": "Alonso de Mendoza Martínez de Toda",
+"cargo": "Tech Consultant Team Lead",
+"empresa": "Shakers",
+"role": "orador"
+},
+{
+"nome": "Michele Trevisiol",
+"cargo": "Cofundador",
+"empresa": "Piper AI (Aircall)",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-147",
 "id": "s142",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Shakers",
+"depois": "Contratar talento IA y trabajar con IA: el caso cruzado de Piper AI (Aircall) y Shakers",
+"em": "2026-10-16T10:31:38Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Claudia Silva Baringo, Alonso de Mendoza Martínez de Toda, Michele Trevisiol",
+"em": "2026-10-16T10:31:38Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5537,8 +5569,15 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-16T10:31:38Z"
 }
-]
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
@@ -5837,6 +5876,12 @@
 "cargo": "Key Account Manager",
 "empresa": "Insights España",
 "role": "orador"
+},
+{
+"nome": "Justine Charlet",
+"cargo": "Learning Manager",
+"empresa": "The Workshop",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-insights-discovery",
@@ -5844,7 +5889,14 @@
 "tags": [
 "IA"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Paloma Sánchez",
+"depois": "Paloma Sánchez, Justine Charlet",
+"em": "2026-10-16T10:31:38Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -7030,14 +7082,34 @@
 "track_id": "tfm",
 "hora_inicio": "11:55",
 "hora_fim": "12:15",
-"titulo": "Ponencia SmartUp",
+"titulo": "IA + Marketing. Cómo multiplicar tu impacto como director digital",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Hoy los estudiantes eligen dónde formarse buscando en todas partes: redes, medios, ChatGPT y agentes de IA. Cristina Asenjo, Head of Digital Marketing de IE Executive Education & Lifelong Learning, co…",
+"oradores": [
+{
+"nome": "Cristina Asenjo",
+"cargo": "Head of Digital Marketing",
+"empresa": "IE EXECUTIVE EDUCATION & LIFELONG LEARNING",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-smartup",
 "id": "s299",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia SmartUp",
+"depois": "IA + Marketing. Cómo multiplicar tu impacto como director digital",
+"em": "2026-10-16T10:31:38Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Cristina Asenjo",
+"em": "2026-10-16T10:31:38Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7871,14 +7943,28 @@
 "titulo": "Data Centers & Energía: lecciones de EE.UU. para la oportunidad digital de España",
 "tipo": "Palestra",
 "descricao": "La inteligencia artificial consume ya el equivalente a cuatro veces la electricidad de España al año. EE.UU. está pagando ahora el coste de no haberlo planificado: colas de interconexión de más de 233…",
-"oradores": [],
+"oradores": [
+{
+"nome": "Pedro Azagra",
+"cargo": "CEO",
+"empresa": "Iberdrola",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-138",
 "id": "s392",
 "tags": [
 "IA",
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Pedro Azagra",
+"em": "2026-10-16T10:31:38Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7932,14 +8018,52 @@
 "track_id": "future-commerce",
 "hora_inicio": "13:00",
 "hora_fim": "13:45",
-"titulo": "Mesa debate SmartUp",
-"tipo": "Mesa Debate",
-"descricao": "",
-"oradores": [],
+"titulo": "El student journey ha muerto: qué están probando ya las instituciones educativas para captar estudiantes con IA",
+"tipo": "Palestra",
+"descricao": "El student journey tradicional ha muerto: los futuros estudiantes ya no comparan decenas de webs, sino que preguntan a ChatGPT, Gemini o a un agente de IA qué y dónde estudiar. En esta mesa, moderada…",
+"oradores": [
+{
+"nome": "David Ruiz Uceta",
+"cargo": "Socio Fundador",
+"empresa": "Smartup I Evolución digital I CPS",
+"role": "moderador"
+},
+{
+"nome": "Rita Rodríguez Castro",
+"cargo": "Directora de Desarrollo y Marketing",
+"empresa": "Universidad Pontificia de Salamanca",
+"role": "orador"
+},
+{
+"nome": "Cristina Asenjo",
+"cargo": "Head of Digital Marketing",
+"empresa": "IE EXECUTIVE EDUCATION & LIFELONG LEARNING",
+"role": "orador"
+},
+{
+"nome": "Francisco José Pradana",
+"cargo": "Director de Departamento de Economía, Negocios y Relaciones Internacionales",
+"empresa": "Universidad Europea",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-debate-smartup",
 "id": "s361",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Mesa debate SmartUp",
+"depois": "El student journey ha muerto: qué están probando ya las instituciones educativas para captar estudiantes con IA",
+"em": "2026-10-16T10:31:38Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "David Ruiz Uceta, Rita Rodríguez Castro, Cristina Asenjo, Francisco José Pradana",
+"em": "2026-10-16T10:31:38Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8779,7 +8903,7 @@
 "track_id": "dc-edge",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
-"titulo": "Ponencia Emmanuel Becker - Mediterra Data Centers",
+"titulo": "TBC",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [],
@@ -8788,7 +8912,14 @@
 "tags": [
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Emmanuel Becker - Mediterra Data Centers",
+"depois": "TBC",
+"em": "2026-10-16T10:31:38Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8993,6 +9124,12 @@
 "cargo": "Co-CEO",
 "empresa": "DECOWOOD",
 "role": "orador"
+},
+{
+"nome": "Julián Vesga",
+"cargo": "Propietario y Gerente",
+"empresa": "Calzados Vesga",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/empezar-con-poco-llegar-lejos-aciertos-tropiezos-y-aprendizajes",
@@ -9006,6 +9143,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "oradores",
+"antes": "Víctor Quesada, Ion Vidaurreta",
+"depois": "Víctor Quesada, Ion Vidaurreta, Julián Vesga",
+"em": "2026-10-16T10:31:38Z"
 }
 ]
 },
@@ -9376,7 +9519,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-136",
 "id": "s386",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-16T10:31:38Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
