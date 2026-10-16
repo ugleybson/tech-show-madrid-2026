@@ -1,5 +1,5 @@
 /* Service worker – guarda a app para funcionar sem rede no recinto (IFEMA) */
-const CACHE = 'tsm2026-v4';
+const CACHE = 'tsm2026-v5';
 const FICHEIROS = [
   './',
   './index.html',
@@ -18,7 +18,7 @@ const FICHEIROS = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(FICHEIROS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(FICHEIROS.map(f => new Request(f, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {
@@ -33,7 +33,8 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   e.respondWith(
-    fetch(e.request)
+    // no-cache: confirma sempre com o servidor (evita servir uma versão antiga da cache HTTP)
+    fetch(e.request, new URL(e.request.url).origin === location.origin ? { cache: 'no-cache' } : {})
       .then(r => {
         if (r.ok && new URL(e.request.url).origin === location.origin) {
           const copia = r.clone();

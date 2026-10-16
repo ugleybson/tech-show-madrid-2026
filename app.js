@@ -74,7 +74,8 @@ carregarProgramaGuardado();
   state.equipa.forEach(m => {
     const c = CREDENCIAIS[m.id];
     if (!c) return;
-    if (m.nome === antigos[m.id]) { m.nome = nomes[m.id]; m.inicial = m.nome.charAt(0).toUpperCase(); }
+    // Sem credencial guardada = membro ainda do tempo do placeholder: recebe o nome real
+    if (m.nome === antigos[m.id] || !m.credencial || /^membro \d$/i.test(m.nome.trim())) { m.nome = nomes[m.id]; m.inicial = m.nome.charAt(0).toUpperCase(); }
     Object.assign(m, { credencial: m.credencial || c.credencial, cargo: c.cargo, pavilhao: c.pavilhao, trilhas: c.trilhas, prioritarias: c.prioritarias || [] });
   });
   // Sessões antigas que não existem no programa oficial (placeholders / hora errada)
@@ -1597,6 +1598,11 @@ function init() {
   // Funcionamento offline (só quando servido por http/https)
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
     navigator.serviceWorker.register('sw.js').catch(() => {});
+    // Nova versão da app instalada: recarrega uma vez para usar logo os ficheiros novos
+    if (navigator.serviceWorker.controller) {
+      let recarregou = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => { if (!recarregou) { recarregou = true; location.reload(); } });
+    }
   }
 
   // Modal close buttons
