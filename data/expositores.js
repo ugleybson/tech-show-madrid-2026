@@ -1,9 +1,9 @@
 // Gerado por tools/expositores_site.py a partir de tools/expositores_curadoria.json
-const EXPOSITORES_VERSAO = 1;
+const EXPOSITORES_VERSAO = 2;
 const PERGUNTAS_GERAIS_EXP = [
  "Se fossem uma consultora de PME em Portugal a tornar-se AI First, por onde começavam?",
  "Que casos de uso de IA estão a ter retorno real nos vossos clientes PME, e em quanto tempo?",
- "Quem é a pessoa certa para continuar a conversa depois da feira?"
+ "Quem é a pessoa certa para continuar a conversa depois da Tech Show Madrid?"
 ];
 const CATEGORIAS_EXP = [
  {

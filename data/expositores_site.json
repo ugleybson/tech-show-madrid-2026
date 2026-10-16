@@ -1,6 +1,6 @@
 {
  "fonte": "https://www.techshowmadrid.es/expositores",
- "actualizado_em": "2026-10-15T16:44:36+00:00",
+ "actualizado_em": "2026-10-16T13:59:49+00:00",
  "expositores": [
   {
    "slug": "22-vatios-sl",
@@ -310,7 +310,7 @@
   },
   {
    "slug": "sunco",
-   "nome": "BEEHEE",
+   "nome": "BEEHE",
    "stand": "5B70",
    "patrocinio": "Exhibitor"
   },
@@ -1152,7 +1152,7 @@
    "slug": "impulsa-3",
    "nome": "IMPULSA 3",
    "stand": "3A37",
-   "patrocinio": ""
+   "patrocinio": "Exhibitor"
   },
   {
    "slug": "in-quattro",
@@ -2466,7 +2466,7 @@
    "slug": "splio",
    "nome": "Splio",
    "stand": "3A30",
-   "patrocinio": ""
+   "patrocinio": "Exhibitor"
   },
   {
    "slug": "spoki",
@@ -2664,7 +2664,7 @@
    "slug": "tiktok-1",
    "nome": "TikTok",
    "stand": "3C50",
-   "patrocinio": ""
+   "patrocinio": "Exhibitor"
   },
   {
    "slug": "tileflow",
