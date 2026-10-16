@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 9,
-"actualizado_em": "2026-10-16T10:31:38Z",
+"versao": 10,
+"actualizado_em": "2026-10-16T15:07:53Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -180,7 +180,7 @@
 },
 {
 "nome": "Víctor Martínez",
-"cargo": "Head of Digital Solutions",
+"cargo": "Business & Digital Transformation Leader",
 "empresa": "SKF Industrial",
 "role": "orador"
 }
@@ -430,14 +430,21 @@
 "track_id": "hr-wellbeing",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "TBC",
+"titulo": "Ponencia Lilly",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-therapyside",
 "id": "s150",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "Ponencia Lilly",
+"em": "2026-10-16T15:07:53Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
