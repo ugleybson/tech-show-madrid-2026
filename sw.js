@@ -1,5 +1,5 @@
 /* Service worker – guarda a app para funcionar sem rede no recinto (IFEMA) */
-const CACHE = 'tsm2026-v3';
+const CACHE = 'tsm2026-v4';
 const FICHEIROS = [
   './',
   './index.html',
@@ -14,6 +14,7 @@ const FICHEIROS = [
   './AcreditacionMTS26_MADRID_J13849432_F%C3%A1bio+Miguel+Mendes+Ferreira.pdf',
   './AcreditacionMTS26_MADRID_P13827748_Gleibson+Silva.pdf',
   './AcreditacionMTS26_MADRID_L13788720_Marco+Nunes.pdf',
+  './AcreditacionMTS26_MADRID_A14052857_Celestino+Oliveira.pdf',
 ];
 
 self.addEventListener('install', e => {

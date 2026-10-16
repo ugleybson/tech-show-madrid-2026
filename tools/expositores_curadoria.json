@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "nota": "Curadoria da equipa Norporgest para o plano AI First. Editar aqui e correr python tools/expositores_site.py para validar stands e gerar data/expositores.js/.json. Membros: m1 Pedro, m2 Fábio, m3 Gleibson, m4 Marco, m5 Membro 5.",
+ "nota": "Curadoria da equipa Norporgest para o plano AI First. Editar aqui e correr python tools/expositores_site.py para validar stands e gerar data/expositores.js/.json. Membros: m1 Pedro, m2 Fábio, m3 Gleibson, m4 Marco, m5 Celestino.",
  "perguntas_gerais": [
   "Se fossem uma consultora de PME em Portugal a tornar-se AI First, por onde começavam?",
   "Que casos de uso de IA estão a ter retorno real nos vossos clientes PME, e em quanto tempo?",

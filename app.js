@@ -25,6 +25,11 @@ const CREDENCIAIS = {
         cargo:'Consultor Financeiro', pavilhao:'Data Centre World', trilhas:['dc-design','dc-energy','dc-edge'],
         // Sessões sobre investimento: Portugal como porta de entrada, mercado, capital, novo ciclo em Espanha
         prioritarias:['s235','s368','s370','s375'] },
+  // Gerente: decisões de negócio com IA, B2B, faturação electrónica e governança
+  m5: { credencial:'AcreditacionMTS26_MADRID_A14052857_Celestino+Oliveira.pdf',
+        cargo:'Gerente', pavilhao:'E-SHOW', trilhas:['e-show','future-commerce','ecommerce-strat','ai-commerce','prestashop'],
+        // Integrar IA, prospecção B2B com IA, factura electrónica, crescer em B2B, venda B2B com IA, rentabilidade, governança de IA
+        prioritarias:['s189','s186','s215','s217','s344','s342','s365'] },
 };
 
 let state = {
@@ -33,7 +38,7 @@ let state = {
     {id:'m2', nome:'Fábio Ferreira', inicial:'F', cor:COLORS[1], areas:[], ...CREDENCIAIS.m2},
     {id:'m3', nome:'Gleibson Silva', inicial:'G', cor:COLORS[2], areas:[], ...CREDENCIAIS.m3},
     {id:'m4', nome:'Marco Nunes', inicial:'M', cor:COLORS[3], areas:[], ...CREDENCIAIS.m4},
-    {id:'m5', nome:'Membro 5', inicial:'E', cor:COLORS[4], areas:[]},
+    {id:'m5', nome:'Celestino Oliveira', inicial:'C', cor:COLORS[4], areas:[], ...CREDENCIAIS.m5},
   ],
   inscricoes: JSON.parse(localStorage.getItem('tsm_inscricoes') || '{}'), // {sessaoId: [membroId,...]}
   diaAtivo: '2026-11-04',
@@ -64,8 +69,8 @@ carregarProgramaGuardado();
 
 // Migração: aplicar dados reais a equipas já guardadas no localStorage
 (function migrateEquipa() {
-  const antigos = { m1:'Membro 1', m2:'Membro 2', m3:'Membro 3', m4:'Membro 4' };
-  const nomes = { m1:'Pedro Monteiro', m2:'Fábio Ferreira', m3:'Gleibson Silva', m4:'Marco Nunes' };
+  const antigos = { m1:'Membro 1', m2:'Membro 2', m3:'Membro 3', m4:'Membro 4', m5:'Membro 5' };
+  const nomes = { m1:'Pedro Monteiro', m2:'Fábio Ferreira', m3:'Gleibson Silva', m4:'Marco Nunes', m5:'Celestino Oliveira' };
   state.equipa.forEach(m => {
     const c = CREDENCIAIS[m.id];
     if (!c) return;
@@ -1658,6 +1663,12 @@ function init() {
     const m1 = getMembro('m1');
     if (m1 && m1.trilhas) gerado = planearPorCredencial(m1) > 0 || gerado;
     localStorage.setItem('tsm_plano_v', '2');
+  }
+  // Versão 3: credencial do Celestino (m5) — gera o plano pelas salas do E-SHOW
+  if (localStorage.getItem('tsm_plano_v') !== '3') {
+    const m5 = getMembro('m5');
+    if (m5 && m5.trilhas) gerado = planearPorCredencial(m5) > 0 || gerado;
+    localStorage.setItem('tsm_plano_v', '3');
   }
   if (gerado) saveState();
 
