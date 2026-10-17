@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 13,
-"actualizado_em": "2026-10-17T18:41:06Z",
+"versao": 14,
+"actualizado_em": "2026-10-17T21:11:18Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -6628,7 +6628,14 @@
 "titulo": "¿Estamos ante un crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
 "tipo": "Palestra",
 "descricao": "¿Sigue siendo la experiencia acumulada el mejor predictor de éxito, o la capacidad de adaptación y aprendizaje continuo empieza a pesar más que un CV tradicional? Factorial comparte cómo la IA está re…",
-"oradores": [],
+"oradores": [
+{
+"nome": "Martina Friedman",
+"cargo": "Talent Business Consultant",
+"empresa": "Factorial",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-factorial",
 "id": "s307",
 "tags": [],
@@ -6638,6 +6645,12 @@
 "antes": "Ponencia Factorial",
 "depois": "¿Estamos ante un crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Martina Friedman",
+"em": "2026-10-17T21:11:18Z"
 }
 ]
 },
