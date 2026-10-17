@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 11,
-"actualizado_em": "2026-10-16T18:53:21Z",
+"versao": 12,
+"actualizado_em": "2026-10-17T08:58:24Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1713,15 +1713,15 @@
 "role": "orador"
 },
 {
-"nome": "Carmen de Andrés",
-"cargo": "Europe Human Resources Director",
-"empresa": "LLYC",
-"role": "orador"
-},
-{
 "nome": "Rebeca Navarro",
 "cargo": "Directora de Talento",
 "empresa": "El Corte Inglés",
+"role": "orador"
+},
+{
+"nome": "Carmen Fernández Rodríguez",
+"cargo": "Global People and Culture Head. Total Rewards",
+"empresa": "LLYC",
 "role": "orador"
 }
 ],
@@ -1732,7 +1732,14 @@
 "bem-estar",
 "liderança"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Mónica García Ingelmo, Araceli Morato, Carmen de Andrés, Rebeca Navarro",
+"depois": "Mónica García Ingelmo, Araceli Morato, Rebeca Navarro, Carmen Fernández Rodríguez",
+"em": "2026-10-17T08:58:24Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
