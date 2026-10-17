@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 12,
-"actualizado_em": "2026-10-17T08:58:24Z",
+"versao": 13,
+"actualizado_em": "2026-10-17T18:41:06Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -3374,7 +3374,7 @@
 {
 "nome": "Borja Elizalde",
 "cargo": "Head of AI Services",
-"empresa": "Synvert ClearPeaks",
+"empresa": "ClearPeaks",
 "role": "orador"
 },
 {
@@ -3405,10 +3405,17 @@
 "track_id": "hr-talent",
 "hora_inicio": "15:00",
 "hora_fim": "15:20",
-"titulo": "Ponencia HiBob",
+"titulo": "Más allá del hype de la IA: Las personas están preparadas para lo que viene",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "La IA está transformando el trabajo, pero el verdadero reto es preparar a las personas para el cambio.Las expectativas sobre nuevas habilidades avanzan más rápido que la formación y el apoyo disponibl…",
+"oradores": [
+{
+"nome": "Andreu Comellas",
+"cargo": "Account Executive",
+"empresa": "HiBob",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-150",
 "id": "s143",
 "tags": [],
@@ -3418,6 +3425,18 @@
 "antes": "TBC",
 "depois": "Ponencia HiBob",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia HiBob",
+"depois": "Más allá del hype de la IA: Las personas están preparadas para lo que viene",
+"em": "2026-10-17T18:41:06Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Andreu Comellas",
+"em": "2026-10-17T18:41:06Z"
 }
 ]
 },
