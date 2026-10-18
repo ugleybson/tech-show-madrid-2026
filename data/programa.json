@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 14,
-"actualizado_em": "2026-10-17T21:11:18Z",
+"versao": 15,
+"actualizado_em": "2026-10-18T11:30:38Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -4707,14 +4707,40 @@
 "track_id": "e-show",
 "hora_inicio": "16:45",
 "hora_fim": "17:05",
-"titulo": "TBC",
+"titulo": "A Spanish story with global relevance: how Scuffers is making AI part of its customer promise",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-72",
+"descricao": "As AI becomes available to every brand the advantage lies in the experience you build with it. Join Teresa Lopez, Head of Customer Service at Scuffers and Alex Lopera, CEO of Permut to explore how Scu…",
+"oradores": [
+{
+"nome": "Alex Lopera",
+"cargo": "CEO",
+"empresa": "Permut",
+"role": "orador"
+},
+{
+"nome": "Teresa López",
+"cargo": "Head of Customer Service",
+"empresa": "Scuffers",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/a-spanish-story-with-global-relevance-how-scuffers-is-making-ai-part-of-its-customer-promise",
 "id": "s169",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "A Spanish story with global relevance: how Scuffers is making AI part of its customer promise",
+"em": "2026-10-18T11:30:38Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Alex Lopera, Teresa López",
+"em": "2026-10-18T11:30:38Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
