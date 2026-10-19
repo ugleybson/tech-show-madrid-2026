@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 16,
-"actualizado_em": "2026-10-19T11:53:13Z",
+"versao": 17,
+"actualizado_em": "2026-10-19T18:12:16Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -422,24 +422,51 @@
 "track_id": "hr-talent",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "Ponencia Clasing",
+"titulo": "HR: lleva tu formación corporativa a la era de la inteligencia organizacional",
 "tipo": "Palestra",
 "descricao": "",
-"oradores": [],
+"oradores": [
+{
+"nome": "Adrián Aybar",
+"cargo": "CEO",
+"empresa": "Clasing",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-146",
 "id": "s137",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Clasing",
+"depois": "HR: lleva tu formación corporativa a la era de la inteligencia organizacional",
+"em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Adrián Aybar",
+"em": "2026-10-19T18:12:16Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
 "track_id": "hr-wellbeing",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "Ponencia Lilly",
+"titulo": "OBESIDAD: El valor social de un mejor control del peso",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "La presentación aborda la obesidad como uno de los principales retos sanitarios, sociales y económicos en España, poniendo el foco en su infradiagnóstico y abordaje insuficiente. A partir del informe…",
+"oradores": [
+{
+"nome": "Dra. Ana Segura Grau",
+"cargo": ".",
+"empresa": "Lilly",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-therapyside",
 "id": "s150",
 "tags": [],
@@ -449,6 +476,18 @@
 "antes": "TBC",
 "depois": "Ponencia Lilly",
 "em": "2026-10-16T15:07:53Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia Lilly",
+"depois": "OBESIDAD: El valor social de un mejor control del peso",
+"em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Dra. Ana Segura Grau",
+"em": "2026-10-19T18:12:16Z"
 }
 ]
 },
@@ -2296,6 +2335,12 @@
 "cargo": "Chief Data Officer",
 "empresa": "Decathlon España",
 "role": "orador"
+},
+{
+"nome": "Ariadna Cuffi",
+"cargo": "Data Governance Lead",
+"empresa": "SEQURA",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-debate-club-cdo-1",
@@ -2312,6 +2357,12 @@
 "antes": "Cecilia Aparicio, Mario Prieto, Oscar López Ugarte, Antonio López González",
 "depois": "Cecilia Aparicio, Mario Prieto, Antonio López González",
 "em": "2026-10-14T19:33:05Z"
+},
+{
+"campo": "oradores",
+"antes": "Cecilia Aparicio, Mario Prieto, Antonio López González",
+"depois": "Cecilia Aparicio, Mario Prieto, Antonio López González, Ariadna Cuffi",
+"em": "2026-10-19T18:12:16Z"
 }
 ]
 },
@@ -6761,7 +6812,7 @@
 "track_id": "hr-learning",
 "hora_inicio": "11:00",
 "hora_fim": "11:20",
-"titulo": "¿Estamos ante un crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
+"titulo": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
 "tipo": "Palestra",
 "descricao": "¿Sigue siendo la experiencia acumulada el mejor predictor de éxito, o la capacidad de adaptación y aprendizaje continuo empieza a pesar más que un CV tradicional? Factorial comparte cómo la IA está re…",
 "oradores": [
@@ -6787,6 +6838,12 @@
 "antes": "—",
 "depois": "Martina Friedman",
 "em": "2026-10-17T21:11:18Z"
+},
+{
+"campo": "titulo",
+"antes": "¿Estamos ante un crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
+"depois": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
+"em": "2026-10-19T18:12:16Z"
 }
 ]
 },
@@ -6825,6 +6882,12 @@
 "cargo": "Sales Manager Mid-Market",
 "empresa": "SEQURA",
 "role": "orador"
+},
+{
+"nome": "Mario Fontán",
+"cargo": "Director de Negocio Online",
+"empresa": "Colorbaby Gro",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/m%C3%A1s-ingresos-con-el-mismo-tr%C3%A1fico-c%C3%B3mo-convertir-mejor-con-prestashop-sequra",
@@ -6836,6 +6899,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "oradores",
+"antes": "Joan Asensio",
+"depois": "Joan Asensio, Mario Fontán",
+"em": "2026-10-19T18:12:16Z"
 }
 ]
 },
@@ -7113,15 +7182,15 @@
 "role": "moderador"
 },
 {
-"nome": "Leo Rueda",
-"cargo": "Responsable de Logística",
-"empresa": "Padel Nuestro",
-"role": "orador"
-},
-{
 "nome": "Aitor Madoz",
 "cargo": "Global Operations Director",
 "empresa": "UNOde50.",
+"role": "orador"
+},
+{
+"nome": "Daniel Capilla",
+"cargo": "Head of Logistics",
+"empresa": "Singularu",
 "role": "orador"
 }
 ],
@@ -7130,7 +7199,14 @@
 "tags": [
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Ramón García, Leo Rueda, Aitor Madoz",
+"depois": "Ramón García, Aitor Madoz, Daniel Capilla",
+"em": "2026-10-19T18:12:16Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7415,14 +7491,14 @@
 "track_id": "dc-design",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
-"titulo": "Ponencia PGI - Aina Juliol",
+"titulo": "Diseñar para lo que aún no sabemos: ingeniería que protege la inversión en data centers de IA",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "Un data center se financia para 15 o 20 años, pero nadie sabe qué necesitará la inteligencia artificial dentro de dos o tres. Cada generación de chips consume más energía, genera más calor a pesar de…",
 "oradores": [
 {
-"nome": "Aina Juliol",
-"cargo": "President - CEO",
-"empresa": "PGI DATA CENTERS",
+"nome": "Xavier Domènech",
+"cargo": "Business Manager de la Business Unit",
+"empresa": "PGI Engineering & Consulting",
 "role": "orador"
 }
 ],
@@ -7431,7 +7507,20 @@
 "tags": [
 "IA"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia PGI - Aina Juliol",
+"depois": "Diseñar para lo que aún no sabemos: ingeniería que protege la inversión en data centers de IA",
+"em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "Aina Juliol",
+"depois": "Xavier Domènech",
+"em": "2026-10-19T18:12:16Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8657,14 +8746,40 @@
 "track_id": "ai-data",
 "hora_inicio": "13:45",
 "hora_fim": "14:05",
-"titulo": "Ponencia Clasing",
+"titulo": "La inteligencia detrás de los equipos de alto rendimiento",
 "tipo": "Palestra",
 "descricao": "",
-"oradores": [],
+"oradores": [
+{
+"nome": "Adrián Aybar",
+"cargo": "CEO",
+"empresa": "Clasing",
+"role": "orador"
+},
+{
+"nome": "Pat Iglesias",
+"cargo": "Experta en cultura empresarial, liderazgo y seguridad psicológica",
+"empresa": ".",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-42",
 "id": "s271",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Clasing",
+"depois": "La inteligencia detrás de los equipos de alto rendimiento",
+"em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Adrián Aybar, Pat Iglesias",
+"em": "2026-10-19T18:12:16Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9179,10 +9294,17 @@
 "track_id": "dc-edge",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
-"titulo": "La infraestructura invisible de la IA: energía, industria e ingeniería para la nueva generación de centros de datos - Fabián Torres - Vice President CGCOII",
+"titulo": "La infraestructura invisible de la IA: energía, industria e ingeniería para la nueva generación de centros de datos",
 "tipo": "Palestra",
 "descricao": "La inteligencia artificial está desencadenando una nueva revolución industrial cuyo verdadero reto ya no son los algoritmos, sino la infraestructura que los hace posibles: energía, centros de datos, c…",
-"oradores": [],
+"oradores": [
+{
+"nome": "Fabián Torres Suárez",
+"cargo": "Decano",
+"empresa": "COIIM Colegio Oficial de Ingenieros Industriales de Madrid",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-134",
 "id": "s385",
 "tags": [
@@ -9200,6 +9322,18 @@
 "antes": "TBC",
 "depois": "La infraestructura invisible de la IA: energía, industria e ingeniería para la nueva generación de centros de datos - Fabián Torres - Vice President CGCOII",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "titulo",
+"antes": "La infraestructura invisible de la IA: energía, industria e ingeniería para la nueva generación de centros de datos - Fabián Torres - Vice President CGCOII",
+"depois": "La infraestructura invisible de la IA: energía, industria e ingeniería para la nueva generación de centros de datos",
+"em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Fabián Torres Suárez",
+"em": "2026-10-19T18:12:16Z"
 }
 ]
 },
@@ -9608,14 +9742,34 @@
 "track_id": "ecommerce-strat",
 "hora_inicio": "16:00",
 "hora_fim": "16:20",
-"titulo": "TBC",
+"titulo": "IA y e-commerce, ¿y ahora qué?",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Tráfico orgánico que tiende a reducirse canibalizado por las AI Overviews, los agentes que empiezan a cerrar compras, clientes que ya no nos pertenecen porque viven en un ecosistema externo a nuestra…",
+"oradores": [
+{
+"nome": "Héctor Pla",
+"cargo": "Co fundador",
+"empresa": "DECÁNTALO",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-62",
 "id": "s355",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "IA y e-commerce, ¿y ahora qué?",
+"em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Héctor Pla",
+"em": "2026-10-19T18:12:16Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9760,7 +9914,7 @@
 "track_id": "cloud-ai",
 "hora_inicio": "16:30",
 "hora_fim": "16:50",
-"titulo": "Ponencia Javier Gavilán - Lincotek",
+"titulo": "Ponencia Javier Gavilán - Telecom Senior Advisor",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [],
@@ -9773,6 +9927,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia Javier Gavilán - Lincotek",
+"depois": "Ponencia Javier Gavilán - Telecom Senior Advisor",
+"em": "2026-10-19T18:12:16Z"
 }
 ]
 },
@@ -9927,6 +10087,29 @@
 "antes": "Eva Diaz Claver",
 "depois": "Mar Porras",
 "em": "2026-10-19T11:53:13Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "tfm",
+"hora_inicio": "16:30",
+"hora_fim": "16:50",
+"titulo": "The Agent",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/the-agent",
+"id": "s404",
+"tags": [
+"agentes"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-19T18:12:16Z"
 }
 ]
 }
