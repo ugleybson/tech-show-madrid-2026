@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 18,
-"actualizado_em": "2026-10-20T11:55:52Z",
+"versao": 19,
+"actualizado_em": "2026-10-20T16:18:43Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -2481,6 +2481,12 @@
 "cargo": "Inward Investment & Aftercare",
 "empresa": "AICEP Portugal Trade & Invest",
 "role": "orador"
+},
+{
+"nome": "Duncan White",
+"cargo": "Senior Director, Communications and Marketing",
+"empresa": "AtlasEdge Data Centres",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-17",
@@ -2495,6 +2501,12 @@
 "antes": "Luís Duarte, Filipe Barreiro, Maria Saraiva, Carlos Fernandes",
 "depois": "Luís Duarte, Filipe Barreiro, Carlos Fernandes",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "oradores",
+"antes": "Luís Duarte, Filipe Barreiro, Carlos Fernandes",
+"depois": "Luís Duarte, Filipe Barreiro, Carlos Fernandes, Duncan White",
+"em": "2026-10-20T16:18:43Z"
 }
 ]
 },
@@ -7278,14 +7290,40 @@
 "track_id": "tech-keynote",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
-"titulo": "Ponencia Atos/ Microsoft",
+"titulo": "La revolución de la IA en el sector público: innovación con impacto",
 "tipo": "Palestra",
 "descricao": "",
-"oradores": [],
+"oradores": [
+{
+"nome": "Álvaro García",
+"cargo": "Head of AI Center of Excellence & AI Sales Executive",
+"empresa": "Atos",
+"role": "orador"
+},
+{
+"nome": "David Hurtado Toran",
+"cargo": "Director de Innovación",
+"empresa": "Microsoft",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-atos/-microsoft",
 "id": "s259",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Atos/ Microsoft",
+"depois": "La revolución de la IA en el sector público: innovación con impacto",
+"em": "2026-10-20T16:18:43Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Álvaro García, David Hurtado Toran",
+"em": "2026-10-20T16:18:43Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -10028,6 +10066,36 @@
 "antes": "Pierre Caceres Casanova",
 "depois": "Pierre Caceres Casanova, Capucine Bardet, Javier Paniagua",
 "em": "2026-10-15T11:51:49Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "dc-design",
+"hora_inicio": "16:30",
+"hora_fim": "16:50",
+"titulo": "Data Centers offgrid: Visión americana, necesidad europea.",
+"tipo": "Palestra",
+"descricao": "“Datacenters off-grid”: explicación de ejemplos de implantación en USA, potencial uso en Europa y revisión del marco técnico-legal actual.",
+"oradores": [
+{
+"nome": "Roberto Pérez Leira",
+"cargo": "Director Comercial HVAC Iberia",
+"empresa": "Johnson Controls",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-johnson-controls",
+"id": "s405",
+"tags": [
+"dados"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-20T16:18:43Z"
 }
 ]
 },
