@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 17,
-"actualizado_em": "2026-10-19T18:12:16Z",
+"versao": 18,
+"actualizado_em": "2026-10-20T11:55:52Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1652,8 +1652,8 @@
 "descricao": "La mesa analizará cómo garantizar el suministro energético que requiere el crecimiento de los data centers en España, en un contexto marcado por la presión sobre las redes, la electrificación, la inte…",
 "oradores": [
 {
-"nome": "Alejandro Fuster",
-"cargo": "Director técnico",
+"nome": "Lorena Ventoso",
+"cargo": "Directora de Operaciones y Marketing",
 "empresa": "Spain DC",
 "role": "moderador"
 },
@@ -1665,14 +1665,20 @@
 },
 {
 "nome": "Víctor Gago",
-"cargo": "Schneider Electric",
-"empresa": "Data Center and C&SP Sales Manager Iberia",
+"cargo": "Data Center and C&SP Sales Manager Iberia",
+"empresa": "Schneider Electric",
 "role": "orador"
 },
 {
 "nome": "Armando Layna",
-"cargo": "Vocal Junta Directiva SpainSDC y Socio Director Sales For You Consulting",
+"cargo": "Vocal en la Junta Directiva de SpainDC y Socio Director de Sales For You Consulting",
 "empresa": "Spain DC",
+"role": "orador"
+},
+{
+"nome": "Marta de Pablos Álvaro",
+"cargo": "Directora de Crecimiento",
+"empresa": "NEDGIA (Grupo Naturgy)",
 "role": "orador"
 }
 ],
@@ -1694,6 +1700,12 @@
 "antes": "Alejandro Fuster, Emmanuel Becker, Víctor Gago",
 "depois": "Alejandro Fuster, Emmanuel Becker, Víctor Gago, Armando Layna",
 "em": "2026-10-14T19:33:05Z"
+},
+{
+"campo": "oradores",
+"antes": "Alejandro Fuster, Emmanuel Becker, Víctor Gago, Armando Layna",
+"depois": "Lorena Ventoso, Emmanuel Becker, Víctor Gago, Armando Layna, Marta de Pablos Álvaro",
+"em": "2026-10-20T11:55:52Z"
 }
 ]
 },
@@ -8003,14 +8015,26 @@
 "track_id": "ai-data",
 "hora_inicio": "12:45",
 "hora_fim": "13:05",
-"titulo": "De la pregunta al insight: cómo eliminar las barreras técnicas del dato corporativo con IA",
+"titulo": "Del dato disponible al conocimiento accionable",
 "tipo": "Palestra",
-"descricao": "Los datos empresariales albergan un enorme potencial, pero acceder a ellos suele requerir el manejo de herramientas complejas o depender en gran medida de los equipos técnicos. En esta sesión, explor…",
+"descricao": "Los datos de la compañía tienen todas las respuestas, pero llegar a ellas suele requerir herramientas complejas, conocimientos técnicos o esperar a que otro equipo tenga disponibilidad.En esta sesión…",
 "oradores": [
 {
-"nome": "Alex Romero",
-"cargo": "Principal Consultant, AI & Agentic AI",
-"empresa": "Synvert ClearPeaks",
+"nome": "Judith Fernández Martín-Forero",
+"cargo": "Advanced Visualization",
+"empresa": "Moeve",
+"role": "orador"
+},
+{
+"nome": "Fèlix Ribera",
+"cargo": "Senior Consultant, AI & Agentic AI",
+"empresa": "ClearPeaks",
+"role": "orador"
+},
+{
+"nome": "Jordi Morera Trujillo",
+"cargo": "SPAI AI Community Technical Lead",
+"empresa": "Cognizant",
 "role": "orador"
 }
 ],
@@ -8032,6 +8056,18 @@
 "antes": "—",
 "depois": "Alex Romero",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "titulo",
+"antes": "De la pregunta al insight: cómo eliminar las barreras técnicas del dato corporativo con IA",
+"depois": "Del dato disponible al conocimiento accionable",
+"em": "2026-10-20T11:55:52Z"
+},
+{
+"campo": "oradores",
+"antes": "Alex Romero",
+"depois": "Judith Fernández Martín-Forero, Fèlix Ribera, Jordi Morera Trujillo",
+"em": "2026-10-20T11:55:52Z"
 }
 ]
 },
@@ -9914,10 +9950,17 @@
 "track_id": "cloud-ai",
 "hora_inicio": "16:30",
 "hora_fim": "16:50",
-"titulo": "Ponencia Javier Gavilán - Telecom Senior Advisor",
+"titulo": "AI-Native Telco Cloud: la evolución de la virtualización hacia redes autónomas",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "La virtualización sentó las bases de la Telco Cloud liberadas por programas como UNICA de Telefonica. La IA está impulsando su siguiente evolución. Esta ponencia explora cómo las telco incorporan dato…",
+"oradores": [
+{
+"nome": "Javier Gavilán",
+"cargo": "Telecom Senior Advisor",
+"empresa": ".",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-javier-gavil%C3%A1n-lincotek",
 "id": "s402",
 "tags": [],
@@ -9933,6 +9976,18 @@
 "antes": "Ponencia Javier Gavilán - Lincotek",
 "depois": "Ponencia Javier Gavilán - Telecom Senior Advisor",
 "em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia Javier Gavilán - Telecom Senior Advisor",
+"depois": "AI-Native Telco Cloud: la evolución de la virtualización hacia redes autónomas",
+"em": "2026-10-20T11:55:52Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Javier Gavilán",
+"em": "2026-10-20T11:55:52Z"
 }
 ]
 },
@@ -10098,7 +10153,14 @@
 "titulo": "The Agent",
 "tipo": "Palestra",
 "descricao": "",
-"oradores": [],
+"oradores": [
+{
+"nome": "Pepe Quintero",
+"cargo": "Country Manager Spain & Brand Partnerships",
+"empresa": "The Agent",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/the-agent",
 "id": "s404",
 "tags": [
@@ -10110,6 +10172,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Pepe Quintero",
+"em": "2026-10-20T11:55:52Z"
 }
 ]
 }
