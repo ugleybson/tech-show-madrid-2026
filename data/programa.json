@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 19,
-"actualizado_em": "2026-10-20T16:18:43Z",
+"versao": 20,
+"actualizado_em": "2026-10-20T20:03:44Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -6107,11 +6107,25 @@
 "titulo": "Ponencia SmartUp",
 "tipo": "Palestra",
 "descricao": "",
-"oradores": [],
+"oradores": [
+{
+"nome": "Clara Martínez García",
+"cargo": "Head of Performance Marketing",
+"empresa": "Civitatis.com",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-smartup-1",
 "id": "s198",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Clara Martínez García",
+"em": "2026-10-20T20:03:44Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
