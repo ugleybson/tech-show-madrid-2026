@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 22,
-"actualizado_em": "2026-10-21T17:50:08Z",
+"versao": 23,
+"actualizado_em": "2026-10-21T21:08:09Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -10986,7 +10986,7 @@
 "track_id": "tfm",
 "hora_inicio": "16:30",
 "hora_fim": "16:50",
-"titulo": "The Agent",
+"titulo": "Vender en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces de la moda",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [
@@ -11014,6 +11014,12 @@
 "antes": "—",
 "depois": "Pepe Quintero",
 "em": "2026-10-20T11:55:52Z"
+},
+{
+"campo": "titulo",
+"antes": "The Agent",
+"depois": "Vender en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces de la moda",
+"em": "2026-10-21T21:08:09Z"
 }
 ]
 }
