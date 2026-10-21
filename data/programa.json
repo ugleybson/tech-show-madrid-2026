@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 21,
-"actualizado_em": "2026-10-21T12:39:51Z",
+"versao": 22,
+"actualizado_em": "2026-10-21T17:50:08Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1159,7 +1159,7 @@
 {
 "nome": "Alessandra Bosco",
 "cargo": "Director eCom",
-"empresa": "1teamsports",
+"empresa": "11Teamsports",
 "role": "orador"
 },
 {
@@ -1672,14 +1672,21 @@
 "track_id": "ecommerce-strat",
 "hora_inicio": "11:55",
 "hora_fim": "12:15",
-"titulo": "TBC",
+"titulo": "Ponencia Somos Sinapsis",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-57",
 "id": "s174",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "Ponencia Somos Sinapsis",
+"em": "2026-10-21T17:50:08Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -2152,7 +2159,14 @@
 "titulo": "Amazon ya no es el rey. ¿O sí?",
 "tipo": "Palestra",
 "descricao": "Amazon sigue siendo el primer sitio donde se busca un producto, pero ya no el único: la compra se cierra en Amazon y la decisión se toma cada vez más fuera. IA y GEO (que ChatGPT, Rufus o Google te re…",
-"oradores": [],
+"oradores": [
+{
+"nome": "Miriam Larrosa",
+"cargo": "CEO",
+"empresa": "ROICOS",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/amazon-ya-no-es-el-rey-o-s%C3%AD",
 "id": "s409",
 "tags": [
@@ -2165,6 +2179,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Miriam Larrosa",
+"em": "2026-10-21T17:50:08Z"
 }
 ]
 },
@@ -2507,15 +2527,15 @@
 "descricao": "¿Cómo evitas que tu propio cliente de Amazon se vaya a comprarte más barato a TikTok Shop? TikTok Shop España ya supera los 21.000 vendedores locales y desde el 19 de octubre permite vender en el rest…",
 "oradores": [
 {
-"nome": "Mario Fontán",
-"cargo": "Director de Negocio Online",
-"empresa": "INTEX",
-"role": "orador"
-},
-{
 "nome": "José Luis Campos",
 "cargo": "E-commerce & Digital Business Lead",
 "empresa": "INABA Foods (Churu)",
+"role": "orador"
+},
+{
+"nome": "Mario Fontán",
+"cargo": "Director de Negocio Online",
+"empresa": "COLORBABY",
 "role": "orador"
 }
 ],
@@ -2528,6 +2548,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Mario Fontán, José Luis Campos",
+"depois": "José Luis Campos, Mario Fontán",
+"em": "2026-10-21T17:50:08Z"
 }
 ]
 },
@@ -4965,14 +4991,20 @@
 "track_id": "ecommerce-strat",
 "hora_inicio": "16:30",
 "hora_fim": "16:50",
-"titulo": "eCommerce conversacional: De la intención de compra a la conversión con el AI Assistant de Doofinder",
+"titulo": "El dependiente que nunca cierra: cómo Maxcolchon vende más con la IA conversacional de Doofinder",
 "tipo": "Palestra",
-"descricao": "Los clientes ya no solo buscan, conversan. A medida que el comportamiento del consumidor evoluciona más allá del uso de palabras clave hacia un lenguaje más natural, las marcas deben adaptarse. En est…",
+"descricao": "¿Y si tu tienda online tuviera un dependiente capaz de resolver dudas a las once de la noche y recomendar el producto adecuado a cada cliente? En esta sesión, Maxcolchon y Doofinder cuentan un caso re…",
 "oradores": [
 {
 "nome": "Berta Marquina",
 "cargo": "Regional Marketing Manager Spain",
 "empresa": "Doofinder",
+"role": "orador"
+},
+{
+"nome": "Raquel Espinosa Elena",
+"cargo": "CMO",
+"empresa": "MAXCOLCHON",
 "role": "orador"
 }
 ],
@@ -4983,7 +5015,20 @@
 "marketing",
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "eCommerce conversacional: De la intención de compra a la conversión con el AI Assistant de Doofinder",
+"depois": "El dependiente que nunca cierra: cómo Maxcolchon vende más con la IA conversacional de Doofinder",
+"em": "2026-10-21T17:50:08Z"
+},
+{
+"campo": "oradores",
+"antes": "Berta Marquina",
+"depois": "Berta Marquina, Raquel Espinosa Elena",
+"em": "2026-10-21T17:50:08Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5887,6 +5932,12 @@
 "cargo": "Desarrollo de Negocio y Marketing Digital",
 "empresa": "Dispersa Juguetes",
 "role": "orador"
+},
+{
+"nome": "Atenea García de la Rosa Rus",
+"cargo": "CEO",
+"empresa": "Hostelearte",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/crecer-en-b2b-qu%C3%A9-mercados-qu%C3%A9-clientes-qu%C3%A9-decisiones",
@@ -5898,6 +5949,12 @@
 "antes": "prestashop",
 "depois": "prestashop-village",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "oradores",
+"antes": "Diana Iglesias, César Sastre",
+"depois": "Diana Iglesias, César Sastre, Atenea García de la Rosa Rus",
+"em": "2026-10-21T17:50:08Z"
 }
 ]
 },
@@ -6368,6 +6425,27 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "ai-data",
+"hora_inicio": "18:25",
+"hora_fim": "18:45",
+"titulo": "Ponencia EVOKE TECHNOLOGIES",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-evoke-technologies",
+"id": "s422",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T17:50:08Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "dc-energy",
 "hora_inicio": "18:25",
 "hora_fim": "18:45",
@@ -6549,7 +6627,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-145",
 "id": "s149",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-21T17:50:08Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
@@ -9327,8 +9413,8 @@
 },
 {
 "nome": "Luis Arconada",
-"cargo": "Ex Capitán de",
-"empresa": "la Selección Española de Fútbol. Consejero en diferentes empresas",
+"cargo": "Ex Capitán de la Real Sociedad y de la Selección Española de Fútbol",
+"empresa": "Consejero en diferentes empresas",
 "role": "orador"
 }
 ],
@@ -10854,7 +10940,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-143",
 "id": "s316",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-21T17:50:08Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
