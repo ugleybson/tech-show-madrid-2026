@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 20,
-"actualizado_em": "2026-10-20T20:03:44Z",
+"versao": 21,
+"actualizado_em": "2026-10-21T12:39:51Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -104,6 +104,12 @@
 "nome": "PrestaShop Village",
 "cor": "#94a3b8",
 "area": "PrestaShop Village"
+},
+{
+"id": "fbashow",
+"nome": "FBASHOW",
+"cor": "#94a3b8",
+"area": "FBASHOW"
 }
 ],
 "sessoes": [
@@ -150,6 +156,12 @@
 "cargo": "Senior Director de Account Cloud Engineers",
 "empresa": "Oracle",
 "role": "orador"
+},
+{
+"nome": "Nicole Nicole Van der Velden",
+"cargo": "Deportista profesional de vela",
+"empresa": "Los Gallos Spain SailGP Team",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-oracle",
@@ -161,7 +173,14 @@
 "IA",
 "analytics"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Sonia Font Sánchez",
+"depois": "Sonia Font Sánchez, Nicole Nicole Van der Velden",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -315,24 +334,40 @@
 "track_id": "e-show",
 "hora_inicio": "10:30",
 "hora_fim": "10:55",
-"titulo": "De Shanghai a Madrid, el canal digital tiene las mismas reglas que el físico. En China, ya saben exactamente qué automatizar y qué no",
+"titulo": "Watch it. Love it. Want it. Start it",
 "tipo": "Palestra",
-"descricao": "Llevamos años hablando de transformación digital del canal, y también trabajándolo. Sin embargo, la conversación en las conferencias comerciales suele quedarse en tecnología, plataformas, automatizaci…",
+"descricao": "¿Buscas desbloquear nuevos canales de crecimiento y establecer una presencia de alto impacto en TikTok desde el primer día? Diseñada para líderes de marcas, esta sesión estratégica explora las oportun…",
 "oradores": [
 {
-"nome": "Chen Yue",
-"cargo": "Head of Digital -Global Digital Marketing &Ecommerce",
-"empresa": "Laboratorios PHERGAL S.A.",
+"nome": "Teba Lorenzo",
+"cargo": "Directora general de Soluciones de Negocio",
+"empresa": "TikTok para España y Portugal",
 "role": "orador"
 }
 ],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/de-shanghai-a-madrid-el-canal-digital-tiene-las-mismas-reglas-que-el-f%C3%ADsico-en-china-ya-saben-exactamente-qu%C3%A9-automatizar-y-qu%C3%A9-nunca-delegar-a-una-m%C3%A1quina",
-"id": "s161",
-"tags": [
-"aprendizagem",
-"automatização"
-],
-"alteracoes": []
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-68",
+"id": "s340",
+"tags": [],
+"alteracoes": [
+{
+"campo": "hora",
+"antes": "2026-11-05 11:40–12:00",
+"depois": "2026-11-04 10:30–10:55",
+"em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia TIKTOK",
+"depois": "Watch it. Love it. Want it. Start it",
+"em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Teba Lorenzo",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -362,6 +397,40 @@
 "IA"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "10:30",
+"hora_fim": "11:10",
+"titulo": "Control de precio y canibalización de canal: Vendor vs Seller",
+"tipo": "Palestra",
+"descricao": "¿Vendor o Seller: quién controla de verdad el precio final en tu categoría? La hibridación Vendor/Seller es cada vez más habitual y el control de precio se reparte de forma distinta en cada modelo.",
+"oradores": [
+{
+"nome": "Paco Mascareña",
+"cargo": "Ecommerce Manager",
+"empresa": "Sp-Berner",
+"role": "orador"
+},
+{
+"nome": "Adrián Juan Ramos",
+"cargo": "Amazon & Marketplace Manager",
+"empresa": "Experto en Vendor",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/control-de-precio-y-canibalizaci%C3%B3n-de-canal-vendor-vs-seller",
+"id": "s406",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -424,7 +493,7 @@
 "hora_fim": "10:50",
 "titulo": "HR: lleva tu formación corporativa a la era de la inteligencia organizacional",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "La formación corporativa ya no se mide en horas, sino en capacidades. Adrián Aybar explica cómo conectar aprendizaje, datos e IA para anticipar las necesidades de skills, personalizar itinerarios y de…",
 "oradores": [
 {
 "nome": "Adrián Aybar",
@@ -646,12 +715,6 @@
 "role": "orador"
 },
 {
-"nome": "Luis Palazón",
-"cargo": "CEO",
-"empresa": "Alcalink",
-"role": "orador"
-},
-{
 "nome": "Daniel Raya",
 "cargo": "CEO",
 "empresa": "Aipresta",
@@ -674,6 +737,12 @@
 "cargo": "Account Executives - GTM Spain, Alma",
 "empresa": "ALMA",
 "role": "orador"
+},
+{
+"nome": "Celia Sánchez",
+"cargo": "Brand Manager",
+"empresa": "Alcalink",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/6-expertos-1-objetivo-que-tu-tienda-venda-m%C3%A1s",
@@ -687,6 +756,12 @@
 "antes": "prestashop",
 "depois": "prestashop-village",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "oradores",
+"antes": "José Antonio Jiménez Bisbe, Luis Palazón, Daniel Raya, Isaac Mayolas, Marta Rifà, Enrique Pérez",
+"depois": "José Antonio Jiménez Bisbe, Daniel Raya, Isaac Mayolas, Marta Rifà, Enrique Pérez, Celia Sánchez",
+"em": "2026-10-21T12:39:51Z"
 }
 ]
 },
@@ -1109,6 +1184,34 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "11:15",
+"hora_fim": "11:35",
+"titulo": "El EPR en el nuevo marco de la expansión europea",
+"tipo": "Palestra",
+"descricao": "La expansión europea en Amazon viene con letra pequeña: la Responsabilidad Ampliada del Productor ha dejado de ser un trámite burocrático para convertirse en la llave de entrada a la Unión Europea.",
+"oradores": [
+{
+"nome": "Javier Martínez Piñán",
+"cargo": "Sales & Partnerships Manager",
+"empresa": "VAT AI",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-epr-en-el-nuevo-marco-de-la-expansi%C3%B3n-europea",
+"id": "s407",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "ai-commerce",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
@@ -1488,6 +1591,49 @@
 "marketing"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "11:40",
+"hora_fim": "12:20",
+"titulo": "Cuando el que compra es un agente y no una persona",
+"tipo": "Palestra",
+"descricao": "¿Qué pasa con tu ficha, tu precio y tu marca el día que el comprador es un agente que decide por el cliente? Después de recomendar viene comprar: Amazon ya prueba con Buy for Me que su asistente compr…",
+"oradores": [
+{
+"nome": "Joan Sucías",
+"cargo": "CEO",
+"empresa": "Nexes Innova",
+"role": "orador"
+},
+{
+"nome": "Esther Castro",
+"cargo": "Global eCommerce Content Improvement",
+"empresa": "Signify",
+"role": "orador"
+},
+{
+"nome": "Edgar Pascual",
+"cargo": "E-Commerce Key Account Manager",
+"empresa": "Haier Europe",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/cuando-el-que-compra-es-un-agente-y-no-una-persona",
+"id": "s408",
+"tags": [
+"agentes",
+"marketing"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -2000,6 +2146,30 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "12:25",
+"hora_fim": "12:45",
+"titulo": "Amazon ya no es el rey. ¿O sí?",
+"tipo": "Palestra",
+"descricao": "Amazon sigue siendo el primer sitio donde se busca un producto, pero ya no el único: la compra se cierra en Amazon y la decisión se toma cada vez más fuera. IA y GEO (que ChatGPT, Rufus o Google te re…",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/amazon-ya-no-es-el-rey-o-s%C3%AD",
+"id": "s409",
+"tags": [
+"IA",
+"marketing"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "tech-keynote",
 "hora_inicio": "12:25",
 "hora_fim": "12:45",
@@ -2205,7 +2375,7 @@
 "track_id": "prestashop-village",
 "hora_inicio": "12:30",
 "hora_fim": "12:50",
-"titulo": "La diferencia entre integrar IA y operar con Sistemas Multiagénticos en PrestaShop",
+"titulo": "Automatizar sin romper: La guía completa para integrar correctamente IA y Harness en PrestaShop",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [
@@ -2227,6 +2397,12 @@
 "antes": "prestashop",
 "depois": "prestashop-village",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "titulo",
+"antes": "La diferencia entre integrar IA y operar con Sistemas Multiagénticos en PrestaShop",
+"depois": "Automatizar sin romper: La guía completa para integrar correctamente IA y Harness en PrestaShop",
+"em": "2026-10-21T12:39:51Z"
 }
 ]
 },
@@ -2323,6 +2499,40 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "12:50",
+"hora_fim": "13:30",
+"titulo": "Vender también en TikTok Shop sin canibalizar Amazon",
+"tipo": "Palestra",
+"descricao": "¿Cómo evitas que tu propio cliente de Amazon se vaya a comprarte más barato a TikTok Shop? TikTok Shop España ya supera los 21.000 vendedores locales y desde el 19 de octubre permite vender en el rest…",
+"oradores": [
+{
+"nome": "Mario Fontán",
+"cargo": "Director de Negocio Online",
+"empresa": "INTEX",
+"role": "orador"
+},
+{
+"nome": "José Luis Campos",
+"cargo": "E-commerce & Digital Business Lead",
+"empresa": "INABA Foods (Churu)",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/vender-tambi%C3%A9n-en-tiktok-shop-sin-canibalizar-amazon",
+"id": "s410",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "ai-data",
 "hora_inicio": "12:55",
 "hora_fim": "13:35",
@@ -2351,7 +2561,7 @@
 {
 "nome": "Ariadna Cuffi",
 "cargo": "Data Governance Lead",
-"empresa": "SEQURA",
+"empresa": "seQura",
 "role": "orador"
 }
 ],
@@ -2982,6 +3192,36 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "13:35",
+"hora_fim": "13:55",
+"titulo": "Full Funnel SEO + PPC de Amazon",
+"tipo": "Palestra",
+"descricao": "Cómo entiende Amazon el funnel de compra y cómo orgánico y pago se dan la mano, desde la parte alta del embudo hasta la retención.",
+"oradores": [
+{
+"nome": "Jordi Ordóñez",
+"cargo": "CEO",
+"empresa": "JORDIOBDOTCOM",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/full-funnel-seo-ppc-de-amazon",
+"id": "s411",
+"tags": [
+"marketing"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "e-show",
 "hora_inicio": "13:40",
 "hora_fim": "14:00",
@@ -3241,14 +3481,20 @@
 "track_id": "ai-data",
 "hora_inicio": "15:00",
 "hora_fim": "15:20",
-"titulo": "De la factura al insight: automatizando la reconciliación financiera con IA",
+"titulo": "Cómo el Ayuntamiento de Madrid automatizó con IA su soporte al desarrollador",
 "tipo": "Palestra",
-"descricao": "Una empresa de retail perdía horas cada semana conciliando facturas de proveedores contra órdenes de compra de forma manual. Con Astrafy, implementó un agente de IA que extrae, valida y cruza los dato…",
+"descricao": "El soporte técnico del Ayuntamiento de Madrid para desarrolladores internos dependía de documentación fragmentada y consultas personales a perfiles senior. Con Astrafy, IAM (Informática del Ayuntamien…",
 "oradores": [
 {
 "nome": "Shay Begun",
 "cargo": "Chief Revenue Officer",
 "empresa": "Astrafy",
+"role": "orador"
+},
+{
+"nome": "Clara Benedet",
+"cargo": "Responsable de Infraestructura de Sistemas de Inteligencia Artificial",
+"empresa": "IAM (Informática del Ayuntamiento de Madrid).",
 "role": "orador"
 }
 ],
@@ -3260,7 +3506,20 @@
 "reconciliação",
 "dados financeiros"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "De la factura al insight: automatizando la reconciliación financiera con IA",
+"depois": "Cómo el Ayuntamiento de Madrid automatizó con IA su soporte al desarrollador",
+"em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Shay Begun",
+"depois": "Shay Begun, Clara Benedet",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -3889,6 +4148,30 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "15:30",
+"hora_fim": "15:50",
+"titulo": "De viral a rentable: el método para escalar tu marca en TikTok Shop",
+"tipo": "Palestra",
+"descricao": "Un vídeo viral no es un negocio. El sistema que usan en Rocketplace para convertir TikTok Shop en un canal de ventas estable: creadores que venden, contenido que convierte, Live Shopping y Ads que esc…",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/de-viral-a-rentable-el-m%C3%A9todo-para-escalar-tu-marca-en-tiktok-shop",
+"id": "s412",
+"tags": [
+"marketing",
+"ROI"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "future-commerce",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
@@ -4044,6 +4327,37 @@
 "liderança"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "15:55",
+"hora_fim": "16:35",
+"titulo": "¿Dejas que la IA de Amazon pilote tus campañas de Ads?",
+"tipo": "Palestra",
+"descricao": "¿Confías ya en Ads Agent para poner las pujas, o lo sigues llevando tú a mano keyword a keyword? En unBoxed 2026 Amazon presentó Ads Agent: la consola de Ads y Amazon DSP en un solo sitio, manejados p…",
+"oradores": [
+{
+"nome": "Carlos Martínez",
+"cargo": "CEO",
+"empresa": "Epinium",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/dejas-que-la-ia-de-amazon-pilote-tus-campa%C3%B1as-de-ads",
+"id": "s413",
+"tags": [
+"IA",
+"agentes"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -4839,6 +5153,29 @@
 "mercado laboral"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "fbashow",
+"hora_inicio": "16:40",
+"hora_fim": "17:00",
+"titulo": "¿Miedo a uno de los mercados más grandes de Europa? Oportunidades post-Brexit y aduanas sin fricción",
+"tipo": "Palestra",
+"descricao": "Supera las barreras aduaneras del Brexit y aprovecha el enorme potencial del e-commerce británico.",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/miedo-a-uno-de-los-mercados-m%C3%A1s-grandes-de-europa-oportunidades-post-brexit-y-aduanas-sin-fricci%C3%B3n",
+"id": "s414",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5748,6 +6085,24 @@
 "cargo": "European Market Development Manager",
 "empresa": "Open Compute Project Foundation",
 "role": "moderador"
+},
+{
+"nome": "Jorge Lis",
+"cargo": "Global Segment Leader, Data Centres",
+"empresa": "ABB",
+"role": "orador"
+},
+{
+"nome": "Paola Manteca",
+"cargo": "General Manager Modular Data Centers Europe",
+"empresa": "Schneider Electric",
+"role": "orador"
+},
+{
+"nome": "Jon Abbott",
+"cargo": "Technologies Director | Colocation & Hyperscale",
+"empresa": "Vertiv",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-20",
@@ -5756,7 +6111,14 @@
 "IA",
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Raul Alvarez",
+"depois": "Raul Alvarez, Jorge Lis, Paola Manteca, Jon Abbott",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -6399,6 +6761,29 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "fbashow",
+"hora_inicio": "10:30",
+"hora_fim": "11:10",
+"titulo": "Miravia, Carrefour, MediaMarkt, El Corte Inglés: los marketplaces que ignoras",
+"tipo": "Palestra",
+"descricao": "¿Cuál de los marketplaces españoles compensa de verdad y cuál te come recursos sin devolver nada? Se habla de Amazon como si fuera el único canal. Los marketplaces del retail español están comprando t…",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/miravia-carrefour-mediamarkt-el-corte-ingl%C3%A9s-los-marketplaces-que-ignoras",
+"id": "s415",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "future-commerce",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
@@ -6918,13 +7303,13 @@
 {
 "nome": "Joan Asensio",
 "cargo": "Sales Manager Mid-Market",
-"empresa": "SEQURA",
+"empresa": "seQura",
 "role": "orador"
 },
 {
 "nome": "Mario Fontán",
 "cargo": "Director de Negocio Online",
-"empresa": "Colorbaby Gro",
+"empresa": "INTEX",
 "role": "orador"
 }
 ],
@@ -7037,6 +7422,29 @@
 "e-commerce"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-05",
+"track_id": "fbashow",
+"hora_inicio": "11:15",
+"hora_fim": "11:35",
+"titulo": "Transforma las oportunidades internacionales en el éxito de tu marketplace",
+"tipo": "Palestra",
+"descricao": "¿El cumplimiento europeo frena tu marketplace? Domina el cumplimiento normativo desde una sola plataforma.",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/transforma-las-oportunidades-internacionales-en-el-%C3%A9xito-de-tu-marketplace",
+"id": "s416",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7387,14 +7795,71 @@
 "track_id": "e-show",
 "hora_inicio": "11:40",
 "hora_fim": "12:00",
-"titulo": "Ponencia TIKTOK",
+"titulo": "De Shanghai a Madrid, el canal digital tiene las mismas reglas que el físico. En China, ya saben exactamente qué automatizar y qué no",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-68",
-"id": "s340",
+"descricao": "Llevamos años hablando de transformación digital del canal, y también trabajándolo. Sin embargo, la conversación en las conferencias comerciales suele quedarse en tecnología, plataformas, automatizaci…",
+"oradores": [
+{
+"nome": "Chen Yue",
+"cargo": "Head of Digital -Global Digital Marketing &Ecommerce",
+"empresa": "Laboratorios PHERGAL S.A.",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/de-shanghai-a-madrid-el-canal-digital-tiene-las-mismas-reglas-que-el-f%C3%ADsico-en-china-ya-saben-exactamente-qu%C3%A9-automatizar-y-qu%C3%A9-nunca-delegar-a-una-m%C3%A1quina",
+"id": "s161",
+"tags": [
+"aprendizagem",
+"automatização"
+],
+"alteracoes": [
+{
+"campo": "hora",
+"antes": "2026-11-04 10:30–10:55",
+"depois": "2026-11-05 11:40–12:00",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "fbashow",
+"hora_inicio": "11:40",
+"hora_fim": "12:20",
+"titulo": "Incrementalidad de verdad: MMM vs atribución last-click",
+"tipo": "Palestra",
+"descricao": "¿Qué parte de tus ventas de Amazon Ads habrían pasado igual sin el anuncio? Amazon empuja métricas nuevas como Long-Term Sales, que suma a la venta inmediata una estimación del valor a 12 meses del cl…",
+"oradores": [
+{
+"nome": "Sonia Villalba",
+"cargo": "Paid Media Manager",
+"empresa": "ROICOS",
+"role": "orador"
+},
+{
+"nome": "Alyona Dvornikova",
+"cargo": "Global Retail Media Manager",
+"empresa": "Suntory Global Spirits",
+"role": "orador"
+},
+{
+"nome": "Jaime Maganto",
+"cargo": "Head of Amazon Southern Europe",
+"empresa": "Beiersdorf",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/incrementalidad-de-verdad-mmm-vs-atribuci%C3%B3n-last-click",
+"id": "s417",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7831,6 +8296,37 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "fbashow",
+"hora_inicio": "12:25",
+"hora_fim": "12:45",
+"titulo": "Tu IA solo contesta: cómo hacer que trabaje en tu cuenta de Amazon",
+"tipo": "Palestra",
+"descricao": "Amazon acaba de presentar agentes, workflows y servidores MCP, pero casi todo el mundo sigue usando la IA para hacer preguntas. Carlos recorre en directo los cuatro niveles (preguntar, conectar la IA…",
+"oradores": [
+{
+"nome": "Carlos Martínez",
+"cargo": "CEO",
+"empresa": "Epinium",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tu-ia-solo-contesta-c%C3%B3mo-hacer-que-trabaje-en-tu-cuenta-de-amazon",
+"id": "s418",
+"tags": [
+"IA",
+"agentes"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "hr-talent",
 "hora_inicio": "12:25",
 "hora_fim": "12:55",
@@ -8161,6 +8657,42 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "fbashow",
+"hora_inicio": "12:50",
+"hora_fim": "13:30",
+"titulo": "Juguetes: la normativa UE 2026 que cambia el listing entero",
+"tipo": "Palestra",
+"descricao": "¿Tu ficha de producto ya cumple la nueva normativa, o esperas a que te suspendan primero? El nuevo reglamento europeo de seguridad de juguetes (2025/2509) prohíbe sustancias como PFAS, disruptores end…",
+"oradores": [
+{
+"nome": "Guillermo Maté",
+"cargo": "Responsable de Marketplaces",
+"empresa": "La Casa de las Carcasas",
+"role": "orador"
+},
+{
+"nome": "Vlad Slobodenyuk",
+"cargo": "Marketplace & Key Account Manager",
+"empresa": "Cerdá Group",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/juguetes-la-normativa-ue-2026-que-cambia-el-listing-entero",
+"id": "s419",
+"tags": [
+"cibersegurança"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "cloud-ai",
 "hora_inicio": "12:55",
 "hora_fim": "13:15",
@@ -8303,24 +8835,30 @@
 "track_id": "tfm",
 "hora_inicio": "12:55",
 "hora_fim": "13:15",
-"titulo": "Presente y futuro del SEO para IA (GEO): El caso de éxito de Barceló Hotel Group.",
+"titulo": "Ponencia SPLIO",
 "tipo": "Palestra",
-"descricao": "En esta ponencia, Javier Bermúdez compartirá cómo la Autoridad, la Analítica y la Accesibilidad (las 3 'A') se han convertido en la nueva ventaja competitiva para liderar los motores generativos. A tr…",
-"oradores": [
-{
-"nome": "Javier Bermúdez Flores",
-"cargo": "AI & Organic Engine Manager",
-"empresa": "Barceló Hotel Group",
-"role": "orador"
-}
-],
+"descricao": "",
+"oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/presente-y-futuro-del-seo-para-ia-geo-el-caso-de-%C3%A9xito-de-barcel%C3%B3-hotel-group",
 "id": "s301",
 "tags": [
 "IA",
 "marketing"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Presente y futuro del SEO para IA (GEO): El caso de éxito de Barceló Hotel Group.",
+"depois": "Ponencia SPLIO",
+"em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Javier Bermúdez Flores",
+"depois": "—",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8768,6 +9306,64 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "ai-data",
+"hora_inicio": "13:35",
+"hora_fim": "14:05",
+"titulo": "La inteligencia detrás de los equipos de alto rendimiento",
+"tipo": "Palestra",
+"descricao": "¿Qué separa a un equipo que cumple de uno que marca la diferencia? Luis Arconada, Patricia Iglesias y Adrián Aybar comparten cómo identificar las capacidades que impulsan el rendimiento, detectar a ti…",
+"oradores": [
+{
+"nome": "Adrián Aybar",
+"cargo": "CEO",
+"empresa": "Clasing",
+"role": "orador"
+},
+{
+"nome": "Pat Iglesias",
+"cargo": "Experta en cultura empresarial, liderazgo y seguridad psicológica",
+"empresa": ".",
+"role": "orador"
+},
+{
+"nome": "Luis Arconada",
+"cargo": "Ex Capitán de",
+"empresa": "la Selección Española de Fútbol. Consejero en diferentes empresas",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-42",
+"id": "s271",
+"tags": [],
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Clasing",
+"depois": "La inteligencia detrás de los equipos de alto rendimiento",
+"em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Adrián Aybar, Pat Iglesias",
+"em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "hora",
+"antes": "2026-11-05 13:45–14:05",
+"depois": "2026-11-05 13:35–14:05",
+"em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Adrián Aybar, Pat Iglesias",
+"depois": "Adrián Aybar, Pat Iglesias, Luis Arconada",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "hr-talent",
 "hora_inicio": "13:35",
 "hora_fim": "13:40",
@@ -8828,46 +9424,6 @@
 "liderança"
 ],
 "alteracoes": []
-},
-{
-"dia": "2026-11-05",
-"track_id": "ai-data",
-"hora_inicio": "13:45",
-"hora_fim": "14:05",
-"titulo": "La inteligencia detrás de los equipos de alto rendimiento",
-"tipo": "Palestra",
-"descricao": "",
-"oradores": [
-{
-"nome": "Adrián Aybar",
-"cargo": "CEO",
-"empresa": "Clasing",
-"role": "orador"
-},
-{
-"nome": "Pat Iglesias",
-"cargo": "Experta en cultura empresarial, liderazgo y seguridad psicológica",
-"empresa": ".",
-"role": "orador"
-}
-],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-42",
-"id": "s271",
-"tags": [],
-"alteracoes": [
-{
-"campo": "titulo",
-"antes": "Ponencia Clasing",
-"depois": "La inteligencia detrás de los equipos de alto rendimiento",
-"em": "2026-10-19T18:12:16Z"
-},
-{
-"campo": "oradores",
-"antes": "—",
-"depois": "Adrián Aybar, Pat Iglesias",
-"em": "2026-10-19T18:12:16Z"
-}
-]
 },
 {
 "dia": "2026-11-05",
@@ -9326,14 +9882,34 @@
 "track_id": "cloud-ai",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
-"titulo": "Ponencia Mecides",
+"titulo": "Tu próxima innovación necesita inversión: el papel del Tax Lease en la IA y el Big Data",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "¿Cómo financiar el desarrollo de nuevas tecnologías sin depender de la deuda bancaria ni renunciar a parte del capital de la empresa? Mecides abordará el papel del Tax Lease como vía para movilizar in…",
+"oradores": [
+{
+"nome": "Arnau González",
+"cargo": "Director comercial",
+"empresa": "Mecides",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-115",
 "id": "s283",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Mecides",
+"depois": "Tu próxima innovación necesita inversión: el papel del Tax Lease en la IA y el Big Data",
+"em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Arnau González",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9474,6 +10050,40 @@
 "e-commerce"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-05",
+"track_id": "fbashow",
+"hora_inicio": "15:30",
+"hora_fim": "16:10",
+"titulo": "Que tu proveedor financie tu crecimiento",
+"tipo": "Palestra",
+"descricao": "¿Cuánto pago aplazado puedes negociar con fábrica antes de que se rompa la relación? Financiar inventario con banco o con revenue-based cuesta caro. Negociar 60 o 90 días con el proveedor es la financ…",
+"oradores": [
+{
+"nome": "Carla Carrasco",
+"cargo": "CEO",
+"empresa": "Accountali",
+"role": "orador"
+},
+{
+"nome": "Eduardo Pereda",
+"cargo": "CFO",
+"empresa": "Nullure",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/que-tu-proveedor-financie-tu-crecimiento",
+"id": "s420",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9947,6 +10557,37 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "fbashow",
+"hora_inicio": "16:15",
+"hora_fim": "16:35",
+"titulo": "Vendes mucho, ¿pero ganas algo? La rentabilidad real de tu ecommerce",
+"tipo": "Palestra",
+"descricao": "Vender mucho y ganar dinero no son lo mismo. Dídac desmonta euro a euro una venta de 30 € en Amazon (IVA, comisión, FBA, producto, publicidad y devoluciones) para ver cuánto queda de verdad, explica p…",
+"oradores": [
+{
+"nome": "Dídac Sánchez",
+"cargo": "Coo",
+"empresa": "Datali Group",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/vendes-mucho-pero-ganas-algo-la-rentabilidad-real-de-tu-ecommerce",
+"id": "s421",
+"tags": [
+"e-commerce",
+"ROI"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "e-show",
 "hora_inicio": "16:25",
 "hora_fim": "16:50",
@@ -10140,14 +10781,20 @@
 "track_id": "ecommerce-strat",
 "hora_inicio": "16:30",
 "hora_fim": "16:50",
-"titulo": "Cuando lo que funcionaba deja de funcionar: CRO en acción (Caso Real)",
+"titulo": "Cómo escalar el CRO en una gran empresa: el caso Naturgy",
 "tipo": "Palestra",
-"descricao": "¿Qué haces cuando la IA, el fin de las cookies y la presión por obtener resultados cambian las reglas del juego? A través de un caso real, veremos cómo combinar datos cuantitativos y cualitativos para…",
+"descricao": "¿Cómo consiguió Naturgy aumentar un 61,5 % la conversión en un experimento de rediseño web? Descubre cómo una gran empresa ha transformado su estrategia de CRO para acelerar la experimentación, involu…",
 "oradores": [
 {
 "nome": "Ilie George Avram",
 "cargo": "Head of business for Spain & Italy",
 "empresa": "WINGIFY",
+"role": "orador"
+},
+{
+"nome": "Marina Gómez Collazo",
+"cargo": "Responsable de SEO, CRO y Analítica de Venta a Distancia",
+"empresa": "Naturgy",
 "role": "orador"
 }
 ],
@@ -10157,7 +10804,20 @@
 "IA",
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Cuando lo que funcionaba deja de funcionar: CRO en acción (Caso Real)",
+"depois": "Cómo escalar el CRO en una gran empresa: el caso Naturgy",
+"em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Ilie George Avram",
+"depois": "Ilie George Avram, Marina Gómez Collazo",
+"em": "2026-10-21T12:39:51Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
