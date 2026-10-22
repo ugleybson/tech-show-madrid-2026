@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 25,
-"actualizado_em": "2026-10-22T10:23:17Z",
+"versao": 26,
+"actualizado_em": "2026-10-22T15:26:38Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -4395,8 +4395,8 @@
 "descricao": "Chats, automatizaciones, LLMs… La IA ya está dentro de las organizaciones, a menudo antes de que los equipos de seguridad hayan podido reaccionar. En esta charla revisaremos el proceso que las empresa…",
 "oradores": [
 {
-"nome": "Jesús Vallejo",
-"cargo": "Responsable Departamento APIs",
+"nome": "Guillermo García",
+"cargo": "API Expert",
 "empresa": "CloudAPPi",
 "role": "orador"
 }
@@ -4409,7 +4409,14 @@
 "cloud",
 "gestão"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Jesús Vallejo",
+"depois": "Guillermo García",
+"em": "2026-10-22T15:26:38Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5917,6 +5924,12 @@
 "cargo": "General Manager Europe Retail, E-commerce and Wholesale Operations",
 "empresa": "Masai Barefoot Technology Spain (MBT)",
 "role": "orador"
+},
+{
+"nome": "Pablo Gómez Domínguez",
+"cargo": "CEO",
+"empresa": "TiendaCPU",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-66",
@@ -5926,7 +5939,14 @@
 "aprendizagem",
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Marta Gil, Ana Gordo, Marc Gual",
+"depois": "Marta Gil, Ana Gordo, Marc Gual, Pablo Gómez Domínguez",
+"em": "2026-10-22T15:26:38Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -6806,14 +6826,21 @@
 "track_id": "future-commerce",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "TBC",
+"titulo": "Ponencia Manago AI",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-90",
 "id": "s357",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "Ponencia Manago AI",
+"em": "2026-10-22T15:26:38Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7827,9 +7854,9 @@
 "track_id": "e-show",
 "hora_inicio": "11:40",
 "hora_fim": "12:00",
-"titulo": "De Shanghai a Madrid, el canal digital tiene las mismas reglas que el físico. En China, ya saben exactamente qué automatizar y qué no",
+"titulo": "De Shanghái a Madrid: el canal cambia, la lógica comercial no",
 "tipo": "Palestra",
-"descricao": "Llevamos años hablando de transformación digital del canal, y también trabajándolo. Sin embargo, la conversación en las conferencias comerciales suele quedarse en tecnología, plataformas, automatizaci…",
+"descricao": "La digitalización ha transformado profundamente la forma de vender: marketplaces, Retail Media, automatización, datos, IA y nuevos modelos de marketing y distribución. Sin embargo, detrás de toda esa…",
 "oradores": [
 {
 "nome": "Chen Yue",
@@ -7850,6 +7877,12 @@
 "antes": "2026-11-04 10:30–10:55",
 "depois": "2026-11-05 11:40–12:00",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "titulo",
+"antes": "De Shanghai a Madrid, el canal digital tiene las mismas reglas que el físico. En China, ya saben exactamente qué automatizar y qué no",
+"depois": "De Shanghái a Madrid: el canal cambia, la lógica comercial no",
+"em": "2026-10-22T15:26:38Z"
 }
 ]
 },
@@ -8213,20 +8246,6 @@
 },
 {
 "dia": "2026-11-05",
-"track_id": "tech-keynote",
-"hora_inicio": "12:00",
-"hora_fim": "13:10",
-"titulo": "Acto Institucional",
-"tipo": "Palestra",
-"descricao": "",
-"oradores": [],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/acto-institucional",
-"id": "s260",
-"tags": [],
-"alteracoes": []
-},
-{
-"dia": "2026-11-05",
 "track_id": "e-show",
 "hora_inicio": "12:10",
 "hora_fim": "12:35",
@@ -8536,6 +8555,27 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "tech-keynote",
+"hora_inicio": "12:30",
+"hora_fim": "12:50",
+"titulo": "Ponencia Novo Nordisk Pharma",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-novo-nordisk-pharma",
+"id": "s423",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-22T15:26:38Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "ecommerce-strat",
 "hora_inicio": "12:35",
 "hora_fim": "12:55",
@@ -8714,6 +8754,27 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "tech-keynote",
+"hora_inicio": "12:50",
+"hora_fim": "13:10",
+"titulo": "Acto Institucional",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/acto-institucional",
+"id": "s260",
+"tags": [],
+"alteracoes": [
+{
+"campo": "hora",
+"antes": "2026-11-05 12:00–13:10",
+"depois": "2026-11-05 12:50–13:10",
+"em": "2026-10-22T15:26:38Z"
 }
 ]
 },
@@ -10938,9 +10999,9 @@
 "track_id": "tfm",
 "hora_inicio": "16:30",
 "hora_fim": "16:50",
-"titulo": "Vender en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces de la moda",
+"titulo": "Vender moda en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "Los grande marketplaces te abren la puerta a millones de clientes en toda Europa sin montar estructura fuera. Pero entre facturar y ganar dinero hay un camino que pocas marcas conocen. ¿Cómo elijo el…",
 "oradores": [
 {
 "nome": "Pepe Quintero",
@@ -10972,6 +11033,12 @@
 "antes": "The Agent",
 "depois": "Vender en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces de la moda",
 "em": "2026-10-21T21:08:09Z"
+},
+{
+"campo": "titulo",
+"antes": "Vender en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces de la moda",
+"depois": "Vender moda en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces",
+"em": "2026-10-22T15:26:38Z"
 }
 ]
 }
