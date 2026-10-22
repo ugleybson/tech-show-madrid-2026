@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 26,
-"actualizado_em": "2026-10-22T15:26:38Z",
+"versao": 27,
+"actualizado_em": "2026-10-22T19:21:12Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1646,10 +1646,17 @@
 "track_id": "ecommerce-strat",
 "hora_inicio": "11:55",
 "hora_fim": "12:15",
-"titulo": "Ponencia Somos Sinapsis",
+"titulo": "De la tienda física al liderazgo digital: Caso de éxito Omnicanal Bici Escapa con BigCommerce y Sinapsis",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Descubre cómo Bici Escapa (Grupo Quadis) unificó su operativa B2C, B2B y servicios de taller en una única arquitectura omnicanal sobre BigCommerce. De la mano de Sinapsis y BigCommerce, analizaremos l…",
+"oradores": [
+{
+"nome": "Toni Garrido Morales",
+"cargo": "Co-fundador & CTO",
+"empresa": "SOMOS SINAPSIS",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-57",
 "id": "s174",
 "tags": [],
@@ -1659,6 +1666,18 @@
 "antes": "TBC",
 "depois": "Ponencia Somos Sinapsis",
 "em": "2026-10-21T17:50:08Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia Somos Sinapsis",
+"depois": "De la tienda física al liderazgo digital: Caso de éxito Omnicanal Bici Escapa con BigCommerce y Sinapsis",
+"em": "2026-10-22T19:21:12Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Toni Garrido Morales",
+"em": "2026-10-22T19:21:12Z"
 }
 ]
 },
@@ -6497,9 +6516,9 @@
 "track_id": "future-commerce",
 "hora_inicio": "18:30",
 "hora_fim": "18:50",
-"titulo": "Ponencia SmartUp",
+"titulo": "Efecto Halo y Causalidad: Cómo rentabilizar cada euro invertido en destinos europeos",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "En esta sesión abordaremos cómo Civitatis mide el impacto real e incremental de sus campañas de Google Ads en destinos europeos mediante el uso de series temporales bayesianas (Causal Impact). Se pres…",
 "oradores": [
 {
 "nome": "Clara Martínez García",
@@ -6517,6 +6536,12 @@
 "antes": "—",
 "depois": "Clara Martínez García",
 "em": "2026-10-20T20:03:44Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia SmartUp",
+"depois": "Efecto Halo y Causalidad: Cómo rentabilizar cada euro invertido en destinos europeos",
+"em": "2026-10-22T19:21:12Z"
 }
 ]
 },
@@ -8558,10 +8583,23 @@
 "track_id": "tech-keynote",
 "hora_inicio": "12:30",
 "hora_fim": "12:50",
-"titulo": "Ponencia Novo Nordisk Pharma",
+"titulo": "IA en acción: de los retos de negocio a las soluciones",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "¿Cómo puede la inteligencia artificial ayudar a resolver problemas reales de negocio? En esta sesion hablaremos de cómo en Novo Nordisk hemos identificado oportunidades de aplicación de la IA en la or…",
+"oradores": [
+{
+"nome": "Jonathan Alcazar",
+"cargo": "Nixi4health AI Backend Developer",
+"empresa": "Novo Nordisk Pharma",
+"role": "orador"
+},
+{
+"nome": "Francisco Javier Fillat",
+"cargo": "Digital Health & Digital Marketing Sr.Manager",
+"empresa": "Novo Nordisk",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-novo-nordisk-pharma",
 "id": "s423",
 "tags": [],
@@ -8571,6 +8609,18 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-22T15:26:38Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia Novo Nordisk Pharma",
+"depois": "IA en acción: de los retos de negocio a las soluciones",
+"em": "2026-10-22T19:21:12Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Jonathan Alcazar, Francisco Javier Fillat",
+"em": "2026-10-22T19:21:12Z"
 }
 ]
 },
@@ -11001,12 +11051,18 @@
 "hora_fim": "16:50",
 "titulo": "Vender moda en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces",
 "tipo": "Palestra",
-"descricao": "Los grande marketplaces te abren la puerta a millones de clientes en toda Europa sin montar estructura fuera. Pero entre facturar y ganar dinero hay un camino que pocas marcas conocen. ¿Cómo elijo el…",
+"descricao": "Los grandes marketplaces te abren la puerta a millones de clientes en toda Europa sin montar estructura fuera. Pero entre facturar y ganar dinero hay un camino que pocas marcas conocen. ¿Cómo elijo el…",
 "oradores": [
 {
 "nome": "Pepe Quintero",
 "cargo": "Country Manager Spain & Brand Partnerships",
 "empresa": "The Agent",
+"role": "orador"
+},
+{
+"nome": "Anna Fabregas",
+"cargo": "Head of Ecommerce and Direct Sales",
+"empresa": "THINKING MU",
 "role": "orador"
 }
 ],
@@ -11039,6 +11095,12 @@
 "antes": "Vender en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces de la moda",
 "depois": "Vender moda en 30 países y que salga rentable: lo que nadie te cuenta de los marketplaces",
 "em": "2026-10-22T15:26:38Z"
+},
+{
+"campo": "oradores",
+"antes": "Pepe Quintero",
+"depois": "Pepe Quintero, Anna Fabregas",
+"em": "2026-10-22T19:21:12Z"
 }
 ]
 }
