@@ -59,6 +59,7 @@ let state = {
   expPrio: '',     // '' | A | B | C
   expCat: '',
   expAberto: null,
+  pergLang: lerLocal('tsm_perg_lang') === 'en' ? 'en' : 'pt',  // língua das perguntas nos stands
 };
 
 function lerLocal(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
@@ -1183,7 +1184,12 @@ function visita(e) { return state.visitas[e.id] || {}; }
 function membrosExp(e) { const v = visita(e); return v.membros || e.responsaveis || []; }
 function diaExp(e) { return visita(e).dia || e.dia; }
 function alterarVisita(e, campos) {
-  state.visitas[e.id] = { ...visita(e), ...campos, em: new Date().toISOString() };
+  const agora = new Date().toISOString();
+  if ('visitado' in campos) {
+    if (campos.visitado && !visita(e).visitado) Object.assign(campos, { visitado_em: agora, visitado_por: state.eu || '' });
+    if (!campos.visitado) Object.assign(campos, { visitado_em: '', visitado_por: '' });
+  }
+  state.visitas[e.id] = { ...visita(e), ...campos, em: agora };
   saveState();
 }
 
@@ -1371,6 +1377,18 @@ async function copiarTexto(t) {
   }
 }
 
+function perguntasExp(e, lang) {
+  const cat = getCategoriaExp(e.categoria);
+  const en = lang === 'en';
+  const gerais = en && typeof PERGUNTAS_GERAIS_EXP_EN !== 'undefined' && PERGUNTAS_GERAIS_EXP_EN.length
+    ? PERGUNTAS_GERAIS_EXP_EN : (typeof PERGUNTAS_GERAIS_EXP !== 'undefined' ? PERGUNTAS_GERAIS_EXP : []);
+  return [
+    ...((en && e.perguntas_en) || e.perguntas || []),
+    ...((en && cat.perguntas_en) || cat.perguntas || []),
+    ...gerais,
+  ];
+}
+
 function openExpositorModal(id) {
   const e = getExpositor(id);
   if (!e) return;
@@ -1378,7 +1396,9 @@ function openExpositorModal(id) {
   const cat = getCategoriaExp(e.categoria);
   const v = visita(e);
   const quem = membrosExp(e);
-  const perguntas = [...(e.perguntas || []), ...cat.perguntas, ...(typeof PERGUNTAS_GERAIS_EXP !== 'undefined' ? PERGUNTAS_GERAIS_EXP : [])];
+  const perguntas = perguntasExp(e, state.pergLang);
+  const feitas = v.perguntadas || [];
+  const quemVisitou = getMembro(v.visitado_por);
   const sessoes = (e._sessoes || []).map(sid => SESSOES.find(s => s.id === sid)).filter(Boolean);
   const dia = diaExp(e);
   const badge = document.getElementById('modal-exp-badge');
@@ -1399,25 +1419,38 @@ function openExpositorModal(id) {
       ${e.ficha ? `<a href="${esc(e.ficha)}" target="_blank" rel="noopener">📄 Ficha oficial</a>` : ''}
       <a href="${SWAPCARD_EXPOSITORES}" target="_blank" rel="noopener" data-swapcard>💬 Swapcard</a>
     </div>
+    <div class="exp-visita ${v.visitado ? 'is-on' : ''}">
+      <p class="modal__speakers-title">🙋 A nossa visita</p>
+      <div class="exp-toggles">
+        <button class="exp-toggle ${v.visitado ? 'on' : ''}" data-toggle="visitado">${v.visitado ? '✅ Visitado' : '⬜ Marcar como visitado'}</button>
+        <button class="exp-toggle ${v.followup ? 'on' : ''}" data-toggle="followup">${v.followup ? '🔁 Follow-up pedido' : '🔁 Pedir follow-up'}</button>
+      </div>
+      ${v.visitado && v.visitado_em ? `<p class="exp-visita__quando">Visitado ${fmtDataHora(v.visitado_em)}${quemVisitou ? ` por <b style="color:${quemVisitou.cor}">${esc(quemVisitou.nome)}</b>` : ''} · ${feitas.length}/${perguntas.length} perguntas feitas</p>` : ''}
+    </div>
     ${sessoes.length ? `
       <p class="modal__speakers-title">🎤 Fala no programa</p>
       <ul class="exp-sessoes">${sessoes.map(s => `
         <li data-exp-sessao="${s.id}"><b>${s.dia === '2026-11-04' ? '4 Nov' : '5 Nov'} ${s.hora_inicio}</b> · ${esc(s.titulo)} <small style="color:${getTrack(s.track_id).cor}">${esc(getTrack(s.track_id).nome)}</small></li>`).join('')}
       </ul>` : ''}
-    <p class="modal__speakers-title">❓ Perguntas a fazer</p>
-    <ol class="exp-perguntas">${perguntas.map(p => `<li>${esc(p)}</li>`).join('')}</ol>
+    <div class="exp-perg-head">
+      <p class="modal__speakers-title">❓ ${state.pergLang === 'en' ? 'Questions to ask' : 'Perguntas a fazer'}</p>
+      <div class="lang-toggle" role="group" aria-label="Língua das perguntas">
+        <button class="${state.pergLang === 'pt' ? 'active' : ''}" data-lang="pt">PT</button>
+        <button class="${state.pergLang === 'en' ? 'active' : ''}" data-lang="en">EN</button>
+      </div>
+    </div>
+    <ol class="exp-perguntas" ${state.pergLang === 'en' ? 'lang="en"' : ''}>${perguntas.map((p, i) => `
+      <li class="${feitas.includes(i) ? 'is-done' : ''}" data-pergunta="${i}" title="Tocar para marcar como feita">${esc(p)}</li>`).join('')}</ol>
+    <p class="exp-hint">Toque numa pergunta para a marcar como feita.</p>
+    <label class="filter-label" for="exp-contacto">👤 Contacto no stand</label>
+    <input class="exp-input" id="exp-contacto" type="text" placeholder="Nome, cargo, email ou telefone" value="${esc(v.contacto)}" />
+    <label class="filter-label" for="exp-notas">📝 Observações da visita</label>
+    <textarea class="exp-input" id="exp-notas" rows="5" placeholder="O que vimos e ouvimos, respostas às perguntas, preços, próximos passos...">${esc(v.notas)}</textarea>
+    <p class="exp-hint">Grava automaticamente neste telemóvel. Use o 🎤 do teclado para ditar.</p>
     <div class="exp-actions">
       <button class="btn-secondary" data-copiar-msg>📋 Copiar mensagem de contacto</button>
       <button class="btn-secondary" data-mover-dia>📅 Passar para ${dia === '2026-11-04' ? '5 Nov' : '4 Nov'}</button>
-    </div>
-    <div class="exp-toggles">
-      <button class="exp-toggle ${v.visitado ? 'on' : ''}" data-toggle="visitado">${v.visitado ? '✅ Visitado' : '⬜ Marcar como visitado'}</button>
-      <button class="exp-toggle ${v.followup ? 'on' : ''}" data-toggle="followup">${v.followup ? '🔁 Follow-up pedido' : '🔁 Pedir follow-up'}</button>
-    </div>
-    <label class="filter-label" for="exp-contacto">Contacto no stand</label>
-    <input class="exp-input" id="exp-contacto" type="text" placeholder="Nome, cargo, email ou telefone" value="${esc(v.contacto)}" />
-    <label class="filter-label" for="exp-notas">Notas e feedback para o plano AI First</label>
-    <textarea class="exp-input" id="exp-notas" rows="4" placeholder="O que disseram, preços, próximos passos...">${esc(v.notas)}</textarea>`;
+    </div>`;
 
   document.getElementById('modal-exp-team').innerHTML = state.equipa.map(m => {
     const on = quem.includes(m.id);
@@ -1439,6 +1472,17 @@ function openExpositorModal(id) {
     const k = b.dataset.toggle;
     alterarVisita(e, { [k]: !visita(e)[k] });
     openExpositorModal(id); renderAll();
+  }));
+  body.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => {
+    state.pergLang = b.dataset.lang;
+    gravarLocal('tsm_perg_lang', state.pergLang);
+    openExpositorModal(id);
+  }));
+  body.querySelectorAll('[data-pergunta]').forEach(li => li.addEventListener('click', () => {
+    const i = Number(li.dataset.pergunta);
+    const atual = visita(e).perguntadas || [];
+    alterarVisita(e, { perguntadas: atual.includes(i) ? atual.filter(x => x !== i) : [...atual, i] });
+    li.classList.toggle('is-done');
   }));
   body.querySelector('[data-mover-dia]').addEventListener('click', () => {
     alterarVisita(e, { dia: dia === '2026-11-04' ? '2026-11-05' : '2026-11-04' });
@@ -1473,12 +1517,14 @@ function closeExpositorModal() {
 // CSV para o follow-up depois da feira (Excel PT: separador ";" e BOM)
 function exportarContactosCSV() {
   const col = t => `"${String(t ?? '').replace(/"/g, '""').replace(/\r?\n/g, ' / ')}"`;
-  const linhas = [['Expositor','Stand','Dia','Prioridade','Categoria','Objetivo','Responsáveis','Visitado','Follow-up','Contacto','Notas','Site','Actualizado']];
+  const linhas = [['Expositor','Stand','Dia','Prioridade','Categoria','Objetivo','Responsáveis','Visitado','Visitado em','Visitado por','Perguntas feitas','Follow-up','Contacto','Observações','Site','Actualizado']];
   EXPOSITORES.slice().sort(ordemExp).forEach(e => {
     const v = visita(e);
     linhas.push([e.nome, e.stand, diaExp(e), e.prioridade, getCategoriaExp(e.categoria).nome, (OBJETIVOS[e.objetivo] || '').replace(/^\S+\s/, ''),
       membrosExp(e).map(id => (getMembro(id) || {}).nome).filter(Boolean).join(', '),
-      v.visitado ? 'sim' : 'não', v.followup ? 'sim' : 'não', v.contacto, v.notas, e.site, v.em ? fmtDataHora(v.em) : '']);
+      v.visitado ? 'sim' : 'não', v.visitado_em ? fmtDataHora(v.visitado_em) : '', (getMembro(v.visitado_por) || {}).nome || '',
+      (v.perguntadas || []).length ? `${v.perguntadas.length}: ` + v.perguntadas.slice().sort((a,b) => a - b).map(i => perguntasExp(e, 'pt')[i]).filter(Boolean).join(' | ') : '',
+      v.followup ? 'sim' : 'não', v.contacto, v.notas, e.site, v.em ? fmtDataHora(v.em) : '']);
   });
   const csv = '﻿' + linhas.map(l => l.map(col).join(';')).join('\r\n');
   const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
@@ -1503,6 +1549,7 @@ async function atualizarExpositores() {
         EXPOSITORES.splice(0, EXPOSITORES.length, ...d.expositores);
         if (Array.isArray(d.categorias)) CATEGORIAS_EXP.splice(0, CATEGORIAS_EXP.length, ...d.categorias);
         if (Array.isArray(d.perguntas_gerais) && typeof PERGUNTAS_GERAIS_EXP !== 'undefined') PERGUNTAS_GERAIS_EXP.splice(0, PERGUNTAS_GERAIS_EXP.length, ...d.perguntas_gerais);
+        if (Array.isArray(d.perguntas_gerais_en) && typeof PERGUNTAS_GERAIS_EXP_EN !== 'undefined') PERGUNTAS_GERAIS_EXP_EN.splice(0, PERGUNTAS_GERAIS_EXP_EN.length, ...d.perguntas_gerais_en);
         expositoresVersao = d.versao;
         ligarExpositoresSessoes();
         renderAll();

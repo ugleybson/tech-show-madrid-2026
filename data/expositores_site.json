@@ -1,6 +1,6 @@
 {
  "fonte": "https://www.techshowmadrid.es/expositores",
- "actualizado_em": "2026-10-16T13:59:49+00:00",
+ "actualizado_em": "2026-10-22T09:22:38+00:00",
  "expositores": [
   {
    "slug": "22-vatios-sl",
@@ -120,13 +120,19 @@
    "slug": "aircall",
    "nome": "Aircall",
    "stand": "3G105",
-   "patrocinio": "Exhibitor"
+   "patrocinio": "Shopify Partner Village"
   },
   {
    "slug": "aire",
    "nome": "Aire",
    "stand": "3F16",
    "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "aiven-oy",
+   "nome": "Aiven Oy",
+   "stand": "3K12",
+   "patrocinio": ""
   },
   {
    "slug": "alcalink",
@@ -723,6 +729,12 @@
    "patrocinio": "Exhibitor"
   },
   {
+   "slug": "duco-ventilation-sun-control",
+   "nome": "Duco Ventilation & Sun Control",
+   "stand": "5B36",
+   "patrocinio": ""
+  },
+  {
    "slug": "eae",
    "nome": "EAE",
    "stand": "5F62",
@@ -865,6 +877,12 @@
    "nome": "Evernex",
    "stand": "3N08",
    "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "evoke-technologies",
+   "nome": "Evoke Technologies",
+   "stand": "3G113",
+   "patrocinio": "Theatre Sponsor"
   },
   {
    "slug": "exacloud",
@@ -1290,7 +1308,7 @@
    "slug": "johnson-controls",
    "nome": "Johnson Controls",
    "stand": "5B60",
-   "patrocinio": "Exhibitor"
+   "patrocinio": "Silver Sponsor"
   },
   {
    "slug": "julius-baer",
@@ -1465,6 +1483,12 @@
    "nome": "LEOlytics",
    "stand": "3C94",
    "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "lilly",
+   "nome": "Lilly",
+   "stand": "3C31",
+   "patrocinio": "Silver Sponsor"
   },
   {
    "slug": "lindapter-international",
@@ -2385,10 +2409,10 @@
    "patrocinio": "Exhibitor"
   },
   {
-   "slug": "skrey",
+   "slug": "skrey-1",
    "nome": "Skrey",
-   "stand": "S07",
-   "patrocinio": "Shopify Partner Village"
+   "stand": "S08",
+   "patrocinio": "Exhibitor"
   },
   {
    "slug": "sme-soluciones",
@@ -2664,7 +2688,7 @@
    "slug": "tiktok-1",
    "nome": "TikTok",
    "stand": "3C50",
-   "patrocinio": "Exhibitor"
+   "patrocinio": "Silver Sponsor"
   },
   {
    "slug": "tileflow",

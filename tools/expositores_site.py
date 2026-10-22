@@ -121,6 +121,7 @@ def main():
     versao = int(cur.get('versao', 1))
     saida = {'fonte': BASE + 'expositores', 'versao': versao, 'actualizado_em': agora,
              'perguntas_gerais': cur.get('perguntas_gerais', []),
+             'perguntas_gerais_en': cur.get('perguntas_gerais_en', []),
              'categorias': cur['categorias'], 'expositores': cur['expositores']}
     with open(OUT_JSON, 'w', encoding='utf-8') as f:
         json.dump(saida, f, ensure_ascii=False, indent=1)
@@ -128,6 +129,7 @@ def main():
         f.write('// Gerado por tools/expositores_site.py a partir de tools/expositores_curadoria.json\n')
         f.write(f'const EXPOSITORES_VERSAO = {versao};\n')
         f.write('const PERGUNTAS_GERAIS_EXP = ' + json.dumps(cur.get('perguntas_gerais', []), ensure_ascii=False, indent=1) + ';\n')
+        f.write('const PERGUNTAS_GERAIS_EXP_EN = ' + json.dumps(cur.get('perguntas_gerais_en', []), ensure_ascii=False, indent=1) + ';\n')
         f.write('const CATEGORIAS_EXP = ' + json.dumps(cur['categorias'], ensure_ascii=False, indent=1) + ';\n')
         f.write('const EXPOSITORES = ' + json.dumps(cur['expositores'], ensure_ascii=False, indent=1) + ';\n')
     print(f"{len(cur['expositores'])} expositores curados gravados (versão {versao}).")

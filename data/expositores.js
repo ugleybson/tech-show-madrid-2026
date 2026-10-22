@@ -1,9 +1,14 @@
 // Gerado por tools/expositores_site.py a partir de tools/expositores_curadoria.json
-const EXPOSITORES_VERSAO = 2;
+const EXPOSITORES_VERSAO = 3;
 const PERGUNTAS_GERAIS_EXP = [
  "Se fossem uma consultora de PME em Portugal a tornar-se AI First, por onde começavam?",
  "Que casos de uso de IA estão a ter retorno real nos vossos clientes PME, e em quanto tempo?",
  "Quem é a pessoa certa para continuar a conversa depois da Tech Show Madrid?"
+];
+const PERGUNTAS_GERAIS_EXP_EN = [
+ "If you were an SME consultancy in Portugal becoming AI First, where would you start?",
+ "Which AI use cases are delivering real returns for your SME customers, and how quickly?",
+ "Who is the right person to continue this conversation after Tech Show Madrid?"
 ];
 const CATEGORIAS_EXP = [
  {
@@ -15,6 +20,12 @@ const CATEGORIAS_EXP = [
    "Têm programa de parceiros para gabinetes de contabilidade ou consultoras? Que margens e requisitos?",
    "Há API aberta para ligar a n8n, OCR e agentes externos?",
    "Têm clientes ou parceiros em Portugal? Quem é o contacto para o mercado português?"
+  ],
+  "perguntas_en": [
+   "Which AI features are available today, and which are coming in the next 12 months?",
+   "Do you have a partner programme for accounting firms or consultancies? What margins and requirements?",
+   "Is there an open API to connect n8n, OCR and external agents?",
+   "Do you have customers or partners in Portugal? Who is the contact for the Portuguese market?"
   ]
  },
  {
@@ -26,6 +37,12 @@ const CATEGORIAS_EXP = [
    "Cobrem Portugal e fundos europeus, ou só Espanha?",
    "Há API ou exportação para integrar no nosso fluxo de pré-análise de candidaturas?",
    "Modelo de parceria para consultoras que preparam candidaturas?"
+  ],
+  "perguntas_en": [
+   "How do you use AI to find and qualify grant calls or tenders for each company?",
+   "Do you cover Portugal and EU funds, or only Spain?",
+   "Is there an API or export to plug into our application pre-assessment workflow?",
+   "What partnership model do you offer consultancies that prepare funding applications?"
   ]
  },
  {
@@ -37,6 +54,12 @@ const CATEGORIAS_EXP = [
    "Têm programa para assessorias ou gabinetes que gerem salários e RH de PME?",
    "O produto cumpre a legislação laboral portuguesa? Há clientes em Portugal?",
    "Que integração existe com software de contabilidade e salários?"
+  ],
+  "perguntas_en": [
+   "Which HR tasks does the AI in your product already handle on its own?",
+   "Do you have a programme for firms that run payroll and HR for SMEs?",
+   "Does the product comply with Portuguese labour law? Do you have customers in Portugal?",
+   "What integration exists with accounting and payroll software?"
   ]
  },
  {
@@ -48,6 +71,12 @@ const CATEGORIAS_EXP = [
    "Como tratam a supervisão humana, os registos e a governação dos agentes?",
    "Programa de parceiros ou white-label para consultoras que implementam em clientes?",
    "Onde ficam os dados (UE) e como se cumpre o RGPD e o AI Act?"
+  ],
+  "perguntas_en": [
+   "Which agents are already in production at SMEs, and which processes do they replace?",
+   "How do you handle human oversight, logging and governance of the agents?",
+   "Do you have a partner or white-label programme for consultancies that deploy at customers?",
+   "Where is the data stored (EU), and how do you comply with GDPR and the AI Act?"
   ]
  },
  {
@@ -59,6 +88,12 @@ const CATEGORIAS_EXP = [
    "Como se liga a uma base de conhecimento interna com pesquisa e respostas com fonte (RAG)?",
    "Têm dashboards que explicam a variação dos números, não só mostram?",
    "Preço para volumes de uma consultora com algumas centenas de clientes PME?"
+  ],
+  "perguntas_en": [
+   "How accurate is your extraction of invoices, contracts and documents in Portuguese?",
+   "How does it connect to an internal knowledge base with search and sourced answers (RAG)?",
+   "Do your dashboards explain why the numbers changed, not just show them?",
+   "What is the pricing for a consultancy with a few hundred SME clients?"
   ]
  },
  {
@@ -70,6 +105,12 @@ const CATEGORIAS_EXP = [
    "Suportam português de Portugal (voz, texto, avatares)?",
    "Há programa de agência ou revenda para quem gere marketing de PME?",
    "Que resultados mostram clientes PME?"
+  ],
+  "perguntas_en": [
+   "Which part of content production does your AI handle today, and with what brand control?",
+   "Do you support European Portuguese (voice, text, avatars)?",
+   "Is there an agency or reseller programme for firms that run SME marketing?",
+   "What results are SME customers seeing?"
   ]
  },
  {
@@ -81,6 +122,12 @@ const CATEGORIAS_EXP = [
    "Programa de parceiros para consultoras que gerem a infraestrutura de PME?",
    "Como protegem dados de clientes usados por agentes de IA?",
    "Custos típicos para uma PME com 10 a 50 utilizadores?"
+  ],
+  "perguntas_en": [
+   "What do you offer for hosting n8n, models and vector databases in the EU?",
+   "Do you have a partner programme for consultancies that manage SME infrastructure?",
+   "How do you protect customer data used by AI agents?",
+   "What are typical costs for an SME with 10 to 50 users?"
   ]
  },
  {
@@ -92,6 +139,12 @@ const CATEGORIAS_EXP = [
    "Que parceiros procuram em Portugal?",
    "Que eventos ou programas recomendam para criar rede ibérica em IA?",
    "Podemos levar clientes PME a reuniões convosco?"
+  ],
+  "perguntas_en": [
+   "What support is available for Portuguese companies that want to enter Spain?",
+   "What kind of partners are you looking for in Portugal?",
+   "Which events or programmes would you recommend for building an Iberian AI network?",
+   "Could we bring SME clients to meetings with you?"
   ]
  }
 ];
@@ -112,6 +165,9 @@ const EXPOSITORES = [
   "porque": "A Cegid é dona do Primavera, o software de contabilidade mais usado nas PME portuguesas. Saber o roteiro de IA e as condições de parceiro para gabinetes.",
   "perguntas": [
    "Que funções de IA chegam ao Primavera em Portugal e quando?"
+  ],
+  "perguntas_en": [
+   "Which AI features are coming to Primavera in Portugal, and when?"
   ],
   "nome_oficial": "CEGID",
   "patrocinio": "Exhibitor",
@@ -135,6 +191,9 @@ const EXPOSITORES = [
   "perguntas": [
    "O Sage Copilot está disponível para Portugal? Que tarefas contabilísticas já automatiza?"
   ],
+  "perguntas_en": [
+   "Is Sage Copilot available for Portugal? Which accounting tasks does it already automate?"
+  ],
   "nome_oficial": "Sage",
   "patrocinio": "Theatre Sponsor",
   "site": "https://sage.com",
@@ -156,6 +215,9 @@ const EXPOSITORES = [
   "perguntas": [
    "Como mudou o trabalho das assessorias que usam a vossa IA? Que tarefas desapareceram?"
   ],
+  "perguntas_en": [
+   "How has the work of advisory firms using your AI changed? Which tasks have disappeared?"
+  ],
   "nome_oficial": "Wolters Kluwer",
   "patrocinio": "Exhibitor",
   "site": "https://www.wolterskluwer.com",
@@ -176,6 +238,9 @@ const EXPOSITORES = [
   "porque": "ERP cloud para PME com programa para contabilistas. Possível ferramenta a recomendar ou revender a clientes.",
   "perguntas": [
    "Programa Holded para asesores: comissões, formação, clientes em Portugal?"
+  ],
+  "perguntas_en": [
+   "Holded programme for advisors: commissions, training, customers in Portugal?"
   ],
   "nome_oficial": "HOLDED",
   "patrocinio": "Exhibitor",
@@ -199,6 +264,9 @@ const EXPOSITORES = [
   "perguntas": [
    "Requisitos para ser parceiro Odoo em Portugal e localização fiscal portuguesa?"
   ],
+  "perguntas_en": [
+   "What are the requirements to become an Odoo partner in Portugal, and how mature is the Portuguese tax localisation?"
+  ],
   "nome_oficial": "Odoo",
   "patrocinio": "Exhibitor",
   "site": "https://WWW.ODOO.COM",
@@ -220,6 +288,9 @@ const EXPOSITORES = [
   "porque": "Zoho One e a IA Zia cobrem CRM, marketing e finanças. Programa de revenda. Fala no programa.",
   "perguntas": [
    "Que agentes Zia existem para CRM e marketing de PME? Margem de parceiro revendedor?"
+  ],
+  "perguntas_en": [
+   "Which Zia agents exist for SME CRM and marketing? What is the reseller partner margin?"
   ],
   "nome_oficial": "Zoho",
   "patrocinio": "VIP Lounge Sponsor",
@@ -243,6 +314,9 @@ const EXPOSITORES = [
   "perguntas": [
    "Cobrem o Portal BASE e o JOUE? Como classificam a adequação de um concurso a uma empresa?"
   ],
+  "perguntas_en": [
+   "Do you cover Portal BASE and the OJEU? How do you score how well a tender fits a company?"
+  ],
   "nome_oficial": "TendersTool",
   "patrocinio": "Exhibitor",
   "site": "https://www.adjudicacionestic.com/front/quienes-somos.php",
@@ -263,6 +337,9 @@ const EXPOSITORES = [
   "porque": "Software de RH para PME com programa de parceiros para assessorias. Serviço complementar para clientes de contabilidade.",
   "perguntas": [
    "Programa de partners para assessorias em Portugal: comissão recorrente?"
+  ],
+  "perguntas_en": [
+   "Partner programme for advisory firms in Portugal: is there a recurring commission?"
   ],
   "nome_oficial": "Factorial",
   "patrocinio": "Theatre Sponsor",
@@ -286,6 +363,9 @@ const EXPOSITORES = [
   "perguntas": [
    "Que caminho de parceria recomendam a uma consultora de PME que quer vender agentes Copilot Studio?"
   ],
+  "perguntas_en": [
+   "What partnership path would you recommend to an SME consultancy that wants to sell Copilot Studio agents?"
+  ],
   "nome_oficial": "Microsoft",
   "patrocinio": "Co-sponsored Session",
   "site": "",
@@ -307,6 +387,9 @@ const EXPOSITORES = [
   "perguntas": [
    "Trabalham com consultoras como implementadoras? Que dimensão mínima de cliente?"
   ],
+  "perguntas_en": [
+   "Do you work with consultancies as implementation partners? What is the minimum customer size?"
+  ],
   "nome_oficial": "Maisa AI",
   "patrocinio": "Gold Sponsor",
   "site": "https://maisa.ai/",
@@ -327,6 +410,9 @@ const EXPOSITORES = [
   "porque": "IA privada e RAG instalados na empresa (equipa do PrivateGPT). Encaixa no Norporgest Knowledge System com dados sensíveis de clientes.",
   "perguntas": [
    "Requisitos de hardware e preço para uma equipa de 20 a 50 pessoas? Licença para revenda?"
+  ],
+  "perguntas_en": [
+   "Hardware requirements and pricing for a team of 20 to 50 people? Is there a resale licence?"
   ],
   "nome_oficial": "Zylon",
   "patrocinio": "Exhibitor",
@@ -350,6 +436,9 @@ const EXPOSITORES = [
   "perguntas": [
    "Testamos com 20 documentos portugueses reais? Integração com n8n?"
   ],
+  "perguntas_en": [
+   "Can we test with 20 real Portuguese documents? Is there an n8n integration?"
+  ],
   "nome_oficial": "AnyFormat",
   "patrocinio": "Exhibitor",
   "site": "https://anyformat.ai/",
@@ -372,6 +461,9 @@ const EXPOSITORES = [
   "perguntas": [
    "Fazem projectos em subcontratação para consultoras? Que tipo de projecto de IA vendem mais a PME?"
   ],
+  "perguntas_en": [
+   "Do you subcontract projects to consultancies? Which AI projects do you sell most to SMEs?"
+  ],
   "nome_oficial": "Intelequia",
   "patrocinio": "Exhibitor",
   "site": "https://www.intelequia.com",
@@ -393,6 +485,9 @@ const EXPOSITORES = [
   "perguntas": [
    "Programa de parceiros contabilistas em Portugal? Ligação directa ao Primavera ou TOConline?"
   ],
+  "perguntas_en": [
+   "Partner programme for accountants in Portugal? Direct connection to Primavera or TOConline?"
+  ],
   "nome_oficial": "Qonto",
   "patrocinio": "PrestaShop Sponsor",
   "site": "http://www.qonto.com",
@@ -413,6 +508,9 @@ const EXPOSITORES = [
   "porque": "Grande integrador ibérico com escritório em Portugal. Aliança de co-venda: eles na tecnologia, a Norporgest na consultoria às PME. Fala no programa.",
   "perguntas": [
    "A Seidor Portugal procura parceiros de consultoria para PME? Como funciona a co-venda?"
+  ],
+  "perguntas_en": [
+   "Is Seidor Portugal looking for SME consulting partners? How does co-selling work?"
   ],
   "nome_oficial": "Seidor Solutions",
   "patrocinio": "VIP Lounge Sponsor",
@@ -436,6 +534,9 @@ const EXPOSITORES = [
   "porque": "Scale-up portuguesa de benefícios para empresas. Feedback de quem vende tecnologia a PME portuguesas, e programa de parceiros. Fala no programa.",
   "perguntas": [
    "O que funcionou para vender a PME portuguesas? Têm programa para contabilistas?"
+  ],
+  "perguntas_en": [
+   "What worked when selling to Portuguese SMEs? Do you have a programme for accountants?"
   ],
   "nome_oficial": "Coverflex",
   "patrocinio": "Silver Sponsor",
@@ -477,6 +578,9 @@ const EXPOSITORES = [
   "porque": "Notas de reunião com IA e follow-up automático. Corresponde ao AI Meeting Agent do plano.",
   "perguntas": [
    "Funciona em português de Portugal? Integra com CRM e Teams?"
+  ],
+  "perguntas_en": [
+   "Does it work in European Portuguese? Does it integrate with CRM and Teams?"
   ],
   "nome_oficial": "Leexi",
   "patrocinio": "Exhibitor",
@@ -574,6 +678,9 @@ const EXPOSITORES = [
   "porque": "Contabilidade para vendedores de e-commerce apoiada por automação. Feedback de um par sobre contabilidade AI First.",
   "perguntas": [
    "Quanto do vosso processo contabilístico já é automático? Que ferramentas usam?"
+  ],
+  "perguntas_en": [
+   "How much of your accounting process is already automated? Which tools do you use?"
   ],
   "nome_oficial": "ACCOUNTALI",
   "patrocinio": "FBA Show Sponsor",
@@ -1145,7 +1252,8 @@ const EXPOSITORES = [
   "perguntas": [],
   "nome_oficial": "KEEPIT",
   "patrocinio": "Exhibitor",
-  "site": "http://www.keepit.com/es",
+  "site": "https://www.keepit.com/es/",
+  "descricao_oficial": "Keepit: protección de datos SaaS, independiente e inmutable Keepit es la solución europea de protección de datos SaaS para aplicaciones críticas como Microsoft 365, Microsoft Entra ID, Okta, Salesforce, Jira, GitHub y muchas más . ¿Por qué elegir Keepit? Una plataforma europea, independiente de los hiperescaladores Diseñada en la nube, para la nube Restauración de datos rápida, sencilla y granular",
   "ficha": "https://www.techshowmadrid.es/exhibitors/keepit"
  },
  {

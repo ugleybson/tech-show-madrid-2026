@@ -1755,7 +1755,23 @@ body {
 }
 .exp-sessoes li:hover { border-color: var(--color-accent); }
 .exp-sessoes small { display: block; margin-top: 2px; }
-.exp-perguntas { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; line-height: 1.45; margin-bottom: 14px; }
+.exp-perguntas { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; line-height: 1.45; margin-bottom: 6px; }
+.exp-perguntas li { cursor: pointer; padding: 4px 6px; margin-left: -6px; border-radius: var(--radius-sm); }
+.exp-perguntas li:hover { background: var(--color-surface3); }
+.exp-perguntas li.is-done { color: var(--color-text-muted); text-decoration: line-through; text-decoration-color: var(--color-success); }
+.exp-perguntas li.is-done::marker { content: '✓  '; color: var(--color-success); }
+.exp-perg-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.lang-toggle { display: inline-flex; padding: 3px; gap: 2px; border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface3); }
+.lang-toggle button {
+  min-width: 40px; min-height: 30px; padding: 0 10px; border: none; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--color-text-muted); font: 700 12px var(--font-main); letter-spacing: .04em;
+}
+.lang-toggle button.active { background: var(--color-accent); color: #fff; }
+.exp-hint { font-size: 11px; color: var(--color-text-dim); margin: 0 0 12px; }
+.exp-visita { margin: 4px 0 14px; padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface); }
+.exp-visita.is-on { border-color: color-mix(in srgb, var(--color-success) 45%, transparent); }
+.exp-visita .exp-toggles { margin-bottom: 0; }
+.exp-visita__quando { font-size: 12px; color: var(--color-text-muted); margin-top: 8px; }
 .exp-actions, .exp-toggles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .exp-actions .btn-secondary { width: auto; flex: 1 1 200px; padding: 8px 14px; }
 .exp-toggle {
