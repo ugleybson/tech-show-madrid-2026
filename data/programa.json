@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 24,
-"actualizado_em": "2026-10-22T09:49:52Z",
+"versao": 25,
+"actualizado_em": "2026-10-22T10:23:17Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -3205,21 +3205,27 @@
 "track_id": "e-show",
 "hora_inicio": "13:40",
 "hora_fim": "14:00",
-"titulo": "BIGGER, BOLDER, BEYOND: Flaconi's journey to becoming Europe's #1 beauty online player",
+"titulo": "TBC",
 "tipo": "Palestra",
-"descricao": "Hypergrowth and profitability are not a contradiction – if you pull the right levers. Since taking over as CEO in late 2022, Bastian Siebers has radically realigned flaconi. The result: Today, flaconi…",
-"oradores": [
-{
-"nome": "Bastian Siebers",
-"cargo": "CEO",
-"empresa": "Flaconi",
-"role": "orador"
-}
-],
+"descricao": "",
+"oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-67",
 "id": "s165",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "BIGGER, BOLDER, BEYOND: Flaconi's journey to becoming Europe's #1 beauty online player",
+"depois": "TBC",
+"em": "2026-10-22T10:23:17Z"
+},
+{
+"campo": "oradores",
+"antes": "Bastian Siebers",
+"depois": "—",
+"em": "2026-10-22T10:23:17Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
