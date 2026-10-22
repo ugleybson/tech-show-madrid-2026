@@ -1811,3 +1811,25 @@ body {
   .exp-card { padding: 12px; }
 }
 body[data-view="expositores"] .sort-group { display: none; }
+
+/* Presença nas sessões */
+.crono__item { align-items: flex-start; }
+.crono__item.is-attended { background: color-mix(in srgb, var(--color-success) 9%, var(--color-surface2)); }
+.crono__check {
+  margin-left: auto; flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  min-width: 52px; min-height: 48px; padding: 4px;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  background: var(--color-surface); color: var(--color-text);
+  font-size: 18px; line-height: 1; cursor: pointer;
+}
+.crono__check small { font: 600 10px var(--font-main); color: var(--color-text-muted); }
+.crono__check[aria-pressed="true"] { border-color: var(--color-success); background: rgba(16,185,129,.14); }
+.crono__check[aria-pressed="true"] small { color: var(--color-success); }
+.crono__presenca { font-size: 11px; color: var(--color-success); margin-top: 2px; }
+.sess-presenca { margin: 8px 0 14px; padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface); }
+.sess-presenca.is-on { border-color: color-mix(in srgb, var(--color-success) 45%, transparent); }
+.sess-presenca__row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.sess-presenca__row .exp-toggle { flex: 0 1 auto; }
+.sess-presenca__quem { font-size: 12px; color: var(--color-text-muted); }
+.sess-presenca .exp-input { margin-bottom: 0; }

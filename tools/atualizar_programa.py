@@ -43,6 +43,7 @@ SALAS = {  # nome da sala no site → id usado na app
     'Edge, Data & AI Solutions Theatre': 'dc-edge',
     'Energy, Sustainability & Renewables Theatre': 'dc-energy',
 }
+SALAS_MIN = {k.lower(): v for k, v in SALAS.items()}  # o site muda maiúsculas ("PrestaShop Village")
 MESES = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6, 'jul': 7, 'aug': 8,
          'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12}
 KW = [('IA', r'\b(IA|AI|inteligencia artificial|artificial intelligence|GenAI|generativ)'), ('agentes', r'agent'),
@@ -102,7 +103,7 @@ def parse(pagina):
             oradores += [orador(o, 'orador') for o in re.findall(r'__speaker__name">(.*?)</span>', li, re.S)]
             titulo = limpar(tm.group(2))
             sessoes.append({
-                'dia': dia, 'sala': sala, 'track_id': SALAS.get(sala, re.sub(r'[^a-z0-9]+', '-', sala.lower()).strip('-')),
+                'dia': dia, 'sala': sala, 'track_id': SALAS_MIN.get(sala.lower(), re.sub(r'[^a-z0-9]+', '-', sala.lower()).strip('-')),
                 'hora_inicio': horas[0], 'hora_fim': horas[1], 'titulo': titulo,
                 'tipo': 'Mesa Debate' if re.search(r'mesa|panel|debate|round ?table', titulo, re.I) else 'Palestra',
                 'descricao': descricao, 'oradores': oradores, 'url': url,
@@ -166,12 +167,16 @@ def main():
             usados.add(velho['id'])
             sessao['id'] = velho['id']
             sessao['tags'] = velho.get('tags', [])
-            alteracoes = list(velho.get('alteracoes', []))
+            # mudança de sala só se o nome mudar de facto (ignora maiúsculas/minúsculas)
+            nome_sala = lambda tid: tracks.get(tid, {}).get('nome', tid).lower()
+            mesma_sala = nome_sala(velho['track_id']) == nome_sala(n['track_id'])
+            alteracoes = [a for a in velho.get('alteracoes', [])
+                          if not (a['campo'] == 'sala' and nome_sala(a['antes']) == nome_sala(a['depois']))]
             novas_alt = []
             if (velho['dia'], velho['hora_inicio'], velho['hora_fim']) != (n['dia'], n['hora_inicio'], n['hora_fim']):
                 novas_alt.append({'campo': 'hora', 'antes': f"{velho['dia']} {velho['hora_inicio']}–{velho['hora_fim']}",
                                   'depois': f"{n['dia']} {n['hora_inicio']}–{n['hora_fim']}"})
-            if velho['track_id'] != n['track_id']:
+            if not mesma_sala:
                 novas_alt.append({'campo': 'sala', 'antes': velho['track_id'], 'depois': n['track_id']})
             if velho['titulo'] != n['titulo']:
                 novas_alt.append({'campo': 'titulo', 'antes': velho['titulo'], 'depois': n['titulo']})
@@ -211,16 +216,18 @@ def main():
             mudancas += 1
         resultado.append(s)
 
-    if not mudancas and anterior['versao']:
+    resultado.sort(key=lambda s: (s['dia'], s['hora_inicio'], s['track_id']))
+    # Também grava correcções sem alteração visível (ex.: sala normalizada, histórico limpo)
+    iguais = json.dumps(sorted(resultado, key=lambda s: s['id']), sort_keys=True) == \
+        json.dumps(sorted(ant, key=lambda s: s['id']), sort_keys=True)
+    if anterior['versao'] and iguais:
         print('Sem alterações no programa')
         return 0
-
-    resultado.sort(key=lambda s: (s['dia'], s['hora_inicio'], s['track_id']))
     saida = {
         'fonte': FONTE,
         'versao': anterior['versao'] + 1,
         'actualizado_em': agora,
-        'tracks': list(tracks.values()),
+        'tracks': [t for t in tracks.values() if any(x['track_id'] == t['id'] for x in resultado)],
         'sessoes': resultado,
     }
     with open(JSON_PATH, 'w', encoding='utf-8') as f:

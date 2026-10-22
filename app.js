@@ -55,6 +55,8 @@ let state = {
   programa: { versao: 0, actualizado_em: null, verificado_em: null },
   // Stands: {expId: {membros?, dia?, visitado, followup, contacto, notas, em}} (por dispositivo)
   visitas: (() => { try { return JSON.parse(localStorage.getItem('tsm_visitas') || '{}'); } catch (e) { return {}; } })(),
+  // Presença nas sessões: {membroId: {sessaoId: {em, notas}}} (por dispositivo)
+  presencas: (() => { try { return JSON.parse(localStorage.getItem('tsm_presencas') || '{}'); } catch (e) { return {}; } })(),
   expDia: 'dia',   // dia | todos
   expPrio: '',     // '' | A | B | C
   expCat: '',
@@ -93,6 +95,21 @@ function saveState() {
   localStorage.setItem('tsm_equipa', JSON.stringify(state.equipa));
   localStorage.setItem('tsm_inscricoes', JSON.stringify(state.inscricoes));
   gravarLocal('tsm_visitas', JSON.stringify(state.visitas));
+  gravarLocal('tsm_presencas', JSON.stringify(state.presencas));
+}
+
+function presenca(mid, sid) { return (state.presencas[mid] || {})[sid] || null; }
+function marcarPresenca(mid, sid, sim) {
+  const p = state.presencas[mid] = state.presencas[mid] || {};
+  if (sim) p[sid] = { ...(p[sid] || {}), em: new Date().toISOString() };
+  else if (p[sid] && p[sid].notas) p[sid] = { notas: p[sid].notas };  // mantém as observações
+  else delete p[sid];
+  saveState();
+}
+function notasPresenca(mid, sid, notas) {
+  const p = state.presencas[mid] = state.presencas[mid] || {};
+  p[sid] = { ...(p[sid] || {}), notas };
+  saveState();
 }
 
 // ── HELPERS ───────────────────────────────────────
@@ -128,8 +145,12 @@ const PROGRAMA_FONTES = [
 const CAMPOS_RELEVANTES = ['hora', 'sala', 'estado'];
 
 function ativa(s) { return s.estado !== 'cancelada'; }
+// Mudança de sala só conta se o nome mudar de facto (o site às vezes só muda maiúsculas)
+function alteracaoReal(a) {
+  return !(a.campo === 'sala' && getTrack(a.antes).nome.toLowerCase() === getTrack(a.depois).nome.toLowerCase());
+}
 function alteracoesRelevantes(s) {
-  return (s.alteracoes || []).filter(a => CAMPOS_RELEVANTES.includes(a.campo) && a.depois !== 'nova');
+  return (s.alteracoes || []).filter(a => CAMPOS_RELEVANTES.includes(a.campo) && a.depois !== 'nova' && alteracaoReal(a));
 }
 function fmtDataHora(iso) {
   if (!iso) return '—';
@@ -158,7 +179,7 @@ function aplicarPrograma(dados) {
       const campos = [];
       if (v.dia !== n.dia || v.hora_inicio !== n.hora_inicio || v.hora_fim !== n.hora_fim)
         campos.push({ campo: 'hora', antes: `${v.dia} ${v.hora_inicio}–${v.hora_fim}`, depois: `${n.dia} ${n.hora_inicio}–${n.hora_fim}` });
-      if (v.track_id !== n.track_id) campos.push({ campo: 'sala', antes: v.track_id, depois: n.track_id });
+      if (getTrack(v.track_id).nome.toLowerCase() !== getTrack(n.track_id).nome.toLowerCase()) campos.push({ campo: 'sala', antes: v.track_id, depois: n.track_id });
       if (v.titulo !== n.titulo) campos.push({ campo: 'titulo', antes: v.titulo, depois: n.titulo });
       const no = x => x.oradores.map(o => o.nome).join(', ');
       if (no(v) !== no(n)) campos.push({ campo: 'oradores', antes: no(v) || '—', depois: no(n) || '—' });
@@ -646,7 +667,7 @@ function renderIndividual(container) {
       <div class="ind-header__stats">
         <div><strong>${minhas.length}</strong><span>sessões</span></div>
         <div><strong>${Math.floor(mins/60)}h${String(mins%60).padStart(2,'0')}</strong><span>em sala</span></div>
-        <div><strong>${tracks.length}</strong><span>sala${tracks.length > 1 ? 's' : ''}</span></div>
+        <div><strong>${minhas.filter(s => (presenca(m.id, s.id) || {}).em).length}/${minhas.filter(ativa).length}</strong><span>assistidas</span></div>
       </div>
     </div>`;
 
@@ -716,13 +737,17 @@ function renderIndividual(container) {
       }
       prev = s;
       const nomes = s.oradores.map(o => o.nome);
+      const pr = presenca(m.id, s.id) || {};
       itens.push(`
-        <li class="crono__item" data-session-id="${s.id}" style="--tc:${tr.cor}">
+        <li class="crono__item ${pr.em ? 'is-attended' : ''}" data-session-id="${s.id}" style="--tc:${tr.cor}">
           <span class="crono__time">${s.hora_inicio}<small>${s.hora_fim}</small></span>
           <span class="crono__body">
             <span class="crono__title">${badgesSessao(s)}${s.titulo}</span>
             <span class="crono__meta"><span style="color:${tr.cor}">${tr.nome}</span> · ${s.tipo}${nomes.length ? ' · ' + nomes.slice(0,2).join(', ') + (nomes.length > 2 ? '…' : '') : ''}</span>
+            ${pr.em || pr.notas ? `<span class="crono__presenca">${pr.em ? `✅ Assistiu · ${fmtDataHora(pr.em)}` : ''}${pr.notas ? `${pr.em ? ' · ' : ''}📝 ${esc(pr.notas.length > 60 ? pr.notas.slice(0, 60) + '…' : pr.notas)}` : ''}</span>` : ''}
           </span>
+          <button class="crono__check" data-presenca="${s.id}" aria-pressed="${pr.em ? 'true' : 'false'}"
+                  aria-label="${pr.em ? 'Desmarcar presença' : 'Marcar presença'} em ${esc(s.titulo)}">${pr.em ? '✅' : '⬜'}<small>${pr.em ? 'Assisti' : 'Marcar'}</small></button>
         </li>`);
     });
     crono = `<ol class="crono">${itens.join('')}</ol>`;
@@ -764,6 +789,14 @@ function renderIndividual(container) {
     renderSessions();
   }));
   container.querySelector('[data-ics]').addEventListener('click', () => exportarICS(m));
+  container.querySelectorAll('[data-presenca]').forEach(b => b.addEventListener('click', ev => {
+    ev.stopPropagation();
+    const sid = b.dataset.presenca;
+    const sim = !(presenca(m.id, sid) || {}).em;
+    marcarPresenca(m.id, sid, sim);
+    renderSessions();
+    if (sim) showToast('✅ Presença marcada. Toque na sessão para escrever observações.');
+  }));
   container.querySelectorAll('[data-ajustar]').forEach(b => b.addEventListener('click', executarAjuste));
   container.querySelector('[data-replan]').addEventListener('click', () => {
     if (!confirm(`Refazer o plano de ${m.nome} pela credencial? As inscrições actuais serão substituídas.`)) return;
@@ -928,6 +961,37 @@ function exportarICS(m) {
   showToast(`📅 ${ss.length} sessões exportadas para o calendário`);
 }
 
+// --- Presença numa sessão (membro escolhido em "Meu plano" neste telemóvel) ---
+function blocoPresencaSessao(s) {
+  const eu = getMembro(state.eu);
+  if (!eu) return '';
+  const pr = presenca(eu.id, s.id) || {};
+  return `
+    <div class="sess-presenca ${pr.em ? 'is-on' : ''}" style="--mc:${eu.cor}">
+      <div class="sess-presenca__row">
+        <button class="exp-toggle ${pr.em ? 'on' : ''}" data-sess-presenca>${pr.em ? '✅ Assisti' : '⬜ Marcar presença'}</button>
+        <span class="sess-presenca__quem">${esc(eu.nome)}${pr.em ? ` · ${fmtDataHora(pr.em)}` : ''}</span>
+      </div>
+      <label class="filter-label" for="sess-notas">📝 Observações da sessão</label>
+      <textarea class="exp-input" id="sess-notas" rows="3" placeholder="Ideias, números, contactos, o que aplicar na Norporgest...">${esc(pr.notas || '')}</textarea>
+    </div>`;
+}
+function ligarPresencaSessao(s) {
+  const eu = getMembro(state.eu);
+  if (!eu) return;
+  const b = document.querySelector('[data-sess-presenca]');
+  if (b) b.addEventListener('click', () => {
+    marcarPresenca(eu.id, s.id, !(presenca(eu.id, s.id) || {}).em);
+    openSessionModal(s.id);
+    renderSessions();
+  });
+  const t = document.getElementById('sess-notas');
+  if (t) {
+    t.addEventListener('input', () => notasPresenca(eu.id, s.id, t.value));
+    t.addEventListener('change', () => renderSessions());
+  }
+}
+
 // --- Session Modal ---
 function openSessionModal(sessaoId) {
   const s = SESSOES.find(x => x.id === sessaoId);
@@ -946,10 +1010,12 @@ function openSessionModal(sessaoId) {
 
   document.getElementById('modal-session-title').textContent = s.titulo;
   document.getElementById('modal-desc').textContent = s.descricao;
-  const hist = (s.alteracoes || []).filter(a => a.depois !== 'nova');
+  const hist = (s.alteracoes || []).filter(a => a.depois !== 'nova' && alteracaoReal(a));
   document.getElementById('modal-status').innerHTML =
     (!ativa(s) ? '<div class="modal__alert">❌ Sessão <b>cancelada</b> no programa oficial.</div>' : '') +
-    (hist.length ? `<div class="modal__history"><b>Alterações no programa</b>${hist.map(a => `<div>${descreverAlteracao(a)} <small>${fmtDataHora(a.em)}</small></div>`).join('')}</div>` : '');
+    (hist.length ? `<div class="modal__history"><b>Alterações no programa</b>${hist.map(a => `<div>${descreverAlteracao(a)} <small>${fmtDataHora(a.em)}</small></div>`).join('')}</div>` : '') +
+    blocoPresencaSessao(s);
+  ligarPresencaSessao(s);
 
   // Speakers
   const spkEl = document.getElementById('modal-speakers');
@@ -1122,8 +1188,10 @@ function exportPlan() {
         txt += `  ${dias[dia]}:\n`;
         byDay[dia].forEach(s => {
           const track = getTrack(s.track_id);
-          txt += `    • ${s.hora_inicio}–${s.hora_fim} | ${track.nome}\n`;
+          const pr = presenca(m.id, s.id) || {};
+          txt += `    ${pr.em ? '[x]' : '[ ]'} ${s.hora_inicio}–${s.hora_fim} | ${track.nome}\n`;
           txt += `      ${s.titulo}\n`;
+          if (pr.notas) txt += `      Observações: ${pr.notas.replace(/\n/g, ' / ')}\n`;
         });
       });
       txt += '\n';

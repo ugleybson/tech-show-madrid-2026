@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 23,
-"actualizado_em": "2026-10-21T21:08:09Z",
+"versao": 24,
+"actualizado_em": "2026-10-22T09:49:52Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -98,12 +98,6 @@
 "nome": "Energy, Sustainability & Renewables Theatre",
 "cor": "#facc15",
 "area": "Data Centre · Energia"
-},
-{
-"id": "prestashop-village",
-"nome": "PrestaShop Village",
-"cor": "#94a3b8",
-"area": "PrestaShop Village"
 },
 {
 "id": "fbashow",
@@ -562,7 +556,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "10:30",
 "hora_fim": "10:40",
 "titulo": "Bienvenida",
@@ -579,14 +573,7 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/bienvenida",
 "id": "s208",
 "tags": [],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-04",
@@ -701,7 +688,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "10:45",
 "hora_fim": "11:15",
 "titulo": "6 expertos, 1 objetivo: que tu tienda venda más",
@@ -751,12 +738,6 @@
 "e-commerce"
 ],
 "alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-},
 {
 "campo": "oradores",
 "antes": "José Antonio Jiménez Bisbe, Luis Palazón, Daniel Raya, Isaac Mayolas, Marta Rifà, Enrique Pérez",
@@ -1474,7 +1455,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
 "titulo": "De PrestaShop 9.1 a 9.2: Evolución, novedades y experiencias reales",
@@ -1503,14 +1484,7 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/de-prestashop-91-a-92-evoluci%C3%B3n-novedades-y-experiencias-reales",
 "id": "s210",
 "tags": [],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-04",
@@ -1974,7 +1948,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
 "titulo": "Stripeízate: Dispara las ventas de tu PrestaShop en 1 clic",
@@ -1991,14 +1965,7 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-169",
 "id": "s211",
 "tags": [],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-04",
@@ -2392,7 +2359,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "12:30",
 "hora_fim": "12:50",
 "titulo": "Automatizar sin romper: La guía completa para integrar correctamente IA y Harness en PrestaShop",
@@ -2412,12 +2379,6 @@
 "IA"
 ],
 "alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-},
 {
 "campo": "titulo",
 "antes": "La diferencia entre integrar IA y operar con Sistemas Multiagénticos en PrestaShop",
@@ -2855,7 +2816,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "13:00",
 "hora_fim": "13:15",
 "titulo": "Más marketplaces. Más ventas. Más control. Cómo escalar tu ecommerce sin multiplicar la complejidad operativa",
@@ -2874,14 +2835,7 @@
 "tags": [
 "e-commerce"
 ],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-04",
@@ -3606,7 +3560,7 @@
 "hora_fim": "15:20",
 "titulo": "Liquid-Cooled 800 VDC Platform for Next-Generation AI Infrastructure",
 "tipo": "Palestra",
-"descricao": "As AI infrastructure continues to scale toward higher rack power densities, liquid cooling is extending beyond compute hardware into power conversion systems. This presentation introduces Megmeet’s li…",
+"descricao": "As AI infrastructure continues to scale toward higher rack power densities, liquid cooling is extending beyond compute hardware into power conversion systems. This presentation introduces MEGMEET's li…",
 "oradores": [
 {
 "nome": "Roya Movahedi",
@@ -4691,7 +4645,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "16:00",
 "hora_fim": "16:20",
 "titulo": "¿Y si el pago a plazos fuera más que un simple método de pago?",
@@ -4714,14 +4668,7 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/y-si-el-pago-a-plazos-fuera-m%C3%A1s-que-un-simple-m%C3%A9todo-de-pago",
 "id": "s214",
 "tags": [],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-04",
@@ -5133,7 +5080,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "16:30",
 "hora_fim": "16:50",
 "titulo": "Nueva Ley de factura electrónica: Qué es y cómo afecta a tu e-commerce",
@@ -5152,14 +5099,7 @@
 "tags": [
 "e-commerce"
 ],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-04",
@@ -5552,7 +5492,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "17:00",
 "hora_fim": "17:20",
 "titulo": "¿Se puede crear un eCommerce en 20 minutos? Vamos a hacerlo en directo con IA",
@@ -5572,14 +5512,7 @@
 "IA",
 "e-commerce"
 ],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-04",
@@ -5914,7 +5847,7 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "17:30",
 "hora_fim": "18:15",
 "titulo": "Crecer en B2B: qué mercados, qué clientes, qué decisiones",
@@ -5944,12 +5877,6 @@
 "id": "s217",
 "tags": [],
 "alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-},
 {
 "campo": "oradores",
 "antes": "Diana Iglesias, César Sastre",
@@ -6887,14 +6814,34 @@
 "track_id": "hr-learning",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "Ponencia Kelio Solutions",
+"titulo": "Workforce Management: hacia una gestión global e inteligente de las personas",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "A medida que una organización crece, también lo hace su complejidad: más centros, más turnos, distintos convenios y, a menudo, varios países. Gestionar el día a día con hojas de cálculo deja de ser vi…",
+"oradores": [
+{
+"nome": "Jesús Santos",
+"cargo": "Account Manager",
+"empresa": "KELIO",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-kelio-solutions",
 "id": "s306",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Kelio Solutions",
+"depois": "Workforce Management: hacia una gestión global e inteligente de las personas",
+"em": "2026-10-22T09:49:52Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Jesús Santos",
+"em": "2026-10-22T09:49:52Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7379,7 +7326,7 @@
 },
 {
 "dia": "2026-11-05",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "11:00",
 "hora_fim": "11:20",
 "titulo": "Más ingresos con el mismo tráfico: cómo convertir mejor con PrestaShop & seQura",
@@ -7767,7 +7714,7 @@
 },
 {
 "dia": "2026-11-05",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
 "titulo": "PrestaShop + Spoki: la nueva era de la comunicación con clientes",
@@ -7784,14 +7731,7 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/prestashop-spoki-la-nueva-era-de-la-comunicaci%C3%B3n-con-clientes",
 "id": "s366",
 "tags": [],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-05",
@@ -8559,7 +8499,7 @@
 },
 {
 "dia": "2026-11-05",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "12:30",
 "hora_fim": "12:50",
 "titulo": "¿Está tu e-commerce preparado para 2027? Privacidad, IA, consumo y nuevas reglas",
@@ -8585,12 +8525,6 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-14T15:19:24Z"
-},
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
 }
 ]
 },
@@ -8921,10 +8855,23 @@
 "track_id": "tfm",
 "hora_inicio": "12:55",
 "hora_fim": "13:15",
-"titulo": "Ponencia SPLIO",
+"titulo": "Del dato a la copa: el CRM de Bodeboca y Decántalo se brinda",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Bodeboca y Decántalo ya contaba con una de las estrategias CRM más avanzadas de su sector, basada en una segmentación y una personalización extremadamente precisas, construidas de forma manual por su…",
+"oradores": [
+{
+"nome": "Guadalupe Asensio Borrego",
+"cargo": "Marketing and Brand Manager",
+"empresa": "Bodeboca & Decántalo",
+"role": "orador"
+},
+{
+"nome": "Donald Pontabry",
+"cargo": "COO & Country Manager South Europe",
+"empresa": "SPLIO",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/presente-y-futuro-del-seo-para-ia-geo-el-caso-de-%C3%A9xito-de-barcel%C3%B3-hotel-group",
 "id": "s301",
 "tags": [
@@ -8943,6 +8890,18 @@
 "antes": "Javier Bermúdez Flores",
 "depois": "—",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia SPLIO",
+"depois": "Del dato a la copa: el CRM de Bodeboca y Decántalo se brinda",
+"em": "2026-10-22T09:49:52Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Guadalupe Asensio Borrego, Donald Pontabry",
+"em": "2026-10-22T09:49:52Z"
 }
 ]
 },
@@ -9130,7 +9089,7 @@
 },
 {
 "dia": "2026-11-05",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "13:00",
 "hora_fim": "13:20",
 "titulo": "Aumenta tus conversiones en Q4 con PrestaShop Checkout 5.4",
@@ -9147,14 +9106,7 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/aumenta-tus-conversiones-en-q4-con-prestashop-checkout-54",
 "id": "s367",
 "tags": [],
-"alteracoes": [
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
-}
-]
+"alteracoes": []
 },
 {
 "dia": "2026-11-05",
@@ -10306,7 +10258,7 @@
 },
 {
 "dia": "2026-11-05",
-"track_id": "prestashop-village",
+"track_id": "prestashop",
 "hora_inicio": "15:45",
 "hora_fim": "16:30",
 "titulo": "Empezar con poco, llegar lejos: aciertos, tropiezos y aprendizajes",
@@ -10349,12 +10301,6 @@
 "antes": "Víctor Quesada, Ion Vidaurreta",
 "depois": "Víctor Quesada, Ion Vidaurreta, Julián Vesga",
 "em": "2026-10-16T10:31:38Z"
-},
-{
-"campo": "sala",
-"antes": "prestashop",
-"depois": "prestashop-village",
-"em": "2026-10-19T11:53:13Z"
 }
 ]
 },

@@ -1,5 +1,5 @@
 /* Service worker – guarda a app para funcionar sem rede no recinto (IFEMA) */
-const CACHE = 'tsm2026-v7';
+const CACHE = 'tsm2026-v8';
 const FICHEIROS = [
   './',
   './index.html',
