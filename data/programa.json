@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 28,
-"actualizado_em": "2026-10-23T11:53:56Z",
+"versao": 29,
+"actualizado_em": "2026-10-23T16:18:26Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1403,6 +1403,12 @@
 "cargo": "CRO - Chief Revenue Officer",
 "empresa": "Kymatio",
 "role": "orador"
+},
+{
+"nome": "Raquel Martínez",
+"cargo": "Business Continuity Management and Cybersecurity Awareness",
+"empresa": "REDEIA",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-kymatio",
@@ -1419,6 +1425,12 @@
 "antes": "Carlos Mulero, Raquel Martínez",
 "depois": "Carlos Mulero",
 "em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "oradores",
+"antes": "Carlos Mulero",
+"depois": "Carlos Mulero, Raquel Martínez",
+"em": "2026-10-23T16:18:26Z"
 }
 ]
 },
@@ -1793,7 +1805,7 @@
 "track_id": "ecommerce-strat",
 "hora_inicio": "11:55",
 "hora_fim": "12:15",
-"titulo": "De la tienda física al liderazgo digital: Caso de éxito Omnicanal Bici Escapa con BigCommerce y Sinapsis",
+"titulo": "De la tienda física al liderazgo digital: Caso de éxito Omnicanal Escapa con BigCommerce y Sinapsis",
 "tipo": "Palestra",
 "descricao": "Descubre cómo Bici Escapa (Grupo Quadis) unificó su operativa B2C, B2B y servicios de taller en una única arquitectura omnicanal sobre BigCommerce. De la mano de Sinapsis y BigCommerce, analizaremos l…",
 "oradores": [
@@ -1801,6 +1813,12 @@
 "nome": "Toni Garrido Morales",
 "cargo": "Co-fundador & CTO",
 "empresa": "SOMOS SINAPSIS",
+"role": "orador"
+},
+{
+"nome": "Fabio Frascella",
+"cargo": "Senior Sales Engineer",
+"empresa": "BigCommerce",
 "role": "orador"
 }
 ],
@@ -1825,6 +1843,18 @@
 "antes": "—",
 "depois": "Toni Garrido Morales",
 "em": "2026-10-22T19:21:12Z"
+},
+{
+"campo": "titulo",
+"antes": "De la tienda física al liderazgo digital: Caso de éxito Omnicanal Bici Escapa con BigCommerce y Sinapsis",
+"depois": "De la tienda física al liderazgo digital: Caso de éxito Omnicanal Escapa con BigCommerce y Sinapsis",
+"em": "2026-10-23T16:18:26Z"
+},
+{
+"campo": "oradores",
+"antes": "Toni Garrido Morales",
+"depois": "Toni Garrido Morales, Fabio Frascella",
+"em": "2026-10-23T16:18:26Z"
 }
 ]
 },
@@ -3303,32 +3333,6 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "tech-keynote",
-"hora_inicio": "13:25",
-"hora_fim": "13:45",
-"titulo": "From process maps to P&L: A Framework for turning AI into measurable ROI",
-"tipo": "Palestra",
-"descricao": "Most enterprises can point to AI pilots but far fewer can point to AI that moved the P&L. Drawing on a decade leading AI and automation across manufacturing, e-commerce and mobility operations, this t…",
-"oradores": [
-{
-"nome": "Dr. Jishna Pulluru",
-"cargo": "Director AI & Automation",
-"empresa": "SIXT",
-"role": "orador"
-}
-],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-23",
-"id": "s005",
-"tags": [
-"IA",
-"ROI",
-"processos",
-"automatização"
-],
-"alteracoes": []
-},
-{
-"dia": "2026-11-04",
 "track_id": "ai-commerce",
 "hora_inicio": "13:30",
 "hora_fim": "13:50",
@@ -3480,6 +3484,39 @@
 "antes": "Ponencia Factorial",
 "depois": "El ROI de la formación: Multiplica el valor de tu negocio impulsando a tu equipo",
 "em": "2026-10-14T09:55:40Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
+"track_id": "tech-keynote",
+"hora_inicio": "13:30",
+"hora_fim": "13:50",
+"titulo": "From process maps to P&L: A Framework for turning AI into measurable ROI",
+"tipo": "Palestra",
+"descricao": "Most enterprises can point to AI pilots but far fewer can point to AI that moved the P&L. Drawing on a decade leading AI and automation across manufacturing, e-commerce and mobility operations, this t…",
+"oradores": [
+{
+"nome": "Dr. Jishna Pulluru",
+"cargo": "Director AI & Automation",
+"empresa": "SIXT",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-23",
+"id": "s005",
+"tags": [
+"IA",
+"ROI",
+"processos",
+"automatização"
+],
+"alteracoes": [
+{
+"campo": "hora",
+"antes": "2026-11-04 13:25–13:45",
+"depois": "2026-11-04 13:30–13:50",
+"em": "2026-10-23T16:18:26Z"
 }
 ]
 },
@@ -3686,7 +3723,15 @@
 "competitividade",
 "talento"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-23T16:18:26Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
@@ -4545,23 +4590,29 @@
 "track_id": "hr-talent",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
-"titulo": "Talent Acquisition in a Box: Building a Scalable Hiring Function from Scratch",
+"titulo": "TBC",
 "tipo": "Palestra",
-"descricao": "Can Talent Acquisition be designed as a repeatable system rather than a collection of processes? This session explores how to build a scalable, plug-and-play TA function that can be deployed in virtua…",
-"oradores": [
-{
-"nome": "Corbmac McKay",
-"cargo": "Global Talent Acquisition Lead",
-"empresa": "Nespresso",
-"role": "orador"
-}
-],
+"descricao": "",
+"oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/talent-acquisition-in-a-box-building-a-scalable-hiring-function-from-scratch",
 "id": "s144",
 "tags": [
 "talento"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Talent Acquisition in a Box: Building a Scalable Hiring Function from Scratch",
+"depois": "TBC",
+"em": "2026-10-23T16:18:26Z"
+},
+{
+"campo": "oradores",
+"antes": "Corbmac McKay",
+"depois": "—",
+"em": "2026-10-23T16:18:26Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -4889,7 +4940,7 @@
 "track_id": "hr-learning",
 "hora_inicio": "16:00",
 "hora_fim": "16:20",
-"titulo": "BEAT: la métrica que falta en todos los planes de digitalización",
+"titulo": "BEAT: Lo que tu plan de IA no está midiendo",
 "tipo": "Palestra",
 "descricao": "Los planes de digitalización miden todo: tiempo, productividad, resultados. Todo menos lo que le pasa a la persona mientras la tecnología trabaja por ella. BEAT es la métrica que cierra ese hueco. Bas…",
 "oradores": [
@@ -4903,7 +4954,14 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/beat-la-m%C3%A9trica-que-falta-en-todos-los-planes-de-digitalizaci%C3%B3n",
 "id": "s131",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "BEAT: la métrica que falta en todos los planes de digitalización",
+"depois": "BEAT: Lo que tu plan de IA no está midiendo",
+"em": "2026-10-23T16:18:26Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -7517,15 +7575,15 @@
 "descricao": "En Tech Show Madrid 2026, GenAiA plantea una pregunta incómoda pero urgente, ¿qué significa que los sectores críticos operen sobre infraestructura que no controlamos? La soberanía digital ya no es un…",
 "oradores": [
 {
-"nome": "Óscar Méndez Soto",
-"cargo": "Presidente",
-"empresa": "GenAiA",
+"nome": "Natalia Sánchez",
+"cargo": "Presidenta",
+"empresa": "Omnicom PR Group",
 "role": "moderador"
 },
 {
-"nome": "Alister Moreno",
-"cargo": "Fundador y CEO",
-"empresa": "Clikalia y presidente de EsTech",
+"nome": "Óscar Méndez Soto",
+"cargo": "Presidente",
+"empresa": "GenAiA",
 "role": "orador"
 },
 {
@@ -7535,9 +7593,9 @@
 "role": "orador"
 },
 {
-"nome": "Natalia Sánchez",
-"cargo": "Presidenta",
-"empresa": "Omnicom PR Group",
+"nome": "Alister Moreno",
+"cargo": "Fundador y CEO",
+"empresa": "Clikalia y presidente de EsTech",
 "role": "orador"
 }
 ],
@@ -7564,6 +7622,12 @@
 "antes": "Óscar Méndez Soto, Alister Moreno, Alex Brando",
 "depois": "Óscar Méndez Soto, Alister Moreno, Alex Brando, Natalia Sánchez",
 "em": "2026-10-15T16:09:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Óscar Méndez Soto, Alister Moreno, Alex Brando, Natalia Sánchez",
+"depois": "Natalia Sánchez, Óscar Méndez Soto, Alex Brando, Alister Moreno",
+"em": "2026-10-23T16:18:26Z"
 }
 ]
 },
@@ -9066,7 +9130,7 @@
 "dia": "2026-11-05",
 "track_id": "tech-keynote",
 "hora_inicio": "12:30",
-"hora_fim": "12:50",
+"hora_fim": "13:00",
 "titulo": "IA en acción: de los retos de negocio a las soluciones",
 "tipo": "Palestra",
 "descricao": "¿Cómo puede la inteligencia artificial ayudar a resolver problemas reales de negocio? En esta sesion hablaremos de cómo en Novo Nordisk hemos identificado oportunidades de aplicación de la IA en la or…",
@@ -9105,6 +9169,12 @@
 "antes": "—",
 "depois": "Jonathan Alcazar, Francisco Javier Fillat",
 "em": "2026-10-22T19:21:12Z"
+},
+{
+"campo": "hora",
+"antes": "2026-11-05 12:30–12:50",
+"depois": "2026-11-05 12:30–13:00",
+"em": "2026-10-23T16:18:26Z"
 }
 ]
 },
@@ -9309,8 +9379,15 @@
 "antes": "2026-11-05 12:00–13:10",
 "depois": "2026-11-05 12:50–13:10",
 "em": "2026-10-22T15:26:38Z"
+},
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-23T16:18:26Z"
 }
-]
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
@@ -10390,7 +10467,7 @@
 "track_id": "hr-learning",
 "hora_inicio": "15:00",
 "hora_fim": "15:20",
-"titulo": "De conocimiento disperso a un sistema de aprendizaje autónomo para tus empleados",
+"titulo": "La IA que se encarga de tu formación de principio a fin.",
 "tipo": "Palestra",
 "descricao": "El conocimiento de una organización no debería quedarse en un PDF, en un procedimiento o en la experiencia de unas pocas personas.Pero convertir todo ese conocimiento en formación, hacerla llegar a ca…",
 "oradores": [
@@ -10419,6 +10496,12 @@
 "antes": "Maialen Carrasco",
 "depois": "Maialen Carrasco, Sandra Letrado",
 "em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "titulo",
+"antes": "De conocimiento disperso a un sistema de aprendizaje autónomo para tus empleados",
+"depois": "La IA que se encarga de tu formación de principio a fin.",
+"em": "2026-10-23T16:18:26Z"
 }
 ]
 },
