@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 27,
-"actualizado_em": "2026-10-22T19:21:12Z",
+"versao": 28,
+"actualizado_em": "2026-10-23T11:53:56Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -104,9 +104,51 @@
 "nome": "FBASHOW",
 "cor": "#94a3b8",
 "area": "FBASHOW"
+},
+{
+"id": "connected-commerce-village",
+"nome": "Connected Commerce Village",
+"cor": "#94a3b8",
+"area": "Connected Commerce Village"
 }
 ],
 "sessoes": [
+{
+"dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "10:15",
+"hora_fim": "10:30",
+"titulo": "Apertura Publicis Connected Media & IAB",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Roberto Santos",
+"cargo": "COO Publicis Groupe Iberia & CEO Connected Media Iberia",
+"empresa": "Publicis Groupe",
+"role": "orador"
+},
+{
+"nome": "Reyes Justribó",
+"cargo": "Presidenta IAB Europe",
+"empresa": "IAB Spain",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/apertura-publicis-connected-media-iab",
+"id": "s424",
+"tags": [
+"IA"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
+},
 {
 "dia": "2026-11-04",
 "track_id": "ai-commerce",
@@ -218,6 +260,40 @@
 "antes": "Javier Rodríguez Cabrera, Adrián Gómez",
 "depois": "Javier Rodríguez Cabrera, Adrián Gómez, Víctor Martínez",
 "em": "2026-10-14T15:19:24Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "10:30",
+"hora_fim": "11:00",
+"titulo": "Connected ID: Where Influence Meets Commerce",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Lara Velazquez",
+"cargo": "Influence Lead",
+"empresa": "Publicis Groupe",
+"role": "orador"
+},
+{
+"nome": "José Luis Ferrero",
+"cargo": "Commerce lead",
+"empresa": "Publicis Groupe España",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/connected-id-where-influence-meets-commerce",
+"id": "s425",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
 }
 ]
 },
@@ -586,7 +662,7 @@
 "oradores": [
 {
 "nome": "Jesús García",
-"cargo": "Director General",
+"cargo": "Director General de Negocio",
 "empresa": "CIONET Spain",
 "role": "orador"
 },
@@ -865,6 +941,36 @@
 "antes": "M. Inmaculada Blázquez García, Luis Casado, Luis Federico Gimilio, Javier de la Cuerda",
 "depois": "Inma Elizalde, Luis Casado, Luis Federico Gimilio, Javier de la Cuerda, M. Inmaculada Blázquez García",
 "em": "2026-10-15T11:51:49Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "11:00",
+"hora_fim": "11:30",
+"titulo": "Tendencias Retail y el retail media no endémico",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Eduardo Esparza",
+"cargo": "VP General Manager Iberia & Brazil",
+"empresa": "Webloyalty",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tendencias-retail-y-el-retail-media-no-end%C3%A9mico",
+"id": "s426",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
 }
 ]
 },
@@ -1245,6 +1351,46 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "11:30",
+"hora_fim": "12:00",
+"titulo": "De la inspiración a la conversión: el caso de éxito de L'Oréal en TikTok",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Elena Vega",
+"cargo": "Tiktokshop Leader CPD",
+"empresa": "L'Oréal",
+"role": "orador"
+},
+{
+"nome": "Teba Lorenzo",
+"cargo": "Sales Country Manager",
+"empresa": "TikTok",
+"role": "orador"
+},
+{
+"nome": "Rebeca Gomez",
+"cargo": "Transactional & Data director",
+"empresa": "Zenith",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/de-la-inspiraci%C3%B3n-a-la-conversi%C3%B3n-el-caso-de-%C3%A9xito-de-lor%C3%A9al-en-tiktok",
+"id": "s427",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "cyber-security",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
@@ -1257,12 +1403,6 @@
 "cargo": "CRO - Chief Revenue Officer",
 "empresa": "Kymatio",
 "role": "orador"
-},
-{
-"nome": "Raquel Martínez",
-"cargo": "Business Continuity Management and Cybersecurity Awareness",
-"empresa": "REDEIA",
-"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-kymatio",
@@ -1273,7 +1413,14 @@
 "negócio",
 "consciencialização"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Carlos Mulero, Raquel Martínez",
+"depois": "Carlos Mulero",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -1740,6 +1887,40 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "12:00",
+"hora_fim": "12:30",
+"titulo": "El nuevo reto de la internacionalización: por qué Alohas decidió apoyarse en ESW tras años de éxito en EE. UU.",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Gregoire Berniere",
+"cargo": "Sales Director",
+"empresa": "ESW",
+"role": "orador"
+},
+{
+"nome": "Jordi Marzá",
+"cargo": "Chief Operating Officer (COO)",
+"empresa": "Alohas",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-nuevo-reto-de-la-internacionalizaci%C3%B3n-por-qu%C3%A9-alohas-decidi%C3%B3-apoyarse-en-esw-tras-a%C3%B1os-de-%C3%A9xito-en-ee-uu",
+"id": "s428",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "cyber-security",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
@@ -1885,14 +2066,34 @@
 "track_id": "hr-learning",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
-"titulo": "Ponencia UKG",
+"titulo": "Más allá del hype de la IA: Construyendo la fuerza laboral humano-IA",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "La mayoría de la tecnología de RR. HH. promete una IA que deslumbra en una demostración y se estanca en el trabajo diario. Esta charla analiza qué hace que la IA para la fuerza laboral realmente funci…",
+"oradores": [
+{
+"nome": "Amaury MARTIN",
+"cargo": "Sales Director EMEA South",
+"empresa": "UKG",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-fresh-people-1",
 "id": "s125",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia UKG",
+"depois": "Más allá del hype de la IA: Construyendo la fuerza laboral humano-IA",
+"em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Amaury MARTIN",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -2248,6 +2449,43 @@
 "negócio"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "12:30",
+"hora_fim": "13:00",
+"titulo": "Retail Media Beyond the Bottom Funnel: Turning Consumer Data into Sustainable FMCG Growth",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "David Sequeira",
+"cargo": "Executive VicePresident",
+"empresa": "Skai",
+"role": "orador"
+},
+{
+"nome": "Raquel Martinez",
+"cargo": "Retail Media Manager",
+"empresa": "Publicis Groupe",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/retail-media-beyond-the-bottom-funnel-turning-consumer-data-into-sustainable-fmcg-growth",
+"id": "s429",
+"tags": [
+"dados",
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -2644,6 +2882,34 @@
 "multinacional"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "13:00",
+"hora_fim": "13:30",
+"titulo": "Diversificar para crecer: el éxito de afiliación de Misako.",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Paloma Lumbreras",
+"cargo": "Country Manager",
+"empresa": "CJ Affiliate Spain",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/diversificar-para-crecer-el-%C3%A9xito-de-afiliaci%C3%B3n-de-misako",
+"id": "s430",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -3063,6 +3329,34 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "ai-commerce",
+"hora_inicio": "13:30",
+"hora_fim": "13:50",
+"titulo": "Cómo Shopify nos permitió focalizarnos en nuestro negocio",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Javier Fontanals",
+"cargo": "COO",
+"empresa": "LORENA CANALS",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/c%C3%B3mo-shopify-nos-permiti%C3%B3-focalizarnos-en-nuestro-negocio",
+"id": "s431",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "cyber-security",
 "hora_inicio": "13:30",
 "hora_fim": "14:05",
@@ -3073,7 +3367,7 @@
 {
 "nome": "Eduvigis Ortíz",
 "cargo": "Founder & President",
-"empresa": "Women4Cyber and Eraneos Iberia",
+"empresa": "Women4Cyber Spain",
 "role": "orador"
 },
 {
@@ -3468,7 +3762,7 @@
 "oradores": [
 {
 "nome": "Bill Murphy",
-"cargo": "CEO y Co-Founder",
+"cargo": "Funder",
 "empresa": "FIK",
 "role": "orador"
 }
@@ -3840,7 +4134,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-152",
 "id": "s156",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-23T11:53:56Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
@@ -5019,12 +5321,6 @@
 "descricao": "La inteligencia artificial ya permite hacer cosas que hace unos años parecían imposibles. El verdadero reto está en saber cuáles tienen sentido para el negocio, aportan valor y pueden ser rentables. C…",
 "oradores": [
 {
-"nome": "Pedro Romera",
-"cargo": "Solution Architect IA",
-"empresa": "CTTexpress",
-"role": "orador"
-},
-{
 "nome": "Leticia Martin",
 "cargo": "Directora de Comunicación y Marca",
 "empresa": "CTTexpress",
@@ -5035,6 +5331,12 @@
 "cargo": "Founder & CEO",
 "empresa": "ThirdWish Group",
 "role": "orador"
+},
+{
+"nome": "Carlos Machado Silva",
+"cargo": "Director del área de AI",
+"empresa": "CTTexpress",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-ctt-express",
@@ -5043,7 +5345,14 @@
 "IA",
 "ROI"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Pedro Romera, Leticia Martin, Luis de Torres",
+"depois": "Leticia Martin, Luis de Torres, Carlos Machado Silva",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5286,6 +5595,42 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "ai-commerce",
+"hora_inicio": "17:00",
+"hora_fim": "17:20",
+"titulo": "Maximiliano Jabugo: De elaborar Jamón a construir el futuro del ecommerce",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Maximiliano Portes Fernández",
+"cargo": "Director",
+"empresa": "Maximiliano Jabugo",
+"role": "orador"
+},
+{
+"nome": "Bill Murphy",
+"cargo": "Funder",
+"empresa": "FIK",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/maximiliano-jabugo-de-elaborar-jam%C3%B3n-a-construir-el-futuro-del-ecommerce",
+"id": "s432",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "cloud-ai",
 "hora_inicio": "17:00",
 "hora_fim": "17:20",
@@ -5382,10 +5727,17 @@
 "track_id": "dc-energy",
 "hora_inicio": "17:00",
 "hora_fim": "17:20",
-"titulo": "Ponencia Edith Guedella - Head Of Sustainability - ACCIONA",
+"titulo": "Data Center Net-Zero: reduciendo las emisiones desde la fase de construcción",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "A medida que el sector de los centros de datos acelera su crecimiento para dar respuesta al desarrollo de la inteligencia artificial, el cloud computing y las infraestructuras digitales, las estrategi…",
+"oradores": [
+{
+"nome": "Edith Guedella Bustamante",
+"cargo": "Head Of Sustainability. Construction.",
+"empresa": "acciona",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-edith-guedella-head-of-sustainability-acciona",
 "id": "s401",
 "tags": [],
@@ -5395,6 +5747,18 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia Edith Guedella - Head Of Sustainability - ACCIONA",
+"depois": "Data Center Net-Zero: reduciendo las emisiones desde la fase de construcción",
+"em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Edith Guedella Bustamante",
+"em": "2026-10-23T11:53:56Z"
 }
 ]
 },
@@ -5615,14 +5979,20 @@
 "track_id": "tfm",
 "hora_inicio": "17:25",
 "hora_fim": "17:45",
-"titulo": "La nueva era de la comunicación con clientes: WhatsApp, Agentes de IA y Voz",
+"titulo": "La nueva era del marketing conversacional: WhatsApp e IA en acción | Caso de éxito La Casa de las Setas x Spoki",
 "tipo": "Palestra",
-"descricao": "La comunicación entre empresas y clientes está entrando en una nueva etapa. WhatsApp ya ha cambiado la forma en la que compramos, preguntamos y recibimos asistencia, pero la llegada de los agentes de…",
+"descricao": "¿Cómo transformar WhatsApp en un canal estratégico de marketing, ventas y fidelización?En esta sesión, Spoki y La Casa de las Setas compartirán su experiencia real utilizando WhatsApp para conectar co…",
 "oradores": [
 {
 "nome": "Ana Rueda Dominguez",
 "cargo": "Country Manager",
 "empresa": "SPOKI",
+"role": "orador"
+},
+{
+"nome": "Luis de Yrissarri",
+"cargo": "E-Commerce & Marketing Manager",
+"empresa": "La Casa de las Setas",
 "role": "orador"
 }
 ],
@@ -5632,7 +6002,54 @@
 "IA",
 "agentes"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "La nueva era de la comunicación con clientes: WhatsApp, Agentes de IA y Voz",
+"depois": "La nueva era del marketing conversacional: WhatsApp e IA en acción | Caso de éxito La Casa de las Setas x Spoki",
+"em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "oradores",
+"antes": "Ana Rueda Dominguez",
+"depois": "Ana Rueda Dominguez, Luis de Yrissarri",
+"em": "2026-10-23T11:53:56Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
+"track_id": "ai-commerce",
+"hora_inicio": "17:30",
+"hora_fim": "17:50",
+"titulo": "El despertar de la nueva inteligencia corporativa en Simuero",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Guillermo García",
+"cargo": "CEO",
+"empresa": "ONESTIC",
+"role": "orador"
+},
+{
+"nome": "Valería García",
+"cargo": "Head of Ecommerce",
+"empresa": "Simuero",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-despertar-de-la-nueva-inteligencia-corporativa-en-simuero",
+"id": "s433",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -6036,6 +6453,42 @@
 "e-commerce"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "ai-commerce",
+"hora_inicio": "18:00",
+"hora_fim": "18:20",
+"titulo": "AI-First Commerce: cómo convertir la IA en una ventaja competitiva real",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Elad Rodriguez",
+"cargo": "CEO",
+"empresa": "NITSNETS",
+"role": "orador"
+},
+{
+"nome": "Carlos Muñoz",
+"cargo": "CDO",
+"empresa": "Disfrazzes",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ai-first-commerce-c%C3%B3mo-convertir-la-ia-en-una-ventaja-competitiva-real",
+"id": "s434",
+"tags": [
+"IA"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -7402,6 +7855,12 @@
 "cargo": "Director de Negocio Online",
 "empresa": "INTEX",
 "role": "orador"
+},
+{
+"nome": "Laura Quiroga",
+"cargo": "Key Account Manager",
+"empresa": "seQura",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/m%C3%A1s-ingresos-con-el-mismo-tr%C3%A1fico-c%C3%B3mo-convertir-mejor-con-prestashop-sequra",
@@ -7419,6 +7878,12 @@
 "antes": "Joan Asensio",
 "depois": "Joan Asensio, Mario Fontán",
 "em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "Joan Asensio, Mario Fontán",
+"depois": "Joan Asensio, Mario Fontán, Laura Quiroga",
+"em": "2026-10-23T11:53:56Z"
 }
 ]
 },
@@ -7775,7 +8240,7 @@
 "track_id": "prestashop",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
-"titulo": "PrestaShop + Spoki: la nueva era de la comunicación con clientes",
+"titulo": "La nueva era del eCommerce conversacional: PrestaShop, WhatsApp e IA en acción | Caso de éxito Deportes y Aventura del Noroeste x Spoki",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [
@@ -7784,12 +8249,31 @@
 "cargo": "Global Partner Manager",
 "empresa": "SPOKI",
 "role": "orador"
+},
+{
+"nome": "Luis de Yrissarr",
+"cargo": "E-commerce & Marketing Manager",
+"empresa": "Deportes y Aventura del Noroeste",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/prestashop-spoki-la-nueva-era-de-la-comunicaci%C3%B3n-con-clientes",
 "id": "s366",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "PrestaShop + Spoki: la nueva era de la comunicación con clientes",
+"depois": "La nueva era del eCommerce conversacional: PrestaShop, WhatsApp e IA en acción | Caso de éxito Deportes y Aventura del Noroeste x Spoki",
+"em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "oradores",
+"antes": "Maria Fornell",
+"depois": "Maria Fornell, Luis de Yrissarr",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9613,14 +10097,14 @@
 "track_id": "dc-design",
 "hora_inicio": "13:45",
 "hora_fim": "14:05",
-"titulo": "Futuros retos del despliegue de los centros de datos en España: del diseño a la puesta a disposición del cliente.",
+"titulo": "La Revolución de los Centros de Datos en el Mundo y Europa: dónde estamos y lo que viene",
 "tipo": "Palestra",
-"descricao": "Presentaremos una visión complementaria sobre los retos que plantea el desarrollo de estas infraestructuras desde el punto de vista de la construcción, al margen de los aspectos relacionados con la re…",
+"descricao": "Un análisis del mercado Mundial, Europeo y Español de centros de datos, explorando la oferta, demanda y la evolución las principales tendencias que están impulsando el crecimiento del sector. Una visi…",
 "oradores": [
 {
-"nome": "Rafael Hicar Armendariz",
-"cargo": "Head of Data Centers for Spain",
-"empresa": "Ferrovial Construcción",
+"nome": "Luis Bravo Sainz",
+"cargo": "Sr Principal Analyst, EMEA",
+"empresa": "datacenterHawk by S&P Global",
 "role": "orador"
 }
 ],
@@ -9629,7 +10113,20 @@
 "tags": [
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Futuros retos del despliegue de los centros de datos en España: del diseño a la puesta a disposición del cliente.",
+"depois": "La Revolución de los Centros de Datos en el Mundo y Europa: dónde estamos y lo que viene",
+"em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "oradores",
+"antes": "Rafael Hicar Armendariz",
+"depois": "Luis Bravo Sainz",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9895,12 +10392,18 @@
 "hora_fim": "15:20",
 "titulo": "De conocimiento disperso a un sistema de aprendizaje autónomo para tus empleados",
 "tipo": "Palestra",
-"descricao": "Las organizaciones no tienen un problema de generación de contenido, tienen un problema de sistema. El conocimiento existe: en PDFs, procesos, personas, experiencia acumulada. Lo que no existía era un…",
+"descricao": "El conocimiento de una organización no debería quedarse en un PDF, en un procedimiento o en la experiencia de unas pocas personas.Pero convertir todo ese conocimiento en formación, hacerla llegar a ca…",
 "oradores": [
 {
 "nome": "Maialen Carrasco",
 "cargo": "Head of Customer Success",
 "empresa": "Vidext Technologies SL",
+"role": "orador"
+},
+{
+"nome": "Sandra Letrado",
+"cargo": "HR Operations Specialist",
+"empresa": "LG ELECTRONICS",
 "role": "orador"
 }
 ],
@@ -9910,7 +10413,14 @@
 "marketing",
 "aprendizagem"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Maialen Carrasco",
+"depois": "Maialen Carrasco, Sandra Letrado",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -10071,9 +10581,9 @@
 "track_id": "cyber-security",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
-"titulo": "Ponencia - Iván Sánchez - ALS",
+"titulo": "Ciberdefensa en la era de la IA en una organización global y multisectorial",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "En esta sesión exploraremos cómo la inteligencia artificial está transformando la ciberdefensa en organizaciones de testing, laboratorios e inspección, abriendo nuevas oportunidades para los equipos d…",
 "oradores": [
 {
 "nome": "Iván Sánchez",
@@ -10085,7 +10595,14 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-164",
 "id": "s294",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia - Iván Sánchez - ALS",
+"depois": "Ciberdefensa en la era de la IA en una organización global y multisectorial",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -10457,6 +10974,36 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "16:00",
+"hora_fim": "16:20",
+"titulo": "Q4 + IA: Quick Wins y errores que aún estás a tiempo de evitar",
+"tipo": "Palestra",
+"descricao": "El último trimestre del año es el momento de convertir la IA en resultados concretos, sin grandes proyectos ni largos tiempos de implementación. Descubre los Quick Wins que puedes activar ahora para g…",
+"oradores": [
+{
+"nome": "Marta Sánchez",
+"cargo": "Head of Media & Acquisition",
+"empresa": "Rocket Digital",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/q4-ia-quick-wins-y-errores-que-a%C3%BAn-est%C3%A1s-a-tiempo-de-evitar",
+"id": "s435",
+"tags": [
+"IA"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "ai-data",
 "hora_inicio": "16:00",
 "hora_fim": "16:20",
@@ -10681,14 +11228,34 @@
 "track_id": "tfm",
 "hora_inicio": "16:00",
 "hora_fim": "16:20",
-"titulo": "Ponencia SPOKI",
+"titulo": "Ninguna oportunidad perdida con Spoki Voice: cómo recuperar leads con agentes de voz inteligentes",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "¿Cuántas oportunidades de venta se pierden por falta de seguimiento?En esta sesión descubriremos cómo los agentes de IA por voz permiten recuperar leads que parecían perdidos, automatizar el seguimien…",
+"oradores": [
+{
+"nome": "Manuel García Oliveros",
+"cargo": "Enterprise Account Executive",
+"empresa": "SPOKI",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-82",
 "id": "s305",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia SPOKI",
+"depois": "Ninguna oportunidad perdida con Spoki Voice: cómo recuperar leads con agentes de voz inteligentes",
+"em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Manuel García Oliveros",
+"em": "2026-10-23T11:53:56Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
