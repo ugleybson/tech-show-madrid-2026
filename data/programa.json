@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 30,
-"actualizado_em": "2026-10-25T19:26:53Z",
+"versao": 31,
+"actualizado_em": "2026-10-25T21:59:08Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -5851,14 +5851,14 @@
 "track_id": "future-commerce",
 "hora_inicio": "17:00",
 "hora_fim": "17:20",
-"titulo": "Behind the Scenes of \"La Bolsa\": how AI is Shaping the Fnancial Markets of Tomorrow",
+"titulo": "El corazón tecnológico de «La Bolsa» y las tecnologías que impulsan los mercados del futuro",
 "tipo": "Palestra",
-"descricao": "Most people know the stock exchange, or \"La Bolsa\", from what they see on trading screens or on TV. Far fewer understand the sophisticated technology that powers it behind the scenes. From ultra low l…",
+"descricao": "Una mirada entre bastidores al corazón de los mercados financieros y su tecnología que permite que funcionen cada día con velocidad, seguridad y resiliencia. La ponencia mostrará cómo infraestructuras…",
 "oradores": [
 {
-"nome": "Berta Ares Lombán",
-"cargo": "General Director",
-"empresa": "BME Inntech",
+"nome": "Sara R. Villalgordo",
+"cargo": "Global Head of Core Infrastructure",
+"empresa": "BME",
 "role": "orador"
 }
 ],
@@ -5867,7 +5867,20 @@
 "tags": [
 "IA"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Behind the Scenes of \"La Bolsa\": how AI is Shaping the Fnancial Markets of Tomorrow",
+"depois": "El corazón tecnológico de «La Bolsa» y las tecnologías que impulsan los mercados del futuro",
+"em": "2026-10-25T21:59:08Z"
+},
+{
+"campo": "oradores",
+"antes": "Berta Ares Lombán",
+"depois": "Sara R. Villalgordo",
+"em": "2026-10-25T21:59:08Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
