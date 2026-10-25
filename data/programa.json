@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 29,
-"actualizado_em": "2026-10-23T16:18:26Z",
+"versao": 30,
+"actualizado_em": "2026-10-25T19:26:53Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -2263,7 +2263,7 @@
 "oradores": [
 {
 "nome": "Marta Gil",
-"cargo": "Moderadora - Head of Speaking",
+"cargo": "Head of DEx",
 "empresa": "DEx",
 "role": "moderador"
 },
@@ -6403,14 +6403,14 @@
 "oradores": [
 {
 "nome": "Marta Gil",
-"cargo": "Moderadora - Head of Speaking",
+"cargo": "Head of DEx",
 "empresa": "DEx",
 "role": "moderador"
 },
 {
 "nome": "Ana Gordo",
 "cargo": "Head of Ecommerce Europe",
-"empresa": "COS",
+"empresa": "COS . Miembro de DEx",
 "role": "orador"
 },
 {
@@ -7807,19 +7807,19 @@
 {
 "nome": "Cristina López Pancorbo",
 "cargo": "ECommerce and Omnichannel Director - Non Food",
-"empresa": "El Corte Inglés",
+"empresa": "El Corte Inglés. Miembro de DEx",
 "role": "moderador"
 },
 {
 "nome": "David Ogalla",
 "cargo": "Ecommerce Manager",
-"empresa": "Ferrer",
+"empresa": "Ferrer. Miembro de DEx",
 "role": "orador"
 },
 {
 "nome": "Fátima Lerdo",
 "cargo": "Chief Digital Officer",
-"empresa": "Tramas+",
+"empresa": "Tramas+. Miembro de DEx",
 "role": "orador"
 },
 {
