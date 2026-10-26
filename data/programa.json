@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 31,
-"actualizado_em": "2026-10-25T21:59:08Z",
+"versao": 32,
+"actualizado_em": "2026-10-26T10:23:37Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -133,6 +133,12 @@
 "cargo": "Presidenta IAB Europe",
 "empresa": "IAB Spain",
 "role": "orador"
+},
+{
+"nome": "Belén Vila",
+"cargo": "Chief Operating Officer",
+"empresa": "IAB Spain",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/apertura-publicis-connected-media-iab",
@@ -146,6 +152,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "oradores",
+"antes": "Roberto Santos, Reyes Justribó",
+"depois": "Roberto Santos, Reyes Justribó, Belén Vila",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -488,6 +500,12 @@
 "cargo": "Amazon & Marketplace Manager",
 "empresa": "Experto en Vendor",
 "role": "orador"
+},
+{
+"nome": "Irene Manterola",
+"cargo": "marketing director",
+"empresa": "SPC",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/control-de-precio-y-canibalizaci%C3%B3n-de-canal-vendor-vs-seller",
@@ -499,6 +517,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Paco Mascareña, Adrián Juan Ramos",
+"depois": "Paco Mascareña, Adrián Juan Ramos, Irene Manterola",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -3474,7 +3498,14 @@
 "titulo": "El ROI de la formación: Multiplica el valor de tu negocio impulsando a tu equipo",
 "tipo": "Palestra",
 "descricao": "¿Cómo demostrar que invertir en formación no es un gasto, sino una palanca de crecimiento? En esta ponencia, Factorial comparte cómo medir el impacto real de los programas de desarrollo del equipo: de…",
-"oradores": [],
+"oradores": [
+{
+"nome": "Ángel Asensio Torres",
+"cargo": "Senior Account Manager",
+"empresa": "Factorial",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-factorial-1",
 "id": "s155",
 "tags": [],
@@ -3484,6 +3515,12 @@
 "antes": "Ponencia Factorial",
 "depois": "El ROI de la formación: Multiplica el valor de tu negocio impulsando a tu equipo",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Ángel Asensio Torres",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -4691,14 +4728,26 @@
 "track_id": "fbashow",
 "hora_inicio": "15:55",
 "hora_fim": "16:35",
-"titulo": "¿Dejas que la IA de Amazon pilote tus campañas de Ads?",
+"titulo": "Cómo usan la IA las marcas que venden en Amazon (y dónde no la dejan decidir)",
 "tipo": "Palestra",
-"descricao": "¿Confías ya en Ads Agent para poner las pujas, o lo sigues llevando tú a mano keyword a keyword? En unBoxed 2026 Amazon presentó Ads Agent: la consola de Ads y Amazon DSP en un solo sitio, manejados p…",
+"descricao": "¿Qué le delegas ya a la IA en el día a día (Ads, catálogo, contenido, atención) y qué sigues llevando tú a mano?",
 "oradores": [
 {
 "nome": "Carlos Martínez",
 "cargo": "CEO",
 "empresa": "Epinium",
+"role": "orador"
+},
+{
+"nome": "Pablo Fayos",
+"cargo": "eCommerce & Digital Marketing Manager",
+"empresa": "Miniland",
+"role": "orador"
+},
+{
+"nome": "Miriam López",
+"cargo": "Co-Founder & CMO",
+"empresa": "MAIKAI PETS",
 "role": "orador"
 }
 ],
@@ -4714,6 +4763,18 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "titulo",
+"antes": "¿Dejas que la IA de Amazon pilote tus campañas de Ads?",
+"depois": "Cómo usan la IA las marcas que venden en Amazon (y dónde no la dejan decidir)",
+"em": "2026-10-26T10:23:37Z"
+},
+{
+"campo": "oradores",
+"antes": "Carlos Martínez",
+"depois": "Carlos Martínez, Pablo Fayos, Miriam López",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -5546,7 +5607,14 @@
 "titulo": "¿Miedo a uno de los mercados más grandes de Europa? Oportunidades post-Brexit y aduanas sin fricción",
 "tipo": "Palestra",
 "descricao": "Supera las barreras aduaneras del Brexit y aprovecha el enorme potencial del e-commerce británico.",
-"oradores": [],
+"oradores": [
+{
+"nome": "Daniel Perez Shaw",
+"cargo": "BD en Aduanas y Transporte",
+"empresa": "Kata Global Logistics",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/miedo-a-uno-de-los-mercados-m%C3%A1s-grandes-de-europa-oportunidades-post-brexit-y-aduanas-sin-fricci%C3%B3n",
 "id": "s414",
 "tags": [
@@ -5558,6 +5626,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Daniel Perez Shaw",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -5744,17 +5818,37 @@
 "track_id": "dc-design",
 "hora_inicio": "17:00",
 "hora_fim": "17:45",
-"titulo": "Mesa de debate - Diseñando la Fábrica de IA: la nueva infraestructura para escalar la inteligencia artificial",
-"tipo": "Mesa Debate",
-"descricao": "La inteligencia artificial está transformando los centros de datos en Fábrica de IA: infraestructuras capaces de producir inteligencia a gran escala. Pero esta evolución no se resuelve únicamente con…",
-"oradores": [],
+"titulo": "From Model to AI Factory: How Collaboration Turns Innovation into Real-World Infrastructure - Schneider Electric",
+"tipo": "Palestra",
+"descricao": ".",
+"oradores": [
+{
+"nome": "Alessandro Giusti",
+"cargo": "R&D Director",
+"empresa": "AVEVA",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-de-debate-schneider-electric",
 "id": "s228",
 "tags": [
 "IA",
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Mesa de debate - Diseñando la Fábrica de IA: la nueva infraestructura para escalar la inteligencia artificial",
+"depois": "From Model to AI Factory: How Collaboration Turns Innovation into Real-World Infrastructure - Schneider Electric",
+"em": "2026-10-26T10:23:37Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Alessandro Giusti",
+"em": "2026-10-26T10:23:37Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -7355,7 +7449,14 @@
 "titulo": "Miravia, Carrefour, MediaMarkt, El Corte Inglés: los marketplaces que ignoras",
 "tipo": "Palestra",
 "descricao": "¿Cuál de los marketplaces españoles compensa de verdad y cuál te come recursos sin devolver nada? Se habla de Amazon como si fuera el único canal. Los marketplaces del retail español están comprando t…",
-"oradores": [],
+"oradores": [
+{
+"nome": "Ana Mesa",
+"cargo": "International Business Development",
+"empresa": "Winkle",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/miravia-carrefour-mediamarkt-el-corte-ingl%C3%A9s-los-marketplaces-que-ignoras",
 "id": "s415",
 "tags": [
@@ -7367,6 +7468,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Ana Mesa",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -8064,7 +8171,14 @@
 "titulo": "Transforma las oportunidades internacionales en el éxito de tu marketplace",
 "tipo": "Palestra",
 "descricao": "¿El cumplimiento europeo frena tu marketplace? Domina el cumplimiento normativo desde una sola plataforma.",
-"oradores": [],
+"oradores": [
+{
+"nome": "Agustín Perla",
+"cargo": "International Business Development Officer",
+"empresa": "AVASK",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/transforma-las-oportunidades-internacionales-en-el-%C3%A9xito-de-tu-marketplace",
 "id": "s416",
 "tags": [
@@ -8076,6 +8190,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Agustín Perla",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -9358,6 +9478,12 @@
 "cargo": "Marketplace & Key Account Manager",
 "empresa": "Cerdá Group",
 "role": "orador"
+},
+{
+"nome": "Daniel Pérez Shaw",
+"cargo": "Customs and Trade Business Development Officer",
+"empresa": "KATA Global Logistics.",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/juguetes-la-normativa-ue-2026-que-cambia-el-listing-entero",
@@ -9371,6 +9497,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Guillermo Maté, Vlad Slobodenyuk",
+"depois": "Guillermo Maté, Vlad Slobodenyuk, Daniel Pérez Shaw",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -10088,6 +10220,36 @@
 "antes": "Adrián Aybar, Pat Iglesias",
 "depois": "Adrián Aybar, Pat Iglesias, Luis Arconada",
 "em": "2026-10-21T12:39:51Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "fbashow",
+"hora_inicio": "13:35",
+"hora_fim": "13:55",
+"titulo": "Del ecommerce al 303: el viaje que nadie te explica",
+"tipo": "Palestra",
+"descricao": "Hacienda ya conoce tus ventas online. ¿Las tienes tú controladas? Seguimos el recorrido de una venta, del clic al 303, y repasamos los puntos ciegos fiscales de Amazon, la tienda online y la venta en…",
+"oradores": [
+{
+"nome": "Carla Carrasco",
+"cargo": "CEO",
+"empresa": "Accountali",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/del-ecommerce-al-303-el-viaje-que-nadie-te-explica",
+"id": "s436",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -10839,6 +11001,12 @@
 "cargo": "CFO",
 "empresa": "Nullure",
 "role": "orador"
+},
+{
+"nome": "Alfredo Mendoza",
+"cargo": "Co-Funder & CEO",
+"empresa": "Magnolia Europa",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/que-tu-proveedor-financie-tu-crecimiento",
@@ -10850,6 +11018,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "Carla Carrasco, Eduardo Pereda",
+"depois": "Carla Carrasco, Eduardo Pereda, Alfredo Mendoza",
+"em": "2026-10-26T10:23:37Z"
 }
 ]
 },
@@ -11427,14 +11601,34 @@
 "track_id": "tech-keynote",
 "hora_inicio": "16:25",
 "hora_fim": "16:45",
-"titulo": "TBC",
+"titulo": "IA para atraer, experiencias humanas para conectar. Cómo conectar con el nuevo consumidor en un mundo saturado de mensajes",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "La IA transforma cómo llegamos a las personas. ¿Qué hace que confíen y nos elijan? Una mirada al marketing del futuro: automatización con criterio, encuentros cara a cara y experiencias que convierten…",
+"oradores": [
+{
+"nome": "Vanina Romero",
+"cargo": "Business Hacker y consultora estratégica en marketing del futuro y comportamiento del consumidor",
+"empresa": ".",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-170",
 "id": "s264",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "IA para atraer, experiencias humanas para conectar. Cómo conectar con el nuevo consumidor en un mundo saturado de mensajes",
+"em": "2026-10-26T10:23:37Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Vanina Romero",
+"em": "2026-10-26T10:23:37Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
