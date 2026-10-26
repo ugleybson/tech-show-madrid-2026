@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 32,
-"actualizado_em": "2026-10-26T10:23:37Z",
+"versao": 33,
+"actualizado_em": "2026-10-26T16:51:36Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1003,14 +1003,34 @@
 "track_id": "cyber-security",
 "hora_inicio": "11:00",
 "hora_fim": "11:20",
-"titulo": "Ponencia Orange",
+"titulo": "IA, confianza y defensa colectiva: repensando la ciberresiliencia",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "La IA está cambiando nuestra forma de trabajar y también la forma en que somos atacados. Desde el ransomware y la guerra cognitiva hasta tecnologías emergentes como la criptografía postcuántica, las o…",
+"oradores": [
+{
+"nome": "Alejandro Velilla",
+"cargo": "Head of Trusted Solutions",
+"empresa": "ORANGE CYBERDEFENSE",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-38",
 "id": "s109",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Orange",
+"depois": "IA, confianza y defensa colectiva: repensando la ciberresiliencia",
+"em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Alejandro Velilla",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -1095,13 +1115,13 @@
 {
 "nome": "Moderadora: Laura Ramírez",
 "cargo": "Global Business Digital Director",
-"empresa": "UNOde50",
+"empresa": "UNOde50. Miembro de DEx",
 "role": "moderador"
 },
 {
 "nome": "Beatriz del rey",
 "cargo": "Ecommerce & CRM Manager",
-"empresa": "Domino’s Pizza",
+"empresa": "Domino's Pizza. Miembro de DEx",
 "role": "orador"
 },
 {
@@ -1887,20 +1907,26 @@
 "track_id": "ai-commerce",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
-"titulo": "Media & eCommerce Growth Keynote",
+"titulo": "Conectando negocio y marketing en la era de la IA (Insights del primer Platinum Partner de Shopify en España)",
 "tipo": "Palestra",
-"descricao": "En 2026, escalar un negocio digital exige una sincronización radical entre automatización publicitaria por IA y arquitectura de conversión. Nacho Rodés y Pablo Callejón desvelan el playbook estratégic…",
+"descricao": "En 2026, conectar negocio y marketing exige una visión integrada de estrategia, datos e inteligencia artificial. Nacho Rodés (Rocket Digital), Gonzalo Travesedo (Google) y Jaume Portell (Pagemind) com…",
 "oradores": [
 {
 "nome": "Nacho Rodés",
-"cargo": "Co-founder",
+"cargo": "Managing Director & Co-founder",
 "empresa": "Rocket Digital",
 "role": "orador"
 },
 {
-"nome": "Pablo Callejón",
-"cargo": "Co-Founder and CMO",
-"empresa": "Rocket Digital",
+"nome": "Gonzalo Travesedo Juliá",
+"cargo": "Strategic Agency Manager",
+"empresa": "Google",
+"role": "orador"
+},
+{
+"nome": "Jaume Portell",
+"cargo": "Founder",
+"empresa": "Pagemind",
 "role": "orador"
 }
 ],
@@ -1911,7 +1937,20 @@
 "e-commerce",
 "automatização"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Media & eCommerce Growth Keynote",
+"depois": "Conectando negocio y marketing en la era de la IA (Insights del primer Platinum Partner de Shopify en España)",
+"em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "Nacho Rodés, Pablo Callejón",
+"depois": "Nacho Rodés, Gonzalo Travesedo Juliá, Jaume Portell",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -3123,14 +3162,34 @@
 "track_id": "hr-talent",
 "hora_inicio": "13:00",
 "hora_fim": "13:20",
-"titulo": "Ponencia Onirica Virtual",
+"titulo": "La revolución del training con la Realidad Virtual: mejora de ventas, reducción de riesgos y mejor talento.",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "En esta charla exploraremos a través de casos de éxito como el de Grifols, Alfasigma o Comillas cómo la Realidad Virtual está transformando diferentes áreas de negocio a través de sus principales caso…",
+"oradores": [
+{
+"nome": "Alejandro Báguena",
+"cargo": "Fundador y CEO",
+"empresa": "Onirica VR",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-onirica-virtual",
 "id": "s141",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Onirica Virtual",
+"depois": "La revolución del training con la Realidad Virtual: mejora de ventas, reducción de riesgos y mejor talento.",
+"em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Alejandro Báguena",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -3385,6 +3444,67 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "13:30",
+"hora_fim": "14:00",
+"titulo": "El consumidor ya ha cambiado. ¿Ha cambiado el Marketing de Retail?",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Carmen Fraile",
+"cargo": "Directora",
+"empresa": "iaFarma HEFAME",
+"role": "orador"
+},
+{
+"nome": "Jesús Hernández",
+"cargo": "Subdirector La Vaguada",
+"empresa": "La Vaguada",
+"role": "orador"
+},
+{
+"nome": "Mercedes Larrañaga",
+"cargo": "KAM - GfK",
+"empresa": "An NIQ Company",
+"role": "orador"
+},
+{
+"nome": "Angel Cachón",
+"cargo": "Chief Digital and Marketing Officer",
+"empresa": "DONTE",
+"role": "orador"
+},
+{
+"nome": "Sandra Perez",
+"cargo": "Responsable de Marketing y Comunicación",
+"empresa": "Ilunion Retail",
+"role": "orador"
+},
+{
+"nome": "Jose Luis Ferrero",
+"cargo": "Commerce Lead",
+"empresa": "Publicis Commerce Spain & Portugal",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-consumidor-ya-ha-cambiado-ha-cambiado-el-marketing-de-retail",
+"id": "s437",
+"tags": [
+"marketing",
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "cyber-security",
 "hora_inicio": "13:30",
 "hora_fim": "14:05",
@@ -3611,8 +3731,15 @@
 "antes": "Bastian Siebers",
 "depois": "—",
 "em": "2026-10-22T10:23:17Z"
+},
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-26T16:51:36Z"
 }
-]
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
@@ -3927,6 +4054,73 @@
 "gestão"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "15:00",
+"hora_fim": "15:30",
+"titulo": "Velocidad de la IA para crecer: Retos de Marketing y D2C",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "María Pelayo",
+"cargo": "Redactora",
+"empresa": "EcommerceNews",
+"role": "orador"
+},
+{
+"nome": "Andrés de España",
+"cargo": "CEO 3Dids & Consultor Shopify España",
+"empresa": "3dids",
+"role": "orador"
+},
+{
+"nome": "Julian Alvarez",
+"cargo": "eCommerce Manager",
+"empresa": "Electro Todo",
+"role": "orador"
+},
+{
+"nome": "Javier Llopis",
+"cargo": "Responsable de Marketing Digital",
+"empresa": "Valencia Basket",
+"role": "orador"
+},
+{
+"nome": "Patricia Conejero",
+"cargo": "Global CMO",
+"empresa": "YODEYMA",
+"role": "orador"
+},
+{
+"nome": "Jose Luis Jimenez",
+"cargo": "Director de Marketing",
+"empresa": "Galletas Gullón",
+"role": "orador"
+},
+{
+"nome": "Paúl Herrera",
+"cargo": "Global Marketing director",
+"empresa": "Grupo Emperador",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/velocidad-de-la-ia-para-crecer-retos-de-marketing-y-d2c",
+"id": "s438",
+"tags": [
+"IA",
+"marketing"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -4441,6 +4635,64 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "15:30",
+"hora_fim": "15:50",
+"titulo": "El futuro de las organizaciones: Más Humanos, Más Digitales, Más Conectados",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "María Pelayo",
+"cargo": "Redactora",
+"empresa": "EcommerceNews",
+"role": "orador"
+},
+{
+"nome": "Diego Caminero",
+"cargo": "Talent Business Partner",
+"empresa": "Publicis Groupe",
+"role": "orador"
+},
+{
+"nome": "Jose Maria Visconti Caparros",
+"cargo": "Marketing Category Director",
+"empresa": "ESIC",
+"role": "orador"
+},
+{
+"nome": "Gastón Fornés",
+"cargo": "Dean UBI Europe",
+"empresa": "UBI",
+"role": "orador"
+},
+{
+"nome": "Cristina Delgado",
+"cargo": "Fundadora y Presidenta",
+"empresa": "Women in Retail",
+"role": "orador"
+},
+{
+"nome": "Leticia Rodríguez",
+"cargo": "Partner",
+"empresa": "Page Executive",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-futuro-de-las-organizaciones-m%C3%A1s-humanos-m%C3%A1s-digitales-m%C3%A1s-conectados",
+"id": "s439",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "dc-design",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
@@ -4722,6 +4974,37 @@
 "liderança"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "15:50",
+"hora_fim": "16:10",
+"titulo": "Myth busting: Retail Data con The Trade Desk",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Jose Muries",
+"cargo": "Business Development Director",
+"empresa": "TheTradeDesk",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/myth-busting-retail-data-con-the-trade-desk",
+"id": "s440",
+"tags": [
+"dados",
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5167,6 +5450,36 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "16:10",
+"hora_fim": "16:30",
+"titulo": "La 3ª Ola del Retail Media: Omnicanalidad Real",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Lola Garcia-German",
+"cargo": "Directora General",
+"empresa": "Unlimitail",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/la-3%C2%AA-ola-del-retail-media-omnicanalidad-real",
+"id": "s441",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "e-show",
 "hora_inicio": "16:10",
 "hora_fim": "16:35",
@@ -5193,9 +5506,9 @@
 "track_id": "ai-data",
 "hora_inicio": "16:25",
 "hora_fim": "16:45",
-"titulo": "Your agents still can't read your documents (reliably). What Iberia did about it.",
+"titulo": "Tu agente de IA todavía no sabe leer documentos de forma fiable. Esto es lo que hizo IVI Fertility para cambiarlo.",
 "tipo": "Palestra",
-"descricao": "Agents can read a PDF in a demo. Feeding thousands of heterogeneous documents into real decisions is a different problem, and it's where automation breaks silently. The first part of this talk covers…",
+"descricao": "Antes de una primera visita de fertilidad, las pacientes suben todo su historial médico: resultados de laboratorio, informes, tratamientos anteriores, etc. Son muchos documentos por paciente de media,…",
 "oradores": [
 {
 "nome": "Diego Pérez Sastre",
@@ -5204,9 +5517,9 @@
 "role": "orador"
 },
 {
-"nome": "Sofía Holod",
-"cargo": "Data engineer",
-"empresa": "Iberia",
+"nome": "Marta Rivera Alba",
+"cargo": "Head of Data Science",
+"empresa": "IVI Fertility",
 "role": "orador"
 }
 ],
@@ -5216,7 +5529,20 @@
 "agentes",
 "automatização"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Your agents still can't read your documents (reliably). What Iberia did about it.",
+"depois": "Tu agente de IA todavía no sabe leer documentos de forma fiable. Esto es lo que hizo IVI Fertility para cambiarlo.",
+"em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "Diego Pérez Sastre, Sofía Holod",
+"depois": "Diego Pérez Sastre, Marta Rivera Alba",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5286,6 +5612,40 @@
 "controlo"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "16:30",
+"hora_fim": "17:00",
+"titulo": "Beyond Customer Experience",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Julieta Lechuga",
+"cargo": "Data Strategy Director",
+"empresa": "ERIS",
+"role": "orador"
+},
+{
+"nome": "Javier Varas Navas",
+"cargo": "Martech Director - CRM",
+"empresa": "ERIS",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/beyond-customer-experience",
+"id": "s442",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5789,6 +6149,60 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "17:00",
+"hora_fim": "17:30",
+"titulo": "Retail Media conectado y Full Funnel",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Javier Piedrahita",
+"cargo": "CEO & Founder",
+"empresa": "MrkDirecto",
+"role": "orador"
+},
+{
+"nome": "Ricardo Molero",
+"cargo": "Investment & Biddable Media Lead",
+"empresa": "Publicis Groupe",
+"role": "orador"
+},
+{
+"nome": "Carol Martins",
+"cargo": "Global Retail Media manager",
+"empresa": "Signify",
+"role": "orador"
+},
+{
+"nome": "Alejandro Pascual",
+"cargo": "Retail Media and Digital Marketing Director",
+"empresa": "Samsung",
+"role": "orador"
+},
+{
+"nome": "Fernando Leira",
+"cargo": "Chief Revenue Officer",
+"empresa": "Unlimitail",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/retail-media-conectado-y-full-funnel",
+"id": "s443",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "cyber-security",
 "hora_inicio": "17:00",
 "hora_fim": "17:20",
@@ -6244,6 +6658,34 @@
 },
 {
 "dia": "2026-11-04",
+"track_id": "connected-commerce-village",
+"hora_inicio": "17:30",
+"hora_fim": "18:30",
+"titulo": "Promociones inteligentes y gamificación en Carrefour: proof over promise",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Nicolas Trannoy",
+"cargo": "Chief of Strategy & Marketing",
+"empresa": "Luckycart",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/promociones-inteligentes-y-gamificaci%C3%B3n-en-carrefour-proof-over-promise",
+"id": "s444",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-04",
 "track_id": "cyber-security",
 "hora_inicio": "17:30",
 "hora_fim": "17:50",
@@ -6504,9 +6946,9 @@
 "track_id": "e-show",
 "hora_inicio": "17:50",
 "hora_fim": "18:35",
-"titulo": "Mesa debate: IA y eCommerce: los grandes dilemas de la nueva experiencia de cliente",
-"tipo": "Mesa Debate",
-"descricao": "La inteligencia artificial está redefiniendo cómo descubrimos, elegimos y compramos productos. En esta mesa de debate analizaremos los grandes dilemas que plantea esta transformación: el papel de los…",
+"titulo": "¿De quién es el cliente? Marcas, plataformas e IA en la nueva compra digital",
+"tipo": "Palestra",
+"descricao": "Tener la venta no siempre significa tener la relación con el cliente. En un entorno donde plataformas e inteligencia artificial intervienen cada vez más en el descubrimiento y la elección, ¿qué capaci…",
 "oradores": [
 {
 "nome": "Marta Gil",
@@ -6531,6 +6973,12 @@
 "cargo": "CEO",
 "empresa": "TiendaCPU",
 "role": "orador"
+},
+{
+"nome": "Andrea Moragues",
+"cargo": "Founder & CEO",
+"empresa": "BYAN",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-66",
@@ -6546,6 +6994,18 @@
 "antes": "Marta Gil, Ana Gordo, Marc Gual",
 "depois": "Marta Gil, Ana Gordo, Marc Gual, Pablo Gómez Domínguez",
 "em": "2026-10-22T15:26:38Z"
+},
+{
+"campo": "titulo",
+"antes": "Mesa debate: IA y eCommerce: los grandes dilemas de la nueva experiencia de cliente",
+"depois": "¿De quién es el cliente? Marcas, plataformas e IA en la nueva compra digital",
+"em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "Marta Gil, Ana Gordo, Marc Gual, Pablo Gómez Domínguez",
+"depois": "Marta Gil, Ana Gordo, Marc Gual, Pablo Gómez Domínguez, Andrea Moragues",
+"em": "2026-10-26T16:51:36Z"
 }
 ]
 },
@@ -7249,6 +7709,40 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "connected-commerce-village",
+"hora_inicio": "10:15",
+"hora_fim": "10:30",
+"titulo": "Apertura AMKT de España y Publicis Commerce",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Juan Canton",
+"cargo": "Director General",
+"empresa": "Asociación Mkt",
+"role": "orador"
+},
+{
+"nome": "Jose Luis Ferrero",
+"cargo": "Commerce Lead",
+"empresa": "Publicis Commerce Spain & Portugal",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/apertura-amkt-de-espa%C3%B1a-y-publicis-commerce",
+"id": "s447",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "ai-data",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
@@ -7276,14 +7770,74 @@
 "track_id": "cloud-ai",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "Ponencia Orange",
+"titulo": "Cloud soberano de Orange: El poder de la nube con la garantía y protección de Orange",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "El Cloud soberano de Orange redefine la seguridad empresarial, permitiéndote innovar sin límites mientras mantienes la soberanía absoluta de tus datos bajo normativa local. El impulso tecnológico que…",
+"oradores": [
+{
+"nome": "Miguel Ángel Rico",
+"cargo": "Business Development Manager",
+"empresa": "ORANGE EMPRESAS",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-112",
 "id": "s276",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Orange",
+"depois": "Cloud soberano de Orange: El poder de la nube con la garantía y protección de Orange",
+"em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Miguel Ángel Rico",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "connected-commerce-village",
+"hora_inicio": "10:30",
+"hora_fim": "11:00",
+"titulo": "Cómo ganar en los tres lineales: físico, digital y agéntico",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Alfonso Sebastián",
+"cargo": "Vicepresidente",
+"empresa": "Asociación Española del Retail AER",
+"role": "orador"
+},
+{
+"nome": "Fernando Leira",
+"cargo": "Chief Revenue Officer",
+"empresa": "Unlimitail",
+"role": "orador"
+},
+{
+"nome": "Jose Luis Ferrero",
+"cargo": "Commerce Lead",
+"empresa": "Publicis Commerce Spain & Portugal",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/c%C3%B3mo-ganar-en-los-tres-lineales-f%C3%ADsico-digital-y-ag%C3%A9ntico",
+"id": "s448",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7455,6 +8009,12 @@
 "cargo": "International Business Development",
 "empresa": "Winkle",
 "role": "orador"
+},
+{
+"nome": "Javier Martínez Piñán",
+"cargo": "Sales & Partnerships Manager",
+"empresa": "VAT AI",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/miravia-carrefour-mediamarkt-el-corte-ingl%C3%A9s-los-marketplaces-que-ignoras",
@@ -7474,6 +8034,12 @@
 "antes": "—",
 "depois": "Ana Mesa",
 "em": "2026-10-26T10:23:37Z"
+},
+{
+"campo": "oradores",
+"antes": "Ana Mesa",
+"depois": "Ana Mesa, Javier Martínez Piñán",
+"em": "2026-10-26T16:51:36Z"
 }
 ]
 },
@@ -7675,6 +8241,18 @@
 "cargo": "Chief Financial Officer",
 "empresa": "Banco Santander España",
 "role": "orador"
+},
+{
+"nome": "Miriam Español",
+"cargo": "Head Office Data & Analytics",
+"empresa": "HEINEKEN",
+"role": "orador"
+},
+{
+"nome": "Fernando López Gil",
+"cargo": "Northern & Western Europe People Experience Lead",
+"empresa": "Mondelez International",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/programa-dch-mesa-redonda-del-hype-al-roi-el-impacto-real-de-la-ia-en-la-cuenta-de-resultados-1",
@@ -7683,7 +8261,14 @@
 "IA",
 "ROI"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Fernando Castillo, Catalina Mejía",
+"depois": "Fernando Castillo, Catalina Mejía, Miriam Español, Fernando López Gil",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -7774,6 +8359,42 @@
 "IA"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-05",
+"track_id": "connected-commerce-village",
+"hora_inicio": "11:00",
+"hora_fim": "11:30",
+"titulo": "The New Health Shopper: Winning Moments of Intent Through Full-Funnel Retail Media",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "David Sequeira",
+"cargo": "Executive VicePresident",
+"empresa": "Skai",
+"role": "orador"
+},
+{
+"nome": "Raquel Martinez",
+"cargo": "Retail Media Manager",
+"empresa": "Publicis Groupe",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/the-new-health-shopper-winning-moments-of-intent-through-full-funnel-retail-media",
+"id": "s449",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -8289,6 +8910,37 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "connected-commerce-village",
+"hora_inicio": "11:30",
+"hora_fim": "12:00",
+"titulo": "Menos hype y más negocio: cómo los retailers están usando la IA, de verdad",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Paloma Lumbreras",
+"cargo": "Country Manager",
+"empresa": "CJ Affiliate Spain",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/menos-hype-y-m%C3%A1s-negocio-c%C3%B3mo-los-retailers-est%C3%A1n-usando-la-ia-de-verdad",
+"id": "s450",
+"tags": [
+"IA",
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "dc-design",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
@@ -8788,6 +9440,48 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "connected-commerce-village",
+"hora_inicio": "12:00",
+"hora_fim": "12:30",
+"titulo": "Retail Media en España: innovación",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Salvatore Cospito",
+"cargo": "Presidente Comisión Retail Media",
+"empresa": "IAB",
+"role": "orador"
+},
+{
+"nome": "Julia Pastor González",
+"cargo": "Ecommerce Activation Manager",
+"empresa": "Mondelez International",
+"role": "orador"
+},
+{
+"nome": "Mercedes Gómez-Varela",
+"cargo": "Senior Partnerships & Alliances",
+"empresa": "Iberia",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/retail-media-en-espa%C3%B1a-innovaci%C3%B3n",
+"id": "s451",
+"tags": [
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "dc-design",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
@@ -8908,7 +9602,7 @@
 {
 "nome": "Montse Vilà",
 "cargo": "Directora de Marketing & Ecommerce",
-"empresa": "Boboli",
+"empresa": "Boboli. Miembro DEx",
 "role": "orador"
 }
 ],
@@ -8949,6 +9643,27 @@
 "id": "s309",
 "tags": [],
 "alteracoes": []
+},
+{
+"dia": "2026-11-05",
+"track_id": "tech-keynote",
+"hora_inicio": "12:00",
+"hora_fim": "12:20",
+"titulo": "Ponencia Lenovo",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-lenovo",
+"id": "s445",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9102,12 +9817,31 @@
 "cargo": "Chief People Officer Global",
 "empresa": "Ayesa Digital",
 "role": "orador"
+},
+{
+"nome": "Juan Miguel Barajas Gonzalez",
+"cargo": "Director Corporativo de Inteligencia Artificial",
+"empresa": "Ayesa Digital",
+"role": "orador"
+},
+{
+"nome": "Montserrat Alonso Paulí",
+"cargo": "Socia",
+"empresa": "Sagardoy",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/programa-dch-futuro-del-trabajo-el-rol-del-profesional-de-rr-hh-en-la-era-de-la-ia",
 "id": "s324",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Laura del Barrio, Angel Javier Vicente",
+"depois": "Laura del Barrio, Angel Javier Vicente, Juan Miguel Barajas Gonzalez, Montserrat Alonso Paulí",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9157,6 +9891,42 @@
 "marketing"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-05",
+"track_id": "connected-commerce-village",
+"hora_inicio": "12:30",
+"hora_fim": "13:00",
+"titulo": "TikTok Shop: el nuevo punto de encuentro entre contenido, comunidad y comercio",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Paula Sebastián",
+"cargo": "Sr Beauty Category Manager",
+"empresa": "TikTok Shop",
+"role": "orador"
+},
+{
+"nome": "Paula Delgado García",
+"cargo": "Commerce Specialist",
+"empresa": "Publicis Commerce",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tiktok-shop-el-nuevo-punto-de-encuentro-entre-contenido-comunidad-y-comercio",
+"id": "s452",
+"tags": [
+"marketing"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9730,6 +10500,61 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "connected-commerce-village",
+"hora_inicio": "13:00",
+"hora_fim": "13:30",
+"titulo": "Conclusiones: Connected Commerce, Payments, Agentic y Retail Media",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Ángeles Morillas",
+"cargo": "Chief Learning Officer",
+"empresa": "The New Retail News",
+"role": "orador"
+},
+{
+"nome": "Salvatore Cospito",
+"cargo": "Presidente Comisión Retail Media",
+"empresa": "IAB",
+"role": "orador"
+},
+{
+"nome": "Isabel jimenez",
+"cargo": "Retail Media Executive Advisor",
+"empresa": "Retail x Digital",
+"role": "orador"
+},
+{
+"nome": "Mercedes Gómez-Varela",
+"cargo": "Senior Partnerships & Alliances",
+"empresa": "Iberia",
+"role": "orador"
+},
+{
+"nome": "Jose Luis Ferrero",
+"cargo": "Commerce Lead",
+"empresa": "Publicis Commerce Spain & Portugal",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/conclusiones-connected-commerce-payments-agentic-y-retail-media",
+"id": "s453",
+"tags": [
+"agentes",
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "dc-design",
 "hora_inicio": "13:00",
 "hora_fim": "13:40",
@@ -10078,7 +10903,7 @@
 "dia": "2026-11-05",
 "track_id": "cyber-security",
 "hora_inicio": "13:25",
-"hora_fim": "13:55",
+"hora_fim": "13:50",
 "titulo": "¿Cómo se gobierna la ciberseguridad en la industria alimentaria? Claves para controlar los riesgos y asegurar la continuidad del negocio",
 "tipo": "Palestra",
 "descricao": "Una conversación entre Josep Bardallo y Alberto López Rodríguez, CISOs de referencia de la industria alimentaria, sobre los principales desafíos de seguridad en organizaciones con entornos IT y OT cad…",
@@ -10101,7 +10926,14 @@
 "tags": [
 "cibersegurança"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "hora",
+"antes": "2026-11-05 13:25–13:55",
+"depois": "2026-11-05 13:25–13:50",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -10296,9 +11128,9 @@
 "track_id": "hr-learning",
 "hora_inicio": "13:40",
 "hora_fim": "14:00",
-"titulo": "In an age of generated content, understanding people becomes the ultimate advantage. La IA genera contenido. Los líderes entienden a sus equipos.",
+"titulo": "La confianza: La infraestructura invisible del futuro",
 "tipo": "Palestra",
-"descricao": "En un entorno en el que la IA está transformando la forma de crear, trabajar y tomar decisiones, entender a las personas se convierte en una ventaja diferencial. Esta ponencia explorará el papel del l…",
+"descricao": "La inteligencia artificial puede generar contenido a una escala sin precedentes, pero sigue existiendo una capacidad esencialmente humana que ninguna tecnología puede replicar: comprender a las person…",
 "oradores": [
 {
 "nome": "Gabriela Puertas",
@@ -10314,7 +11146,14 @@
 "marketing",
 "liderança"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "In an age of generated content, understanding people becomes the ultimate advantage. La IA genera contenido. Los líderes entienden a sus equipos.",
+"depois": "La confianza: La infraestructura invisible del futuro",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -10383,8 +11222,8 @@
 {
 "dia": "2026-11-05",
 "track_id": "cyber-security",
-"hora_inicio": "14:00",
-"hora_fim": "14:15",
+"hora_inicio": "13:55",
+"hora_fim": "14:10",
 "titulo": "Orizon Oversight by Cyrebro: El IA SOC as a service",
 "tipo": "Palestra",
 "descricao": "Orizon Oversight by Cyrebro redefine el SOC as a Service combinando Inteligencia Artificial y analistas expertos para una ciberseguridad 24/7. En esta ponencia, descubriras cómo optimizar la detección…",
@@ -10417,6 +11256,12 @@
 "antes": "—",
 "depois": "Alberto Vidal, Esteban Kilstein",
 "em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "hora",
+"antes": "2026-11-05 14:00–14:15",
+"depois": "2026-11-05 13:55–14:10",
+"em": "2026-10-26T16:51:36Z"
 }
 ]
 },
@@ -10596,9 +11441,9 @@
 "track_id": "ecommerce-strat",
 "hora_inicio": "15:00",
 "hora_fim": "15:20",
-"titulo": "Expand Your Business: Enter the new Kaufland marketplaces in Spain and Netherlands and multiple other markets with one registration!",
+"titulo": "Amplía tu negocio: ¡Accede a los nuevos marketplaces de Kaufland en España y Países Bajos y a múltiples mercados con un solo registro!",
 "tipo": "Palestra",
-"descricao": "Stefano Tosi will show you how to quickly and easily sell on nine international online marketplaces with Kaufland Global Marketplace.Learn about the benefits of international expansion with Kaufland G…",
+"descricao": "Stefano Tosi te mostrará cómo vender de forma rápida y sencilla en nueve marketplaces internacionales con Kaufland Global Marketplace. Descubre las ventajas que la expansión internacional a través de…",
 "oradores": [
 {
 "nome": "Stefano Tosi",
@@ -10612,7 +11457,14 @@
 "tags": [
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Expand Your Business: Enter the new Kaufland marketplaces in Spain and Netherlands and multiple other markets with one registration!",
+"depois": "Amplía tu negocio: ¡Accede a los nuevos marketplaces de Kaufland en España y Países Bajos y a múltiples mercados con un solo registro!",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -11635,14 +12487,34 @@
 "track_id": "ai-data",
 "hora_inicio": "16:30",
 "hora_fim": "17:00",
-"titulo": "Ponencia Ayesa Digital",
+"titulo": "KPIs y optimización continua de agentes de IA: Observabilidad te dice si el agente funciona, Agent Analytics te dice si de verdad sirve\"",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Hemos aprendido a medir nuestro eCommerce o nuestra app con objetivos, embudos y KPIs. Con los agentes de IA seguimos midiendo el modelo: latencia, tokens, trazas o costes. Pero los agentes son nuestr…",
+"oradores": [
+{
+"nome": "Eduardo Sánchez Rojo",
+"cargo": "responsable de Experiencia Digital y Analítica Avanzada en el área de AI-Data & DX",
+"empresa": "Ayesa Digital",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-ayesa-digital",
 "id": "s275",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia Ayesa Digital",
+"depois": "KPIs y optimización continua de agentes de IA: Observabilidad te dice si el agente funciona, Agent Analytics te dice si de verdad sirve\"",
+"em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Eduardo Sánchez Rojo",
+"em": "2026-10-26T16:51:36Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -11958,6 +12830,36 @@
 "antes": "Pepe Quintero",
 "depois": "Pepe Quintero, Anna Fabregas",
 "em": "2026-10-22T19:21:12Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "future-commerce",
+"hora_inicio": "18:30",
+"hora_fim": "18:50",
+"titulo": "El student journey ha muerto: qué están probando ya las instituciones educativas para captar estudiantes con IA",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "David Ruiz Uceta",
+"cargo": "Socio Fundador",
+"empresa": "Smartup I Evolución digital I CPS",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-student-journey-ha-muerto-qu%C3%A9-est%C3%A1n-probando-ya-las-instituciones-educativas-para-captar-estudiantes-con-ia",
+"id": "s446",
+"tags": [
+"IA"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-26T16:51:36Z"
 }
 ]
 }
