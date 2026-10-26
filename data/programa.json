@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 33,
-"actualizado_em": "2026-10-26T16:51:36Z",
+"versao": 34,
+"actualizado_em": "2026-10-26T21:17:59Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -6808,6 +6808,12 @@
 "cargo": "Director Customer Experience",
 "empresa": "Mayoral",
 "role": "orador"
+},
+{
+"nome": "Pau Gorina",
+"cargo": "Head of eCommerce",
+"empresa": "Gisela",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-59",
@@ -6816,7 +6822,14 @@
 "IA",
 "agentes"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Francisco Javier Fillat, Caroline Arrú de Caveda, Asier Delgado Muñoz, Jorge Fernández",
+"depois": "Francisco Javier Fillat, Caroline Arrú de Caveda, Asier Delgado Muñoz, Jorge Fernández, Pau Gorina",
+"em": "2026-10-26T21:17:59Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -7478,10 +7491,23 @@
 "track_id": "ai-data",
 "hora_inicio": "18:25",
 "hora_fim": "18:45",
-"titulo": "Ponencia EVOKE TECHNOLOGIES",
+"titulo": "AI-Driven Software Development and AI-Driven Solutions Across ERPs: How Evoke AI Orbit Agents Build, Test, Upgrade and Run Enterprise Systems",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Most AI pilots never reach production because of how the software around them is built, tested and governed. This session shows how Evoke AI Orbit applies AI-driven development across the ERP lifecycl…",
+"oradores": [
+{
+"nome": "Sridhar Koppula",
+"cargo": "Vice President, Business Head – Europe & Competency Head – ERP",
+"empresa": "Evoke Technologies",
+"role": "orador"
+},
+{
+"nome": "Karan Deep Singh Mangat",
+"cargo": "Business Head, UK & Ireland",
+"empresa": "Evoke Technologies",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-evoke-technologies",
 "id": "s422",
 "tags": [],
@@ -7491,6 +7517,18 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T17:50:08Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia EVOKE TECHNOLOGIES",
+"depois": "AI-Driven Software Development and AI-Driven Solutions Across ERPs: How Evoke AI Orbit Agents Build, Test, Upgrade and Run Enterprise Systems",
+"em": "2026-10-26T21:17:59Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Sridhar Koppula, Karan Deep Singh Mangat",
+"em": "2026-10-26T21:17:59Z"
 }
 ]
 },
@@ -12383,6 +12421,37 @@
 "dia": "2026-11-05",
 "track_id": "e-show",
 "hora_inicio": "16:05",
+"hora_fim": "16:20",
+"titulo": "IA en Retail - Casos Prácticos",
+"tipo": "Palestra",
+"descricao": "En Carrefour lideramos la revolución del retail con un enfoque hiper-pragmático, concentrando el impacto tecnológico en cuatro áreas clave: optimizamos precios y promociones en tiempo real, adaptamos…",
+"oradores": [
+{
+"nome": "Javier Mallo",
+"cargo": "CIO",
+"empresa": "Carrefour España",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-71",
+"id": "s347",
+"tags": [
+"IA",
+"e-commerce"
+],
+"alteracoes": [
+{
+"campo": "hora",
+"antes": "2026-11-05 16:25–16:50",
+"depois": "2026-11-05 16:05–16:20",
+"em": "2026-10-26T21:17:59Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "e-show",
+"hora_inicio": "16:05",
 "hora_fim": "16:15",
 "titulo": "TBC",
 "tipo": "Palestra",
@@ -12391,7 +12460,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-73",
 "id": "s346",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-26T21:17:59Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
@@ -12423,30 +12500,6 @@
 "em": "2026-10-21T12:39:51Z"
 }
 ]
-},
-{
-"dia": "2026-11-05",
-"track_id": "e-show",
-"hora_inicio": "16:25",
-"hora_fim": "16:50",
-"titulo": "IA en Retail - Casos Prácticos",
-"tipo": "Palestra",
-"descricao": "En Carrefour lideramos la revolución del retail con un enfoque hiper-pragmático, concentrando el impacto tecnológico en cuatro áreas clave: optimizamos precios y promociones en tiempo real, adaptamos…",
-"oradores": [
-{
-"nome": "Javier Mallo",
-"cargo": "CIO",
-"empresa": "Carrefour España",
-"role": "orador"
-}
-],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-71",
-"id": "s347",
-"tags": [
-"IA",
-"e-commerce"
-],
-"alteracoes": []
 },
 {
 "dia": "2026-11-05",
@@ -12860,8 +12913,15 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-26T21:17:59Z"
 }
-]
+],
+"estado": "cancelada"
 }
 ]
 }
