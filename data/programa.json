@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 34,
-"actualizado_em": "2026-10-26T21:17:59Z",
+"versao": 35,
+"actualizado_em": "2026-10-27T11:27:40Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -2241,6 +2241,12 @@
 "cargo": "Global People and Culture Head. Total Rewards",
 "empresa": "LLYC",
 "role": "orador"
+},
+{
+"nome": "Gabriel Maestroarena Rodas",
+"cargo": "Director del Grado de Business Analytics – Universidad Villanueva",
+"empresa": "Universidad Villanueva",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/liderazgo-aumentado-la-ia-como-copiloto-del-m%C3%A1nager-para-crear-equipos-m%C3%A1s-saludables",
@@ -2256,6 +2262,12 @@
 "antes": "Mónica García Ingelmo, Araceli Morato, Carmen de Andrés, Rebeca Navarro",
 "depois": "Mónica García Ingelmo, Araceli Morato, Rebeca Navarro, Carmen Fernández Rodríguez",
 "em": "2026-10-17T08:58:24Z"
+},
+{
+"campo": "oradores",
+"antes": "Mónica García Ingelmo, Araceli Morato, Rebeca Navarro, Carmen Fernández Rodríguez",
+"depois": "Mónica García Ingelmo, Araceli Morato, Rebeca Navarro, Carmen Fernández Rodríguez, Gabriel Maestroarena Rodas",
+"em": "2026-10-27T11:27:40Z"
 }
 ]
 },
@@ -3133,7 +3145,7 @@
 {
 "nome": "Andrés Ortega",
 "cargo": "Chief People Officer",
-"empresa": "Hotelatelier [Petit Palace Hotelity + Icon Hotels]",
+"empresa": "Petit Palace",
 "role": "orador"
 },
 {
@@ -4001,7 +4013,7 @@
 },
 {
 "nome": "Clara Benedet",
-"cargo": "Responsable de Infraestructura de Sistemas de Inteligencia Artificial",
+"cargo": "AI Infrastructure Lead",
 "empresa": "IAM (Informática del Ayuntamiento de Madrid).",
 "role": "orador"
 }
@@ -4596,6 +4608,18 @@
 "cargo": "Chief Data and AI Officer",
 "empresa": "Carrefour",
 "role": "orador"
+},
+{
+"nome": "Rosa Narváez",
+"cargo": "IT Director Channels, Customer, Data & AI",
+"empresa": "ING España & Portugal",
+"role": "orador"
+},
+{
+"nome": "Javier Martínez Martín",
+"cargo": "Chief Data Officer",
+"empresa": "Codere",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-debate-organizada-por-ai-network",
@@ -4605,7 +4629,14 @@
 "agentes",
 "liderança"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Unai Obieta, Francisco Escalona",
+"depois": "Unai Obieta, Francisco Escalona, Rosa Narváez, Javier Martínez Martín",
+"em": "2026-10-27T11:27:40Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -5092,14 +5123,52 @@
 "track_id": "ai-commerce",
 "hora_inicio": "16:00",
 "hora_fim": "16:20",
-"titulo": "Ponencia RESKYT",
+"titulo": "¿Pagas para que vuelva un cliente que ya es tuyo? Lo que hacen con su app Tradeinn, Munich y Pádel Nuestro",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Cada vez que un cliente vuelve a comprarte a través de un anuncio, pagas por alguien que ya era tuyo. Tres tiendas online cuentan qué cambia cuando ese cliente tiene tu app en el móvil. Con la captaci…",
+"oradores": [
+{
+"nome": "Jaume Gomà",
+"cargo": "CEO",
+"empresa": "Reskyt",
+"role": "orador"
+},
+{
+"nome": "Júlia Barnadas",
+"cargo": "Frontend Developer & App QA",
+"empresa": "Tradeinn",
+"role": "orador"
+},
+{
+"nome": "Pepe Ortuño Ros",
+"cargo": "eCommerce Manager",
+"empresa": "Padel Nuestro",
+"role": "orador"
+},
+{
+"nome": "Jordi Marcén López",
+"cargo": "Growth Digital & eCommerce",
+"empresa": "MUNICH",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-reskyt",
 "id": "s206",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia RESKYT",
+"depois": "¿Pagas para que vuelva un cliente que ya es tuyo? Lo que hacen con su app Tradeinn, Munich y Pádel Nuestro",
+"em": "2026-10-27T11:27:40Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Jaume Gomà, Júlia Barnadas, Pepe Ortuño Ros, Jordi Marcén López",
+"em": "2026-10-27T11:27:40Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -9687,10 +9756,17 @@
 "track_id": "tech-keynote",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
-"titulo": "Ponencia Lenovo",
+"titulo": "Convirtiendo Retos en Impacto: Lenovo + FIFA",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "En esta sesión exploraremos cómo identificar las oportunidades que se esconden tras las necesidades de los clientes, cómo conectar las capacidades de la IA y la tecnología con los retos de negocio y c…",
+"oradores": [
+{
+"nome": "Juan Lorenzo",
+"cargo": "Sports Chief of Staff - Sports & Entertainment",
+"empresa": "Lenovo",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-lenovo",
 "id": "s445",
 "tags": [],
@@ -9700,6 +9776,18 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia Lenovo",
+"depois": "Convirtiendo Retos en Impacto: Lenovo + FIFA",
+"em": "2026-10-27T11:27:40Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Juan Lorenzo",
+"em": "2026-10-27T11:27:40Z"
 }
 ]
 },
@@ -11472,7 +11560,15 @@
 "tags": [
 "IA"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-27T11:27:40Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
