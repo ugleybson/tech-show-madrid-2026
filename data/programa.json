@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 35,
-"actualizado_em": "2026-10-27T11:27:40Z",
+"versao": 36,
+"actualizado_em": "2026-10-27T16:47:34Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -3636,6 +3636,12 @@
 "cargo": "Senior Account Manager",
 "empresa": "Factorial",
 "role": "orador"
+},
+{
+"nome": "Marta Arroyo",
+"cargo": "HR Manager",
+"empresa": "Grupo Chavsa",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-factorial-1",
@@ -3653,6 +3659,12 @@
 "antes": "—",
 "depois": "Ángel Asensio Torres",
 "em": "2026-10-26T10:23:37Z"
+},
+{
+"campo": "oradores",
+"antes": "Ángel Asensio Torres",
+"depois": "Ángel Asensio Torres, Marta Arroyo",
+"em": "2026-10-27T16:47:34Z"
 }
 ]
 },
@@ -6114,15 +6126,15 @@
 "descricao": "La carrera por la IA suele asociarse a enormes inversiones en infraestructura. Sin embargo, la verdadera soberanía no depende de desarrollar toda la tecnología desde cero, sino de mantener el control…",
 "oradores": [
 {
-"nome": "Cristina Ortiz Bermúdez",
-"cargo": "Partner Program Manager",
-"empresa": "OVHCLOUD",
-"role": "orador"
-},
-{
 "nome": "Rodrigo Martínez Martín",
 "cargo": "Co-fundador y CTO",
 "empresa": "Lur Nova",
+"role": "orador"
+},
+{
+"nome": "David Buenhombre",
+"cargo": "Presales Engineer",
+"empresa": "OVHCLOUD",
 "role": "orador"
 }
 ],
@@ -6131,7 +6143,14 @@
 "tags": [
 "IA"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Cristina Ortiz Bermúdez, Rodrigo Martínez Martín",
+"depois": "Rodrigo Martínez Martín, David Buenhombre",
+"em": "2026-10-27T16:47:34Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -6510,7 +6529,7 @@
 "dia": "2026-11-04",
 "track_id": "hr-wellbeing",
 "hora_inicio": "17:00",
-"hora_fim": "17:20",
+"hora_fim": "17:30",
 "titulo": "La incertidumbre no se gestiona, se lidera",
 "tipo": "Palestra",
 "descricao": "En estos tiempos tan convulsos, inciertos, cambiantes, artificiales, tan pirotécnicos, tan deshumanizados tenemos que entender que liderar no es mandar, es influir, es inspirar, es servir y querer. Li…",
@@ -6531,6 +6550,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-15T19:57:40Z"
+},
+{
+"campo": "hora",
+"antes": "2026-11-04 17:00–17:20",
+"depois": "2026-11-04 17:00–17:30",
+"em": "2026-10-27T16:47:34Z"
 }
 ]
 },
@@ -7446,7 +7471,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-157",
 "id": "s160",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-27T16:47:34Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
@@ -8155,10 +8188,23 @@
 "track_id": "future-commerce",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "Ponencia Manago AI",
+"titulo": "No es solo IA. Conoce tu próxima Customer Engagement Platform",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "En Tech Show Madrid todos prometen un agente de IA, pero la pregunta que importa es otra: ¿con qué datos trabaja, a qué canales llega y qué reglas sigue? En esta sesión, Manago AI muestra lo que hay b…",
+"oradores": [
+{
+"nome": "Sergiusz Olszewski",
+"cargo": "Product Operations Manager",
+"empresa": "Manago AI",
+"role": "orador"
+},
+{
+"nome": "Federico di Sarli Gonzalez",
+"cargo": "Partner Account Manager",
+"empresa": "Manago AI",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-90",
 "id": "s357",
 "tags": [],
@@ -8168,6 +8214,18 @@
 "antes": "TBC",
 "depois": "Ponencia Manago AI",
 "em": "2026-10-22T15:26:38Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia Manago AI",
+"depois": "No es solo IA. Conoce tu próxima Customer Engagement Platform",
+"em": "2026-10-27T16:47:34Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Sergiusz Olszewski, Federico di Sarli Gonzalez",
+"em": "2026-10-27T16:47:34Z"
 }
 ]
 },
@@ -12469,6 +12527,43 @@
 "dia": "2026-11-05",
 "track_id": "hr-wellbeing",
 "hora_inicio": "16:00",
+"hora_fim": "16:30",
+"titulo": "Cómo liderar el impacto social y atraer al talento",
+"tipo": "Palestra",
+"descricao": "Una conferencia dirigida a profesionales de Recursos Humanos sobre cómo las empresas pueden alinear propósito, diversidad, RSC y employer branding para generar impacto real. A través de iniciativas co…",
+"oradores": [
+{
+"nome": "Mar Porras",
+"cargo": "Presidenta",
+"empresa": "STEM Women Association",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-163",
+"id": "s337",
+"tags": [
+"marketing",
+"talento"
+],
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Eva Diaz Claver",
+"depois": "Mar Porras",
+"em": "2026-10-19T11:53:13Z"
+},
+{
+"campo": "hora",
+"antes": "2026-11-05 16:30–16:50",
+"depois": "2026-11-05 16:00–16:30",
+"em": "2026-10-27T16:47:34Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "hr-wellbeing",
+"hora_inicio": "16:00",
 "hora_fim": "16:20",
 "titulo": "TBC",
 "tipo": "Palestra",
@@ -12477,7 +12572,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-162",
 "id": "s336",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-27T16:47:34Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
@@ -12890,37 +12993,6 @@
 }
 ],
 "estado": "cancelada"
-},
-{
-"dia": "2026-11-05",
-"track_id": "hr-wellbeing",
-"hora_inicio": "16:30",
-"hora_fim": "16:50",
-"titulo": "Cómo liderar el impacto social y atraer al talento",
-"tipo": "Palestra",
-"descricao": "Una conferencia dirigida a profesionales de Recursos Humanos sobre cómo las empresas pueden alinear propósito, diversidad, RSC y employer branding para generar impacto real. A través de iniciativas co…",
-"oradores": [
-{
-"nome": "Mar Porras",
-"cargo": "Presidenta",
-"empresa": "STEM Women Association",
-"role": "orador"
-}
-],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-163",
-"id": "s337",
-"tags": [
-"marketing",
-"talento"
-],
-"alteracoes": [
-{
-"campo": "oradores",
-"antes": "Eva Diaz Claver",
-"depois": "Mar Porras",
-"em": "2026-10-19T11:53:13Z"
-}
-]
 },
 {
 "dia": "2026-11-05",
