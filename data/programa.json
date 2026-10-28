@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 37,
-"actualizado_em": "2026-10-28T13:44:39Z",
+"versao": 38,
+"actualizado_em": "2026-10-28T19:16:05Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -3508,7 +3508,7 @@
 "hora_fim": "13:50",
 "titulo": "Cómo Shopify nos permitió focalizarnos en nuestro negocio",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "Una conversación sobre cómo hemos pasado de una gestión del negocio desconectada del ecosistema tecnológico y fragmentada a una manera de operar centrada en el cliente con una plataforma orientada a g…",
 "oradores": [
 {
 "nome": "Javier Fontanals",
@@ -4970,8 +4970,15 @@
 "antes": "Corbmac McKay",
 "depois": "—",
 "em": "2026-10-23T16:18:26Z"
+},
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-28T19:16:05Z"
 }
-]
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
@@ -6842,13 +6849,19 @@
 "track_id": "cyber-security",
 "hora_inicio": "17:30",
 "hora_fim": "17:50",
-"titulo": "La IA no es el reto. El reto es desplegarla sin poner en riesgo tu empresa.",
+"titulo": "Soberanía del dato y ciberresiliencia: ¿dónde están tus datos cuando todo falla?",
 "tipo": "Palestra",
-"descricao": "Toda empresa quiere adoptar IA, pero pocas se preguntan qué pasa después: datos expuestos, agentes sin supervisión, shadow AI campando a sus anchas. Esta charla explora cómo pasar de la promesa a la p…",
+"descricao": "Tus datos pueden estar protegidos y aun así fuera de tu control. Cuando un ataque o una crisis geopolítica golpea, la jurisdicción donde residen tus copias y servicios determina si puedes recuperarte…",
 "oradores": [
 {
-"nome": "Germán Delgado",
-"cargo": "Director de Marketing, Producto y Desarrollo",
+"nome": "Sergio Gutiérrez",
+"cargo": "Director Área Multicloud",
+"empresa": "Velorcios",
+"role": "orador"
+},
+{
+"nome": "Wajdi Ayach",
+"cargo": "TSO Director",
 "empresa": "Velorcios",
 "role": "orador"
 }
@@ -6861,7 +6874,20 @@
 "desafios",
 "segurança"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "La IA no es el reto. El reto es desplegarla sin poner en riesgo tu empresa.",
+"depois": "Soberanía del dato y ciberresiliencia: ¿dónde están tus datos cuando todo falla?",
+"em": "2026-10-28T19:16:05Z"
+},
+{
+"campo": "oradores",
+"antes": "Germán Delgado",
+"depois": "Sergio Gutiérrez, Wajdi Ayach",
+"em": "2026-10-28T19:16:05Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -7526,12 +7552,6 @@
 "role": "orador"
 },
 {
-"nome": "Jorge Ruano",
-"cargo": "Chief Data Officer",
-"empresa": "Ouigo Spain",
-"role": "orador"
-},
-{
 "nome": "Gabriel Moliné",
 "cargo": "CISO",
 "empresa": "Carrefour España",
@@ -7559,6 +7579,12 @@
 "antes": "Antonio Lorenzo, Borja Carroquino Larraz, Jorge Ruano",
 "depois": "Antonio Lorenzo, Borja Carroquino Larraz, Jorge Ruano, Gabriel Moliné, Noelia Alvarez Martinez",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "oradores",
+"antes": "Antonio Lorenzo, Borja Carroquino Larraz, Jorge Ruano, Gabriel Moliné, Noelia Alvarez Martinez",
+"depois": "Antonio Lorenzo, Borja Carroquino Larraz, Gabriel Moliné, Noelia Alvarez Martinez",
+"em": "2026-10-28T19:16:05Z"
 }
 ]
 },
@@ -8883,7 +8909,7 @@
 "track_id": "hr-learning",
 "hora_inicio": "11:00",
 "hora_fim": "11:20",
-"titulo": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA & seniority y CV tradicional?",
+"titulo": "¿Falta talento o sobran currículums tradicionales? El impacto de la IA y el nuevo valor de querer aprender.",
 "tipo": "Palestra",
 "descricao": "¿Sigue siendo la experiencia acumulada el mejor predictor de éxito, o la capacidad de adaptación y aprendizaje continuo empieza a pesar más que un CV tradicional? Factorial comparte cómo la IA está re…",
 "oradores": [
@@ -8921,6 +8947,12 @@
 "antes": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
 "depois": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA & seniority y CV tradicional?",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "titulo",
+"antes": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA & seniority y CV tradicional?",
+"depois": "¿Falta talento o sobran currículums tradicionales? El impacto de la IA y el nuevo valor de querer aprender.",
+"em": "2026-10-28T19:16:05Z"
 }
 ]
 },
@@ -9738,10 +9770,17 @@
 "track_id": "ai-commerce",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
-"titulo": "Ponencia ONESTIC",
+"titulo": "El despertar de la inteligencia corporativa. Cómo activar el conocimiento interno de tu compañía.",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Dentro de cada empresa hay un conocimiento que crece con las personas, las decisiones y la experiencia. Conectarlo y darle contexto permite a la compañía entender mejor su negocio, evaluar escenarios…",
+"oradores": [
+{
+"nome": "Guillermo García",
+"cargo": "CEO",
+"empresa": "ONESTIC",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-onestic",
 "id": "s458",
 "tags": [],
@@ -9751,6 +9790,18 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia ONESTIC",
+"depois": "El despertar de la inteligencia corporativa. Cómo activar el conocimiento interno de tu compañía.",
+"em": "2026-10-28T19:16:05Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Guillermo García",
+"em": "2026-10-28T19:16:05Z"
 }
 ]
 },
@@ -10928,10 +10979,23 @@
 "track_id": "ai-commerce",
 "hora_inicio": "13:00",
 "hora_fim": "13:20",
-"titulo": "ROCKET",
+"titulo": "Q4 + IA: Quick Wins y errores que aún estás a tiempo de evitar",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "El último trimestre del año es el momento de convertir la IA en resultados concretos, sin grandes proyectos ni largos tiempos de implementación. Descubre los Quick Wins que puedes activar ahora para g…",
+"oradores": [
+{
+"nome": "Marta Sánchez",
+"cargo": "Head of Media & Acquisition",
+"empresa": "Rocket Digital",
+"role": "orador"
+},
+{
+"nome": "Águeda Sánchez",
+"cargo": "Head of Operations",
+"empresa": "Rocket Digital",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/rocket",
 "id": "s460",
 "tags": [],
@@ -10941,6 +11005,18 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "titulo",
+"antes": "ROCKET",
+"depois": "Q4 + IA: Quick Wins y errores que aún estás a tiempo de evitar",
+"em": "2026-10-28T19:16:05Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Marta Sánchez, Águeda Sánchez",
+"em": "2026-10-28T19:16:05Z"
 }
 ]
 },
