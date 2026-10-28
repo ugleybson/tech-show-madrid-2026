@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 36,
-"actualizado_em": "2026-10-27T16:47:34Z",
+"versao": 37,
+"actualizado_em": "2026-10-28T13:44:39Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1254,9 +1254,9 @@
 "track_id": "hr-wellbeing",
 "hora_inicio": "11:00",
 "hora_fim": "11:20",
-"titulo": "La nueva ventaja competitiva: por qué la compensación se ha convertido en una palanca de negocio",
+"titulo": "Cómo la tecnología transforma la compensación: de tarea administrativa a ventaja competitiva.",
 "tipo": "Palestra",
-"descricao": "Atraer y fidelizar talento es cada vez más difícil. Y la compensación ya no es solo una nómina que gestionar: es una palanca de negocio. Descubriremos cómo las empresas están usando nuevos modelos de…",
+"descricao": "En un evento donde la tecnología es protagonista, esta charla muestra cómo también está cambiando la forma de compensar a las personas que la hacen posible. El 91% de los empleados espera algo más all…",
 "oradores": [
 {
 "nome": "Eduardo Gaspar",
@@ -1270,7 +1270,14 @@
 "tags": [
 "talento"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "La nueva ventaja competitiva: por qué la compensación se ha convertido en una palanca de negocio",
+"depois": "Cómo la tecnología transforma la compensación: de tarea administrativa a ventaja competitiva.",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -1304,6 +1311,12 @@
 "cargo": "Regional Marketing Manager DACH",
 "empresa": "Doofinder",
 "role": "orador"
+},
+{
+"nome": "Paula Agudo",
+"cargo": "E-commerce & Marketing Digital Manager",
+"empresa": "Noirfonce",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-64",
@@ -1311,7 +1324,14 @@
 "tags": [
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Laura Kremer, Alessandra Bosco, Dorit Posdorf, Anna Atmis",
+"depois": "Laura Kremer, Alessandra Bosco, Dorit Posdorf, Anna Atmis, Paula Agudo",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -2520,6 +2540,12 @@
 "cargo": "E-commerce and digital business executive",
 "empresa": "Legends Global",
 "role": "orador"
+},
+{
+"nome": "Nacho Abad Barcenilla",
+"cargo": "Account Executive",
+"empresa": "Shopify",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/del-d%C3%ADa-de-partido-al-escenario-mundial-c%C3%B3mo-legends-impulsa-el-ecommerce-para-fans",
@@ -2527,7 +2553,14 @@
 "tags": [
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Daniel De Santiago",
+"depois": "Daniel De Santiago, Nacho Abad Barcenilla",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -2987,6 +3020,48 @@
 "multinacional"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "ai-commerce",
+"hora_inicio": "13:00",
+"hora_fim": "13:20",
+"titulo": "AI-First Commerce: cómo convertir la IA en una ventaja competitiva real",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Elad Rodriguez",
+"cargo": "CEO",
+"empresa": "NITSNETS",
+"role": "orador"
+},
+{
+"nome": "Carlos Muñoz",
+"cargo": "CDO",
+"empresa": "Disfrazzes",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ai-first-commerce-c%C3%B3mo-convertir-la-ia-en-una-ventaja-competitiva-real",
+"id": "s434",
+"tags": [
+"IA"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "hora",
+"antes": "2026-11-04 18:00–18:20",
+"depois": "2026-11-04 13:00–13:20",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -4554,54 +4629,6 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "ai-commerce",
-"hora_inicio": "15:30",
-"hora_fim": "15:50",
-"titulo": "La IA que trabaja: un caso real en Customer Service",
-"tipo": "Palestra",
-"descricao": "¿Qué cambia realmente cuando un agente de IA empieza a trabajar junto a tu equipo de Customer Service? A través de un caso real, descubriremos cómo Konvo ha impactado en la operación y en la experienc…",
-"oradores": [
-{
-"nome": "Guillem Oliva de Fuenmayor",
-"cargo": "CEO & Co-Founder",
-"empresa": "Konvo AI",
-"role": "orador"
-},
-{
-"nome": "Alessandro Ridolfi",
-"cargo": "CEO & Co-Founder",
-"empresa": "Esenzia",
-"role": "orador"
-},
-{
-"nome": "Alejandro Jurado",
-"cargo": "Head of Data & Logistics",
-"empresa": "Esenzia",
-"role": "orador"
-}
-],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-konvo-ai",
-"id": "s205",
-"tags": [
-"IA"
-],
-"alteracoes": [
-{
-"campo": "titulo",
-"antes": "Ponencia KONVO AI",
-"depois": "La IA que trabaja: un caso real en Customer Service",
-"em": "2026-10-14T09:55:40Z"
-},
-{
-"campo": "oradores",
-"antes": "—",
-"depois": "Guillem Oliva de Fuenmayor, Alessandro Ridolfi, Alejandro Jurado",
-"em": "2026-10-14T09:55:40Z"
-}
-]
-},
-{
-"dia": "2026-11-04",
 "track_id": "ai-data",
 "hora_inicio": "15:30",
 "hora_fim": "16:15",
@@ -4969,6 +4996,38 @@
 "automatização"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-04",
+"track_id": "prestashop",
+"hora_inicio": "15:30",
+"hora_fim": "15:50",
+"titulo": "IA y Finanzas para el eCommerce: Cómo la automatización inteligente está transformando la gestión financiera de los negocios online",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Marta Rifà",
+"cargo": "Directora de Marketing Sur de Europa",
+"empresa": "Qonto",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ia-y-finanzas-para-el-ecommerce-c%C3%B3mo-la-automatizaci%C3%B3n-inteligente-est%C3%A1-transformando-la-gesti%C3%B3n-financiera-de-los-negocios-online",
+"id": "s454",
+"tags": [
+"IA",
+"e-commerce",
+"automatização"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -7188,42 +7247,6 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "ai-commerce",
-"hora_inicio": "18:00",
-"hora_fim": "18:20",
-"titulo": "AI-First Commerce: cómo convertir la IA en una ventaja competitiva real",
-"tipo": "Palestra",
-"descricao": "",
-"oradores": [
-{
-"nome": "Elad Rodriguez",
-"cargo": "CEO",
-"empresa": "NITSNETS",
-"role": "orador"
-},
-{
-"nome": "Carlos Muñoz",
-"cargo": "CDO",
-"empresa": "Disfrazzes",
-"role": "orador"
-}
-],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ai-first-commerce-c%C3%B3mo-convertir-la-ia-en-una-ventaja-competitiva-real",
-"id": "s434",
-"tags": [
-"IA"
-],
-"alteracoes": [
-{
-"campo": "estado",
-"antes": "—",
-"depois": "nova",
-"em": "2026-10-23T11:53:56Z"
-}
-]
-},
-{
-"dia": "2026-11-04",
 "track_id": "cloud-ai",
 "hora_inicio": "18:00",
 "hora_fim": "18:20",
@@ -7883,6 +7906,83 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "10:30",
+"hora_fim": "10:50",
+"titulo": "La IA que trabaja: un caso real en Customer Service",
+"tipo": "Palestra",
+"descricao": "¿Qué cambia realmente cuando un agente de IA empieza a trabajar junto a tu equipo de Customer Service? A través de un caso real, descubriremos cómo Konvo ha impactado en la operación y en la experienc…",
+"oradores": [
+{
+"nome": "Guillem Oliva de Fuenmayor",
+"cargo": "CEO & Co-Founder",
+"empresa": "Konvo AI",
+"role": "orador"
+},
+{
+"nome": "Alessandro Ridolfi",
+"cargo": "CEO & Co-Founder",
+"empresa": "Esenzia",
+"role": "orador"
+},
+{
+"nome": "Alejandro Jurado",
+"cargo": "Head of Data & Logistics",
+"empresa": "Esenzia",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-konvo-ai",
+"id": "s205",
+"tags": [
+"IA"
+],
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Ponencia KONVO AI",
+"depois": "La IA que trabaja: un caso real en Customer Service",
+"em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Guillem Oliva de Fuenmayor, Alessandro Ridolfi, Alejandro Jurado",
+"em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "hora",
+"antes": "2026-11-04 15:30–15:50",
+"depois": "2026-11-05 10:30–10:50",
+"em": "2026-10-28T13:44:39Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "10:30",
+"hora_fim": "10:50",
+"titulo": "Ponencia KONVO AI",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-konvo-ai-1",
+"id": "s455",
+"tags": [
+"IA"
+],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-28T13:44:39Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "ai-data",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
@@ -8437,6 +8537,40 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "11:00",
+"hora_fim": "11:20",
+"titulo": "La suscripción que alimenta a Natuka",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Rafael Lobato",
+"cargo": "E-commerce & Digital Growth Manager",
+"empresa": "Natuka",
+"role": "orador"
+},
+{
+"nome": "Victor Alvarez",
+"cargo": "CEO",
+"empresa": "Fantasticfy",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/la-suscripci%C3%B3n-que-alimenta-a-natuka",
+"id": "s456",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-28T13:44:39Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "ai-data",
 "hora_inicio": "11:00",
 "hora_fim": "11:40",
@@ -8749,7 +8883,7 @@
 "track_id": "hr-learning",
 "hora_inicio": "11:00",
 "hora_fim": "11:20",
-"titulo": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
+"titulo": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA & seniority y CV tradicional?",
 "tipo": "Palestra",
 "descricao": "¿Sigue siendo la experiencia acumulada el mejor predictor de éxito, o la capacidad de adaptación y aprendizaje continuo empieza a pesar más que un CV tradicional? Factorial comparte cómo la IA está re…",
 "oradores": [
@@ -8781,6 +8915,12 @@
 "antes": "¿Estamos ante un crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
 "depois": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
 "em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "titulo",
+"antes": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA vs seniority y CV tradicional?",
+"depois": "¿Estamos ante una crisis de talento? Capacidad de adaptación a la IA & seniority y CV tradicional?",
+"em": "2026-10-28T13:44:39Z"
 }
 ]
 },
@@ -9008,6 +9148,40 @@
 "e-commerce"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "11:30",
+"hora_fim": "11:50",
+"titulo": "El match perfecto para escalar: cómo PlátanoMelón reinventó su logística",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Matthieu André",
+"cargo": "COO",
+"empresa": "Platanomelón",
+"role": "orador"
+},
+{
+"nome": "Steffen Thobo-Carlsen",
+"cargo": "Country Manager Spain",
+"empresa": "BigBlue",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-match-perfecto-para-escalar-c%C3%B3mo-pl%C3%A1tanomel%C3%B3n-reinvent%C3%B3-su-log%C3%ADstica",
+"id": "s457",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -9309,6 +9483,12 @@
 "cargo": "Director de Innovación",
 "empresa": "Microsoft",
 "role": "orador"
+},
+{
+"nome": "Almudena Alcaide",
+"cargo": "Director R&D and Innovation",
+"empresa": "Fundación ONCE",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-atos/-microsoft",
@@ -9326,6 +9506,12 @@
 "antes": "—",
 "depois": "Álvaro García, David Hurtado Toran",
 "em": "2026-10-20T16:18:43Z"
+},
+{
+"campo": "oradores",
+"antes": "Álvaro García, David Hurtado Toran",
+"depois": "Álvaro García, David Hurtado Toran, Almudena Alcaide",
+"em": "2026-10-28T13:44:39Z"
 }
 ]
 },
@@ -9544,6 +9730,27 @@
 "antes": "—",
 "depois": "Cristina Asenjo",
 "em": "2026-10-16T10:31:38Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "12:00",
+"hora_fim": "12:20",
+"titulo": "Ponencia ONESTIC",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-onestic",
+"id": "s458",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-28T13:44:39Z"
 }
 ]
 },
@@ -10075,6 +10282,40 @@
 "marketing"
 ],
 "alteracoes": []
+},
+{
+"dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "12:30",
+"hora_fim": "12:50",
+"titulo": "Más allá del canal distribuidor: Cómo digitalizar 170 años de historia.",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [
+{
+"nome": "Alberto Portolés Coscojuela",
+"cargo": "CTO & CoFounder",
+"empresa": "Numéricco",
+"role": "orador"
+},
+{
+"nome": "Luis Román",
+"cargo": "New Business & eCommerce Director",
+"empresa": "Grupo Lacasa",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/m%C3%A1s-all%C3%A1-del-canal-distribuidor-c%C3%B3mo-digitalizar-170-a%C3%B1os-de-historia",
+"id": "s459",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -10684,6 +10925,27 @@
 },
 {
 "dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "13:00",
+"hora_fim": "13:20",
+"titulo": "ROCKET",
+"tipo": "Palestra",
+"descricao": "",
+"oradores": [],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/rocket",
+"id": "s460",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-28T13:44:39Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
 "track_id": "connected-commerce-village",
 "hora_inicio": "13:00",
 "hora_fim": "13:30",
@@ -10794,17 +11056,10 @@
 "track_id": "dc-energy",
 "hora_inicio": "13:00",
 "hora_fim": "14:00",
-"titulo": "Data Centers & Energía: lecciones de EE.UU. para la oportunidad digital de España",
+"titulo": "Data centers en España: claves para la próxima etapa",
 "tipo": "Palestra",
-"descricao": "La inteligencia artificial consume ya el equivalente a cuatro veces la electricidad de España al año. EE.UU. está pagando ahora el coste de no haberlo planificado: colas de interconexión de más de 233…",
-"oradores": [
-{
-"nome": "Pedro Azagra",
-"cargo": "CEO",
-"empresa": "Iberdrola",
-"role": "orador"
-}
-],
+"descricao": ".",
+"oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-138",
 "id": "s392",
 "tags": [
@@ -10817,6 +11072,18 @@
 "antes": "—",
 "depois": "Pedro Azagra",
 "em": "2026-10-16T10:31:38Z"
+},
+{
+"campo": "titulo",
+"antes": "Data Centers & Energía: lecciones de EE.UU. para la oportunidad digital de España",
+"depois": "Data centers en España: claves para la próxima etapa",
+"em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "oradores",
+"antes": "Pedro Azagra",
+"depois": "—",
+"em": "2026-10-28T13:44:39Z"
 }
 ]
 },
@@ -11131,7 +11398,13 @@
 {
 "nome": "Enrique Moraga Guerrero",
 "cargo": "Director – EMEA Data centre Business",
-"empresa": "Moteurs Baudouin",
+"empresa": "Baudouin",
+"role": "orador"
+},
+{
+"nome": "Richard Flynn",
+"cargo": "Data Centre Project Delivery Director",
+"empresa": "Baudouin",
 "role": "orador"
 }
 ],
@@ -11141,21 +11414,48 @@
 "IA",
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Enrique Moraga Guerrero",
+"depois": "Enrique Moraga Guerrero, Richard Flynn",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
 "track_id": "hr-wellbeing",
 "hora_inicio": "13:25",
 "hora_fim": "13:45",
-"titulo": "TBC",
+"titulo": "Beneficios a medida: RV, IA y Epigenética para el alto rendimiento y la longevidad",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "Los beneficios para empleados siguen pensándose en talla única, pero cada persona rinde, enferma, se recupera y envejece de forma distinta. Por eso muchos programas de bienestar no mueven los indicado…",
+"oradores": [
+{
+"nome": "María Gilabert Hernando",
+"cargo": "Psicóloga, Coach, Emprendedora y Speaker Internacional",
+"empresa": "Be Top Speaker",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-160",
 "id": "s333",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "Beneficios a medida: RV, IA y Epigenética para el alto rendimiento y la longevidad",
+"em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "María Gilabert Hernando",
+"em": "2026-10-28T13:44:39Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -12214,12 +12514,6 @@
 "descricao": "",
 "oradores": [
 {
-"nome": "Víctor Quesada",
-"cargo": "Fundador y Ceo",
-"empresa": "Ecoportátil",
-"role": "orador"
-},
-{
 "nome": "Ion Vidaurreta",
 "cargo": "Co-CEO",
 "empresa": "DECOWOOD",
@@ -12249,6 +12543,12 @@
 "antes": "Víctor Quesada, Ion Vidaurreta",
 "depois": "Víctor Quesada, Ion Vidaurreta, Julián Vesga",
 "em": "2026-10-16T10:31:38Z"
+},
+{
+"campo": "oradores",
+"antes": "Víctor Quesada, Ion Vidaurreta, Julián Vesga",
+"depois": "Ion Vidaurreta, Julián Vesga",
+"em": "2026-10-28T13:44:39Z"
 }
 ]
 },
