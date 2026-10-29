@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 40,
-"actualizado_em": "2026-10-29T16:18:34Z",
+"versao": 41,
+"actualizado_em": "2026-10-29T21:17:00Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -9629,12 +9629,6 @@
 "role": "moderador"
 },
 {
-"nome": "Natalia Rodríguez",
-"cargo": "Transformación y Experiencia Colaborador",
-"empresa": "OBRAMAT",
-"role": "orador"
-},
-{
 "nome": "Ángel Lobo Muñoz",
 "cargo": "Director de Recursos Humanos",
 "empresa": "Eggo Kitchen & House",
@@ -9654,7 +9648,14 @@
 "talento",
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Pablo Gutiérrez Merelles, Natalia Rodríguez, Ángel Lobo Muñoz, Eva Bermúdez",
+"depois": "Pablo Gutiérrez Merelles, Ángel Lobo Muñoz, Eva Bermúdez",
+"em": "2026-10-29T21:17:00Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -12653,7 +12654,7 @@
 "oradores": [
 {
 "nome": "Eloisa Siclari",
-"cargo": "General Manager Italy & Spain",
+"cargo": "Directora General para el Sur de Europa",
 "empresa": "Zalando",
 "role": "orador"
 }
