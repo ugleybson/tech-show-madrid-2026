@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 39,
-"actualizado_em": "2026-10-29T09:14:02Z",
+"versao": 40,
+"actualizado_em": "2026-10-29T16:18:34Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1381,6 +1381,12 @@
 "cargo": "eCommerce Executive Director",
 "empresa": "Carrefour",
 "role": "orador"
+},
+{
+"nome": "Jose Manuel Fernández",
+"cargo": "E-commerce Manager",
+"empresa": "Infinition",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-mirakl",
@@ -1388,7 +1394,14 @@
 "tags": [
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Verónica Tirelli, Justyna Torres",
+"depois": "Verónica Tirelli, Justyna Torres, Jose Manuel Fernández",
+"em": "2026-10-29T16:18:34Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -3201,9 +3214,9 @@
 "descricao": "Analizaremos cómo la logística puede sostener el crecimiento del e-commerce sin perder rentabilidad. Hablaremos de última milla, lockers, acceso a la ciudad, ZBE, devoluciones y logística inversa, con…",
 "oradores": [
 {
-"nome": "Ramón García",
-"cargo": "Director General",
-"empresa": "CITET y Centro Español de Logistica (CEL)",
+"nome": "Carlota Pérez",
+"cargo": "Delegada del CEL Levante y desarrollo de negocio en formación",
+"empresa": "CEL",
 "role": "moderador"
 },
 {
@@ -3219,7 +3232,14 @@
 "e-commerce",
 "ROI"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Ramón García, Carlos Andonegui",
+"depois": "Carlota Pérez, Carlos Andonegui",
+"em": "2026-10-29T16:18:34Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -7718,31 +7738,6 @@
 },
 {
 "dia": "2026-11-04",
-"track_id": "cloud-ai",
-"hora_inicio": "18:30",
-"hora_fim": "18:50",
-"titulo": "Transformación digital desde dentro: cómo tecnología e IA están cambiando la industria musical",
-"tipo": "Palestra",
-"descricao": "La industria musical lleva décadas adaptándose a cambios tecnológicos que han transformado no solo sus productos y canales, sino también la forma en que trabajan sus organizaciones. Desde la experienc…",
-"oradores": [
-{
-"nome": "Juan Antonio Hernández Leiva",
-"cargo": "Head IA-IT infrastructure",
-"empresa": "SONY MUSIC ENTERTAINMENT ESPAÑA",
-"role": "orador"
-}
-],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-101",
-"id": "s024",
-"tags": [
-"transformação digital",
-"música",
-"indústria criativa"
-],
-"alteracoes": []
-},
-{
-"dia": "2026-11-04",
 "track_id": "cyber-security",
 "hora_inicio": "18:30",
 "hora_fim": "18:50",
@@ -9246,6 +9241,38 @@
 "track_id": "cloud-ai",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
+"titulo": "Transformación digital desde dentro: cómo tecnología e IA están cambiando la industria musical",
+"tipo": "Palestra",
+"descricao": "La industria musical lleva décadas adaptándose a cambios tecnológicos que han transformado no solo sus productos y canales, sino también la forma en que trabajan sus organizaciones. Desde la experienc…",
+"oradores": [
+{
+"nome": "Juan Antonio Hernández Leiva",
+"cargo": "Head IA-IT infrastructure",
+"empresa": "SONY MUSIC ENTERTAINMENT ESPAÑA",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-101",
+"id": "s024",
+"tags": [
+"transformação digital",
+"música",
+"indústria criativa"
+],
+"alteracoes": [
+{
+"campo": "hora",
+"antes": "2026-11-04 18:30–18:50",
+"depois": "2026-11-05 11:30–11:50",
+"em": "2026-10-29T16:18:34Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "cloud-ai",
+"hora_inicio": "11:30",
+"hora_fim": "11:50",
 "titulo": "Más bots que pasajeros: cómo preparamos OUIGO para el cliente agentico",
 "tipo": "Palestra",
 "descricao": "Según Cloudflare, en 2026 los bots ya generan más tráfico web que los humanos, y el sector viajes es uno de sus principales objetivos. Cuando el cliente es un agente de IA que consulta APIs en lugar d…",
@@ -9270,8 +9297,15 @@
 "antes": "2026-11-05 16:30–16:50",
 "depois": "2026-11-05 11:30–11:50",
 "em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-29T16:18:34Z"
 }
-]
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
@@ -9424,10 +9458,10 @@
 "descricao": "",
 "oradores": [
 {
-"nome": "Ramón García",
-"cargo": "Director General",
-"empresa": "CITET y Centro Español de Logistica (CEL)",
-"role": "moderador"
+"nome": "Enrique Sánchez",
+"cargo": "Director de Desarrollo de Negocio",
+"empresa": "CITET",
+"role": "orador"
 },
 {
 "nome": "Aitor Madoz",
@@ -9453,6 +9487,12 @@
 "antes": "Ramón García, Leo Rueda, Aitor Madoz",
 "depois": "Ramón García, Aitor Madoz, Daniel Capilla",
 "em": "2026-10-19T18:12:16Z"
+},
+{
+"campo": "oradores",
+"antes": "Ramón García, Aitor Madoz, Daniel Capilla",
+"depois": "Enrique Sánchez, Aitor Madoz, Daniel Capilla",
+"em": "2026-10-29T16:18:34Z"
 }
 ]
 },
@@ -10710,6 +10750,12 @@
 "role": "moderador"
 },
 {
+"nome": "Carlos Cocheteux de la Fuente",
+"cargo": "Country Commercial Manager",
+"empresa": "IKEA España",
+"role": "orador"
+},
+{
 "nome": "Juan Arjona",
 "cargo": "Director de Expansión y miembro del Comité ejecutivo",
 "empresa": "Alain Afflelou",
@@ -10728,7 +10774,14 @@
 "e-commerce",
 "ROI"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Domingos Esteves, Juan Arjona, Fernando de Palacio",
+"depois": "Domingos Esteves, Carlos Cocheteux de la Fuente, Juan Arjona, Fernando de Palacio",
+"em": "2026-10-29T16:18:34Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -11981,9 +12034,9 @@
 "track_id": "dc-energy",
 "hora_inicio": "15:00",
 "hora_fim": "15:20",
-"titulo": "El papel de la energía nuclear como elemento de estabilidad para afrontar los retos de la descarbonización y la autonomía estratégica",
-"tipo": "Palestra",
-"descricao": "El crecimiento de los centros de datos y la electrificación exigen un suministro eléctrico continuo, estable y libre de emisiones. La energía nuclear aporta firmeza al sistema y complementa a las reno…",
+"titulo": "Mesa de debate de FORO NUCLEAR",
+"tipo": "Mesa Debate",
+"descricao": ".",
 "oradores": [
 {
 "nome": "Marta Ugalde",
@@ -11997,7 +12050,14 @@
 "tags": [
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "El papel de la energía nuclear como elemento de estabilidad para afrontar los retos de la descarbonización y la autonomía estratégica",
+"depois": "Mesa de debate de FORO NUCLEAR",
+"em": "2026-10-29T16:18:34Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -12797,8 +12857,8 @@
 "descricao": "Practical Insights from CIMC Digital Power's Prefabricated Modular Data Center Projects",
 "oradores": [
 {
-"nome": "Freddy Chen",
-"cargo": "BD Manager",
+"nome": "Neko Wong",
+"cargo": "Brand Marketing Manager",
 "empresa": "CIMC Digital Power",
 "role": "orador"
 }
@@ -12830,6 +12890,12 @@
 "antes": "—",
 "depois": "Freddy Chen",
 "em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "oradores",
+"antes": "Freddy Chen",
+"depois": "Neko Wong",
+"em": "2026-10-29T16:18:34Z"
 }
 ]
 },
