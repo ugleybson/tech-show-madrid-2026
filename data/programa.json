@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 38,
-"actualizado_em": "2026-10-28T19:16:05Z",
+"versao": 39,
+"actualizado_em": "2026-10-29T09:14:02Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -3000,14 +3000,20 @@
 "track_id": "tech-keynote",
 "hora_inicio": "12:55",
 "hora_fim": "13:15",
-"titulo": "De un caso de uso a miles: cómo escala la IA en una multinacional",
+"titulo": "Como escala la IA en un banco global",
 "tipo": "Palestra",
-"descricao": "¿Qué hace falta para pasar de los primeros casos de uso de IA a miles de procesos en producción? David Villalón, cofundador y CEO de Maisa, cuenta cómo se ha hecho en una de las mayores multinacionale…",
+"descricao": "Conversación entre Maisa y Santander sobre los retos de llevar IA del piloto a producción en escala global.",
 "oradores": [
 {
 "nome": "David Villalón",
 "cargo": "Co- founder",
 "empresa": "Maisa AI",
+"role": "orador"
+},
+{
+"nome": "Juanjo Prieto",
+"cargo": "Global Data & AI Product Manager | AI Workplace & Task Automation",
+"empresa": "Banco Santander",
 "role": "orador"
 }
 ],
@@ -3019,7 +3025,20 @@
 "produção",
 "multinacional"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "De un caso de uso a miles: cómo escala la IA en una multinacional",
+"depois": "Como escala la IA en un banco global",
+"em": "2026-10-29T09:14:02Z"
+},
+{
+"campo": "oradores",
+"antes": "David Villalón",
+"depois": "David Villalón, Juanjo Prieto",
+"em": "2026-10-29T09:14:02Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -8004,8 +8023,15 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-29T09:14:02Z"
 }
-]
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
