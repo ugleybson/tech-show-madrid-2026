@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 42,
-"actualizado_em": "2026-10-30T14:26:34Z",
+"versao": 43,
+"actualizado_em": "2026-10-30T19:35:24Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -3383,21 +3383,15 @@
 "role": "moderador"
 },
 {
+"nome": "Sara Riballo",
+"cargo": "Dircom",
+"empresa": "FOREO",
+"role": "orador"
+},
+{
 "nome": "Pilar Hermida del Llano",
 "cargo": "Directora de Comunicación y Sostenibilidad",
 "empresa": "Dia España",
-"role": "orador"
-},
-{
-"nome": "Marta Domínguez",
-"cargo": "CMO",
-"empresa": "MediaMarkt España",
-"role": "orador"
-},
-{
-"nome": "Marta Panera",
-"cargo": "CMO",
-"empresa": "FOREO",
 "role": "orador"
 }
 ],
@@ -3408,7 +3402,14 @@
 "dados",
 "marketing"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Santiago Hernández Hernández, Pilar Hermida del Llano, Marta Domínguez, Marta Panera",
+"depois": "Santiago Hernández Hernández, Sara Riballo, Pilar Hermida del Llano",
+"em": "2026-10-30T19:35:24Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -6129,15 +6130,21 @@
 "role": "moderador"
 },
 {
-"nome": "Richard Benjamins",
-"cargo": "Co-Founder and CEO",
+"nome": "Manuel Ruiz del Corral",
+"cargo": "Subdirector General - Delegado Digital del Área de Economía, Innovación y Hacienda",
+"empresa": "AYUNTAMIENTO de MADRID",
+"role": "orador"
+},
+{
+"nome": "Frank Escandell",
+"cargo": "Director de Socios Institucionales",
 "empresa": "OdiseIA",
 "role": "orador"
 },
 {
-"nome": "Ricardo Palomo",
-"cargo": "Catedrático de Finanzas. Especialista en impacto de IA en mercado laboral",
-"empresa": ".",
+"nome": "Richard Benjamins",
+"cargo": "Co-Founder and CEO",
+"empresa": "OdiseIA",
 "role": "orador"
 }
 ],
@@ -6149,7 +6156,14 @@
 "futuro trabalho",
 "mercado laboral"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Idoia Salazar, Richard Benjamins, Ricardo Palomo",
+"depois": "Idoia Salazar, Manuel Ruiz del Corral, Frank Escandell, Richard Benjamins",
+"em": "2026-10-30T19:35:24Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -6762,7 +6776,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-25",
 "id": "s101",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-30T19:35:24Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
@@ -8283,7 +8305,15 @@
 "tags": [
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-30T19:35:24Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
@@ -11703,10 +11733,17 @@
 "track_id": "tfm",
 "hora_inicio": "13:25",
 "hora_fim": "13:45",
-"titulo": "TBC",
+"titulo": "La tormenta perfecta: presente y futuro de la profesión del marketing en la era de la IA",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "La inteligencia artificial, la brecha de talento y la transformación de las competencias están redefiniendo la profesión del marketing. A partir de un estudio junto a Anguis Comunicación y Betancourt,…",
+"oradores": [
+{
+"nome": "Santiago Hernández Hernández",
+"cargo": "CEO",
+"empresa": "PuroMarketing",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-tag-heuer-lvmh",
 "id": "s302",
 "tags": [
@@ -11725,6 +11762,18 @@
 "antes": "Fátima Doñoro",
 "depois": "—",
 "em": "2026-10-30T14:26:34Z"
+},
+{
+"campo": "titulo",
+"antes": "TBC",
+"depois": "La tormenta perfecta: presente y futuro de la profesión del marketing en la era de la IA",
+"em": "2026-10-30T19:35:24Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Santiago Hernández Hernández",
+"em": "2026-10-30T19:35:24Z"
 }
 ]
 },
