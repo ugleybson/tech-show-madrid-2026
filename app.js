@@ -40,7 +40,9 @@ let state = {
     {id:'m4', nome:'Marco Nunes', inicial:'M', cor:COLORS[3], areas:[], ...CREDENCIAIS.m4},
     {id:'m5', nome:'Celestino Oliveira', inicial:'C', cor:COLORS[4], areas:[], ...CREDENCIAIS.m5},
   ],
-  inscricoes: JSON.parse(localStorage.getItem('tsm_inscricoes') || '{}'), // {sessaoId: [membroId,...]}
+  inscricoes: {},   // {sessaoId: [membroId,...]} — derivado dos registos partilhados (ver rebuildInscricoes)
+  reg: {},          // registos por membro (inscrições, presenças, visitas) + 'equipa' (plano dos stands)
+  sync: null,       // estado da sincronização com o repositório de dados
   diaAtivo: '2026-11-04',
   view: 'grid', // grid | timeline
   filtroTrack: '',
@@ -53,10 +55,6 @@ let state = {
   indTab: 'crono',          // telemóvel: separador do plano individual (crono | grelha)
   agoraSim: 630,            // vista Agora fora dos dias do evento: hora simulada (minutos)
   programa: { versao: 0, actualizado_em: null, verificado_em: null },
-  // Stands: {expId: {membros?, dia?, visitado, followup, contacto, notas, em}} (por dispositivo)
-  visitas: (() => { try { return JSON.parse(localStorage.getItem('tsm_visitas') || '{}'); } catch (e) { return {}; } })(),
-  // Presença nas sessões: {membroId: {sessaoId: {em, notas}}} (por dispositivo)
-  presencas: (() => { try { return JSON.parse(localStorage.getItem('tsm_presencas') || '{}'); } catch (e) { return {}; } })(),
   expDia: 'dia',   // dia | todos
   expPrio: '',     // '' | A | B | C
   expCat: '',
@@ -67,8 +65,338 @@ let state = {
 function lerLocal(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
 function gravarLocal(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
+// ── REGISTOS PARTILHADOS (sincronização via GitHub) ──────────────────
+// Cada membro tem um ficheiro registos/<id>.json num repositório privado de dados
+// (data/sync.js diz qual). A app lê os ficheiros de todos e escreve o que mudou.
+// Cada entrada tem uma data: em caso de conflito ganha a mais recente.
+// A chave de acesso não está no código: vem do link partilhado (#chave=…) ou é colada
+// em ☰ Equipa → Programa e registos, e fica guardada em cada telemóvel.
+const SYNC_CFG = (typeof window !== 'undefined' && window.TSM_SYNC) || { repo: '', ramo: 'main' };
+const T0 = '2026-10-01T00:00:00Z';   // data dos planos automáticos: qualquer edição real ganha-lhes
+const MEMBROS_REG = ['m1', 'm2', 'm3', 'm4', 'm5', 'equipa'];
+const GH_API = 'https://api.github.com';
+
+function agoraISO() { return new Date().toISOString(); }
+function registoVazio(mid) { return { membro: mid, atualizado_em: null, inscricoes: {}, presencas: {}, visitas: {}, stands: {} }; }
+function reg(mid) { return state.reg[mid] || (state.reg[mid] = registoVazio(mid)); }
+function canon(o) {
+  if (Array.isArray(o)) return o.map(canon);
+  if (o && typeof o === 'object') { const r = {}; Object.keys(o).sort().forEach(k => { r[k] = canon(o[k]); }); return r; }
+  return o;
+}
+function semMeta(r) { const { atualizado_em, ...resto } = r || {}; return canon(resto); }
+
+function carregarRegistos() {
+  let s = null;
+  try { s = JSON.parse(localStorage.getItem('tsm_sync') || 'null'); } catch (e) {}
+  state.sync = { dirty: {}, shas: {}, etag: '', ultimo: null, ...(s || {}), erro: null, aEnviar: false, chave: lerLocal('tsm_chave') };
+  let r = null;
+  try { r = JSON.parse(localStorage.getItem('tsm_reg') || 'null'); } catch (e) {}
+  state.reg = r && typeof r === 'object' ? r : {};
+  MEMBROS_REG.forEach(mid => { state.reg[mid] = { ...registoVazio(mid), ...(state.reg[mid] || {}) }; });
+  if (!r) migrarRegistosAntigos();
+  rebuildInscricoes();
+}
+
+// Dados guardados pelas versões anteriores da app (só neste telemóvel)
+function migrarRegistosAntigos() {
+  const ler = k => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } };
+  const eu = lerLocal('tsm_eu');
+  const tocados = new Set();
+  const ins = ler('tsm_inscricoes') || {};
+  Object.keys(ins).forEach(sid => (ins[sid] || []).forEach(mid => {
+    if (!state.reg[mid]) return;
+    // O plano do próprio ganha a qualquer versão remota; os dos outros só valem como predefinição
+    state.reg[mid].inscricoes[sid] = { v: true, em: mid === eu ? agoraISO() : T0, por: 'migracao' };
+    tocados.add(mid);
+  }));
+  const pres = ler('tsm_presencas') || {};
+  Object.keys(pres).forEach(mid => Object.keys(pres[mid] || {}).forEach(sid => {
+    if (!state.reg[mid]) return;
+    state.reg[mid].presencas[sid] = { em: pres[mid][sid].em || '', notas: pres[mid][sid].notas || '', t: agoraISO() };
+    tocados.add(mid);
+  }));
+  const vis = ler('tsm_visitas') || {};
+  Object.keys(vis).forEach(eid => {
+    const v = vis[eid] || {};
+    if (v.membros || v.dia) { state.reg.equipa.stands[eid] = { membros: v.membros, dia: v.dia, em: v.em || agoraISO(), por: eu || 'migracao' }; tocados.add('equipa'); }
+    const dono = v.visitado_por || eu;
+    if (dono && state.reg[dono] && (v.visitado || v.followup || v.contacto || v.notas || (v.perguntadas || []).length)) {
+      state.reg[dono].visitas[eid] = { visitado: !!v.visitado, visitado_em: v.visitado_em || '', followup: !!v.followup,
+        contacto: v.contacto || '', notas: v.notas || '', perguntadas: v.perguntadas || [], t: v.em || agoraISO() };
+      tocados.add(dono);
+    }
+  });
+  tocados.forEach(mid => { state.sync.dirty[mid] = true; });
+}
+
+// state.inscricoes ({sessaoId: [membroId]}) é derivado dos registos
+function rebuildInscricoes() {
+  const out = {};
+  state.equipa.forEach(m => {
+    const r = state.reg[m.id];
+    if (!r) return;
+    Object.keys(r.inscricoes).forEach(sid => { if (r.inscricoes[sid].v) (out[sid] = out[sid] || []).push(m.id); });
+  });
+  state.inscricoes = out;
+}
+function setInscricao(sid, mid, v, em) {
+  reg(mid).inscricoes[sid] = { v: !!v, em: em || agoraISO(), por: state.eu || mid };
+  marcarSujo(mid);
+}
+function toggleInscricao(sessaoId, membroId) {
+  const on = (state.inscricoes[sessaoId] || []).includes(membroId);
+  setInscricao(sessaoId, membroId, !on);
+  return !on;
+}
+
+// Presença nas sessões
+function presenca(mid, sid) { const p = reg(mid).presencas[sid]; return p && (p.em || p.notas) ? p : null; }
+function marcarPresenca(mid, sid, sim) {
+  const p = reg(mid).presencas;
+  p[sid] = { em: sim ? agoraISO() : '', notas: (p[sid] || {}).notas || '', t: agoraISO() };
+  marcarSujo(mid); saveState();
+}
+function notasPresenca(mid, sid, notas) {
+  const p = reg(mid).presencas;
+  p[sid] = { em: (p[sid] || {}).em || '', notas, t: agoraISO() };
+  marcarSujo(mid); saveState();
+}
+
+// Visitas aos stands: o registo de cada membro, e a visão da equipa
+function visitaMembro(mid, e) { return reg(mid).visitas[e.id] || {}; }
+function visita(e) {
+  const regs = state.equipa.map(m => ({ m, v: reg(m.id).visitas[e.id] })).filter(x => x.v);
+  const vis = regs.filter(x => x.v.visitado).sort((a, b) => (a.v.visitado_em || '').localeCompare(b.v.visitado_em || ''));
+  const st = state.reg.equipa.stands[e.id] || {};
+  return {
+    visitado: vis.length > 0,
+    visitado_em: vis.length ? vis[0].v.visitado_em : '',
+    visitado_por: vis.length ? vis[0].m.id : '',
+    visitantes: vis.map(x => x.m.id),
+    followup: regs.some(x => x.v.followup),
+    contacto: [...new Set(regs.map(x => (x.v.contacto || '').trim()).filter(Boolean))].join(' | '),
+    notas: regs.filter(x => (x.v.notas || '').trim()).map(x => `${x.m.nome.split(' ')[0]}: ${x.v.notas.trim()}`).join('\n'),
+    perguntadas: [...new Set(regs.flatMap(x => x.v.perguntadas || []))],
+    registos: regs, membros: st.membros, dia: st.dia,
+    em: [...regs.map(x => x.v.t), st.em].filter(Boolean).sort().pop() || '',
+  };
+}
+function membrosExp(e) { const st = state.reg.equipa.stands[e.id] || {}; return st.membros || e.responsaveis || []; }
+function diaExp(e) { const st = state.reg.equipa.stands[e.id] || {}; return st.dia || e.dia; }
+// membros/dia são do plano da equipa; o resto é o registo pessoal de `mid` (por omissão, quem usa este telemóvel)
+function alterarVisita(e, campos, mid) {
+  const agora = agoraISO();
+  if ('membros' in campos || 'dia' in campos) {
+    state.reg.equipa.stands[e.id] = { ...(state.reg.equipa.stands[e.id] || {}), ...campos, em: agora, por: state.eu || '' };
+    marcarSujo('equipa'); saveState();
+    return true;
+  }
+  mid = mid || state.eu;
+  if (!mid || !getMembro(mid)) { showToast('👤 Escolha o seu nome em "Meu plano" para registar a visita'); return false; }
+  const v = { visitado: false, visitado_em: '', followup: false, contacto: '', notas: '', perguntadas: [], ...visitaMembro(mid, e) };
+  if ('visitado' in campos) v.visitado_em = campos.visitado ? (v.visitado ? v.visitado_em : agora) : '';
+  Object.assign(v, campos, { t: agora });
+  reg(mid).visitas[e.id] = v;
+  marcarSujo(mid); saveState();
+  return true;
+}
+
+// --- Motor de sincronização ---
+function syncAtivo() { return !!(SYNC_CFG.repo && state.sync && state.sync.chave); }
+function marcarSujo(mid) {
+  rebuildInscricoes();
+  if (!state.sync) return;
+  state.sync.dirty[mid] = true;
+  gravarSyncMeta();
+  agendarEnvio();
+}
+function gravarSyncMeta() {
+  const s = state.sync;
+  gravarLocal('tsm_sync', JSON.stringify({ dirty: s.dirty, shas: s.shas, etag: s.etag, ultimo: s.ultimo }));
+}
+function guardarChave(chave) {
+  state.sync.chave = (chave || '').trim();
+  gravarLocal('tsm_chave', state.sync.chave);
+  state.sync.erro = null; state.sync.shas = {}; state.sync.etag = '';
+  gravarSyncMeta();
+  renderEstadoSync();
+}
+function lerChaveDoLink() {
+  const h = new URLSearchParams((location.hash || '').replace(/^#/, ''));
+  const chave = h.get('chave');
+  if (!chave) return;
+  guardarChave(chave);
+  history.replaceState(null, '', location.pathname + location.search);
+  showToast('🔑 Chave de equipa guardada neste telemóvel');
+}
+function cabecalhos() {
+  return { Authorization: `Bearer ${state.sync.chave}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+}
+function b64enc(s) { return btoa(unescape(encodeURIComponent(s))); }
+function b64dec(s) { return decodeURIComponent(escape(atob(String(s).replace(/\s/g, '')))); }
+function urlReg(mid) { return `${GH_API}/repos/${SYNC_CFG.repo}/contents/registos/${mid}.json`; }
+const ramoSync = () => SYNC_CFG.ramo || 'main';
+
+let envioTimer = null;
+function agendarEnvio() {
+  if (!syncAtivo()) return;
+  clearTimeout(envioTimer);
+  envioTimer = setTimeout(() => sincronizar(false), 2500);
+}
+
+// Junta um registo remoto ao local, entrada a entrada: ganha a data mais recente. Devolve true se o local mudou.
+function fundirRegisto(mid, remoto) {
+  if (!remoto) return false;
+  const local = reg(mid);
+  let mudou = false;
+  [['inscricoes', 'em'], ['presencas', 't'], ['visitas', 't'], ['stands', 'em']].forEach(([campo, data]) => {
+    const rl = local[campo] = local[campo] || {}, rr = remoto[campo] || {};
+    Object.keys(rr).forEach(k => {
+      const a = rl[k], b = rr[k];
+      if (!a || (b[data] || '') > (a[data] || '')) { rl[k] = b; mudou = true; }
+    });
+  });
+  return mudou;
+}
+
+async function lerFicheiro(mid) {
+  const r = await fetch(`${urlReg(mid)}?ref=${ramoSync()}`, { headers: cabecalhos(), cache: 'no-store' });
+  if (r.status === 404) return { sha: null, dados: null };
+  if (!r.ok) throw new Error(`GET ${mid}: ${r.status}`);
+  const j = await r.json();
+  let dados = null;
+  try { dados = JSON.parse(b64dec(j.content)); } catch (e) {}
+  return { sha: j.sha, dados };
+}
+async function escreverFicheiro(mid, sha) {
+  const local = reg(mid);
+  local.atualizado_em = agoraISO();
+  const quem = (getMembro(state.eu) || {}).nome || 'app';
+  const body = { message: `${mid} · ${quem} · ${local.atualizado_em}`, content: b64enc(JSON.stringify(local)), branch: ramoSync() };
+  if (sha) body.sha = sha;
+  const r = await fetch(urlReg(mid), { method: 'PUT', headers: { ...cabecalhos(), 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  if (r.status === 409 || r.status === 422) return null;   // ficheiro mudou entretanto: voltar a ler e fundir
+  if (!r.ok) throw new Error(`PUT ${mid}: ${r.status}`);
+  const j = await r.json();
+  return j.content.sha;
+}
+async function enviarMembro(mid) {
+  for (let tent = 0; tent < 3; tent++) {
+    const { sha, dados } = await lerFicheiro(mid);
+    fundirRegisto(mid, dados);
+    if (dados && JSON.stringify(semMeta(dados)) === JSON.stringify(semMeta(reg(mid)))) {
+      state.sync.shas[mid] = sha; delete state.sync.dirty[mid];
+      return false;
+    }
+    const novo = await escreverFicheiro(mid, sha);
+    if (novo) { state.sync.shas[mid] = novo; delete state.sync.dirty[mid]; return true; }
+  }
+  throw new Error(`conflito persistente em ${mid}`);
+}
+async function receberTodos() {
+  const h = cabecalhos();
+  if (state.sync.etag) h['If-None-Match'] = state.sync.etag;
+  const r = await fetch(`${GH_API}/repos/${SYNC_CFG.repo}/contents/registos?ref=${ramoSync()}`, { headers: h, cache: 'no-store' });
+  if (r.status === 304) return false;
+  if (!r.ok) throw new Error(`listar: ${r.status}`);
+  state.sync.etag = r.headers.get('ETag') || '';
+  const lista = await r.json();
+  let mudou = false;
+  for (const f of lista) {
+    const mid = String(f.name || '').replace(/\.json$/, '');
+    if (!MEMBROS_REG.includes(mid) || state.sync.shas[mid] === f.sha) continue;
+    const { sha, dados } = await lerFicheiro(mid);
+    if (fundirRegisto(mid, dados)) mudou = true;
+    if (!state.sync.dirty[mid]) state.sync.shas[mid] = sha;   // se há alterações locais, o envio confirma o sha
+  }
+  return mudou;
+}
+
+async function sincronizar(manual) {
+  if (!syncAtivo()) {
+    renderEstadoSync();
+    if (manual) showToast('🔑 Sem chave de equipa: abra o link partilhado ou cole a chave em ☰ Equipa');
+    return;
+  }
+  if (state.sync.aEnviar) return;
+  if (navigator.onLine === false) {
+    state.sync.erro = 'offline'; renderEstadoSync();
+    if (manual) showToast('📴 Sem rede — os registos ficam guardados e seguem quando a ligação voltar');
+    return;
+  }
+  state.sync.aEnviar = true; renderEstadoSync();
+  try {
+    let mudou = await receberTodos();
+    for (const mid of Object.keys(state.sync.dirty)) { if (await enviarMembro(mid)) mudou = true; }
+    state.sync.ultimo = agoraISO(); state.sync.erro = null;
+    rebuildInscricoes(); saveState(); gravarSyncMeta();
+    if (mudou) {
+      renderAll();
+      const aEscrever = document.activeElement && document.activeElement.matches('input, textarea');
+      if (state.expAberto && !aEscrever) openExpositorModal(state.expAberto);
+    } else renderEstadoSync();
+    if (manual) showToast('☁️ Registos da equipa sincronizados');
+  } catch (e) {
+    state.sync.erro = String((e && e.message) || e);
+    renderEstadoSync();
+    if (manual) showToast(/401|403/.test(state.sync.erro) ? '🔑 Chave inválida ou expirada' : '⚠️ Não foi possível sincronizar agora');
+  } finally {
+    state.sync.aEnviar = false; renderEstadoSync();
+  }
+}
+
+function renderEstadoSync() {
+  const s = state.sync || {};
+  const pend = Object.keys(s.dirty || {}).length;
+  let icone, txt, cls;
+  if (!syncAtivo()) { icone = '🔑'; txt = 'Sem chave de equipa — registos só neste telemóvel'; cls = 'is-off'; }
+  else if (s.aEnviar) { icone = '⏳'; txt = 'A sincronizar…'; cls = 'is-busy'; }
+  else if (s.erro === 'offline' || navigator.onLine === false) { icone = '📴'; txt = `Sem rede${pend ? ` · ${pend} por enviar` : ''}`; cls = 'is-off'; }
+  else if (s.erro) { icone = '⚠️'; txt = /401|403/.test(s.erro) ? 'Chave inválida ou expirada' : `Erro ao sincronizar${pend ? ` · ${pend} por enviar` : ''}`; cls = 'is-err'; }
+  else { icone = '☁️'; txt = s.ultimo ? `Partilhado com a equipa · ${fmtDataHora(s.ultimo)}` : 'Partilhado com a equipa'; cls = 'is-ok'; }
+  const pill = document.getElementById('sync-pill');
+  if (pill) { pill.textContent = icone; pill.title = txt; pill.className = `sync-pill ${cls}`; }
+  const el = document.getElementById('sync-estado');
+  if (el) el.innerHTML = `${icone} ${txt}${s.chave ? ` · <a href="#" data-sync-trocar>chave …${esc(s.chave.slice(-4))}</a>` : ''}`;
+  const box = document.getElementById('sync-chave-box');
+  if (box) box.hidden = !!s.chave && !box.dataset.aberta;
+}
+function ligarSync() {
+  lerChaveDoLink();
+  const input = document.getElementById('sync-chave');
+  const guardar = () => {
+    const c = (input.value || '').trim();
+    if (!c) { showToast('Cole a chave de equipa primeiro'); return; }
+    guardarChave(c); input.value = '';
+    delete document.getElementById('sync-chave-box').dataset.aberta;
+    showToast('🔑 Chave guardada. A sincronizar…');
+    sincronizar(true);
+  };
+  document.getElementById('btn-sync-chave').addEventListener('click', guardar);
+  input.addEventListener('keydown', ev => { if (ev.key === 'Enter') guardar(); });
+  document.getElementById('btn-sync-colar').addEventListener('click', async () => {
+    try { input.value = (await navigator.clipboard.readText()).trim(); guardar(); }
+    catch (e) { showToast('Não consegui ler a área de transferência: cole a chave no campo'); input.focus(); }
+  });
+  document.getElementById('sync-estado').addEventListener('click', ev => {
+    if (!ev.target.closest('[data-sync-trocar]')) return;
+    ev.preventDefault();
+    const box = document.getElementById('sync-chave-box');
+    box.dataset.aberta = '1'; box.hidden = false; input.focus();
+  });
+  document.getElementById('sync-pill').addEventListener('click', () => sincronizar(true));
+  setTimeout(() => sincronizar(false), 800);
+  setInterval(() => { if (document.visibilityState === 'visible') sincronizar(false); }, 60000);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') sincronizar(false); });
+  window.addEventListener('online', () => sincronizar(false));
+  window.addEventListener('offline', renderEstadoSync);
+}
+
 // Programa: se houver uma versão mais recente descarregada, usa-a já (antes da migração das inscrições)
 carregarProgramaGuardado();
+// Registos (inscrições, presenças, visitas): os deste telemóvel, à espera de fundir com os da equipa
+carregarRegistos();
 
 // Migração: aplicar dados reais a equipas já guardadas no localStorage
 (function migrateEquipa() {
@@ -83,33 +411,21 @@ carregarProgramaGuardado();
   });
   // Sessões antigas que não existem no programa oficial (placeholders / hora errada)
   const remap = { s040: 's102' };
-  Object.keys(state.inscricoes).forEach(id => {
-    if (SESSOES.some(x => x.id === id)) return;
-    if (remap[id]) state.inscricoes[remap[id]] = [...new Set([...(state.inscricoes[remap[id]] || []), ...state.inscricoes[id]])];
-    delete state.inscricoes[id];
+  MEMBROS_REG.forEach(mid => {
+    const ins = reg(mid).inscricoes;
+    Object.keys(ins).forEach(id => {
+      if (SESSOES.some(x => x.id === id)) return;
+      if (remap[id] && !ins[remap[id]]) ins[remap[id]] = ins[id];
+      delete ins[id];
+    });
   });
+  rebuildInscricoes();
 })();
 
 // ── SAVE / LOAD ───────────────────────────────────
 function saveState() {
   localStorage.setItem('tsm_equipa', JSON.stringify(state.equipa));
-  localStorage.setItem('tsm_inscricoes', JSON.stringify(state.inscricoes));
-  gravarLocal('tsm_visitas', JSON.stringify(state.visitas));
-  gravarLocal('tsm_presencas', JSON.stringify(state.presencas));
-}
-
-function presenca(mid, sid) { return (state.presencas[mid] || {})[sid] || null; }
-function marcarPresenca(mid, sid, sim) {
-  const p = state.presencas[mid] = state.presencas[mid] || {};
-  if (sim) p[sid] = { ...(p[sid] || {}), em: new Date().toISOString() };
-  else if (p[sid] && p[sid].notas) p[sid] = { notas: p[sid].notas };  // mantém as observações
-  else delete p[sid];
-  saveState();
-}
-function notasPresenca(mid, sid, notas) {
-  const p = state.presencas[mid] = state.presencas[mid] || {};
-  p[sid] = { ...(p[sid] || {}), notas };
-  saveState();
+  gravarLocal('tsm_reg', JSON.stringify(state.reg));
 }
 
 // ── HELPERS ───────────────────────────────────────
@@ -120,18 +436,6 @@ function getSessoesMembro(memId) {
 }
 function getAssignedMembers(sessaoId) {
   return (state.inscricoes[sessaoId] || []).map(mid => getMembro(mid)).filter(Boolean);
-}
-
-function toggleInscricao(sessaoId, membroId) {
-  if (!state.inscricoes[sessaoId]) state.inscricoes[sessaoId] = [];
-  const idx = state.inscricoes[sessaoId].indexOf(membroId);
-  if (idx === -1) {
-    state.inscricoes[sessaoId].push(membroId);
-    return true;
-  } else {
-    state.inscricoes[sessaoId].splice(idx, 1);
-    return false;
-  }
 }
 
 // ── PROGRAMA EM DIRECTO ───────────────────────────
@@ -332,7 +636,7 @@ function problemasPlano(m) {
 function ajustarPlanos() {
   let removidas = 0, adicionadas = 0;
   state.equipa.forEach(m => {
-    const sair = id => { state.inscricoes[id] = (state.inscricoes[id] || []).filter(x => x !== m.id); removidas++; };
+    const sair = id => { setInscricao(id, m.id, false); removidas++; };
     const peso = s => ((m.prioritarias || []).includes(s.id) ? 4 : 0) + (s.tags.includes('IA') ? 2 : 0) - (/^\s*TBC\s*$/i.test(s.titulo) ? 3 : 0);
     const libertados = [];
     getSessoesMembro(m.id).filter(s => !ativa(s)).forEach(c => { sair(c.id); libertados.push(c); });
@@ -352,7 +656,7 @@ function ajustarPlanos() {
         .filter(s => ativa(s) && s.id !== c.id && salas.includes(s.track_id) && sobrepoe(s, c)
           && !plano.some(p => sobrepoe(p, s)) && !NAO_PLANEAR.test(s.titulo))
         .sort((a,b) => peso(b) - peso(a) || salas.indexOf(a.track_id) - salas.indexOf(b.track_id))[0];
-      if (alt) { (state.inscricoes[alt.id] = state.inscricoes[alt.id] || []).push(m.id); adicionadas++; }
+      if (alt) { setInscricao(alt.id, m.id, true); adicionadas++; }
     });
   });
   return { removidas, adicionadas };
@@ -385,11 +689,12 @@ const NAO_PLANEAR = /^(check-in|institutional welcome|conclusi[oó]n)\b/i;
 
 // Escolhe sessões sem sobreposições: primeiro as prioritárias do membro (pela ordem dada),
 // depois as das salas do pavilhão – as de IA antes das restantes, pela ordem das salas.
-function planearPorCredencial(m) {
+// automatico=true marca o plano com a data T0: qualquer edição feita pela equipa prevalece sobre ele
+function planearPorCredencial(m, automatico) {
   if (!m.trilhas || !m.trilhas.length) return 0;
-  Object.values(state.inscricoes).forEach(arr => {
-    const i = arr.indexOf(m.id);
-    if (i !== -1) arr.splice(i, 1);
+  const em = automatico ? T0 : agoraISO();
+  Object.keys(state.inscricoes).forEach(sid => {
+    if (state.inscricoes[sid].includes(m.id)) setInscricao(sid, m.id, false, em);
   });
   const prioritarias = (m.prioritarias || []).map(id => SESSOES.find(s => s.id === id)).filter(s => s && ativa(s));
   const prio = s => (s.tags.includes('IA') ? 0 : 100) + m.trilhas.indexOf(s.track_id);
@@ -400,10 +705,7 @@ function planearPorCredencial(m) {
   [...prioritarias, ...candidatos].forEach(s => {
     if (!escolhidas.some(e => sobrepoe(e, s))) escolhidas.push(s);
   });
-  escolhidas.forEach(s => {
-    if (!state.inscricoes[s.id]) state.inscricoes[s.id] = [];
-    state.inscricoes[s.id].push(m.id);
-  });
+  escolhidas.forEach(s => setInscricao(s.id, m.id, true, em));
   return escolhidas.length;
 }
 
@@ -1200,7 +1502,7 @@ function exportPlan() {
     if (stands.length) {
       txt += '  Stands a visitar:\n';
       stands.forEach(e => {
-        const v = visita(e);
+        const v = visitaMembro(m.id, e);
         txt += `    ${v.visitado ? '[x]' : '[ ]'} ${diaExp(e) === '2026-11-04' ? '4 Nov' : '5 Nov'} | ${e.stand} | ${e.nome} (${e.prioridade})${v.followup ? ' | FOLLOW-UP' : ''}\n`;
         if (v.contacto) txt += `        Contacto: ${v.contacto}\n`;
         if (v.notas) txt += `        Notas: ${v.notas.replace(/\n/g, ' / ')}\n`;
@@ -1248,19 +1550,6 @@ function esc(t) {
 }
 function getCategoriaExp(id) { return CATEGORIAS_EXP.find(c => c.id === id) || { id, nome: id, cor: '#6366f1', perguntas: [] }; }
 function getExpositor(id) { return EXPOSITORES.find(e => e.id === id); }
-function visita(e) { return state.visitas[e.id] || {}; }
-function membrosExp(e) { const v = visita(e); return v.membros || e.responsaveis || []; }
-function diaExp(e) { return visita(e).dia || e.dia; }
-function alterarVisita(e, campos) {
-  const agora = new Date().toISOString();
-  if ('visitado' in campos) {
-    if (campos.visitado && !visita(e).visitado) Object.assign(campos, { visitado_em: agora, visitado_por: state.eu || '' });
-    if (!campos.visitado) Object.assign(campos, { visitado_em: '', visitado_por: '' });
-  }
-  state.visitas[e.id] = { ...visita(e), ...campos, em: agora };
-  saveState();
-}
-
 // Zona a partir do stand: "3E84" → Pavilhão 3 · corredor E; aldeias com prefixo próprio
 function zonaStand(stand) {
   const s = String(stand || '').split(',')[0].trim().toUpperCase();
@@ -1324,7 +1613,7 @@ function renderExpCard(e) {
         <div class="exp-card__top">
           <span class="exp-prio exp-prio--${e.prioridade}" title="${PRIORIDADES[e.prioridade]}">${e.prioridade}</span>
           <span class="exp-card__name">${esc(e.nome)}</span>
-          ${v.visitado ? '<span class="exp-flag" title="Visitado">✅</span>' : ''}
+          ${v.visitado ? `<span class="exp-flag exp-flag--who" title="Visitado por ${esc(v.visitantes.map(id => (getMembro(id) || {}).nome).join(', '))}">✅${v.visitantes.map(id => (getMembro(id) || {}).inicial || '').join('')}</span>` : ''}
           ${v.followup ? '<span class="exp-flag" title="Follow-up">🔁</span>' : ''}
         </div>
         <div class="exp-card__meta"><span style="color:${cat.cor}">${esc(cat.nome)}</span> · ${OBJETIVOS[e.objetivo] || ''}${fala ? ` · 🎤 fala ${fala}×` : ''}</div>
@@ -1369,7 +1658,7 @@ function renderExpositores(container) {
       <h3 class="exp-zone">${esc(g.z)} <span>${g.itens.length}</span></h3>
       <div class="exp-list">${g.itens.map(renderExpCard).join('')}</div>`).join('')
       : `<div class="no-results"><div class="no-results__icon">🏢</div><div class="no-results__text">Nenhum stand com estes filtros${state.expDia === 'dia' ? ' neste dia. Experimente "Ambos os dias".' : '.'}</div></div>`}
-    <p class="ind-hint">Lista curada a partir de ${EXPOSITORES.length} expositores escolhidos entre os mais de 500 da lista oficial. As notas e o estado das visitas ficam guardados neste telemóvel: exporte os contactos no fim de cada dia.</p>`;
+    <p class="ind-hint">Lista curada a partir de ${EXPOSITORES.length} expositores escolhidos entre os mais de 500 da lista oficial. Visitas, contactos e observações são partilhados com toda a equipa (☁️ no cabeçalho).</p>`;
 
   container.querySelectorAll('[data-exp-dia]').forEach(b => b.addEventListener('click', () => { state.expDia = b.dataset.expDia; renderSessions(); }));
   container.querySelectorAll('[data-exp-prio]').forEach(b => b.addEventListener('click', () => { state.expPrio = b.dataset.expPrio; renderSessions(); }));
@@ -1384,15 +1673,16 @@ function renderStandsMembro(m, dia) {
   const primeiro = m.nome.split(' ')[0];
   return `
     <section class="ind-section ind-section--stands ind-stands">
-      <h3 class="ind-section__title ind-section__title--show">🏢 Stands a visitar · ${meus.filter(e => visita(e).visitado).length}/${meus.length} visitados</h3>
+      <h3 class="ind-section__title ind-section__title--show">🏢 Stands a visitar · ${meus.filter(e => visitaMembro(m.id, e).visitado).length}/${meus.length} visitados</h3>
       ${meus.length ? `<ol class="stand-list">${meus.map(e => {
-        const v = visita(e);
+        const v = visitaMembro(m.id, e);
+        const outros = visita(e).visitantes.filter(id => id !== m.id).map(id => (getMembro(id) || {}).nome.split(' ')[0]);
         return `
           <li class="stand-row prio-${e.prioridade} ${v.visitado ? 'is-visited' : ''}" style="--track-color:${getCategoriaExp(e.categoria).cor}">
-            <button class="stand-row__check" data-visitado="${e.id}" aria-label="Marcar ${esc(e.nome)} como visitado">${v.visitado ? '✅' : '⬜'}</button>
+            <button class="stand-row__check" data-visitado="${e.id}" data-membro="${m.id}" aria-label="Marcar ${esc(e.nome)} como visitado">${v.visitado ? '✅' : '⬜'}</button>
             <span class="stand-row__body" data-exp-id="${e.id}">
               <span class="stand-row__title"><b>${esc(e.stand)}</b> · ${esc(e.nome)} <span class="exp-prio exp-prio--${e.prioridade}">${e.prioridade}</span>${v.followup ? ' 🔁' : ''}</span>
-              <span class="stand-row__meta">${esc(zonaStand(e.stand).nome)} · ${OBJETIVOS[e.objetivo] || ''}</span>
+              <span class="stand-row__meta">${esc(zonaStand(e.stand).nome)} · ${OBJETIVOS[e.objetivo] || ''}${outros.length ? ` · ✅ ${esc(outros.join(', '))}` : ''}</span>
             </span>
           </li>`;
       }).join('')}</ol>` : `<p class="ind-hint">Sem stands atribuídos a ${esc(primeiro)} neste dia.</p>`}
@@ -1403,7 +1693,7 @@ function ligarStandsMembro(container) {
   container.querySelectorAll('[data-visitado]').forEach(b => b.addEventListener('click', ev => {
     ev.stopPropagation();
     const e = getExpositor(b.dataset.visitado);
-    alterarVisita(e, { visitado: !visita(e).visitado });
+    alterarVisita(e, { visitado: !visitaMembro(b.dataset.membro, e).visitado }, b.dataset.membro);
     renderAll();
   }));
   container.querySelectorAll('.stand-row__body[data-exp-id]').forEach(el => el.addEventListener('click', () => openExpositorModal(el.dataset.expId)));
@@ -1463,10 +1753,12 @@ function openExpositorModal(id) {
   state.expAberto = id;
   const cat = getCategoriaExp(e.categoria);
   const v = visita(e);
+  const eu = getMembro(state.eu);
+  const vEu = eu ? visitaMembro(eu.id, e) : {};
   const quem = membrosExp(e);
   const perguntas = perguntasExp(e, state.pergLang);
-  const feitas = v.perguntadas || [];
-  const quemVisitou = getMembro(v.visitado_por);
+  const feitas = vEu.perguntadas || [];
+  const outros = v.registos.filter(x => (!eu || x.m.id !== eu.id) && ((x.v.contacto || '').trim() || (x.v.notas || '').trim()));
   const sessoes = (e._sessoes || []).map(sid => SESSOES.find(s => s.id === sid)).filter(Boolean);
   const dia = diaExp(e);
   const badge = document.getElementById('modal-exp-badge');
@@ -1488,12 +1780,14 @@ function openExpositorModal(id) {
       <a href="${SWAPCARD_EXPOSITORES}" target="_blank" rel="noopener" data-swapcard>💬 Swapcard</a>
     </div>
     <div class="exp-visita ${v.visitado ? 'is-on' : ''}">
-      <p class="modal__speakers-title">🙋 A nossa visita</p>
+      <p class="modal__speakers-title">🙋 A nossa visita${eu ? ` <small>· eu: ${esc(eu.nome.split(' ')[0])}</small>` : ''}</p>
       <div class="exp-toggles">
-        <button class="exp-toggle ${v.visitado ? 'on' : ''}" data-toggle="visitado">${v.visitado ? '✅ Visitado' : '⬜ Marcar como visitado'}</button>
-        <button class="exp-toggle ${v.followup ? 'on' : ''}" data-toggle="followup">${v.followup ? '🔁 Follow-up pedido' : '🔁 Pedir follow-up'}</button>
+        <button class="exp-toggle ${vEu.visitado ? 'on' : ''}" data-toggle="visitado">${vEu.visitado ? '✅ Visitei' : '⬜ Marcar como visitado'}</button>
+        <button class="exp-toggle ${vEu.followup ? 'on' : ''}" data-toggle="followup">${vEu.followup ? '🔁 Follow-up marcado' : '🔁 Marcar para follow-up'}</button>
       </div>
-      ${v.visitado && v.visitado_em ? `<p class="exp-visita__quando">Visitado ${fmtDataHora(v.visitado_em)}${quemVisitou ? ` por <b style="color:${quemVisitou.cor}">${esc(quemVisitou.nome)}</b>` : ''} · ${feitas.length}/${perguntas.length} perguntas feitas</p>` : ''}
+      ${!eu ? '<p class="exp-visita__quando">Escolha o seu nome em <b>Meu plano</b> para registar a visita em seu nome.</p>' : ''}
+      ${v.registos.filter(x => x.v.visitado || x.v.followup).map(x => `
+        <p class="exp-visita__quando">${x.v.visitado ? '✅' : '🔁'} <b style="color:${x.m.cor}">${esc(x.m.nome)}</b>${x.v.visitado && x.v.visitado_em ? ` · ${fmtDataHora(x.v.visitado_em)}` : ''}${x.v.followup ? ' · follow-up' : ''}${(x.v.perguntadas || []).length ? ` · ${x.v.perguntadas.length}/${perguntas.length} perguntas` : ''}</p>`).join('')}
     </div>
     ${sessoes.length ? `
       <p class="modal__speakers-title">🎤 Fala no programa</p>
@@ -1511,10 +1805,17 @@ function openExpositorModal(id) {
       <li class="${feitas.includes(i) ? 'is-done' : ''}" data-pergunta="${i}" title="Tocar para marcar como feita">${esc(p)}</li>`).join('')}</ol>
     <p class="exp-hint">Toque numa pergunta para a marcar como feita.</p>
     <label class="filter-label" for="exp-contacto">👤 Contacto no stand</label>
-    <input class="exp-input" id="exp-contacto" type="text" placeholder="Nome, cargo, email ou telefone" value="${esc(v.contacto)}" />
-    <label class="filter-label" for="exp-notas">📝 Observações da visita</label>
-    <textarea class="exp-input" id="exp-notas" rows="5" placeholder="O que vimos e ouvimos, respostas às perguntas, preços, próximos passos...">${esc(v.notas)}</textarea>
-    <p class="exp-hint">Grava automaticamente neste telemóvel. Use o 🎤 do teclado para ditar.</p>
+    <input class="exp-input" id="exp-contacto" type="text" placeholder="Nome, cargo, email ou telefone" value="${esc(vEu.contacto || '')}" ${eu ? '' : 'disabled'} />
+    <label class="filter-label" for="exp-notas">📝 Observações da visita${eu ? ` (${esc(eu.nome.split(' ')[0])})` : ''}</label>
+    <textarea class="exp-input" id="exp-notas" rows="5" placeholder="O que vimos e ouvimos, respostas às perguntas, preços, próximos passos..." ${eu ? '' : 'disabled'}>${esc(vEu.notas || '')}</textarea>
+    <p class="exp-hint">Grava automaticamente e partilha com a equipa (☁️). Use o 🎤 do teclado para ditar.</p>
+    ${outros.length ? `
+      <p class="modal__speakers-title">👥 Registos dos colegas</p>
+      ${outros.map(x => `
+        <div class="exp-team-note" style="--mc:${x.m.cor}">
+          <b style="color:${x.m.cor}">${esc(x.m.nome)}</b>${(x.v.contacto || '').trim() ? ` · 👤 ${esc(x.v.contacto.trim())}` : ''}
+          ${(x.v.notas || '').trim() ? `<div>${esc(x.v.notas.trim())}</div>` : ''}
+        </div>`).join('')}` : ''}
     <div class="exp-actions">
       <button class="btn-secondary" data-copiar-msg>📋 Copiar mensagem de contacto</button>
       <button class="btn-secondary" data-mover-dia>📅 Passar para ${dia === '2026-11-04' ? '5 Nov' : '4 Nov'}</button>
@@ -1538,7 +1839,7 @@ function openExpositorModal(id) {
   }));
   body.querySelectorAll('[data-toggle]').forEach(b => b.addEventListener('click', () => {
     const k = b.dataset.toggle;
-    alterarVisita(e, { [k]: !visita(e)[k] });
+    if (!alterarVisita(e, { [k]: !(eu ? visitaMembro(eu.id, e) : {})[k] })) return;
     openExpositorModal(id); renderAll();
   }));
   body.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => {
@@ -1548,8 +1849,8 @@ function openExpositorModal(id) {
   }));
   body.querySelectorAll('[data-pergunta]').forEach(li => li.addEventListener('click', () => {
     const i = Number(li.dataset.pergunta);
-    const atual = visita(e).perguntadas || [];
-    alterarVisita(e, { perguntadas: atual.includes(i) ? atual.filter(x => x !== i) : [...atual, i] });
+    const atual = (eu ? visitaMembro(eu.id, e) : {}).perguntadas || [];
+    if (!alterarVisita(e, { perguntadas: atual.includes(i) ? atual.filter(x => x !== i) : [...atual, i] })) return;
     li.classList.toggle('is-done');
   }));
   body.querySelector('[data-mover-dia]').addEventListener('click', () => {
@@ -1590,16 +1891,15 @@ function exportarContactosCSV() {
     const v = visita(e);
     linhas.push([e.nome, e.stand, diaExp(e), e.prioridade, getCategoriaExp(e.categoria).nome, (OBJETIVOS[e.objetivo] || '').replace(/^\S+\s/, ''),
       membrosExp(e).map(id => (getMembro(id) || {}).nome).filter(Boolean).join(', '),
-      v.visitado ? 'sim' : 'não', v.visitado_em ? fmtDataHora(v.visitado_em) : '', (getMembro(v.visitado_por) || {}).nome || '',
+      v.visitado ? 'sim' : 'não', v.visitado_em ? fmtDataHora(v.visitado_em) : '', v.visitantes.map(id => (getMembro(id) || {}).nome).filter(Boolean).join(', '),
       (v.perguntadas || []).length ? `${v.perguntadas.length}: ` + v.perguntadas.slice().sort((a,b) => a - b).map(i => perguntasExp(e, 'pt')[i]).filter(Boolean).join(' | ') : '',
       v.followup ? 'sim' : 'não', v.contacto, v.notas, e.site, v.em ? fmtDataHora(v.em) : '']);
   });
   const csv = '﻿' + linhas.map(l => l.map(col).join(';')).join('\r\n');
   const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
   const a = document.createElement('a');
-  const quem = getMembro(state.eu);
   a.href = url;
-  a.download = `TechShow_Madrid_2026_Contactos${quem ? '_' + quem.nome.split(' ')[0] : ''}.csv`;
+  a.download = `TechShow_Madrid_2026_Contactos_equipa.csv`;
   a.click();
   URL.revokeObjectURL(url);
   showToast('📇 Contactos exportados');
@@ -1629,6 +1929,7 @@ async function atualizarExpositores() {
 
 function renderAll() {
   renderEstadoPrograma();
+  renderEstadoSync();
   renderTeam();
   renderSessions();
   renderSummary();
@@ -1704,7 +2005,7 @@ function init() {
       if (state.view !== 'grid' && state.view !== 'timeline') setView('grid');
     }
   });
-  ['btn-export','btn-export-contactos','btn-view-schedule','btn-plan-credencial','btn-edit-team'].forEach(id =>
+  ['btn-export','btn-export-contactos','btn-view-schedule','btn-plan-credencial','btn-edit-team','btn-sync-chave'].forEach(id =>
     document.getElementById(id).addEventListener('click', () => { if (isMobile()) fecharMenu(); }));
 
   // Actualiza "Agora" a cada minuto
@@ -1777,24 +2078,26 @@ function init() {
   // Primeira utilização: membros com credencial e sem inscrições recebem o plano automático
   let gerado = false;
   state.equipa.forEach(m => {
-    if (m.trilhas && m.trilhas.length && getSessoesMembro(m.id).length === 0) gerado = planearPorCredencial(m) > 0 || gerado;
+    if (m.trilhas && m.trilhas.length && getSessoesMembro(m.id).length === 0) gerado = planearPorCredencial(m, true) > 0 || gerado;
   });
   // Versão 2 do plano: roteiro de IA no plano do Pedro e sem momentos logísticos
   if (localStorage.getItem('tsm_plano_v') !== '2') {
     const m1 = getMembro('m1');
-    if (m1 && m1.trilhas) gerado = planearPorCredencial(m1) > 0 || gerado;
+    if (m1 && m1.trilhas) gerado = planearPorCredencial(m1, true) > 0 || gerado;
     localStorage.setItem('tsm_plano_v', '2');
   }
   // Versão 3: credencial do Celestino (m5) — gera o plano pelas salas do E-SHOW
   if (localStorage.getItem('tsm_plano_v') !== '3') {
     const m5 = getMembro('m5');
-    if (m5 && m5.trilhas) gerado = planearPorCredencial(m5) > 0 || gerado;
+    if (m5 && m5.trilhas) gerado = planearPorCredencial(m5, true) > 0 || gerado;
     localStorage.setItem('tsm_plano_v', '3');
   }
   if (gerado) saveState();
 
   // Programa: última versão descarregada; depois verifica a fonte (ao abrir e a cada 10 min)
-  document.querySelectorAll('[data-refresh]').forEach(b => b.addEventListener('click', () => atualizarPrograma(true)));
+  document.querySelectorAll('[data-refresh]').forEach(b => b.addEventListener('click', () => { atualizarPrograma(true); sincronizar(false); }));
+  // Registos partilhados da equipa
+  ligarSync();
   document.getElementById('modal-changes-close').addEventListener('click', () => fecharModal('modal-changes'));
   setTimeout(() => atualizarPrograma(false), 1500);
   setInterval(() => { if (navigator.onLine !== false) atualizarPrograma(false); }, 10 * 60000);

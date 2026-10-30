@@ -31,6 +31,7 @@
         </div>
       </div>
       <button class="header__refresh" data-refresh title="Actualizar programa a partir da fonte oficial" aria-label="Actualizar programa">🔄</button>
+      <button class="sync-pill" id="sync-pill" title="Registos partilhados da equipa" aria-label="Sincronizar registos da equipa">☁️</button>
       <div class="header__meta">
         <div class="header__meta-item">
           <span class="header__meta-icon">📅</span>
@@ -85,9 +86,17 @@
       </div>
 
       <div class="sidebar__section">
-        <h3 class="sidebar__section-title">Programa</h3>
+        <h3 class="sidebar__section-title">Programa e registos</h3>
         <div class="programa-estado" id="programa-estado"></div>
-        <button class="btn-secondary w-full mt-2" data-refresh>🔄 Actualizar programa</button>
+        <div class="programa-estado sync-estado" id="sync-estado"></div>
+        <div class="sync-chave" id="sync-chave-box" hidden>
+          <input class="exp-input" id="sync-chave" type="password" placeholder="Chave de equipa (colar aqui)" autocomplete="off" autocapitalize="off" spellcheck="false" />
+          <div class="sync-chave__btns">
+            <button class="btn-secondary" id="btn-sync-colar">📋 Colar</button>
+            <button class="btn-primary" id="btn-sync-chave">Guardar</button>
+          </div>
+        </div>
+        <button class="btn-secondary w-full mt-2" data-refresh>🔄 Actualizar programa e registos</button>
       </div>
 
       <div class="sidebar__section">
@@ -241,6 +250,7 @@
   <!-- Toast notification -->
   <div class="toast" id="toast"></div>
 
+  <script src="data/sync.js"></script>
   <script src="data/programa.js"></script>
   <script src="data/expositores.js"></script>
   <script src="app.js"></script>
