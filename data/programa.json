@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 41,
-"actualizado_em": "2026-10-29T21:17:00Z",
+"versao": 42,
+"actualizado_em": "2026-10-30T14:26:34Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -129,13 +129,7 @@
 "role": "orador"
 },
 {
-"nome": "Reyes Justribó",
-"cargo": "Presidenta IAB Europe",
-"empresa": "IAB Spain",
-"role": "orador"
-},
-{
-"nome": "Belén Vila",
+"nome": "Belén Acebes",
 "cargo": "Chief Operating Officer",
 "empresa": "IAB Spain",
 "role": "orador"
@@ -158,6 +152,12 @@
 "antes": "Roberto Santos, Reyes Justribó",
 "depois": "Roberto Santos, Reyes Justribó, Belén Vila",
 "em": "2026-10-26T10:23:37Z"
+},
+{
+"campo": "oradores",
+"antes": "Roberto Santos, Reyes Justribó, Belén Vila",
+"depois": "Roberto Santos, Belén Acebes",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -1366,7 +1366,7 @@
 "track_id": "ai-commerce",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
-"titulo": "El \"augmented marketplace\" : Carrefour y el futuro del eCommerce",
+"titulo": "El \"augmented marketplace\": Carrefour, Infiniton, y el futuro del eCommerce",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [
@@ -1400,6 +1400,12 @@
 "antes": "Verónica Tirelli, Justyna Torres",
 "depois": "Verónica Tirelli, Justyna Torres, Jose Manuel Fernández",
 "em": "2026-10-29T16:18:34Z"
+},
+{
+"campo": "titulo",
+"antes": "El \"augmented marketplace\" : Carrefour y el futuro del eCommerce",
+"depois": "El \"augmented marketplace\": Carrefour, Infiniton, y el futuro del eCommerce",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -6425,9 +6431,9 @@
 "track_id": "dc-design",
 "hora_inicio": "17:00",
 "hora_fim": "17:45",
-"titulo": "From Model to AI Factory: How Collaboration Turns Innovation into Real-World Infrastructure - Schneider Electric",
+"titulo": "Del modelo a la fábrica de IA: cómo la colaboración convierte la innovación en infraestructura real - Schneider Electric",
 "tipo": "Palestra",
-"descricao": ".",
+"descricao": "La inteligencia artificial está transformando los centros de datos en Fábrica de IA: infraestructuras capaces de producir inteligencia a gran escala. Pero esta evolución no se resuelve únicamente con…",
 "oradores": [
 {
 "nome": "Alessandro Giusti",
@@ -6454,6 +6460,12 @@
 "antes": "—",
 "depois": "Alessandro Giusti",
 "em": "2026-10-26T10:23:37Z"
+},
+{
+"campo": "titulo",
+"antes": "From Model to AI Factory: How Collaboration Turns Innovation into Real-World Infrastructure - Schneider Electric",
+"depois": "Del modelo a la fábrica de IA: cómo la colaboración convierte la innovación en infraestructura real - Schneider Electric",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -7142,6 +7154,12 @@
 "descricao": "",
 "oradores": [
 {
+"nome": "Carmen Rodríguez García",
+"cargo": "CEO",
+"empresa": "Montessori para todos",
+"role": "orador"
+},
+{
 "nome": "Diana Iglesias",
 "cargo": "responsable de marketing",
 "empresa": "Bikkom",
@@ -7169,6 +7187,12 @@
 "antes": "Diana Iglesias, César Sastre",
 "depois": "Diana Iglesias, César Sastre, Atenea García de la Rosa Rus",
 "em": "2026-10-21T17:50:08Z"
+},
+{
+"campo": "oradores",
+"antes": "Diana Iglesias, César Sastre, Atenea García de la Rosa Rus",
+"depois": "Carmen Rodríguez García, Diana Iglesias, César Sastre, Atenea García de la Rosa Rus",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -7949,30 +7973,24 @@
 "track_id": "ai-commerce",
 "hora_inicio": "10:30",
 "hora_fim": "10:50",
-"titulo": "La IA que trabaja: un caso real en Customer Service",
+"titulo": "Peak Season sin descuentos: cómo ECOALF conecta Shopify, Growth y CRM para crecer",
 "tipo": "Palestra",
-"descricao": "¿Qué cambia realmente cuando un agente de IA empieza a trabajar junto a tu equipo de Customer Service? A través de un caso real, descubriremos cómo Konvo ha impactado en la operación y en la experienc…",
+"descricao": "¿Cómo competir durante Black Friday y Navidad cuando los descuentos no forman parte de tu estrategia? Un caso práctico sobre cómo coordinar marketing, tecnología y negocio para impulsar las ventas dur…",
 "oradores": [
 {
-"nome": "Guillem Oliva de Fuenmayor",
-"cargo": "CEO & Co-Founder",
-"empresa": "Konvo AI",
+"nome": "Aida Más",
+"cargo": "ECOALF",
+"empresa": "Head of eCommerce",
 "role": "orador"
 },
 {
-"nome": "Alessandro Ridolfi",
-"cargo": "CEO & Co-Founder",
-"empresa": "Esenzia",
-"role": "orador"
-},
-{
-"nome": "Alejandro Jurado",
-"cargo": "Head of Data & Logistics",
-"empresa": "Esenzia",
+"nome": "Abel Otero",
+"cargo": "Head of Growth",
+"empresa": "ECOALF",
 "role": "orador"
 }
 ],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-konvo-ai",
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-ecolaf",
 "id": "s205",
 "tags": [
 "IA"
@@ -7995,6 +8013,18 @@
 "antes": "2026-11-04 15:30–15:50",
 "depois": "2026-11-05 10:30–10:50",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "titulo",
+"antes": "La IA que trabaja: un caso real en Customer Service",
+"depois": "Peak Season sin descuentos: cómo ECOALF conecta Shopify, Growth y CRM para crecer",
+"em": "2026-10-30T14:26:34Z"
+},
+{
+"campo": "oradores",
+"antes": "Guillem Oliva de Fuenmayor, Alessandro Ridolfi, Alejandro Jurado",
+"depois": "Aida Más, Abel Otero",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -9207,9 +9237,9 @@
 "track_id": "ai-commerce",
 "hora_inicio": "11:30",
 "hora_fim": "11:50",
-"titulo": "El match perfecto para escalar: cómo PlátanoMelón reinventó su logística",
+"titulo": "PlatanoMelón x Bigblue: el cambio logístico para escalar",
 "tipo": "Palestra",
-"descricao": "",
+"descricao": "PlatanoMelón compartirá cómo ha construido una de las marcas líderes en el sector. La conversación recorrerá los retos y oportunidades de crear una nueva categoría de consumo, crecer junto a una comun…",
 "oradores": [
 {
 "nome": "Matthieu André",
@@ -9233,6 +9263,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "titulo",
+"antes": "El match perfecto para escalar: cómo PlátanoMelón reinventó su logística",
+"depois": "PlatanoMelón x Bigblue: el cambio logístico para escalar",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -9837,18 +9873,30 @@
 "track_id": "ai-commerce",
 "hora_inicio": "12:00",
 "hora_fim": "12:20",
-"titulo": "El despertar de la inteligencia corporativa. Cómo activar el conocimiento interno de tu compañía.",
+"titulo": "La IA que trabaja: un caso real en Customer Service",
 "tipo": "Palestra",
-"descricao": "Dentro de cada empresa hay un conocimiento que crece con las personas, las decisiones y la experiencia. Conectarlo y darle contexto permite a la compañía entender mejor su negocio, evaluar escenarios…",
+"descricao": "¿Qué cambia realmente cuando un agente de IA empieza a trabajar junto a tu equipo de Customer Service? A través de un caso real, descubriremos cómo Konvo ha impactado en la operación y en la experienc…",
 "oradores": [
 {
-"nome": "Guillermo García",
-"cargo": "CEO",
-"empresa": "ONESTIC",
+"nome": "Guillem Oliva de Fuenmayor",
+"cargo": "CEO & Co-Founder",
+"empresa": "Konvo AI",
+"role": "orador"
+},
+{
+"nome": "Alessandro Ridolfi",
+"cargo": "CEO & Co-Founder",
+"empresa": "Esenzia",
+"role": "orador"
+},
+{
+"nome": "Alejandro Jurado",
+"cargo": "Head of Data & Logistics",
+"empresa": "Esenzia",
 "role": "orador"
 }
 ],
-"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-onestic",
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-konvo-ai",
 "id": "s458",
 "tags": [],
 "alteracoes": [
@@ -9869,6 +9917,18 @@
 "antes": "—",
 "depois": "Guillermo García",
 "em": "2026-10-28T19:16:05Z"
+},
+{
+"campo": "titulo",
+"antes": "El despertar de la inteligencia corporativa. Cómo activar el conocimiento interno de tu compañía.",
+"depois": "La IA que trabaja: un caso real en Customer Service",
+"em": "2026-10-30T14:26:34Z"
+},
+{
+"campo": "oradores",
+"antes": "Guillermo García",
+"depois": "Guillem Oliva de Fuenmayor, Alessandro Ridolfi, Alejandro Jurado",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -9886,6 +9946,12 @@
 "cargo": "Directora",
 "empresa": "Data Center Market",
 "role": "moderador"
+},
+{
+"nome": "D. Jaime Fernández-Paíno Sopeña",
+"cargo": "Director General de alcaldía",
+"empresa": "Ayuntamiento de Gijón",
+"role": "orador"
 },
 {
 "nome": "Patricia Pérez",
@@ -9925,6 +9991,12 @@
 "antes": "Lucía Bonilla",
 "depois": "Lucía Bonilla, Patricia Pérez, Marco Prieto, Pedro Alexandre",
 "em": "2026-10-15T11:51:49Z"
+},
+{
+"campo": "oradores",
+"antes": "Lucía Bonilla, Patricia Pérez, Marco Prieto, Pedro Alexandre",
+"depois": "Lucía Bonilla, D. Jaime Fernández-Paíno Sopeña, Patricia Pérez, Marco Prieto, Pedro Alexandre",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -9939,7 +10011,7 @@
 "oradores": [
 {
 "nome": "Salvatore Cospito",
-"cargo": "Presidente Comisión Retail Media",
+"cargo": "Vocal",
 "empresa": "IAB",
 "role": "orador"
 },
@@ -10117,6 +10189,12 @@
 "role": "moderador"
 },
 {
+"nome": "Arancha Arias",
+"cargo": "Directora de RRHH",
+"empresa": "Grupo azotea",
+"role": "orador"
+},
+{
 "nome": "Laura Sol",
 "cargo": "Directora de Personas",
 "empresa": "VisionLab",
@@ -10132,7 +10210,14 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/mesa-debate-tbc-1",
 "id": "s309",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "María Ángeles Aguilar, Laura Sol, Coque Parera",
+"depois": "María Ángeles Aguilar, Arancha Arias, Laura Sol, Coque Parera",
+"em": "2026-10-30T14:26:34Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -11117,7 +11202,7 @@
 },
 {
 "nome": "Salvatore Cospito",
-"cargo": "Presidente Comisión Retail Media",
+"cargo": "Vocal",
 "empresa": "IAB",
 "role": "orador"
 },
@@ -11618,24 +11703,58 @@
 "track_id": "tfm",
 "hora_inicio": "13:25",
 "hora_fim": "13:45",
-"titulo": "Tecnología y Exclusividad: Lo que el lujo puede enseñar al marketing del futuro",
+"titulo": "TBC",
 "tipo": "Palestra",
-"descricao": "¿Puede la tecnológica hacer que una marca sea más deseable y no solo más rápida a la hora de convertir? Descubre qué puede aprender el marketing y el retail generalista del sector del lujo: el arte de…",
-"oradores": [
-{
-"nome": "Fátima Doñoro",
-"cargo": "Marleting &Communication Director",
-"empresa": "TAG Heuer (LVMH)",
-"role": "orador"
-}
-],
+"descricao": "",
+"oradores": [],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-tag-heuer-lvmh",
 "id": "s302",
 "tags": [
 "marketing",
 "e-commerce"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "titulo",
+"antes": "Tecnología y Exclusividad: Lo que el lujo puede enseñar al marketing del futuro",
+"depois": "TBC",
+"em": "2026-10-30T14:26:34Z"
+},
+{
+"campo": "oradores",
+"antes": "Fátima Doñoro",
+"depois": "—",
+"em": "2026-10-30T14:26:34Z"
+}
+]
+},
+{
+"dia": "2026-11-05",
+"track_id": "ai-commerce",
+"hora_inicio": "13:30",
+"hora_fim": "13:50",
+"titulo": "El despertar de la inteligencia corporativa. Cómo activar el conocimiento interno de tu compañía.",
+"tipo": "Palestra",
+"descricao": "Dentro de cada empresa hay un conocimiento que crece con las personas, las decisiones y la experiencia. Conectarlo y darle contexto permite a la compañía entender mejor su negocio, evaluar escenarios…",
+"oradores": [
+{
+"nome": "Guillermo García",
+"cargo": "CEO",
+"empresa": "ONESTIC",
+"role": "orador"
+}
+],
+"url": "https://www.techshowmadrid.es/tech-show-madrid-2026/ponencia-onestic",
+"id": "s461",
+"tags": [],
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "—",
+"depois": "nova",
+"em": "2026-10-30T14:26:34Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -12035,9 +12154,9 @@
 "track_id": "dc-energy",
 "hora_inicio": "15:00",
 "hora_fim": "15:20",
-"titulo": "Mesa de debate de FORO NUCLEAR",
-"tipo": "Mesa Debate",
-"descricao": ".",
+"titulo": "El papel de la energía nuclear como elemento de estabilidad para afrontar los retos de la descarbonización y la autonomía estratégica",
+"tipo": "Palestra",
+"descricao": "El crecimiento de los centros de datos y la electrificación exigen un suministro eléctrico continuo, estable y libre de emisiones. La energía nuclear aporta firmeza al sistema y complementa a las reno…",
 "oradores": [
 {
 "nome": "Marta Ugalde",
@@ -12057,6 +12176,12 @@
 "antes": "El papel de la energía nuclear como elemento de estabilidad para afrontar los retos de la descarbonización y la autonomía estratégica",
 "depois": "Mesa de debate de FORO NUCLEAR",
 "em": "2026-10-29T16:18:34Z"
+},
+{
+"campo": "titulo",
+"antes": "Mesa de debate de FORO NUCLEAR",
+"depois": "El papel de la energía nuclear como elemento de estabilidad para afrontar los retos de la descarbonización y la autonomía estratégica",
+"em": "2026-10-30T14:26:34Z"
 }
 ]
 },
@@ -12776,8 +12901,15 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-10-30T14:26:34Z"
 }
-]
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
