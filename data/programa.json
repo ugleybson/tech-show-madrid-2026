@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 44,
-"actualizado_em": "2026-11-01T20:05:10Z",
+"versao": 45,
+"actualizado_em": "2026-11-01T23:43:56Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -2914,6 +2914,12 @@
 "role": "orador"
 },
 {
+"nome": "Carlos Vanaclocha",
+"cargo": "CEO & CoFounder",
+"empresa": "Rocketplace",
+"role": "orador"
+},
+{
 "nome": "José Luis Campos",
 "cargo": "E-commerce & Digital Business Lead",
 "empresa": "INABA Foods (Churu)",
@@ -2947,6 +2953,12 @@
 "antes": "José Luis Campos, Mario Fontán",
 "depois": "Cheryl Medina, José Luis Campos, Mario Fontán",
 "em": "2026-11-01T20:05:10Z"
+},
+{
+"campo": "oradores",
+"antes": "Cheryl Medina, José Luis Campos, Mario Fontán",
+"depois": "Cheryl Medina, Carlos Vanaclocha, José Luis Campos, Mario Fontán",
+"em": "2026-11-01T23:43:56Z"
 }
 ]
 },
@@ -4929,7 +4941,14 @@
 "titulo": "De viral a rentable: el método para escalar tu marca en TikTok Shop",
 "tipo": "Palestra",
 "descricao": "Un vídeo viral no es un negocio. El sistema que usan en Rocketplace para convertir TikTok Shop en un canal de ventas estable: creadores que venden, contenido que convierte, Live Shopping y Ads que esc…",
-"oradores": [],
+"oradores": [
+{
+"nome": "Carlos Vanaclocha",
+"cargo": "CEO & CoFounder",
+"empresa": "Rocketplace",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/de-viral-a-rentable-el-m%C3%A9todo-para-escalar-tu-marca-en-tiktok-shop",
 "id": "s412",
 "tags": [
@@ -4942,6 +4961,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-21T12:39:51Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Carlos Vanaclocha",
+"em": "2026-11-01T23:43:56Z"
 }
 ]
 },
