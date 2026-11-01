@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 43,
-"actualizado_em": "2026-10-30T19:35:24Z",
+"versao": 44,
+"actualizado_em": "2026-11-01T20:05:10Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -503,7 +503,7 @@
 },
 {
 "nome": "Irene Manterola",
-"cargo": "marketing director",
+"cargo": "Online Business Director",
 "empresa": "SPC",
 "role": "orador"
 }
@@ -2492,8 +2492,8 @@
 "descricao": "Amazon sigue siendo el primer sitio donde se busca un producto, pero ya no el único: la compra se cierra en Amazon y la decisión se toma cada vez más fuera. IA y GEO (que ChatGPT, Rufus o Google te re…",
 "oradores": [
 {
-"nome": "Miriam Larrosa",
-"cargo": "CEO",
+"nome": "Gemma García Sellés",
+"cargo": "COO",
 "empresa": "ROICOS",
 "role": "orador"
 }
@@ -2516,6 +2516,12 @@
 "antes": "—",
 "depois": "Miriam Larrosa",
 "em": "2026-10-21T17:50:08Z"
+},
+{
+"campo": "oradores",
+"antes": "Miriam Larrosa",
+"depois": "Gemma García Sellés",
+"em": "2026-11-01T20:05:10Z"
 }
 ]
 },
@@ -2902,6 +2908,12 @@
 "descricao": "¿Cómo evitas que tu propio cliente de Amazon se vaya a comprarte más barato a TikTok Shop? TikTok Shop España ya supera los 21.000 vendedores locales y desde el 19 de octubre permite vender en el rest…",
 "oradores": [
 {
+"nome": "Cheryl Medina",
+"cargo": "TikTok Shop & GMV MAX Lead",
+"empresa": "Rocketplace",
+"role": "orador"
+},
+{
 "nome": "José Luis Campos",
 "cargo": "E-commerce & Digital Business Lead",
 "empresa": "INABA Foods (Churu)",
@@ -2929,6 +2941,12 @@
 "antes": "Mario Fontán, José Luis Campos",
 "depois": "José Luis Campos, Mario Fontán",
 "em": "2026-10-21T17:50:08Z"
+},
+{
+"campo": "oradores",
+"antes": "José Luis Campos, Mario Fontán",
+"depois": "Cheryl Medina, José Luis Campos, Mario Fontán",
+"em": "2026-11-01T20:05:10Z"
 }
 ]
 },
@@ -8352,9 +8370,15 @@
 "descricao": "¿Cuál de los marketplaces españoles compensa de verdad y cuál te come recursos sin devolver nada? Se habla de Amazon como si fuera el único canal. Los marketplaces del retail español están comprando t…",
 "oradores": [
 {
-"nome": "Ana Mesa",
-"cargo": "International Business Development",
+"nome": "Javier Luis",
+"cargo": "Amazon Account Manager",
 "empresa": "Winkle",
+"role": "orador"
+},
+{
+"nome": "Miguel Ángel Obando",
+"cargo": "Ecommerce B2B & Amazon Vendor Manager",
+"empresa": "Cecotec",
 "role": "orador"
 },
 {
@@ -8387,6 +8411,12 @@
 "antes": "Ana Mesa",
 "depois": "Ana Mesa, Javier Martínez Piñán",
 "em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "Ana Mesa, Javier Martínez Piñán",
+"depois": "Javier Luis, Miguel Ángel Obando, Javier Martínez Piñán",
+"em": "2026-11-01T20:05:10Z"
 }
 ]
 },
@@ -11327,7 +11357,7 @@
 "track_id": "dc-energy",
 "hora_inicio": "13:00",
 "hora_fim": "14:00",
-"titulo": "Data centers en España: claves para la próxima etapa",
+"titulo": "Data centers en España: claves para la próxima etapa - SPAIN DC",
 "tipo": "Palestra",
 "descricao": ".",
 "oradores": [],
@@ -11355,6 +11385,12 @@
 "antes": "Pedro Azagra",
 "depois": "—",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "titulo",
+"antes": "Data centers en España: claves para la próxima etapa",
+"depois": "Data centers en España: claves para la próxima etapa - SPAIN DC",
+"em": "2026-11-01T20:05:10Z"
 }
 ]
 },
@@ -12851,6 +12887,12 @@
 "descricao": "",
 "oradores": [
 {
+"nome": "Marco Antonio Velásquez",
+"cargo": "eCommerce Manager",
+"empresa": "Wenzhou Supermercados",
+"role": "orador"
+},
+{
 "nome": "Ion Vidaurreta",
 "cargo": "Co-CEO",
 "empresa": "DECOWOOD",
@@ -12886,6 +12928,12 @@
 "antes": "Víctor Quesada, Ion Vidaurreta, Julián Vesga",
 "depois": "Ion Vidaurreta, Julián Vesga",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "oradores",
+"antes": "Ion Vidaurreta, Julián Vesga",
+"depois": "Marco Antonio Velásquez, Ion Vidaurreta, Julián Vesga",
+"em": "2026-11-01T20:05:10Z"
 }
 ]
 },
