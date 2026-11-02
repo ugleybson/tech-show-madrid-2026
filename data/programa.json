@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 46,
-"actualizado_em": "2026-11-02T12:02:29Z",
+"versao": 47,
+"actualizado_em": "2026-11-02T21:50:50Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -1951,6 +1951,12 @@
 "descricao": "En 2026, conectar negocio y marketing exige una visión integrada de estrategia, datos e inteligencia artificial. Nacho Rodés (Rocket Digital), Gonzalo Travesedo (Google) y Jaume Portell (Pagemind) com…",
 "oradores": [
 {
+"nome": "Júlia Barnadas",
+"cargo": "Digital & Web Designer",
+"empresa": "Tradeinn",
+"role": "orador"
+},
+{
 "nome": "Nacho Rodés",
 "cargo": "Managing Director & Co-founder",
 "empresa": "Rocket Digital",
@@ -1988,6 +1994,12 @@
 "antes": "Nacho Rodés, Pablo Callejón",
 "depois": "Nacho Rodés, Gonzalo Travesedo Juliá, Jaume Portell",
 "em": "2026-10-26T16:51:36Z"
+},
+{
+"campo": "oradores",
+"antes": "Nacho Rodés, Gonzalo Travesedo Juliá, Jaume Portell",
+"depois": "Júlia Barnadas, Nacho Rodés, Gonzalo Travesedo Juliá, Jaume Portell",
+"em": "2026-11-02T21:50:50Z"
 }
 ]
 },
@@ -5315,7 +5327,7 @@
 },
 {
 "nome": "Júlia Barnadas",
-"cargo": "Frontend Developer & App QA",
+"cargo": "Digital & Web Designer",
 "empresa": "Tradeinn",
 "role": "orador"
 },
@@ -7836,7 +7848,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-166",
 "id": "s256",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-11-02T21:50:50Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-04",
@@ -8241,12 +8261,12 @@
 "hora_fim": "10:50",
 "titulo": "La asimetría de velocidad: defender a velocidad de IA",
 "tipo": "Palestra",
-"descricao": "· El breakout time se desploma y el SOC no da abasto. Los agentes de IA ofensiva colapsan la ventana de reacción, la soberanía digital se convierte en estrategia y la criptografía post-cuántica c…",
+"descricao": "El breakout time se desploma y el SOC no da abasto. Los agentes de IA ofensiva colapsan la ventana de reacción, la soberanía digital se convierte en estrategia y la criptografía post-cuántica cada vez…",
 "oradores": [
 {
 "nome": "Jesús R. Abascal Santamaría",
-"cargo": "CISO",
-"empresa": "Eni Plenitude Iberia",
+"cargo": "Profesor de Ciberseguridad",
+"empresa": "UNIVERSIDAD DE CANTABRIA",
 "role": "orador"
 }
 ],
@@ -12755,7 +12775,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-167",
 "id": "s394",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-11-02T21:50:50Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
@@ -13236,7 +13264,15 @@
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-141",
 "id": "s395",
 "tags": [],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "estado",
+"antes": "activa",
+"depois": "cancelada",
+"em": "2026-11-02T21:50:50Z"
+}
+],
+"estado": "cancelada"
 },
 {
 "dia": "2026-11-05",
