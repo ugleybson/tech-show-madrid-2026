@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 45,
-"actualizado_em": "2026-11-01T23:43:56Z",
+"versao": 46,
+"actualizado_em": "2026-11-02T12:02:29Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -2884,6 +2884,12 @@
 "descricao": "The rapid growth of AI is transforming data centers, driving higher computing densities and creating unprecedented thermal management challenges. This session will explore the key cooling demands of n…",
 "oradores": [
 {
+"nome": "Marwan AlObaidi",
+"cargo": "Regional Sales Director Data Centers & Applied Systems",
+"empresa": "Midea Building Tech",
+"role": "orador"
+},
+{
 "nome": "Ricardo Ambrona González",
 "cargo": "KAM Data Center Midea",
 "empresa": "Midea HVAC",
@@ -2896,7 +2902,14 @@
 "IA",
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Ricardo Ambrona González",
+"depois": "Marwan AlObaidi, Ricardo Ambrona González",
+"em": "2026-11-02T12:02:29Z"
+}
+]
 },
 {
 "dia": "2026-11-04",
@@ -3051,7 +3064,7 @@
 "hora_fim": "13:15",
 "titulo": "Como escala la IA en un banco global",
 "tipo": "Palestra",
-"descricao": "Conversación entre Maisa y Santander sobre los retos de llevar IA del piloto a producción en escala global.",
+"descricao": "Conversación entre Maisa y Santander sobre cómo llevar la IA del piloto a producción a escala global",
 "oradores": [
 {
 "nome": "David Villalón",
@@ -3208,7 +3221,7 @@
 },
 {
 "nome": "Carlos Fernandes",
-"cargo": "Inward Investment & Aftercare",
+"cargo": "Director Inward Investment and Aftercare",
 "empresa": "AICEP Portugal Trade & Invest",
 "role": "orador"
 },
@@ -9963,21 +9976,15 @@
 "descricao": "¿Qué cambia realmente cuando un agente de IA empieza a trabajar junto a tu equipo de Customer Service? A través de un caso real, descubriremos cómo Konvo ha impactado en la operación y en la experienc…",
 "oradores": [
 {
+"nome": "Lucas Retail",
+"cargo": "Customer Experience Manager",
+"empresa": "WOW concept",
+"role": "orador"
+},
+{
 "nome": "Guillem Oliva de Fuenmayor",
 "cargo": "CEO & Co-Founder",
 "empresa": "Konvo AI",
-"role": "orador"
-},
-{
-"nome": "Alessandro Ridolfi",
-"cargo": "CEO & Co-Founder",
-"empresa": "Esenzia",
-"role": "orador"
-},
-{
-"nome": "Alejandro Jurado",
-"cargo": "Head of Data & Logistics",
-"empresa": "Esenzia",
 "role": "orador"
 }
 ],
@@ -10014,6 +10021,12 @@
 "antes": "Guillermo García",
 "depois": "Guillem Oliva de Fuenmayor, Alessandro Ridolfi, Alejandro Jurado",
 "em": "2026-10-30T14:26:34Z"
+},
+{
+"campo": "oradores",
+"antes": "Guillem Oliva de Fuenmayor, Alessandro Ridolfi, Alejandro Jurado",
+"depois": "Lucas Retail, Guillem Oliva de Fuenmayor",
+"em": "2026-11-02T12:02:29Z"
 }
 ]
 },
@@ -10223,6 +10236,12 @@
 "descricao": "The rapid growth of AI is transforming data centers, driving higher computing densities and creating unprecedented thermal management challenges. This session will explore the key cooling demands of n…",
 "oradores": [
 {
+"nome": "Marwan AlObaidi",
+"cargo": "Regional Sales Director Data Centers & Applied Systems",
+"empresa": "Midea Building Tech",
+"role": "orador"
+},
+{
 "nome": "Ricardo Ambrona González",
 "cargo": "KAM Data Center Midea",
 "empresa": "Midea HVAC",
@@ -10235,7 +10254,14 @@
 "IA",
 "dados"
 ],
-"alteracoes": []
+"alteracoes": [
+{
+"campo": "oradores",
+"antes": "Ricardo Ambrona González",
+"depois": "Marwan AlObaidi, Ricardo Ambrona González",
+"em": "2026-11-02T12:02:29Z"
+}
+]
 },
 {
 "dia": "2026-11-05",
@@ -11382,10 +11408,23 @@
 "track_id": "dc-energy",
 "hora_inicio": "13:00",
 "hora_fim": "14:00",
-"titulo": "Data centers en España: claves para la próxima etapa - SPAIN DC",
+"titulo": "SpainDC analiza el futuro del sector ante el nuevo Real Decreto",
 "tipo": "Palestra",
-"descricao": ".",
-"oradores": [],
+"descricao": "El proyecto de Real Decreto de centros de datos plantea un nuevo escenario regulatorio para una infraestructura cada vez más estratégica. Se analizarán sus principales implicaciones para el sector, lo…",
+"oradores": [
+{
+"nome": "Begoña Villacís",
+"cargo": "Directora Ejecutiva",
+"empresa": "SpainDC",
+"role": "orador"
+},
+{
+"nome": "Emilio Díaz",
+"cargo": "Presidente",
+"empresa": "SpainDC",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-138",
 "id": "s392",
 "tags": [
@@ -11416,6 +11455,18 @@
 "antes": "Data centers en España: claves para la próxima etapa",
 "depois": "Data centers en España: claves para la próxima etapa - SPAIN DC",
 "em": "2026-11-01T20:05:10Z"
+},
+{
+"campo": "titulo",
+"antes": "Data centers en España: claves para la próxima etapa - SPAIN DC",
+"depois": "SpainDC analiza el futuro del sector ante el nuevo Real Decreto",
+"em": "2026-11-02T12:02:29Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Begoña Villacís, Emilio Díaz",
+"em": "2026-11-02T12:02:29Z"
 }
 ]
 },
@@ -12609,10 +12660,17 @@
 "track_id": "dc-design",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
-"titulo": "Ponencia EMERSON",
+"titulo": "Faster, Bigger, Smarter. Delivering the Next Generation of Data Centers",
 "tipo": "Palestra",
-"descricao": "",
-"oradores": [],
+"descricao": "As data centers grow in scale and complexity, reliable power, effective cooling and operational visibility become increasingly critical. This session explores how automation, instrumentation and contr…",
+"oradores": [
+{
+"nome": "Sadiq Husain",
+"cargo": "Senior Business Development Manager",
+"empresa": "Emerson",
+"role": "orador"
+}
+],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/tbc-165",
 "id": "s376",
 "tags": [],
@@ -12622,6 +12680,18 @@
 "antes": "TBC",
 "depois": "Ponencia EMERSON",
 "em": "2026-10-14T09:55:40Z"
+},
+{
+"campo": "titulo",
+"antes": "Ponencia EMERSON",
+"depois": "Faster, Bigger, Smarter. Delivering the Next Generation of Data Centers",
+"em": "2026-11-02T12:02:29Z"
+},
+{
+"campo": "oradores",
+"antes": "—",
+"depois": "Sadiq Husain",
+"em": "2026-11-02T12:02:29Z"
 }
 ]
 },
