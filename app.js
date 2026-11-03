@@ -19,12 +19,16 @@ const CREDENCIAIS = {
   m2: { credencial:'AcreditacionMTS26_MADRID_J13849432_Fábio+Miguel+Mendes+Ferreira.pdf',
         cargo:'Digital Marketing Specialist', pavilhao:'Technology for Marketing', trilhas:['tfm'] },
   m3: { credencial:'AcreditacionMTS26_MADRID_P13827748_Gleibson+Silva.pdf',
-        cargo:'AI Project Manager', pavilhao:'Big Data & AI World', trilhas:['ai-data','tech-keynote'] },
+        cargo:'AI Project Manager', pavilhao:'Big Data & AI World', trilhas:['ai-data','tech-keynote'],
+        // Reconciliação e contabilidade analítica (AI First, Pilar 1): Sage, Astrafy (conciliação com agente), Anyformat/Iberia (documentos)
+        // + RPA Playwright: demo ao vivo da Velorum (contexto para agentes) e JetBrains (engenharia com agentes de IA)
+        prioritarias:['s042','s045','s104','s107','s265'] },
   // Consultor financeiro: investimento primeiro, depois energia/sustentabilidade, depois edge
   m4: { credencial:'AcreditacionMTS26_MADRID_L13788720_Marco+Nunes.pdf',
         cargo:'Consultor Financeiro', pavilhao:'Data Centre World', trilhas:['dc-design','dc-energy','dc-edge'],
         // Sessões sobre investimento: Portugal como porta de entrada, mercado, capital, novo ciclo em Espanha
-        prioritarias:['s235','s368','s370','s375'] },
+        // + conciliação financeira com IA (Astrafy, 4 nov 15:00) para a automação de lançamentos do AI First
+        prioritarias:['s235','s368','s370','s375','s045'] },
   // Gerente: decisões de negócio com IA, B2B, faturação electrónica e governança
   m5: { credencial:'AcreditacionMTS26_MADRID_A14052857_Celestino+Oliveira.pdf',
         cargo:'Gerente', pavilhao:'E-SHOW', trilhas:['e-show','future-commerce','ecommerce-strat','ai-commerce','prestashop'],

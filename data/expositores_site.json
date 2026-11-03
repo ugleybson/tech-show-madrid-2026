@@ -1,6 +1,6 @@
 {
  "fonte": "https://www.techshowmadrid.es/expositores",
- "actualizado_em": "2026-10-22T09:22:38+00:00",
+ "actualizado_em": "2026-11-03T12:19:03+00:00",
  "expositores": [
   {
    "slug": "22-vatios-sl",
@@ -132,7 +132,7 @@
    "slug": "aiven-oy",
    "nome": "Aiven Oy",
    "stand": "3K12",
-   "patrocinio": ""
+   "patrocinio": "Exhibitor"
   },
   {
    "slug": "alcalink",
@@ -375,12 +375,6 @@
    "patrocinio": "Exhibitor"
   },
   {
-   "slug": "bolt-operations-o%C3%BC",
-   "nome": "Bolt Operations OÜ",
-   "stand": "",
-   "patrocinio": "Exhibitor"
-  },
-  {
    "slug": "box-integration-systems-sl",
    "nome": "BOX INTEGRATION SYSTEMS S.L.",
    "stand": "5C22",
@@ -394,7 +388,7 @@
   },
   {
    "slug": "brother-iberia",
-   "nome": "Brother Iberia",
+   "nome": "Brother Ibérica",
    "stand": "5G45",
    "patrocinio": "Exhibitor"
   },
@@ -732,7 +726,7 @@
    "slug": "duco-ventilation-sun-control",
    "nome": "Duco Ventilation & Sun Control",
    "stand": "5B36",
-   "patrocinio": ""
+   "patrocinio": "Exhibitor"
   },
   {
    "slug": "eae",
@@ -936,7 +930,7 @@
    "slug": "finseed",
    "nome": "Finseed",
    "stand": "P05",
-   "patrocinio": ""
+   "patrocinio": "PrestaShop Sponsor"
   },
   {
    "slug": "flytech",
@@ -1050,6 +1044,12 @@
    "slug": "happyrobot",
    "nome": "HappyRobot",
    "stand": "3K54",
+   "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "hibob",
+   "nome": "HIBOB",
+   "stand": "3C06",
    "patrocinio": "Silver Sponsor"
   },
   {
@@ -1299,6 +1299,12 @@
    "patrocinio": "Exhibitor"
   },
   {
+   "slug": "sansheng",
+   "nome": "Jiangsu Yawei Transformer",
+   "stand": "5B01",
+   "patrocinio": "Exhibitor"
+  },
+  {
    "slug": "john-cockerill-sa",
    "nome": "John Cockerill Hamon",
    "stand": "5C44",
@@ -1431,8 +1437,8 @@
    "patrocinio": "Exhibitor"
   },
   {
-   "slug": "lamdaloopers",
-   "nome": "LamdaLoopers",
+   "slug": "lambdaloopers",
+   "nome": "LambdaLoopers",
    "stand": "3H71",
    "patrocinio": "Exhibitor"
   },
@@ -1471,6 +1477,18 @@
    "nome": "Lengow",
    "stand": "3G99",
    "patrocinio": "Silver Sponsor"
+  },
+  {
+   "slug": "lenovo-1",
+   "nome": "LENOVO",
+   "stand": "5A52",
+   "patrocinio": ""
+  },
+  {
+   "slug": "lenovo",
+   "nome": "Lenovo",
+   "stand": "5A52",
+   "patrocinio": "Keynote Theatre Sponsor"
   },
   {
    "slug": "leoch-batteries",
@@ -1708,7 +1726,7 @@
   },
   {
    "slug": "multisoft",
-   "nome": "Multisoft",
+   "nome": "Multisoftware Defense",
    "stand": "3K40",
    "patrocinio": "Exhibitor"
   },
@@ -1830,6 +1848,12 @@
    "slug": "odoo",
    "nome": "Odoo",
    "stand": "3H16",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "omniwallet",
+   "nome": "OMNIWALLET",
+   "stand": "3A44",
    "patrocinio": "Exhibitor"
   },
   {
@@ -2217,12 +2241,6 @@
    "patrocinio": "DC del Futuro Sponsor"
   },
   {
-   "slug": "sansheng",
-   "nome": "SANSHENG",
-   "stand": "5B01",
-   "patrocinio": "Exhibitor"
-  },
-  {
    "slug": "santa-clara-tech-sl",
    "nome": "SANTA CLARA TECH S.L.",
    "stand": "3G63",
@@ -2325,12 +2343,6 @@
    "patrocinio": "Exhibitor"
   },
   {
-   "slug": "seresco",
-   "nome": "Seresco",
-   "stand": "3G64",
-   "patrocinio": "Exhibitor"
-  },
-  {
    "slug": "servicetonic",
    "nome": "Servicetonic",
    "stand": "3C38",
@@ -2363,7 +2375,7 @@
   {
    "slug": "sierra",
    "nome": "SIERRA",
-   "stand": "3H108",
+   "stand": "7C",
    "patrocinio": "Keynote Theatre Sponsor"
   },
   {
@@ -2411,8 +2423,8 @@
   {
    "slug": "skrey-1",
    "nome": "Skrey",
-   "stand": "S08",
-   "patrocinio": "Exhibitor"
+   "stand": "S07",
+   "patrocinio": "Shopify Partner Village"
   },
   {
    "slug": "sme-soluciones",
@@ -2439,6 +2451,12 @@
    "patrocinio": "Exhibitor"
   },
   {
+   "slug": "socradar",
+   "nome": "SOCRadar",
+   "stand": "3J46",
+   "patrocinio": "Exhibitor"
+  },
+  {
    "slug": "software-one",
    "nome": "Software One",
    "stand": "3F56",
@@ -2460,6 +2478,12 @@
    "slug": "solventia-solutions",
    "nome": "Solventia Solutions",
    "stand": "5G53",
+   "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "somos-sinapsis",
+   "nome": "SOMOS SINAPSIS",
+   "stand": "",
    "patrocinio": "Exhibitor"
   },
   {
@@ -2489,7 +2513,7 @@
   {
    "slug": "splio",
    "nome": "Splio",
-   "stand": "3A30",
+   "stand": "3C41",
    "patrocinio": "Exhibitor"
   },
   {
@@ -2665,12 +2689,6 @@
    "nome": "The Trade Desk",
    "stand": "RM02",
    "patrocinio": "Retail Media Sponsor"
-  },
-  {
-   "slug": "therapyside",
-   "nome": "Therapyside",
-   "stand": "3C32",
-   "patrocinio": "Silver Sponsor"
   },
   {
    "slug": "threatlocker",
@@ -2905,6 +2923,12 @@
    "nome": "Wapping",
    "stand": "3D95",
    "patrocinio": "Exhibitor"
+  },
+  {
+   "slug": "wasabi-technologies",
+   "nome": "Wasabi Technologies",
+   "stand": "C210",
+   "patrocinio": ""
   },
   {
    "slug": "watts-water",

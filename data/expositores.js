@@ -1,5 +1,5 @@
 // Gerado por tools/expositores_site.py a partir de tools/expositores_curadoria.json
-const EXPOSITORES_VERSAO = 3;
+const EXPOSITORES_VERSAO = 5;
 const PERGUNTAS_GERAIS_EXP = [
  "Se fossem uma consultora de PME em Portugal a tornar-se AI First, por onde começavam?",
  "Que casos de uso de IA estão a ter retorno real nos vossos clientes PME, e em quanto tempo?",
@@ -164,10 +164,12 @@ const EXPOSITORES = [
   "dia": "2026-11-04",
   "porque": "A Cegid é dona do Primavera, o software de contabilidade mais usado nas PME portuguesas. Saber o roteiro de IA e as condições de parceiro para gabinetes.",
   "perguntas": [
-   "Que funções de IA chegam ao Primavera em Portugal e quando?"
+   "Que funções de IA chegam ao Primavera em Portugal e quando?",
+   "O Primavera vai sugerir por IA os lançamentos de conciliação bancária e a imputação analítica? Há API para o fazer a partir de fora?"
   ],
   "perguntas_en": [
-   "Which AI features are coming to Primavera in Portugal, and when?"
+   "Which AI features are coming to Primavera in Portugal, and when?",
+   "Will Primavera use AI to suggest bank reconciliation entries and cost-centre allocation? Is there an API to do this externally?"
   ],
   "nome_oficial": "CEGID",
   "patrocinio": "Exhibitor",
@@ -189,10 +191,12 @@ const EXPOSITORES = [
   "dia": "2026-11-04",
   "porque": "Sage Copilot e programa de parceiros contabilistas. Fala no programa: aproveitar a sessão para abordar o orador.",
   "perguntas": [
-   "O Sage Copilot está disponível para Portugal? Que tarefas contabilísticas já automatiza?"
+   "O Sage Copilot está disponível para Portugal? Que tarefas contabilísticas já automatiza?",
+   "A conciliação bancária e a imputação a centros de custo (contabilidade analítica) já são automáticas, com aprovação humana?"
   ],
   "perguntas_en": [
-   "Is Sage Copilot available for Portugal? Which accounting tasks does it already automate?"
+   "Is Sage Copilot available for Portugal? Which accounting tasks does it already automate?",
+   "Are bank reconciliation and cost-centre allocation (management accounting) already automated, with human approval?"
   ],
   "nome_oficial": "Sage",
   "patrocinio": "Theatre Sponsor",
@@ -237,10 +241,12 @@ const EXPOSITORES = [
   "dia": "2026-11-04",
   "porque": "ERP cloud para PME com programa para contabilistas. Possível ferramenta a recomendar ou revender a clientes.",
   "perguntas": [
-   "Programa Holded para asesores: comissões, formação, clientes em Portugal?"
+   "Programa Holded para asesores: comissões, formação, clientes em Portugal?",
+   "A conciliação bancária automática e as etiquetas analíticas (projetos, centros de custo) funcionam com bancos portugueses?"
   ],
   "perguntas_en": [
-   "Holded programme for advisors: commissions, training, customers in Portugal?"
+   "Holded programme for advisors: commissions, training, customers in Portugal?",
+   "Do automatic bank reconciliation and analytic tags (projects, cost centres) work with Portuguese banks?"
   ],
   "nome_oficial": "HOLDED",
   "patrocinio": "Exhibitor",
@@ -262,10 +268,12 @@ const EXPOSITORES = [
   "dia": "2026-11-04",
   "porque": "ERP open source com IA e rede de parceiros implementadores. Pode virar serviço de implementação para clientes PME.",
   "perguntas": [
-   "Requisitos para ser parceiro Odoo em Portugal e localização fiscal portuguesa?"
+   "Requisitos para ser parceiro Odoo em Portugal e localização fiscal portuguesa?",
+   "Como funcionam as regras de reconciliação bancária com IA e as contas analíticas? Servem para PME portuguesas?"
   ],
   "perguntas_en": [
-   "What are the requirements to become an Odoo partner in Portugal, and how mature is the Portuguese tax localisation?"
+   "What are the requirements to become an Odoo partner in Portugal, and how mature is the Portuguese tax localisation?",
+   "How do the AI bank reconciliation rules and analytic accounts work? Are they suitable for Portuguese SMEs?"
   ],
   "nome_oficial": "Odoo",
   "patrocinio": "Exhibitor",
@@ -434,10 +442,12 @@ const EXPOSITORES = [
   "dia": "2026-11-04",
   "porque": "Extracção de dados de documentos com IA. Base do AI Document Agent para faturas, extractos e candidaturas. Fala no programa.",
   "perguntas": [
-   "Testamos com 20 documentos portugueses reais? Integração com n8n?"
+   "Testamos com 20 documentos portugueses reais? Integração com n8n?",
+   "Que precisão têm em extratos bancários em PDF de bancos portugueses (CGD, BCP, Santander, Novo Banco)?"
   ],
   "perguntas_en": [
-   "Can we test with 20 real Portuguese documents? Is there an n8n integration?"
+   "Can we test with 20 real Portuguese documents? Is there an n8n integration?",
+   "How accurate are you on PDF bank statements from Portuguese banks (CGD, BCP, Santander, Novo Banco)?"
   ],
   "nome_oficial": "AnyFormat",
   "patrocinio": "Exhibitor",
@@ -483,10 +493,12 @@ const EXPOSITORES = [
   "dia": "2026-11-05",
   "porque": "Banco online para PME com programa para contabilistas e integrações contabilísticas. Fala no programa.",
   "perguntas": [
-   "Programa de parceiros contabilistas em Portugal? Ligação directa ao Primavera ou TOConline?"
+   "Programa de parceiros contabilistas em Portugal? Ligação directa ao Primavera ou TOConline?",
+   "A exportação de movimentos traz categoria, centro de custo e comprovativo anexado, pronta a conciliar?"
   ],
   "perguntas_en": [
-   "Partner programme for accountants in Portugal? Direct connection to Primavera or TOConline?"
+   "Partner programme for accountants in Portugal? Direct connection to Primavera or TOConline?",
+   "Does the transaction export include category, cost centre and the attached receipt, ready to reconcile?"
   ],
   "nome_oficial": "Qonto",
   "patrocinio": "PrestaShop Sponsor",
@@ -935,11 +947,18 @@ const EXPOSITORES = [
   ],
   "dia": "2026-11-04",
   "porque": "Consultora de BI e dados com IA. Referência para o serviço de controlo de gestão com dashboards que explicam. Fala no programa.",
-  "perguntas": [],
+  "perguntas": [
+   "Como montam a contabilidade analítica (centros de custo, repartição de custos indiretos) quando o ERP do cliente não a tem?",
+   "Os dashboards explicam o desvio por centro de custo, não só o mostram?"
+  ],
+  "perguntas_en": [
+   "How do you build management accounting (cost centres, overhead allocation) when the client's ERP doesn't support it?",
+   "Do the dashboards explain the variance by cost centre, not just show it?"
+  ],
   "nome_oficial": "ClearPeaks",
   "patrocinio": "Gold Sponsor",
   "site": "https://www.clearpeaks.com/?lang=es",
-  "descricao_oficial": "ClearPeaks es una consultora especializada en ofrecer servicios y soluciones en Everything Data: Business Intelligence, Advanced Analytics, Big Data, Cloud y aplicaciones web y móviles. Fundada en 2000, hemos sido un socio de confianza para nuestros clientes en más de 15 sectores industriales y en una amplia gama de áreas funcionales, con operaciones que abarcan Europa, Oriente Medio, Estados Unid",
+  "descricao_oficial": "ClearPeaks, una empresa de GlobalLogic, es una consultora estratégica en IA, datos y analítica que ayuda a las empresas desde el año 2000 a transformar el concepto ‘Everything Data’ en un impacto de negocio medible, abarcando Business Intelligence, Advanced Analytics, Big Data, Cloud e IA. Con oficinas en Barcelona, Reus y Abu Dhabi, y una sólida trayectoria en más de 15 sectores en Europa, Orient",
   "ficha": "https://www.techshowmadrid.es/exhibitors/clearpeaks"
  },
  {
@@ -948,14 +967,24 @@ const EXPOSITORES = [
   "nome": "Astrafy",
   "stand": "3K52",
   "categoria": "dados-docs",
-  "prioridade": "B",
-  "objetivo": "feedback",
+  "prioridade": "A",
+  "objetivo": "produto",
   "responsaveis": [
-   "m3"
+   "m3",
+   "m4"
   ],
-  "dia": "2026-11-05",
-  "porque": "Engenharia de dados e IA sobre Google Cloud. Fala no programa.",
-  "perguntas": [],
+  "dia": "2026-11-04",
+  "porque": "Fala a 4 nov às 15:00 (AI & Data Theatre) sobre conciliação financeira com um agente de IA. Caso directo para automatizar os lançamentos de reconciliação do AI First (Pilar 1). Ir ao stand logo a seguir à palestra; fica ao lado da Anyformat.",
+  "perguntas": [
+   "O agente concilia também faturas com movimentos bancários? Como trata pagamentos parciais, agrupados e comissões?",
+   "Quem aprova antes do lançamento? Fica registo de auditoria de cada sugestão do agente?",
+   "Funciona fora do Google Cloud, sobre SAF-T português e extratos de bancos portugueses?"
+  ],
+  "perguntas_en": [
+   "Does the agent also match invoices against bank transactions? How does it handle partial, grouped payments and bank fees?",
+   "Who approves before the entry is posted? Is every agent suggestion logged for audit?",
+   "Does it work outside Google Cloud, on Portuguese SAF-T files and Portuguese bank statements?"
+  ],
   "nome_oficial": "Astrafy S.L",
   "patrocinio": "Exhibitor",
   "site": "https://astrafy.io/",
@@ -1147,18 +1176,25 @@ const EXPOSITORES = [
   "nome": "Velorum Labs",
   "stand": "3G66",
   "categoria": "agentes-ia",
-  "prioridade": "C",
-  "objetivo": "feedback",
+  "prioridade": "B",
+  "objetivo": "produto",
   "responsaveis": [
    "m3"
   ],
   "dia": "2026-11-04",
-  "porque": "Laboratório de IA. Fala no programa.",
-  "perguntas": [],
+  "porque": "Demonstração ao vivo a 4 nov às 17:55 (AI & Data Theatre) sobre dar contexto a agentes a partir de código e dados. Útil para manter o RPA Playwright de reconciliação. Ir ao stand depois da demo.",
+  "perguntas": [
+   "Como dão contexto a um agente sobre um portal externo que muda (ecrãs, seletores) para as automações não partirem?",
+   "Corre localmente ou na UE, com dados de clientes?"
+  ],
   "nome_oficial": "VELORUM LABS",
   "patrocinio": "Silver Sponsor",
   "site": "https://www.velorumlabs.com/",
-  "ficha": "https://www.techshowmadrid.es/exhibitors/velorum-labs"
+  "ficha": "https://www.techshowmadrid.es/exhibitors/velorum-labs",
+  "perguntas_en": [
+   "How do you give an agent context about an external portal that changes (screens, selectors) so automations do not break?",
+   "Does it run on-premises or in the EU, with customer data?"
+  ]
  },
  {
   "id": "e48",
@@ -1293,5 +1329,62 @@ const EXPOSITORES = [
   "patrocinio": "Exhibitor",
   "site": "https://www.kyoceradocumentsolutions.es/",
   "ficha": "https://www.techshowmadrid.es/exhibitors/h-products-europe-gmbh"
+ },
+ {
+  "id": "e55",
+  "slug": "fortra",
+  "nome": "Fortra",
+  "stand": "3H49",
+  "categoria": "agentes-ia",
+  "prioridade": "B",
+  "objetivo": "feedback",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Dona do Fortra Automate (RPA comercial). Comparar com o robô Playwright de reconciliação: sessões, novas tentativas e auditoria. Confirmar se trazem demo do Automate.",
+  "perguntas": [
+   "O Fortra Automate está na feira? Podem mostrar um fluxo num portal web com login, descarga de PDF e carregamento de anexo?",
+   "Como tratam sessões, 2FA, novas tentativas e o registo de auditoria de cada acção do robô?",
+   "Que licença serve uma consultora que corre robôs para várias empresas clientes?"
+  ],
+  "perguntas_en": [
+   "Is Fortra Automate here? Can you show a flow on a web portal with login, PDF download and attachment upload?",
+   "How do you handle sessions, 2FA, retries and the audit log of every robot action?",
+   "Which licence fits a consultancy running robots for several client companies?"
+  ],
+  "nome_oficial": "Fortra",
+  "patrocinio": "Exhibitor",
+  "site": "https://www.fortra.com/",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/fortra"
+ },
+ {
+  "id": "e56",
+  "slug": "jetbrains",
+  "nome": "JetBrains",
+  "stand": "3F82",
+  "categoria": "agentes-ia",
+  "prioridade": "B",
+  "objetivo": "produto",
+  "responsaveis": [
+   "m3"
+  ],
+  "dia": "2026-11-05",
+  "porque": "Fala a 5 nov às 10:30 sobre engenharia com agentes de IA. Ferramentas para desenvolver e testar o RPA Playwright com agentes sem perder controlo. Ir ao stand depois da palestra.",
+  "perguntas": [
+   "Que ferramentas com agentes (Junie, AI Assistant) ajudam a escrever e testar automações de browser como Playwright?",
+   "Como garantem que o código gerado por agentes é revisto e testado antes de ir para produção?",
+   "Há licenças para equipas pequenas ou programa para consultoras?"
+  ],
+  "perguntas_en": [
+   "Which agent tools (Junie, AI Assistant) help write and test browser automations such as Playwright?",
+   "How do you make sure agent-generated code is reviewed and tested before production?",
+   "Are there licences for small teams or a programme for consultancies?"
+  ],
+  "nome_oficial": "JetBrains",
+  "patrocinio": "Silver Sponsor",
+  "site": "https://www.jetbrains.com",
+  "descricao_oficial": "JetBrains creates intelligent software development tools that help developers and organizations build, understand, and maintain software with confidence. Trusted by more than 15 million users and 88 Fortune Global Top 100 companies, JetBrains combines deep code intelligence with AI to help teams stay in control as software development evolves. JetBrains Air is the company’s system for agentic soft",
+  "ficha": "https://www.techshowmadrid.es/exhibitors/jetbrains"
  }
 ];
