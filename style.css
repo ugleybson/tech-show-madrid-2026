@@ -1539,7 +1539,13 @@ body {
   .ind-show-crono .ind-section--stands,
   .ind-show-grelha .ind-section--stands,
   .ind-show-stands .ind-section--grelha,
-  .ind-show-stands .ind-section--crono { display: none; }
+  .ind-show-stands .ind-section--crono,
+  .ind-show-crono .ind-section--sug,
+  .ind-show-grelha .ind-section--sug,
+  .ind-show-stands .ind-section--sug,
+  .ind-show-sug .ind-section--grelha,
+  .ind-show-sug .ind-section--crono,
+  .ind-show-sug .ind-section--stands { display: none; }
   .ind-show-stands .ind-stands { margin-top: 0; }
   .ind-section { padding: 12px; }
   .ind-section__title { display: none; }
@@ -1862,3 +1868,30 @@ body[data-view="expositores"] .sort-group { display: none; }
   .header__inner { flex-wrap: nowrap; }
   .sync-pill { margin-left: 6px; }
 }
+
+/* ===================== PORTFÓLIO AI FIRST ===================== */
+.prod-chip {
+  display: inline-flex; align-items: center; gap: 3px; margin: 0 3px 0 0;
+  padding: 2px 7px; border-radius: 999px; font-size: 11px; font-weight: 600; line-height: 1.5;
+  color: var(--pc); background: color-mix(in srgb, var(--pc) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pc) 40%, transparent); white-space: nowrap;
+}
+.prod-chip--area { --pc: var(--color-accent2); }
+.session-card__bottom .prod-chip { margin-left: 4px; }
+.modal__prod { width: 100%; margin-top: 8px; font-size: 12px; color: var(--color-text-muted); line-height: 1.8; }
+.ind-section--sug { margin-top: 16px; }
+.sug-foco { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin-bottom: 6px; font-size: 12px; color: var(--color-text-muted); }
+.sug-sub { font: 600 12px var(--font-main); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: .04em; margin: 14px 0 8px; }
+.sug-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.sug {
+  display: flex; gap: 10px; align-items: center;
+  padding: 10px 12px; background: var(--color-surface2);
+  border-left: 3px solid var(--tc); border-radius: var(--radius-sm);
+}
+.sug__main { flex: 1; min-width: 0; cursor: pointer; }
+.sug__top { font-size: 12px; color: var(--color-text-muted); }
+.sug__title { font-size: 13.5px; font-weight: 500; line-height: 1.35; margin: 2px 0; }
+.sug__why { font-size: 11px; color: var(--color-accent2); }
+.sug__swap { font-size: 11px; color: var(--color-warning); margin-top: 3px; }
+.sug__btn { width: auto; flex-shrink: 0; padding: 8px 12px; min-height: 40px; font-size: 12px; }
+@media (max-width: 860px) { .ind-tabs__btn { font-size: 12px; padding: 0 4px; } }

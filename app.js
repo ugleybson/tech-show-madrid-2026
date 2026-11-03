@@ -32,6 +32,27 @@ const CREDENCIAIS = {
         prioritarias:['s189','s186','s215','s217','s344','s342','s365'] },
 };
 
+// Foco de cada membro no portfólio AI First (README/PRD da pasta "AI First - Norporgest"):
+// 1.º e 2.º produto + área de actuação (expressão regular sobre o programa em ES/EN).
+const FOCOS = {
+  m1: { produtos: ['P1', 'P4'], area: 'Liderança e pessoas',
+        areaRe: 'lideraz\\w*|leader\\w*|talento|talent|personas|people|rrhh|recursos humanos|cultura|formaci[oó]n|skills|empleo|direcci[oó]n|ceo',
+        porque: 'Gerente: modelo de negócio do CFO Partilhado e adoção da IA pelas equipas, que é onde começa o Diagnóstico de Processos.' },
+  m2: { produtos: ['P4', 'P2'], area: 'Marketing e captação',
+        areaRe: 'marketing|marca|brand|contenido|content|seo|geo\\b|crm|customer|captaci[oó]n|leads?|campa[ñn]\\w*|redes sociales|social media|comunicaci[oó]n',
+        porque: 'Marketing: comunicar e vender os 4 produtos; no Diagnóstico, as áreas Marketing e Atendimento ao cliente.' },
+  m3: { produtos: ['P4', 'P2'], area: 'IA, agentes e automação',
+        areaRe: 'agent\\w*|llms?|rag\\b|generativ\\w*|gen ?ai|machine learning|copilot|automati\\w*|automatiz\\w*|orquest\\w*',
+        porque: 'AI Project Manager e autor do NPG WorkFlow (método do 4.º Pilar); dados e modelos para o Dashboard Preditivo.' },
+  m4: { produtos: ['P1', 'P3'], area: 'Finanças e investimento',
+        areaRe: 'financ\\w*|invers\\w*|invest\\w*|capital|tesorer\\w*|energ\\w*|rentab\\w*|banc\\w*',
+        porque: 'Consultor financeiro: relato e CFO Partilhado; renegociação de custos, com a energia como maior fatura nos data centres.' },
+  m5: { produtos: ['P3', 'P2'], area: 'Comércio e fornecedores',
+        areaRe: 'e-?commerce|retail|tienda|marketplace\\w*|log[ií]stic\\w*|proveedor\\w*|supplier\\w*|b2b|ventas|sales|compras|margen',
+        porque: 'Gerente com credencial E-SHOW: custos de fornecedores, logística e margens (Renegociação) e indicadores de venda (Dashboard).' },
+};
+Object.keys(FOCOS).forEach(k => { if (CREDENCIAIS[k]) CREDENCIAIS[k].foco = FOCOS[k]; });
+
 let state = {
   equipa: JSON.parse(localStorage.getItem('tsm_equipa') || 'null') || [
     {id:'m1', nome:'Pedro Monteiro', inicial:'P', cor:COLORS[0], areas:[], ...CREDENCIAIS.m1},
@@ -48,6 +69,7 @@ let state = {
   filtroTrack: '',
   filtroMembro: '',
   filtroTipo: '',
+  filtroProduto: '',
   pesquisa: '',
   sort: 'hora',
   sessaoAberta: null,
@@ -407,7 +429,7 @@ carregarRegistos();
     if (!c) return;
     // Sem credencial guardada = membro ainda do tempo do placeholder: recebe o nome real
     if (m.nome === antigos[m.id] || !m.credencial || /^membro \d$/i.test(m.nome.trim())) { m.nome = nomes[m.id]; m.inicial = m.nome.charAt(0).toUpperCase(); }
-    Object.assign(m, { credencial: m.credencial || c.credencial, cargo: c.cargo, pavilhao: c.pavilhao, trilhas: c.trilhas, prioritarias: c.prioritarias || [] });
+    Object.assign(m, { credencial: m.credencial || c.credencial, cargo: c.cargo, pavilhao: c.pavilhao, trilhas: c.trilhas, prioritarias: c.prioritarias || [], foco: c.foco });
   });
   // Sessões antigas que não existem no programa oficial (placeholders / hora errada)
   const remap = { s040: 's102' };
@@ -679,6 +701,167 @@ function badgesSessao(s) {
   return '';
 }
 
+// ── PORTFÓLIO AI FIRST (4 produtos) E SUGESTÕES INDIVIDUAIS ─────────
+// Fonte: "AI First - Norporgest" (README/PRD). As expressões apanham o programa em ES/EN/PT.
+const PRODUTOS = [
+  { id: 'P1', curto: 'CFO Partilhado', nome: 'Relato Financeiro & CFO Partilhado', icone: '📊', cor: '#60a5fa',
+    re: /\b(cfo|financ\w*|finanz\w*|contab\w*|account\w*|fiscal\w*|relato|reporting|cierre|erp|sap|sage|odoo|holded|factura\w*|invoice\w*|due diligence|auditor\w*|tesorer\w*|treasury|cash ?flow|liquidez|cr[eé]dito|banca|bank\w*|inversi[oó]n|invest\w*|capital|p&l|rentab\w*|margen)/gi },
+  { id: 'P2', curto: 'Dashboard Preditivo', nome: 'Dashboard Executivo & Preditivo', icone: '📈', cor: '#34d399',
+    re: /\b(dashboard\w*|cuadro de mando|predic\w*|predict\w*|previs\w*|forecast\w*|analytics|anal[ií]tica|\bbi\b|business intelligence|tiempo real|real[- ]time|insight\w*|kpis?|m[eé]tricas?|metrics?|decisi[oó]n\w*|decision\w*|datos?|data\b|visualiz\w*|anomal\w*|alerta\w*|escenario\w*|scenario\w*)/gi },
+  { id: 'P3', curto: 'Renegociação de Custos', nome: 'Renegociação de Custos com IA', icone: '💶', cor: '#fbbf24',
+    re: /\b(cost[eo]s?|costs?|ahorr\w*|saving\w*|compras|procurement|purchas\w*|proveedor\w*|supplier\w*|energ\w*|finops|gast\w*|spend\w*|negoci\w*|contrat\w*|telecom\w*|seguro\w*|insurance|tarifa\w*|eficiencia energ\w*|consumo\w*|precio\w*|pricing|log[ií]stic\w*)/gi },
+  { id: 'P4', curto: 'Diagnóstico de Processos', nome: 'Diagnóstico & Mapeamento de Processos', icone: '🧭', cor: '#c084fc',
+    re: /\b(proces\w*|automati\w*|automatiz\w*|workflow\w*|flujos?|operacion\w*|operation\w*|agente\w*|agent\w*|transformaci[oó]n|transformation|madurez|maturity|rpa\b|optimiz\w*|reingenier\w*|eficien\w*|productividad|productivity|adopci[oó]n|adoption|escal\w*|scal\w*|implementa\w*|human[- ]in[- ]the[- ]loop|governan\w*|gobern\w*)/gi },
+];
+const PESOS_PROD = [3, 2];          // 1.º foco vale 3, 2.º foco vale 2
+const MIN_SUGESTAO = 4;             // pontuação mínima para sugerir
+// Salas técnicas (infraestrutura de data centre, cibersegurança): fora do portfólio, só para quem lá tem credencial
+const SALAS_TECNICAS = ['dc-design', 'dc-edge', 'dc-energy', 'cyber-security'];
+
+function getProduto(id) { return PRODUTOS.find(p => p.id === id); }
+function contaRe(re, txt) { re.lastIndex = 0; return Math.min((String(txt).match(re) || []).length, 4); }
+
+// Produtos tocados por um texto: {P1: n, ...} (n = ocorrências, máx. 4)
+function produtosTexto(txt) {
+  const r = {};
+  PRODUTOS.forEach(p => { const n = contaRe(p.re, txt); if (n) r[p.id] = n; });
+  return r;
+}
+const _prodCache = new Map();
+function produtosSessao(s) {
+  const chave = s.id + '|' + s.titulo;
+  if (!_prodCache.has(chave)) {
+    const txt = `${s.titulo} ${s.titulo} ${s.descricao} ${(s.tags || []).join(' ')}`;
+    _prodCache.set(chave, produtosTexto(txt));
+  }
+  return _prodCache.get(chave);
+}
+function produtosExp(e) {
+  if (!e._prod) e._prod = produtosTexto(`${e.nome} ${e.porque} ${e.descricao_oficial || ''} ${getCategoriaExp(e.categoria).nome}`);
+  return e._prod;
+}
+// Produtos "fortes" (para etiquetas): 2+ ocorrências, ou 1 no título
+function produtosEtiqueta(s) {
+  const p = produtosSessao(s);
+  return Object.keys(p).filter(id => p[id] >= 2 || contaRe(getProduto(id).re, s.titulo) > 0);
+}
+function chipsProduto(ids, compacto) {
+  return ids.map(id => { const p = getProduto(id);
+    return `<span class="prod-chip" style="--pc:${p.cor}" title="${esc(p.nome)}">${p.icone}${compacto ? '' : ' ' + esc(p.curto)}</span>`; }).join('');
+}
+
+// Pontuação de uma sessão para um membro: produtos do seu foco + área de actuação + IA
+function pontuarSessao(m, s) {
+  const f = m.foco; if (!f) return { pontos: 0, razoes: [] };
+  const p = produtosSessao(s);
+  let pontos = 0; const razoes = [];
+  (f.produtos || []).forEach((id, i) => {
+    if (p[id]) { pontos += p[id] * (PESOS_PROD[i] || 1); razoes.push(`${getProduto(id).icone} ${getProduto(id).curto}`); }
+  });
+  const nArea = f.areaRe ? contaRe(new RegExp(f.areaRe, 'gi'), `${s.titulo} ${s.descricao}`) : 0;
+  if (nArea) { pontos += nArea * 2; razoes.push(`🎯 ${f.area}`); }
+  if ((s.tags || []).includes('IA')) pontos += 1;
+  if ((m.prioritarias || []).includes(s.id)) { pontos += 3; razoes.push('⭐ roteiro'); }
+  return { pontos, razoes };
+}
+function pontuarExp(m, e) {
+  const f = m.foco; if (!f) return { pontos: 0, razoes: [] };
+  const p = produtosExp(e);
+  let pontos = 0; const razoes = [];
+  (f.produtos || []).forEach((id, i) => { if (p[id]) { pontos += p[id] * (PESOS_PROD[i] || 1); razoes.push(`${getProduto(id).icone} ${getProduto(id).curto}`); } });
+  const nArea = f.areaRe ? contaRe(new RegExp(f.areaRe, 'gi'), `${e.nome} ${e.porque} ${e.descricao_oficial || ''}`) : 0;
+  if (nArea) { pontos += nArea * 2; razoes.push(`🎯 ${f.area}`); }
+  pontos += { A: 2, B: 1, C: 0 }[e.prioridade] || 0;
+  return { pontos, razoes };
+}
+
+// Sessões a sugerir neste dia: fora do plano, activas, acima do mínimo; se colide, só se valer mais do que o que tira
+function sugestoesSessoes(m, dia, limite = 8) {
+  const plano = getSessoesMembro(m.id).filter(s => ativa(s) && s.dia === dia);
+  return SESSOES
+    .filter(s => s.dia === dia && ativa(s) && !(state.inscricoes[s.id] || []).includes(m.id) && !NAO_PLANEAR.test(s.titulo)
+      && !(SALAS_TECNICAS.includes(s.track_id) && !(m.trilhas || []).includes(s.track_id)))
+    .map(s => {
+      const sc = pontuarSessao(m, s);
+      const colide = plano.filter(p => sobrepoe(p, s));
+      const perde = colide.reduce((t, p) => t + pontuarSessao(m, p).pontos, 0);
+      return { s, ...sc, colide, ganho: sc.pontos - perde };
+    })
+    .filter(x => x.pontos >= MIN_SUGESTAO && (!x.colide.length || x.ganho > 0))
+    .sort((a, b) => (b.colide.length ? b.ganho : b.pontos + 1) - (a.colide.length ? a.ganho : a.pontos + 1) || a.s.hora_inicio.localeCompare(b.s.hora_inicio))
+    .slice(0, limite);
+}
+function sugestoesStands(m, limite = 5) {
+  return EXPOSITORES
+    .filter(e => !membrosExp(e).includes(m.id))
+    .map(e => ({ e, ...pontuarExp(m, e) }))
+    .filter(x => x.pontos >= MIN_SUGESTAO)
+    .sort((a, b) => b.pontos - a.pontos)
+    .slice(0, limite);
+}
+
+function renderSugestoes(m, dia) {
+  const f = m.foco || {};
+  const primeiro = m.nome.split(' ')[0];
+  const ss = sugestoesSessoes(m, dia);
+  const st = sugestoesStands(m);
+  const linhaS = x => {
+    const tr = getTrack(x.s.track_id);
+    return `
+      <li class="sug" style="--tc:${tr.cor}">
+        <div class="sug__main" data-session-id="${x.s.id}">
+          <div class="sug__top"><b>${x.s.hora_inicio}–${x.s.hora_fim}</b> · <span style="color:${tr.cor}">${esc(tr.nome)}</span></div>
+          <div class="sug__title">${esc(x.s.titulo)}</div>
+          <div class="sug__why">${x.razoes.map(esc).join(' · ')}</div>
+          ${x.colide.length ? `<div class="sug__swap">🔁 Em vez de: ${x.colide.map(c => `${c.hora_inicio} ${esc(c.titulo.length > 50 ? c.titulo.slice(0, 50) + '…' : c.titulo)}`).join('; ')}</div>` : ''}
+        </div>
+        <button class="btn-secondary sug__btn" data-sug-add="${x.s.id}">${x.colide.length ? '🔁 Trocar' : '➕ Juntar'}</button>
+      </li>`;
+  };
+  const linhaE = x => `
+      <li class="sug" style="--tc:${getCategoriaExp(x.e.categoria).cor}">
+        <div class="sug__main" data-exp-id="${x.e.id}">
+          <div class="sug__top"><b>${esc(x.e.stand)}</b> · ${diaExp(x.e) === '2026-11-04' ? '4 Nov' : '5 Nov'} · <span class="exp-prio exp-prio--${x.e.prioridade}">${x.e.prioridade}</span></div>
+          <div class="sug__title">${esc(x.e.nome)}</div>
+          <div class="sug__why">${x.razoes.map(esc).join(' · ')}</div>
+        </div>
+        <button class="btn-secondary sug__btn" data-sug-stand="${x.e.id}">➕ Visitar</button>
+      </li>`;
+  return `
+    <section class="ind-section ind-section--sug">
+      <h3 class="ind-section__title ind-section__title--show">💡 Sugestões para ${esc(primeiro)} · portfólio AI First</h3>
+      <div class="sug-foco">
+        <span>Foco:</span> ${chipsProduto(f.produtos || [])}
+        ${f.area ? `<span class="prod-chip prod-chip--area">🎯 ${esc(f.area)}</span>` : ''}
+      </div>
+      ${f.porque ? `<p class="ind-hint">${esc(f.porque)}</p>` : ''}
+      <p class="sug-sub">🎤 Palestras ${dia === '2026-11-04' ? 'de 4 Nov' : 'de 5 Nov'} (todas as salas)</p>
+      ${ss.length ? `<ol class="sug-list">${ss.map(linhaS).join('')}</ol>` : '<p class="ind-hint">Sem sugestões novas neste dia: o plano já cobre o essencial do teu foco.</p>'}
+      <p class="sug-sub">🏢 Stands ligados aos teus produtos</p>
+      ${st.length ? `<ol class="sug-list">${st.map(linhaE).join('')}</ol>` : '<p class="ind-hint">Os stands mais relevantes para o teu foco já estão na tua lista.</p>'}
+      <p class="ind-hint">"Trocar" só aparece quando a sugestão vale mais para o teu foco do que a sessão que sai do plano.</p>
+    </section>`;
+}
+function ligarSugestoes(container, m) {
+  container.querySelectorAll('[data-sug-add]').forEach(b => b.addEventListener('click', ev => {
+    ev.stopPropagation();
+    const s = SESSOES.find(x => x.id === b.dataset.sugAdd);
+    const saem = getSessoesMembro(m.id).filter(p => ativa(p) && sobrepoe(p, s));
+    saem.forEach(p => setInscricao(p.id, m.id, false));
+    setInscricao(s.id, m.id, true);
+    saveState(); renderAll();
+    showToast(saem.length ? `🔁 Trocou ${saem.length} sessão(ões) por "${s.titulo.slice(0, 40)}…"` : `➕ "${s.titulo.slice(0, 40)}…" no plano`);
+  }));
+  container.querySelectorAll('[data-sug-stand]').forEach(b => b.addEventListener('click', ev => {
+    ev.stopPropagation();
+    const e = getExpositor(b.dataset.sugStand);
+    alterarVisita(e, { membros: [...new Set([...membrosExp(e), m.id])] });
+    renderAll();
+    showToast(`🏢 ${e.nome} juntado aos stands de ${m.nome.split(' ')[0]}`);
+  }));
+  container.querySelectorAll('.sug__main[data-exp-id]').forEach(el => el.addEventListener('click', () => openExpositorModal(el.dataset.expId)));
+}
+
 // ── PLANO PELA CREDENCIAL ─────────────────────────
 function sobrepoe(a, b) {
   return a.dia === b.dia && a.hora_inicio < b.hora_fim && b.hora_inicio < a.hora_fim;
@@ -722,6 +905,7 @@ function filteredSessoes() {
   let list = SESSOES.filter(s => s.dia === state.diaAtivo);
   if (state.filtroTrack) list = list.filter(s => s.track_id === state.filtroTrack);
   if (state.filtroTipo) list = list.filter(s => s.tipo === state.filtroTipo);
+  if (state.filtroProduto) list = list.filter(s => produtosEtiqueta(s).includes(state.filtroProduto));
   if (state.filtroMembro) {
     list = list.filter(s => (state.inscricoes[s.id] || []).includes(state.filtroMembro));
   }
@@ -892,7 +1076,7 @@ function renderCard(s) {
       <div class="session-card__title">${s.titulo}</div>
       ${speakerNames ? `<div class="session-card__speakers">🎤 ${speakerNames}</div>` : ''}
       <div class="session-card__bottom">
-        <span class="session-card__type-badge">${s.tipo}</span>
+        <span class="session-card__type-badge">${s.tipo}</span>${chipsProduto(produtosEtiqueta(s), true)}
         <div class="session-card__avatars">${avatarsHtml}</div>
       </div>
     </div>`;
@@ -1073,13 +1257,16 @@ function renderIndividual(container) {
       <button class="ind-tabs__btn ${state.indTab === 'crono' ? 'active' : ''}" data-ind-tab="crono">▤ Cronograma</button>
       <button class="ind-tabs__btn ${state.indTab === 'grelha' ? 'active' : ''}" data-ind-tab="grelha">▦ Grelha</button>
       <button class="ind-tabs__btn ${state.indTab === 'stands' ? 'active' : ''}" data-ind-tab="stands">🏢 Stands</button>
+      <button class="ind-tabs__btn ${state.indTab === 'sug' ? 'active' : ''}" data-ind-tab="sug">💡 Sugestões</button>
     </div>
     <div class="ind-layout">
       <section class="ind-section ind-section--grelha"><h3 class="ind-section__title">▦ Grelha · salas do pavilhão ${m.pavilhao}${tracks.length > m.trilhas.length ? ' + roteiro' : ''}</h3>${grelha}</section>
       <section class="ind-section ind-section--crono"><h3 class="ind-section__title">▤ Cronograma do dia</h3>${crono}</section>
     </div>
-    ${renderStandsMembro(m, dia)}`;
+    ${renderStandsMembro(m, dia)}
+    ${renderSugestoes(m, dia)}`;
   ligarStandsMembro(container);
+  ligarSugestoes(container, m);
 
   container.querySelectorAll('[data-pick-member]').forEach(b => b.addEventListener('click', () => {
     state.eu = b.dataset.pickMember;
@@ -1338,8 +1525,12 @@ function openSessionModal(sessaoId) {
   }
 
   // Tags
+  const euSug = getMembro(state.eu);
+  const scSug = euSug ? pontuarSessao(euSug, s) : null;
   document.getElementById('modal-tags').innerHTML =
-    s.tags.map(t => `<span class="modal__tag">${t}</span>`).join('');
+    s.tags.map(t => `<span class="modal__tag">${t}</span>`).join('') +
+    (produtosEtiqueta(s).length ? `<div class="modal__prod">Portfólio AI First: ${chipsProduto(produtosEtiqueta(s))}</div>` : '') +
+    (scSug && scSug.pontos >= MIN_SUGESTAO ? `<div class="modal__prod">💡 Relevante para ${esc(euSug.nome.split(' ')[0])}: ${scSug.razoes.map(esc).join(' · ')}</div>` : '');
 
   // URL
   document.getElementById('modal-url').innerHTML =
@@ -1616,7 +1807,7 @@ function renderExpCard(e) {
           ${v.visitado ? `<span class="exp-flag exp-flag--who" title="Visitado por ${esc(v.visitantes.map(id => (getMembro(id) || {}).nome).join(', '))}">✅${v.visitantes.map(id => (getMembro(id) || {}).inicial || '').join('')}</span>` : ''}
           ${v.followup ? '<span class="exp-flag" title="Follow-up">🔁</span>' : ''}
         </div>
-        <div class="exp-card__meta"><span style="color:${cat.cor}">${esc(cat.nome)}</span> · ${OBJETIVOS[e.objetivo] || ''}${fala ? ` · 🎤 fala ${fala}×` : ''}</div>
+        <div class="exp-card__meta"><span style="color:${cat.cor}">${esc(cat.nome)}</span> · ${OBJETIVOS[e.objetivo] || ''}${fala ? ` · 🎤 fala ${fala}×` : ''} ${chipsProduto(Object.keys(produtosExp(e)).filter(id => produtosExp(e)[id] >= 1), true)}</div>
         <div class="exp-card__why">${esc(e.porque)}</div>
       </div>
       <div class="session-card__avatars exp-card__avatars">${quem.map(m => `<div class="session-card__avatar" style="background:${m.cor}" title="${esc(m.nome)}">${m.inicial}</div>`).join('')}</div>
@@ -1962,6 +2153,12 @@ function init() {
     state.filtroMembro = e.target.value;
     renderAll();
   });
+  document.getElementById('filter-produto').innerHTML = '<option value="">Todos os produtos</option>' +
+    PRODUTOS.map(p => `<option value="${p.id}">${p.icone} ${p.nome}</option>`).join('');
+  document.getElementById('filter-produto').addEventListener('change', e => {
+    state.filtroProduto = e.target.value;
+    renderSessions();
+  });
   document.getElementById('filter-type').addEventListener('change', e => {
     state.filtroTipo = e.target.value;
     renderSessions();
@@ -1970,6 +2167,8 @@ function init() {
     state.filtroTrack = '';
     state.filtroMembro = '';
     state.filtroTipo = '';
+    state.filtroProduto = '';
+    document.getElementById('filter-produto').value = '';
     state.pesquisa = '';
     document.getElementById('search-input').value = '';
     document.getElementById('filter-track').value = '';
