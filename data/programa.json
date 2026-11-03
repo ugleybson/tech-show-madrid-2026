@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 48,
-"actualizado_em": "2026-11-03T03:16:07Z",
+"versao": 49,
+"actualizado_em": "2026-11-03T11:11:02Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -6736,7 +6736,7 @@
 {
 "nome": "Roberto Cabezas",
 "cargo": "Top 1 HR Influencers in Spain 2024. Expert",
-"empresa": ".",
+"empresa": "Higher Education Management",
 "role": "orador"
 }
 ],
@@ -12831,15 +12831,15 @@
 "descricao": "¿Cuánto pago aplazado puedes negociar con fábrica antes de que se rompa la relación? Financiar inventario con banco o con revenue-based cuesta caro. Negociar 60 o 90 días con el proveedor es la financ…",
 "oradores": [
 {
-"nome": "Carla Carrasco",
+"nome": "María Selma Vidal",
 "cargo": "CEO",
-"empresa": "Accountali",
+"empresa": "Kunkay",
 "role": "orador"
 },
 {
-"nome": "Eduardo Pereda",
-"cargo": "CFO",
-"empresa": "Nullure",
+"nome": "Carla Carrasco",
+"cargo": "CEO",
+"empresa": "Accountali",
 "role": "orador"
 },
 {
@@ -12864,6 +12864,12 @@
 "antes": "Carla Carrasco, Eduardo Pereda",
 "depois": "Carla Carrasco, Eduardo Pereda, Alfredo Mendoza",
 "em": "2026-10-26T10:23:37Z"
+},
+{
+"campo": "oradores",
+"antes": "Carla Carrasco, Eduardo Pereda, Alfredo Mendoza",
+"depois": "María Selma Vidal, Carla Carrasco, Alfredo Mendoza",
+"em": "2026-11-03T11:11:02Z"
 }
 ]
 },
