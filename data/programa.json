@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 49,
-"actualizado_em": "2026-11-03T11:11:02Z",
+"versao": 50,
+"actualizado_em": "2026-11-04T12:43:52Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -685,8 +685,8 @@
 "descricao": "La inteligencia artificial avanza más rápido que los cimientos sobre los que debe ejecutarse. Miembros del círculo CORE de CIONET (Infraestructura, Arquitectura, Cloud y Plataforma) comparten cómo est…",
 "oradores": [
 {
-"nome": "Jesús García",
-"cargo": "Director General de Negocio",
+"nome": "José Luis Casal",
+"cargo": "Managing Director",
 "empresa": "CIONET Spain",
 "role": "orador"
 },
@@ -740,6 +740,12 @@
 "antes": "Jesús García, Mat Jovanovic, Pedro Martínez Quero, Víctor Cano",
 "depois": "Jesús García, Mat Jovanovic, Pedro Martínez Quero, Víctor Cano, Mariola Martínez Herrera",
 "em": "2026-10-16T18:53:21Z"
+},
+{
+"campo": "oradores",
+"antes": "Jesús García, Mat Jovanovic, Pedro Martínez Quero, Víctor Cano, Mariola Martínez Herrera",
+"depois": "José Luis Casal, Mat Jovanovic, Pedro Martínez Quero, Víctor Cano, Mariola Martínez Herrera",
+"em": "2026-11-04T12:43:52Z"
 }
 ]
 },
@@ -5123,7 +5129,7 @@
 "track_id": "prestashop",
 "hora_inicio": "15:30",
 "hora_fim": "15:50",
-"titulo": "IA y Finanzas para el eCommerce: Cómo la automatización inteligente está transformando la gestión financiera de los negocios online",
+"titulo": "Tu competencia ya gestiona sus finanzas con IA, ¿y tú?",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [
@@ -5147,6 +5153,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-28T13:44:39Z"
+},
+{
+"campo": "titulo",
+"antes": "IA y Finanzas para el eCommerce: Cómo la automatización inteligente está transformando la gestión financiera de los negocios online",
+"depois": "Tu competencia ya gestiona sus finanzas con IA, ¿y tú?",
+"em": "2026-11-04T12:43:52Z"
 }
 ]
 },
@@ -6902,20 +6914,14 @@
 "track_id": "ai-commerce",
 "hora_inicio": "17:30",
 "hora_fim": "17:50",
-"titulo": "El despertar de la nueva inteligencia corporativa en Simuero",
+"titulo": "El despertar de la inteligencia corporativa. Cómo activar el conocimiento interno de tu compañía.",
 "tipo": "Palestra",
 "descricao": "",
 "oradores": [
 {
-"nome": "Guillermo García",
-"cargo": "CEO",
+"nome": "Jaime Maravilla",
+"cargo": "Ecommerce Strategy & Account Managers Team Leader",
 "empresa": "ONESTIC",
-"role": "orador"
-},
-{
-"nome": "Valería García",
-"cargo": "Head of Ecommerce",
-"empresa": "Simuero",
 "role": "orador"
 }
 ],
@@ -6928,6 +6934,18 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-23T11:53:56Z"
+},
+{
+"campo": "titulo",
+"antes": "El despertar de la nueva inteligencia corporativa en Simuero",
+"depois": "El despertar de la inteligencia corporativa. Cómo activar el conocimiento interno de tu compañía.",
+"em": "2026-11-04T12:43:52Z"
+},
+{
+"campo": "oradores",
+"antes": "Guillermo García, Valería García",
+"depois": "Jaime Maravilla",
+"em": "2026-11-04T12:43:52Z"
 }
 ]
 },
@@ -11919,8 +11937,14 @@
 "descricao": "Dentro de cada empresa hay un conocimiento que crece con las personas, las decisiones y la experiencia. Conectarlo y darle contexto permite a la compañía entender mejor su negocio, evaluar escenarios…",
 "oradores": [
 {
-"nome": "Guillermo García",
-"cargo": "CEO",
+"nome": "Pau Gallent",
+"cargo": "Head of AI",
+"empresa": "ONESTIC",
+"role": "orador"
+},
+{
+"nome": "Juan Alcántara",
+"cargo": "Head of Business",
 "empresa": "ONESTIC",
 "role": "orador"
 }
@@ -11934,6 +11958,12 @@
 "antes": "—",
 "depois": "nova",
 "em": "2026-10-30T14:26:34Z"
+},
+{
+"campo": "oradores",
+"antes": "Guillermo García",
+"depois": "Pau Gallent, Juan Alcántara",
+"em": "2026-11-04T12:43:52Z"
 }
 ]
 },
@@ -13022,9 +13052,9 @@
 "role": "orador"
 },
 {
-"nome": "Ion Vidaurreta",
-"cargo": "Co-CEO",
-"empresa": "DECOWOOD",
+"nome": "El Ouafi El Yaakoubi",
+"cargo": "Fundador",
+"empresa": "PhoneMad",
 "role": "orador"
 },
 {
@@ -13063,6 +13093,12 @@
 "antes": "Ion Vidaurreta, Julián Vesga",
 "depois": "Marco Antonio Velásquez, Ion Vidaurreta, Julián Vesga",
 "em": "2026-11-01T20:05:10Z"
+},
+{
+"campo": "oradores",
+"antes": "Marco Antonio Velásquez, Ion Vidaurreta, Julián Vesga",
+"depois": "Marco Antonio Velásquez, El Ouafi El Yaakoubi, Julián Vesga",
+"em": "2026-11-04T12:43:52Z"
 }
 ]
 },
