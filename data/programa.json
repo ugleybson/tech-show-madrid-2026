@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 50,
-"actualizado_em": "2026-11-04T12:43:52Z",
+"versao": 51,
+"actualizado_em": "2026-11-04T13:44:09Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -6923,6 +6923,12 @@
 "cargo": "Ecommerce Strategy & Account Managers Team Leader",
 "empresa": "ONESTIC",
 "role": "orador"
+},
+{
+"nome": "Adrián García",
+"cargo": "Mantenimiento y Soporte",
+"empresa": "ONESTIC",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-despertar-de-la-nueva-inteligencia-corporativa-en-simuero",
@@ -6946,6 +6952,12 @@
 "antes": "Guillermo García, Valería García",
 "depois": "Jaime Maravilla",
 "em": "2026-11-04T12:43:52Z"
+},
+{
+"campo": "oradores",
+"antes": "Jaime Maravilla",
+"depois": "Jaime Maravilla, Adrián García",
+"em": "2026-11-04T13:44:09Z"
 }
 ]
 },
