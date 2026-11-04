@@ -1,7 +1,7 @@
 {
 "fonte": "https://www.techshowmadrid.es/programa-completo",
-"versao": 51,
-"actualizado_em": "2026-11-04T13:44:09Z",
+"versao": 52,
+"actualizado_em": "2026-11-04T20:13:35Z",
 "tracks": [
 {
 "id": "tech-keynote",
@@ -6929,6 +6929,18 @@
 "cargo": "Mantenimiento y Soporte",
 "empresa": "ONESTIC",
 "role": "orador"
+},
+{
+"nome": "Juan Alcántara",
+"cargo": "Head of Business",
+"empresa": "ONESTIC",
+"role": "orador"
+},
+{
+"nome": "Pau Gallent",
+"cargo": "Head of AI",
+"empresa": "ONESTIC",
+"role": "orador"
 }
 ],
 "url": "https://www.techshowmadrid.es/tech-show-madrid-2026/el-despertar-de-la-nueva-inteligencia-corporativa-en-simuero",
@@ -6958,6 +6970,12 @@
 "antes": "Jaime Maravilla",
 "depois": "Jaime Maravilla, Adrián García",
 "em": "2026-11-04T13:44:09Z"
+},
+{
+"campo": "oradores",
+"antes": "Jaime Maravilla, Adrián García",
+"depois": "Jaime Maravilla, Adrián García, Juan Alcántara, Pau Gallent",
+"em": "2026-11-04T20:13:35Z"
 }
 ]
 },
